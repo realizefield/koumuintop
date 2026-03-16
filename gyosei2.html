@@ -1,0 +1,450 @@
+<!DOCTYPE html><html lang="ja"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>1章の2　行政行為の意義 | GAMBA</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Meiryo',sans-serif;background:#f0f4f8;color:#222;line-height:1.85;font-size:15px}
+ruby rt{font-size:10px;color:#888}
+a{color:inherit;text-decoration:none}
+
+/* ナビ */
+.nav{background:#1B2A4A;position:sticky;top:0;z-index:200;box-shadow:0 2px 8px rgba(0,0,0,.35)}
+.nav-in{max-width:960px;margin:0 auto;display:flex;align-items:stretch;flex-wrap:wrap}
+.nav-brand{padding:10px 16px;font-size:14px;font-weight:bold;color:#fff;border-right:1px solid rgba(255,255,255,.15);display:flex;align-items:center;gap:6px;white-space:nowrap}
+.nav-brand small{font-size:11px;color:#8ab4d8;font-weight:normal}
+.nav-links{display:flex;flex-wrap:wrap;flex:1}
+.nav-links a{color:rgba(255,255,255,.8);padding:10px 10px;font-size:13px;display:flex;align-items:center;border-bottom:3px solid transparent;transition:.15s;white-space:nowrap}
+.nav-links a:hover{color:#fff;background:rgba(255,255,255,.08)}
+.nav-links a.cur{color:#fff;border-bottom-color:#C0392B;font-weight:bold}
+.nav-links a.ex{color:#ffd96a}
+.nav-links a.rv{background:#C0392B;color:#fff;margin:5px 6px 5px 2px;padding:5px 12px;border-radius:6px;border-bottom:none;font-size:12px}
+.nav-links a.rv:hover{background:#a93226}
+
+/* レイアウト */
+.main{max-width:960px;margin:0 auto;padding:20px 14px 80px}
+
+/* ヒーローヘッダー */
+.hero{background:#1B2A4A;border-radius:14px;padding:22px 26px;margin-bottom:20px;color:#fff;overflow:hidden;position:relative}
+.hero::before{content:'';position:absolute;right:-30px;top:-30px;width:140px;height:140px;border-radius:50%;background:rgba(192,57,43,.2)}
+.hero .tag{display:inline-block;background:#C0392B;color:#fff;font-size:11px;padding:3px 10px;border-radius:10px;margin-bottom:8px}
+.hero h1{font-size:21px;font-weight:bold;margin-bottom:5px;position:relative}
+.hero p{font-size:13px;color:#8ab4d8;position:relative}
+
+/* ポイントカード */
+.pts{background:#fff;border-radius:12px;padding:18px 20px;margin-bottom:18px;border-left:5px solid #C0392B}
+.pts h3{font-size:14px;font-weight:bold;color:#C0392B;margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.pt{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid #f2f2f2;align-items:flex-start}
+.pt:last-child{border-bottom:none}
+.pn{min-width:24px;height:24px;background:#1B2A4A;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:bold;flex-shrink:0;margin-top:3px}
+.pk{color:#C0392B;font-weight:bold}
+
+/* カード */
+.card{background:#fff;border-radius:12px;padding:20px 22px;margin-bottom:18px;box-shadow:0 1px 4px rgba(0,0,0,.07)}
+.ch{font-size:17px;font-weight:bold;color:#1B2A4A;padding-bottom:10px;border-bottom:2px solid #EBF5FB;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.cn{background:#1B2A4A;color:#fff;width:26px;height:26px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0}
+
+/* 本文 */
+.txt{font-size:15px;line-height:1.95;color:#2c3e50;margin-bottom:10px}
+
+/* 用語ポップアップ */
+.kw{color:#1A5276;font-weight:bold;cursor:pointer;border-bottom:1px dashed #1A5276;transition:.1s}
+.kw:hover{background:#EBF5FB;border-radius:3px}
+.pop{display:none;position:fixed;z-index:500;background:#1B2A4A;color:#fff;border-radius:10px;padding:14px 18px;max-width:290px;font-size:13px;line-height:1.75;box-shadow:0 6px 24px rgba(0,0,0,.35);pointer-events:none}
+.pop.on{display:block;pointer-events:auto}
+.pop-x{float:right;cursor:pointer;color:#8ab4d8;font-size:16px;margin:-2px -4px 0 8px;pointer-events:auto}
+
+/* 例え話ボックス */
+.ex-box{background:#fffbea;border-left:4px solid #f39c12;border-radius:0 8px 8px 0;padding:12px 16px;margin:12px 0;font-size:14px;line-height:1.8}
+.ex-box b{color:#a04000}
+
+/* 図解 */
+.diag{background:#f8fafc;border-radius:10px;padding:10px;margin:14px 0;overflow-x:auto}
+
+/* テーブル */
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin:12px 0}
+.tbl th{background:#1B2A4A;color:#fff;padding:9px 12px;text-align:left;font-size:13px}
+.tbl td{padding:9px 12px;border-bottom:1px solid #eaf0f6;vertical-align:top;line-height:1.75}
+.tbl tr:nth-child(even) td{background:#f8fafc}
+.tbl td:first-child{font-weight:bold;color:#1A5276;background:#EBF5FB}
+.badge{background:#C0392B;color:#fff;font-size:11px;padding:2px 7px;border-radius:8px;margin-left:5px;font-weight:normal}
+
+/* 穴埋め */
+.blank{display:inline-block;min-width:72px;border-bottom:2.5px solid #C0392B;color:#C0392B;font-weight:bold;text-align:center;padding:2px 5px;margin:0 2px;cursor:pointer;border-radius:4px 4px 0 0;background:#fff8f8;transition:.15s;font-size:15px}
+.blank.ok{background:#e8f8f0;border-color:#27ae60;color:#1e8449}
+.blank.ng{background:#fdecea;border-color:#e74c3c;animation:sh .3s}
+@keyframes sh{0%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+
+/* 語群 */
+.wb{background:#EBF5FB;border:2px solid #1A5276;border-radius:10px;padding:12px 16px;margin:14px 0;display:none}
+.wb-h{font-size:12px;font-weight:bold;color:#1A5276;margin-bottom:9px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chip{background:#fff;border:2px solid #1A5276;border-radius:20px;padding:6px 14px;font-size:14px;cursor:pointer;color:#1A5276;font-weight:bold;user-select:none;transition:.15s}
+.chip:hover,.chip.sel{background:#1A5276;color:#fff}
+.chip.used{opacity:.3;pointer-events:none;text-decoration:line-through}
+
+/* ボタン */
+.btn{display:inline-flex;align-items:center;gap:5px;padding:9px 18px;border-radius:8px;font-size:14px;font-weight:bold;cursor:pointer;border:none;transition:.15s;text-decoration:none}
+.b-navy{background:#1B2A4A;color:#fff}.b-navy:hover{background:#2c3e6e}
+.b-red{background:#C0392B;color:#fff}.b-red:hover{background:#a93226}
+.b-out{background:#fff;border:2px solid #1B2A4A;color:#1B2A4A}.b-out:hover{background:#1B2A4A;color:#fff}
+.b-sm{padding:6px 14px;font-size:13px}
+.b-orange{background:#e67e22;color:#fff}.b-orange:hover{background:#ca6f1e}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:14px 0}
+
+/* タイマー */
+.timer{background:#f8fafc;border:2px solid #EBF5FB;border-radius:10px;padding:12px 18px;margin:14px 0;display:none}
+.t-row{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.t-num{font-size:26px;font-weight:bold;color:#1B2A4A;min-width:52px;font-variant-numeric:tabular-nums}
+.t-bar{flex:1;height:9px;background:#ddeef8;border-radius:5px;overflow:hidden}
+.t-fill{height:100%;background:#1A5276;border-radius:5px;transition:width 1s linear}
+.sc-row{display:flex;gap:8px;flex-wrap:wrap}
+.sc{background:#fff;border:1.5px solid #dde8f0;border-radius:8px;padding:7px 14px;text-align:center;min-width:76px}
+.sc .v{font-size:19px;font-weight:bold;color:#1B2A4A}
+.sc .l{font-size:11px;color:#999;margin-top:1px}
+
+/* 結果 */
+.result{display:none;background:#e8f8f0;border:2px solid #1e8449;border-radius:10px;padding:16px 20px;margin:12px 0;text-align:center}
+.result.on{display:block}
+.result .big{font-size:21px;font-weight:bold;color:#1e8449;margin-bottom:6px}
+
+/* チャット */
+.chat{background:#fff;border-radius:12px;overflow:hidden;margin-bottom:18px;box-shadow:0 1px 4px rgba(0,0,0,.07)}
+.chat-h{background:#1B2A4A;color:#fff;padding:11px 18px;font-size:14px;font-weight:bold}
+.chat-msgs{padding:12px;min-height:88px;max-height:220px;overflow-y:auto;background:#fafafa;display:flex;flex-direction:column;gap:9px}
+.bub{padding:9px 13px;border-radius:12px;font-size:14px;max-width:88%;line-height:1.7}
+.bub.u{background:#1B2A4A;color:#fff;align-self:flex-end;border-bottom-right-radius:3px}
+.bub.a{background:#fff;border:1.5px solid #e4e4e4;align-self:flex-start;border-bottom-left-radius:3px}
+.chat-in{display:flex;border-top:1.5px solid #e8e8e8}
+.chat-in input{flex:1;border:none;padding:10px 14px;font-size:14px;outline:none;font-family:'Meiryo',sans-serif}
+.chat-in button{background:#1B2A4A;color:#fff;border:none;padding:0 18px;cursor:pointer;font-size:13px;font-weight:bold}
+.chat-in button:hover{background:#2c3e6e}
+
+/* 復習ボタン */
+.rv-btn{display:inline-flex;align-items:center;gap:6px;background:#fff;border:2px solid #e67e22;color:#e67e22;padding:8px 16px;border-radius:8px;font-size:14px;font-weight:bold;cursor:pointer;transition:.15s}
+.rv-btn.on,.rv-btn:hover{background:#e67e22;color:#fff}
+
+/* 演習ページ */
+.qcard{margin-bottom:20px}
+.qh{display:flex;align-items:center;gap:9px;margin-bottom:12px;flex-wrap:wrap}
+.qn{background:#1B2A4A;color:#fff;padding:4px 14px;border-radius:20px;font-size:14px;font-weight:bold}
+.qd{color:#f39c12;font-size:15px}
+.qr{color:#bbb;font-size:12px;font-style:italic}
+.qbadge{margin-left:auto;padding:4px 13px;border-radius:10px;font-size:13px;font-weight:bold}
+.qbadge.ok{background:#e8f8f0;color:#1e8449}
+.qbadge.ng{background:#fdecea;color:#C0392B}
+.qtxt{font-size:16px;line-height:1.95;margin-bottom:14px;white-space:pre-wrap;color:#2c3e50}
+.choices{display:flex;flex-direction:column;gap:7px}
+.cho{display:flex;align-items:flex-start;gap:11px;padding:11px 15px;border:2px solid #e8edf2;border-radius:8px;cursor:pointer;transition:.15s;font-size:15px;line-height:1.75}
+.cho:hover{border-color:#1A5276;background:#EBF5FB}
+.cho.ok{border-color:#1e8449;background:#e8f8f0;pointer-events:none}
+.cho.ng{border-color:#e74c3c;background:#fdecea;pointer-events:none}
+.cho.dim{pointer-events:none;opacity:.8}
+.cnum{min-width:22px;font-weight:bold;color:#1B2A4A;flex-shrink:0;margin-top:2px}
+.sol{display:none;margin-top:12px;border-radius:8px;overflow:hidden}
+.sol-h{background:#1e8449;color:#fff;padding:10px 16px;font-size:15px;display:flex;align-items:center;gap:8px}
+.sol-h strong{font-size:18px}
+.sol-h span{margin-left:auto;font-size:12px;color:#a8e6c0;font-style:italic}
+.sol-b{background:#e8f8f0;border:2px solid #1e8449;border-top:none;padding:15px}
+.sol-exp{font-size:14px;line-height:1.75;margin-bottom:10px}
+.sol-ce{display:flex;gap:8px;padding:4px 0;border-top:1px solid #c8e6c9;font-size:13px;line-height:1.65}
+.sol-ce:first-of-type{border-top:none;padding-top:8px}
+.ce-ok{color:#1e8449;font-weight:bold}
+.ce-ng{color:#555}
+.sol-kw{margin-top:10px;background:#fff;border-radius:6px;padding:8px 12px;font-size:13px}
+.sol-kw b{color:#e67e22}
+.final{display:none;background:#e8f8f0;border:2px solid #1e8449;border-radius:12px;padding:20px;margin:16px 0;text-align:center}
+.final.on{display:block}
+.final .big{font-size:23px;font-weight:bold;color:#1e8449;margin-bottom:6px}
+.tex{display:flex;align-items:center;gap:11px;padding:9px 15px;background:#f8fafc;border:1.5px solid #dde8f0;border-radius:10px;margin-bottom:14px;font-size:13px;color:#666}
+.tex .tv{font-size:19px;font-weight:bold;color:#1B2A4A;font-variant-numeric:tabular-nums;min-width:46px}
+
+/* 復習ページ */
+.rc{background:#fff;border-radius:12px;padding:16px 20px;margin-bottom:12px;border-left:5px solid #e67e22;box-shadow:0 1px 4px rgba(0,0,0,.07)}
+.rc-h{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;align-items:flex-start;margin-bottom:10px}
+.rc-t{font-size:16px;font-weight:bold;color:#1B2A4A}
+.rc-d{font-size:12px;color:#bbb;margin-top:2px}
+.tally{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0}
+.tl{font-size:13px;color:#e67e22;font-weight:bold;min-width:90px}
+.tmarks{display:flex;gap:5px;flex-wrap:wrap}
+.tm{width:30px;height:30px;border-radius:50%;border:2px solid #e67e22;color:#e67e22;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:bold;cursor:pointer;transition:.15s;user-select:none}
+.tm.on{background:#e67e22;color:#fff}
+.tm-add{border-style:dashed;font-size:18px;line-height:1}
+.memo{width:100%;border:1.5px solid #e0e0e0;border-radius:8px;padding:9px;font-size:14px;margin-top:8px;resize:vertical;min-height:60px;font-family:'Meiryo',sans-serif;line-height:1.7}
+.memo:focus{border-color:#e67e22;outline:none}
+
+@media(max-width:600px){
+  .nav-brand small{display:none}
+  .nav-links a{font-size:12px;padding:8px 6px}
+  .main{padding:12px 10px 60px}
+  .hero h1{font-size:18px}
+}
+</style></head><body>
+<nav class="nav"><div class="nav-in">
+  <div class="nav-brand">行政法 第1章<small>江原予備校</small></div>
+  <div class="nav-links"><a href="gyosei1.html" class="">1章の1</a><a href="gyosei1-1.html" class="ex">演習1</a><a href="gyosei2.html" class=" cur">1章の2</a><a href="gyosei2-1.html" class="ex">演習2</a><a href="gyosei3.html" class="">1章の3</a><a href="gyosei3-1.html" class="ex">演習3</a><a href="gyosei4.html" class="">1章の4</a><a href="gyosei4-1.html" class="ex">演習4</a><a href="review.html" class="rv">復習</a></div>
+</div></nav>
+<div id="pop" class="pop"><span class="pop-x" onclick="hidePop()">✕</span><strong class="pop-word"></strong><br><span class="pop-body"></span></div>
+<div class="main">
+
+<div class="hero">
+  <div class="tag">江原予備校 GAMBAシステム</div>
+  <h1>1章の2　行政行為の意義</h1>
+  <p>行政行為とは？許可・特許・認可の違いをマスターしましょう</p>
+</div>
+
+<div class="pts">
+  <h3>この単元の重要ポイント 3つ</h3>
+  
+  <div class="pt">
+    <div class="pn">1</div>
+    <div><ruby><span class="kw" onclick="showPop('行政',event)">行政</span>行為<rt>ぎょうせいこうい</rt></ruby>の最大の特徴は？ <span class="pk">→ 「一方性」 ― 相手方の同意は不要</span></div>
+  </div>
+  <div class="pt">
+    <div class="pn">2</div>
+    <div>最頻出！許可・特許・認可の区別 <span class="pk">→ 許可=禁止の解除 / 特許=権利の設定 / 認可=補充・完成</span></div>
+  </div>
+  <div class="pt">
+    <div class="pn">3</div>
+    <div>省内の文書決裁は<ruby><span class="kw" onclick="showPop('行政',event)">行政</span>行為<rt>ぎょうせいこうい</rt></ruby>ではない <span class="pk">→ 外部性を欠くため（国民に向けられた行為でない）</span></div>
+  </div>
+</div>
+
+<div class="card" style="background:#EBF5FB;border:2px solid #1A5276">
+  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+    <div>
+      <div style="font-weight:bold;color:#1A5276;margin-bottom:3px">学習の進め方</div>
+      <div style="font-size:13px;color:#555">① 説明を読む → ② チャレンジ開始で語句が語群へ → ③ 語群から選んでタップ</div>
+    </div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <button class="btn b-navy" onclick="start()">チャレンジ開始</button>
+      <button class="btn b-out b-sm" onclick="speakPage()">音声解説</button>
+      <button class="btn b-out b-sm" onclick="reset()">リセット</button>
+    </div>
+  </div>
+</div>
+
+<div class="timer" id="timer">
+  <div class="t-row">
+    <span style="font-size:13px;color:#666;min-width:54px">残り時間</span>
+    <span class="t-num" id="tnum">3:00</span>
+    <div class="t-bar"><div class="t-fill" id="tfill" style="width:100%"></div></div>
+  </div>
+  <div class="sc-row" id="scrow"></div>
+</div>
+
+<div class="card qcard">
+      <div class="ch"><div class="cn">1</div>行政行為とは</div>
+      <div class="txt"><ruby><span class="kw" onclick="showPop('行政',event)">行政</span>庁<rt>ぎょうせいちょう</rt></ruby>が「あなたの店の営業を許可します」「税金を100万円払ってください」と一方的に通知してくる行為が<ruby><span class="kw" onclick="showPop('行政',event)">行政</span>行為<rt>ぎょうせいこうい</rt></ruby>です。民法の契約（双方の合意が必要）とは違い、相手が「嫌だ」と言っても効力が生じる点が大きな特徴です。</div><div class="ex-box"><b>具体例：</b>税務署長が「100万円の税金を納めなさい」と課税処分をした場合、あなたが「嫌だ」と言っても課税処分は有効です。これが「<ruby>一方性<rt>いっぽうせい</rt></ruby>」です。</div><div class="diag"><svg width="100%" viewBox="0 0 640 130" style="max-width:640px;display:block">
+  <defs><marker id="ar2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M2 1L8 5L2 9" fill="none" stroke="#C0392B" stroke-width="1.5"/></marker></defs>
+  <rect x="10" y="40" width="120" height="52" rx="8" fill="#1B2A4A"/>
+  <text x="70" y="70" text-anchor="middle" fill="#fff" font-size="13" font-family="Meiryo" font-weight="bold">行政庁</text>
+  <text x="70" y="86" text-anchor="middle" fill="#8ab4d8" font-size="11" font-family="Meiryo">（市長・税務署長等）</text>
+  <line x1="130" y1="66" x2="195" y2="66" stroke="#C0392B" stroke-width="2" marker-end="url(#ar2)"/>
+  <text x="162" y="58" text-anchor="middle" fill="#C0392B" font-size="11" font-family="Meiryo">一方的に！</text>
+  <text x="162" y="80" text-anchor="middle" fill="#888" font-size="10" font-family="Meiryo">同意不要</text>
+  <rect x="195" y="30" width="175" height="72" rx="8" fill="#C0392B"/>
+  <text x="282" y="60" text-anchor="middle" fill="#fff" font-size="14" font-family="Meiryo" font-weight="bold">行政行為</text>
+  <text x="282" y="80" text-anchor="middle" fill="#ffcccc" font-size="11" font-family="Meiryo">権利・義務の変動</text>
+  <text x="282" y="96" text-anchor="middle" fill="#ffcccc" font-size="11" font-family="Meiryo">（課税処分・営業許可等）</text>
+  <line x1="370" y1="66" x2="430" y2="66" stroke="#555" stroke-width="1.5" marker-end="url(#ar2)"/>
+  <rect x="430" y="40" width="150" height="52" rx="8" fill="#27ae60"/>
+  <text x="505" y="68" text-anchor="middle" fill="#fff" font-size="13" font-family="Meiryo" font-weight="bold">国民（行政客体）</text>
+  <text x="505" y="85" text-anchor="middle" fill="#c8f0d8" font-size="11" font-family="Meiryo">「嫌だ」と言っても効力あり</text>
+</svg></div><div class="fill-unit" id="fu_0_0">
+        <div class="txt"><span class="blank" data-ans="<ruby><span class="kw" onclick="showPop('行政',event)">行政</span>行為<rt>ぎょうせいこうい</rt></ruby>" onclick="bClick(this)"><ruby><span class="kw" onclick="showPop('行政',event)">行政</span>行為<rt>ぎょうせいこうい</rt></ruby></span>とは、<span class="blank" data-ans="<ruby><span class="kw" onclick="showPop('行政',event)">行政</span>庁<rt>ぎょうせいちょう</rt></ruby>" onclick="bClick(this)"><ruby><span class="kw" onclick="showPop('行政',event)">行政</span>庁<rt>ぎょうせいちょう</rt></ruby></span>が<span class="kw" onclick="showPop('法律',event)">法律</span>に基づき、国民（<span class="blank" data-ans="<ruby><span class="kw" onclick="showPop('行政',event)">行政</span>客体<rt>ぎょうせいかくたい</rt></ruby>" onclick="bClick(this)"><ruby><span class="kw" onclick="showPop('行政',event)">行政</span>客体<rt>ぎょうせいかくたい</rt></ruby></span>）に対して、具体的な<span class="blank" data-ans="<ruby><span class="kw" onclick="showPop('法律',event)">法律</span>効果<rt>ほうりつこうか</rt></ruby>" onclick="bClick(this)"><ruby><span class="kw" onclick="showPop('法律',event)">法律</span>効果<rt>ほうりつこうか</rt></ruby></span>（権利義務の変動）を一方的に発生させる行為です。4つの特徴：①<span class="blank" data-ans="<ruby><span class="kw" onclick="showPop('法律',event)">法律</span>行為性<rt>ほうりつこういせい</rt></ruby>" onclick="bClick(this)"><ruby><span class="kw" onclick="showPop('法律',event)">法律</span>行為性<rt>ほうりつこういせい</rt></ruby></span>（権利・義務の変動を生じさせる）、②<span class="blank" data-ans="<ruby>一方性<rt>いっぽうせい</rt></ruby>" onclick="bClick(this)"><ruby>一方性<rt>いっぽうせい</rt></ruby></span>（相手方の同意不要）、③<span class="blank" data-ans="<ruby>具体性<rt>ぐたいせい</rt></ruby>" onclick="bClick(this)"><ruby>具体性<rt>ぐたいせい</rt></ruby></span>（特定の人・事案に対する行為、<span class="blank" data-ans="<ruby>法規命令<rt>ほうきめいれい</rt></ruby>" onclick="bClick(this)"><ruby>法規命令<rt>ほうきめいれい</rt></ruby></span>とは異なる）、④<span class="blank" data-ans="<ruby>外部性<rt>がいぶせい</rt></ruby>" onclick="bClick(this)"><ruby>外部性<rt>がいぶせい</rt></ruby></span>（国民に向けられた外部行為、省内の決裁は対象外）。</div>
+        <div class="wb" id="wb_0_0">
+          <div class="wb-h">【語群】 語句をタップして空欄に入れましょう</div>
+          <div class="chips"><span class="chip" data-w="外部性" onclick="cClick(this)">外部性</span><span class="chip" data-w="法律効果" onclick="cClick(this)">法律効果</span><span class="chip" data-w="法規命令" onclick="cClick(this)">法規命令</span><span class="chip" data-w="行政客体" onclick="cClick(this)">行政客体</span><span class="chip" data-w="行政庁" onclick="cClick(this)">行政庁</span><span class="chip" data-w="行政行為" onclick="cClick(this)">行政行為</span><span class="chip" data-w="法律行為性" onclick="cClick(this)">法律行為性</span><span class="chip" data-w="一方性" onclick="cClick(this)">一方性</span><span class="chip" data-w="具体性" onclick="cClick(this)">具体性</span></div>
+        </div>
+      </div>
+    </div><div class="card qcard">
+      <div class="ch"><div class="cn">2</div>行政行為の種類（許可・特許・認可が最頻出！）</div>
+      <div class="txt">試験で最もよく問われるのが「許可・特許・認可」の区別です。それぞれのキーワードをしっかり覚えましょう。</div><div class="ex-box"><b>具体例：</b>運転免許（許可）：本来は車を運転することは禁止されているが、試験合格で解除される。鉱業権設定（特許）：一般人には認められていない権利を新たに与える。農地売買の許可（認可）：売主と買主の合意だけでは効力が生じず、農地法の許可が必要。</div><div class="fill-unit" id="fu_1_0">
+        <div class="txt"><span class="blank" data-ans="許可" onclick="bClick(this)">許可</span>は「<span class="blank" data-ans="禁止の解除" onclick="bClick(this)">禁止の解除</span>」がキーワード（例：運転免許・飲食店営業許可）。<span class="blank" data-ans="特許" onclick="bClick(this)">特許</span>は「<span class="blank" data-ans="権利の設定" onclick="bClick(this)">権利の設定</span>」がキーワード（例：鉱業権の設定・公有水面埋立免許）。<span class="blank" data-ans="認可" onclick="bClick(this)">認可</span>は「<span class="blank" data-ans="補充・完成" onclick="bClick(this)">補充・完成</span>」がキーワード（例：農地売買の許可・銀行設立の認可）。<span class="blank" data-ans="下命" onclick="bClick(this)">下命</span>は義務を課す行為（例：租税の賦課・除却命令）。準<span class="kw" onclick="showPop('法律',event)">法律</span>行為的<ruby><span class="kw" onclick="showPop('行政',event)">行政</span>行為<rt>ぎょうせいこうい</rt></ruby>として<span class="blank" data-ans="確認" onclick="bClick(this)">確認</span>・<span class="blank" data-ans="公証" onclick="bClick(this)">公証</span>・<span class="blank" data-ans="通知" onclick="bClick(this)">通知</span>・<span class="blank" data-ans="受理" onclick="bClick(this)">受理</span>があります。</div>
+        <div class="wb" id="wb_1_0">
+          <div class="wb-h">【語群】 語句をタップして空欄に入れましょう</div>
+          <div class="chips"><span class="chip" data-w="準法律行為的行政行為" onclick="cClick(this)">準法律行為的行政行為</span><span class="chip" data-w="確認" onclick="cClick(this)">確認</span><span class="chip" data-w="下命" onclick="cClick(this)">下命</span><span class="chip" data-w="通知" onclick="cClick(this)">通知</span><span class="chip" data-w="法律行為的行政行為" onclick="cClick(this)">法律行為的行政行為</span><span class="chip" data-w="認可" onclick="cClick(this)">認可</span><span class="chip" data-w="禁止" onclick="cClick(this)">禁止</span><span class="chip" data-w="公証" onclick="cClick(this)">公証</span><span class="chip" data-w="特許" onclick="cClick(this)">特許</span><span class="chip" data-w="剥権" onclick="cClick(this)">剥権</span><span class="chip" data-w="受理" onclick="cClick(this)">受理</span><span class="chip" data-w="許可" onclick="cClick(this)">許可</span><span class="chip" data-w="免除" onclick="cClick(this)">免除</span><span class="chip" data-w="禁止の解除" onclick="cClick(this)">禁止の解除</span><span class="chip" data-w="補充・完成" onclick="cClick(this)">補充・完成</span><span class="chip" data-w="権利の設定" onclick="cClick(this)">権利の設定</span></div>
+        </div>
+      </div><div style="overflow-x:auto"><table class="tbl">
+      <tr><th>種類</th><th>キーワード</th><th>具体例（試験頻出）</th></tr>
+      <tr><td class="kc">許可</td><td>禁止の解除</td><td>運転免許・飲食店営業許可・医師免許</td></tr><tr><td class="kc">特許</td><td>権利の設定</td><td>鉱業権の設定・公有水面埋立免許・公務員の任命</td></tr><tr><td class="kc">認可</td><td>補充・完成</td><td>農地売買の許可・銀行設立の認可（なければ無効！）</td></tr><tr><td class="kc">下命</td><td>義務を課す</td><td>租税の賦課・除却命令・営業停止命令</td></tr><tr><td class="kc">確認（準<span class="kw" onclick="showPop('法律',event)">法律</span>行為的）</td><td>事実・関係の確認</td><td>当選人の決定・建築確認</td></tr>
+    </table></div>
+    </div>
+
+<div class="result" id="result">
+  <div class="big" id="rtxt"></div>
+  <div style="font-size:13px;color:#555;margin-top:5px" id="rrec"></div>
+</div>
+
+<div class="chat">
+  <div class="chat-h">AIチャット質問 <span style="background:#C0392B;font-size:11px;padding:2px 8px;border-radius:8px;margin-left:6px;font-weight:normal">AI講師</span></div>
+  <div class="chat-msgs" id="cout"><div class="bub a">この単元について何でも質問してください！</div></div>
+  <div class="chat-in">
+    <input id="cinp" type="text" placeholder="例：侵害留保説と全部留保説の違いは？">
+    <button id="csend">送信</button>
+  </div>
+</div>
+
+<div class="card" style="border:2px solid #e67e22;background:#fff9f0">
+  <div style="font-weight:bold;color:#a04000;margin-bottom:8px">復習ページに保存</div>
+  <p style="font-size:13px;color:#666;margin-bottom:10px">苦手な単元はボタンで復習リストに追加できます。</p>
+  <button class="rv-btn" id="rvbtn">復習ページに保存</button>
+</div>
+
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin:20px 0">
+  <a href="gyosei2-1.html" class="btn b-red">演習問題へ →</a>
+  <a href="review.html" class="btn b-out b-sm">復習ページ</a>
+</div>
+
+</div>
+<script>
+
+const SK='gamba2';
+function gR(){try{return JSON.parse(localStorage.getItem(SK+'_r'))||[];}catch(e){return[];}}
+function sR(a){localStorage.setItem(SK+'_r',JSON.stringify(a));}
+function addR(o){const a=gR();if(!a.find(i=>i.id===o.id)){a.push({...o,saved:Date.now(),cnt:0,memo:''});sR(a);}}
+function rmR(id){sR(gR().filter(i=>i.id!==id));}
+function gSc(pid){try{return JSON.parse(localStorage.getItem(SK+'_s_'+pid))||[];}catch(e){return[];}}
+function sSc(pid,d){const a=gSc(pid);a.unshift({t:Date.now(),d});localStorage.setItem(SK+'_s_'+pid,JSON.stringify(a.slice(0,3)));}
+
+/* ポップアップ辞書 */
+const DICT={
+  '行政':'国や都道府県・市町村などが、国民のために行う仕事のこと。税金の徴収、道路の整備、許可証の発行などが含まれます。',
+  '行政法':'行政に関する法律の理論のことです。「行政法」という名前の法律があるわけではなく、行政全体に共通するルールをまとめたものです。',
+  '法律':'ここでは「国会が作った法律」のことだけを指します。内閣が作る政令や各省庁の省令・規則、地方議会が作る条例は含まれません。',
+  '行政行為':'行政庁が国民に対して、一方的に権利や義務を発生させる行為のこと。課税処分や営業許可などが代表例です。',
+  '行政庁':'行政主体（国や都道府県など）の代わりに、実際に行政を行う機関のこと。税務署長や市長などがその例です。',
+  '公定力':'たとえ違法な行政行為でも、裁判所などが正式に取り消すまでは「有効なもの」として扱われる効力のこと。',
+  '不可争力':'取消訴訟を起こせる期間（原則6か月）が過ぎると、国民がその行政行為の効力を争えなくなる効力のこと。',
+  '代執行':'義務者が命令を守らない場合に、行政が代わりにその作業を行い、費用を後から請求できる制度。違法建築の取り壊しなどが例。',
+  '侵害行政':'国民の権利や自由を制限・侵害する行政活動のこと。課税や営業停止命令などが例です。',
+  '給付行政':'国民に利益・サービスを提供する行政活動のこと。補助金の支給や公共施設の提供などが例です。',
+  '取消訴訟':'行政行為が違法であるとして、裁判所にその取消しを求める訴訟のこと。出訴期間（原則6か月）があります。',
+  '瑕疵':'キズ・欠陥のこと。行政行為の「瑕疵」とは、法律違反などの問題があることを意味します。',
+  '遡及効':'さかのぼって効力が生じること。取消しには遡及効があり、最初から無効だったことになります。',
+  '秩序罰':'義務違反に対して科される過料のこと。刑法は適用されず、前科もつきません。行政刑罰とは別です。',
+};
+
+function showPop(word, e){
+  const desc = DICT[word] || word+'の説明はありません。';
+  const p = document.getElementById('pop');
+  p.querySelector('.pop-body').textContent = desc;
+  p.querySelector('.pop-word').textContent = word;
+  p.classList.add('on');
+  const px = Math.min(e.clientX, window.innerWidth - 310);
+  const py = e.clientY + window.scrollY + 20;
+  p.style.left = px + 'px';
+  p.style.top  = py + 'px';
+  e.stopPropagation();
+}
+function hidePop(){document.getElementById('pop').classList.remove('on');}
+document.addEventListener('click', hidePop);
+
+function speak(txt){
+  if(!window.speechSynthesis) return;
+  const u = new SpeechSynthesisUtterance(txt);
+  u.lang='ja-JP'; u.rate=0.88;
+  window.speechSynthesis.cancel();
+  window.speechSynthesis.speak(u);
+}
+
+async function askAI(q, ctx){
+  const out = document.getElementById('cout');
+  const ub = document.createElement('div'); ub.className='bub u'; ub.textContent=q;
+  out.appendChild(ub); out.scrollTop=out.scrollHeight;
+  const ab = document.createElement('div'); ab.className='bub a'; ab.textContent='考え中...';
+  out.appendChild(ab);
+  try{
+    const r = await fetch('https://api.anthropic.com/v1/messages',{method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:500,
+        system:'公務員試験（地方上級・国家一般職）の行政法専門講師です。初学者に丁寧に、身近な例えを使って150字以内で答えてください。学習ページ: '+ctx,
+        messages:[{role:'user',content:q}]})});
+    const d = await r.json();
+    ab.textContent = d.content?.[0]?.text || '回答できませんでした。';
+  }catch(e){ ab.textContent='通信エラーです。'; }
+  out.scrollTop=out.scrollHeight;
+}
+
+function initChat(ctx){
+  const b=document.getElementById('csend'), i=document.getElementById('cinp');
+  if(!b||!i)return;
+  b.onclick=()=>{const q=i.value.trim();if(!q)return;i.value='';askAI(q,ctx);};
+  i.onkeydown=e=>{if(e.key==='Enter')b.click();};
+}
+
+function initRvBtn(pid,title,file){
+  const btn=document.getElementById('rvbtn');
+  if(!btn)return;
+  if(gR().find(i=>i.id===pid)){btn.classList.add('on');btn.textContent='復習に追加済み ✓';}
+  btn.onclick=()=>{
+    const ex=gR().find(i=>i.id===pid);
+    if(ex){rmR(pid);btn.classList.remove('on');btn.textContent='復習ページに保存';}
+    else{addR({id:pid,title,file});btn.classList.add('on');btn.textContent='復習に追加済み ✓';}
+  };
+}
+
+const PID='g2', PT='1章の2　行政行為の意義', PF='gyosei2.html';
+let go=false, sel=null, ok=0, total=0, tl=180, ti=null;
+
+function start(){
+  if(go)return; go=true; ok=0;
+  document.querySelectorAll('.blank').forEach(b=>{b.textContent='　　　　';b.classList.remove('ok','ng');});
+  total=document.querySelectorAll('.blank').length;
+  document.querySelectorAll('.wb').forEach(w=>w.style.display='block');
+  document.getElementById('timer').style.display='block';
+  tl=180; tick(); ti=setInterval(tick,1000);
+  renderSc();
+}
+function tick(){
+  const m=Math.floor(tl/60),s=tl%60;
+  document.getElementById('tnum').textContent=m+':'+String(s).padStart(2,'0');
+  const pct=tl/180*100;
+  document.getElementById('tfill').style.width=pct+'%';
+  document.getElementById('tfill').style.background=tl<30?'#e74c3c':tl<60?'#f39c12':'#1A5276';
+  if(tl<=0){clearInterval(ti);showR(false);}
+  tl--;
+}
+function cClick(c){
+  if(c.classList.contains('used'))return;
+  document.querySelectorAll('.chip.sel').forEach(x=>x.classList.remove('sel'));
+  sel=c; c.classList.add('sel');
+}
+function bClick(b){
+  if(!go||b.classList.contains('ok'))return;
+  if(!sel){b.style.animation='sh .3s';setTimeout(()=>b.style.animation='',400);return;}
+  if(sel.dataset.w===b.dataset.ans){
+    b.textContent=sel.dataset.w; b.classList.add('ok'); b.classList.remove('ng');
+    sel.classList.add('used'); sel.classList.remove('sel'); sel=null; ok++;
+    if(ok===total){clearInterval(ti);showR(true);}
+  } else {
+    b.classList.add('ng'); setTimeout(()=>b.classList.remove('ng'),600);
+  }
+}
+function showR(done){
+  const el=document.getElementById('result'); el.classList.add('on');
+  const p=Math.round(ok/total*100);
+  document.getElementById('rtxt').textContent=done?'全問正解！おめでとうございます！':'スコア: '+ok+'/'+total+' ('+p+'%)';
+  sSc(PID,{ok,total,time:180-tl}); renderSc();
+  const sc=gSc(PID);let rec='記録: ';sc.slice(0,3).forEach((s,i)=>rec+=(i+1)+'回 '+Math.round(s.d.ok/s.d.total*100)+'%  ');
+  document.getElementById('rrec').textContent=rec;
+}
+function renderSc(){
+  const sc=gSc(PID);let h='';
+  sc.slice(0,3).forEach((s,i)=>h+='<div class="sc"><div class="v">'+Math.round(s.d.ok/s.d.total*100)+'%</div><div class="l">'+['今回','前回','2回前'][i]+'</div></div>');
+  document.getElementById('scrow').innerHTML=h;
+}
+function reset(){
+  clearInterval(ti);go=false;ok=0;sel=null;
+  document.querySelectorAll('.blank').forEach(b=>{b.textContent=b.dataset.ans;b.classList.remove('ok','ng');});
+  document.querySelectorAll('.wb').forEach(w=>w.style.display='none');
+  document.querySelectorAll('.chip').forEach(c=>c.classList.remove('used','sel'));
+  document.getElementById('timer').style.display='none';
+  document.getElementById('result').classList.remove('on');
+}
+function speakPage(){speak('行政行為とは、行政庁が法律に基づき、国民に対して法律効果を一方的に発生させる行為です。4つの特徴は法律行為性、一方性、具体性、外部性です。許可は禁止の解除、特許は権利の設定、認可は補充・完成がキーワードです。');}
+document.addEventListener('DOMContentLoaded',()=>{
+  initChat('1章の2　行政行為の意義');
+  initRvBtn(PID,PT,PF);
+});
+</script></body></html>
