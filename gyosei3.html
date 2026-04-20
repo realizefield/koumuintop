@@ -178,7 +178,9 @@ a{color:inherit;text-decoration:none}
   .main{padding:12px 10px 60px}
   .hero h1{font-size:18px}
 }
-</style></head><body>
+</style><link rel="stylesheet" href="app.css">
+<script src="app.js" defer></script>
+</head><body>
 <nav class="nav"><div class="nav-in">
   <div class="nav-brand">行政法 第1章<small>江原予備校</small></div>
   <div class="nav-links"><a href="gyosei1.html" class="">1章の1</a><a href="gyosei1-1.html" class="ex">演習1</a><a href="gyosei2.html" class="">1章の2</a><a href="gyosei2-1.html" class="ex">演習2</a><a href="gyosei3.html" class=" cur">1章の3</a><a href="gyosei3-1.html" class="ex">演習3</a><a href="gyosei4.html" class="">1章の4</a><a href="gyosei4-1.html" class="ex">演習4</a><a href="review.html" class="rv">復習</a></div>
@@ -425,6 +427,7 @@ function bClick(b){
 }
 function showR(done){
   const el=document.getElementById('result'); el.classList.add('on');
+  if(!done && window.GambaV2) window.GambaV2.highlightUnansweredBlanks();
   const p=Math.round(ok/total*100);
   document.getElementById('rtxt').textContent=done?'全問正解！おめでとうございます！':'スコア: '+ok+'/'+total+' ('+p+'%)';
   sSc(PID,{ok,total,time:180-tl}); renderSc();

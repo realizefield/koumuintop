@@ -178,7 +178,9 @@ a{color:inherit;text-decoration:none}
   .main{padding:12px 10px 60px}
   .hero h1{font-size:18px}
 }
-</style></head><body>
+</style><link rel="stylesheet" href="app.css">
+<script src="app.js" defer></script>
+</head><body>
 <nav class="nav"><div class="nav-in">
   <div class="nav-brand">行政法 第1章<small>江原予備校</small></div>
   <div class="nav-links"><a href="gyosei1.html" class="">1章の1</a><a href="gyosei1-1.html" class="ex">演習1</a><a href="gyosei2.html" class="">1章の2</a><a href="gyosei2-1.html" class="ex cur">演習2</a><a href="gyosei3.html" class="">1章の3</a><a href="gyosei3-1.html" class="ex">演習3</a><a href="gyosei4.html" class="">1章の4</a><a href="gyosei4-1.html" class="ex">演習4</a><a href="review.html" class="rv">復習</a></div>
@@ -363,6 +365,113 @@ a{color:inherit;text-decoration:none}
   </div>
 </div>
 
+<div class="card qcard">
+  <div class="qh">
+    <span class="qn">問題 4</span>
+    <span class="qd">★★☆</span>
+    <span class="qr">地方上級・類題</span>
+    <span class="qbadge" id="qb3"></span>
+  </div>
+  <div class="qtxt"><ruby>行政行為<rt>ぎょうせいこうい</rt></ruby>の分類に関する次の記述のうち、妥当なものはどれか。</div>
+  <div class="choices">
+    <div class="cho" id="c3_0" onclick="pick(3,0)">
+      <span class="cnum">１</span><span><ruby>行政行為<rt>ぎょうせいこうい</rt></ruby>は、行政主体が一方的に国民に対して行う行為であれば、事実行為も含めてすべてこれに当たる。</span>
+    </div>
+    <div class="cho" id="c3_1" onclick="pick(3,1)">
+      <span class="cnum">２</span><span><ruby>命令的行為<rt>めいれいてきこうい</rt></ruby>である許可は、本来は一般的に禁止されている行為について特定の人に新たな権利能力を付与する行為である。</span>
+    </div>
+    <div class="cho" id="c3_2" onclick="pick(3,2)">
+      <span class="cnum">３</span><span>形成的行為のうち<ruby>特許<rt>とっきょ</rt></ruby>は、本来人が有している自由を一般的に禁止しておき、特定の場合にその禁止を解除するものである。</span>
+    </div>
+    <div class="cho" id="c3_3" onclick="pick(3,3)">
+      <span class="cnum">４</span><span><ruby>準法律行為的行政行為<rt>じゅんほうりつこういてきぎょうせいこうい</rt></ruby>は、行政庁の意思表示により効果が生ずる点で、<ruby>法律行為的行政行為<rt>ほうりつこういてきぎょうせいこうい</rt></ruby>と共通する。</span>
+    </div>
+    <div class="cho" id="c3_4" onclick="pick(3,4)">
+      <span class="cnum">５</span><span><ruby>確認<rt>かくにん</rt></ruby>は、特定の事実や法律関係の存否につき、公の権威をもって判断する行為であり、<ruby>準法律行為的行政行為<rt>じゅんほうりつこういてきぎょうせいこうい</rt></ruby>に分類される。</span>
+    </div>
+  </div>
+  <div class="sol" id="sol3">
+    <div class="sol-h"><span>正解：</span><strong>５</strong><span>地方上級・類題</span></div>
+    <div class="sol-b">
+      <div class="sol-exp"><b style="color:#1e8449">【解説】</b> 正解は肢５。<ruby>確認<rt>かくにん</rt></ruby>（例：当選人の決定、所得税額の更正処分）は、特定事実・法律関係を公に判断する行為で、<ruby>準法律行為的行政行為<rt>じゅんほうりつこういてきぎょうせいこうい</rt></ruby>の典型例です。</div>
+      
+    <div class="sol-ce ce-ng">
+      <span>✕</span>
+      <span>１：誤り。<ruby>行政行為<rt>ぎょうせいこうい</rt></ruby>は法的効果を伴う法行為であり、事実行為（指導・勧告、警察の即時強制などの物理的行為）は含まない。</span>
+    </div>
+    <div class="sol-ce ce-ng">
+      <span>✕</span>
+      <span>２：誤り。許可は<ruby>命令的行為<rt>めいれいてきこうい</rt></ruby>で、一般的禁止を解除する行為。新たな権利能力を付与するのは形成的行為の<ruby>特許<rt>とっきょ</rt></ruby>。</span>
+    </div>
+    <div class="sol-ce ce-ng">
+      <span>✕</span>
+      <span>３：誤り。これは<ruby>許可<rt>きょか</rt></ruby>の説明。<ruby>特許<rt>とっきょ</rt></ruby>は本来人が有しない特権・権利能力を設定する行為。</span>
+    </div>
+    <div class="sol-ce ce-ng">
+      <span>✕</span>
+      <span>４：誤り。<ruby>準法律行為的行政行為<rt>じゅんほうりつこういてきぎょうせいこうい</rt></ruby>は、意思表示ではなく認識・判断などの表示により、法律上の効果が<b>法律の規定によって</b>生ずる行為。意思表示の有無で区別される点が逆。</span>
+    </div>
+    <div class="sol-ce ce-ok">
+      <span>✔</span>
+      <span>５：正しい。<ruby>確認<rt>かくにん</rt></ruby>は<ruby>準法律行為的行政行為<rt>じゅんほうりつこういてきぎょうせいこうい</rt></ruby>の一つで、事実・法律関係の存否を公的に判断する行為。</span>
+    </div>
+    </div>
+  </div>
+</div>
+<div class="card qcard">
+  <div class="qh">
+    <span class="qn">問題 5</span>
+    <span class="qd">★★★</span>
+    <span class="qr">国税専門官・類題</span>
+    <span class="qbadge" id="qb4"></span>
+  </div>
+  <div class="qtxt"><ruby>行政行為<rt>ぎょうせいこうい</rt></ruby>の附款に関する次の記述のうち、判例・通説に照らし妥当なものはどれか。</div>
+  <div class="choices">
+    <div class="cho" id="c4_0" onclick="pick(4,0)">
+      <span class="cnum">１</span><span>附款は<ruby>法律行為的行政行為<rt>ほうりつこういてきぎょうせいこうい</rt></ruby>に付すことができるが、<ruby>準法律行為的行政行為<rt>じゅんほうりつこういてきぎょうせいこうい</rt></ruby>には原則として付すことができない。</span>
+    </div>
+    <div class="cho" id="c4_1" onclick="pick(4,1)">
+      <span class="cnum">２</span><span><ruby>条件<rt>じょうけん</rt></ruby>とは、行政行為の効力の発生又は消滅を将来到来することが確実な事実にかからしめる附款をいう。</span>
+    </div>
+    <div class="cho" id="c4_2" onclick="pick(4,2)">
+      <span class="cnum">３</span><span><ruby>期限<rt>きげん</rt></ruby>は、行政行為の効力の発生又は消滅を将来到来するかどうか不確実な事実にかからしめる附款である。</span>
+    </div>
+    <div class="cho" id="c4_3" onclick="pick(4,3)">
+      <span class="cnum">４</span><span><ruby>負担<rt>ふたん</rt></ruby>は、本体の行政行為から切り離して独立に<ruby>取消訴訟<rt>とりけしそしょう</rt></ruby>の対象とすることはできず、本体と一体として争うほかない。</span>
+    </div>
+    <div class="cho" id="c4_4" onclick="pick(4,4)">
+      <span class="cnum">５</span><span>附款は、法律に明文の根拠がある場合にのみ付すことができ、<ruby>裁量処分<rt>さいりょうしょぶん</rt></ruby>であっても法律の個別授権がなければ付すことができない。</span>
+    </div>
+  </div>
+  <div class="sol" id="sol4">
+    <div class="sol-h"><span>正解：</span><strong>１</strong><span>国税専門官・類題</span></div>
+    <div class="sol-b">
+      <div class="sol-exp"><b style="color:#1e8449">【解説】</b> 正解は肢１。附款は意思表示の付加要素なので、意思表示を要素としない<ruby>準法律行為的行政行為<rt>じゅんほうりつこういてきぎょうせいこうい</rt></ruby>には原則として付することができません。</div>
+      
+    <div class="sol-ce ce-ok">
+      <span>✔</span>
+      <span>１：正しい。附款は行政行為の意思表示に付加される要素のため、意思表示が要素とならない<ruby>準法律行為的行政行為<rt>じゅんほうりつこういてきぎょうせいこうい</rt></ruby>には原則付されない。</span>
+    </div>
+    <div class="sol-ce ce-ng">
+      <span>✕</span>
+      <span>２：誤り。<ruby>条件<rt>じょうけん</rt></ruby>は将来到来するか<b>不確実</b>な事実にかからしめる附款。確実な事実にかからしめるのは<ruby>期限<rt>きげん</rt></ruby>。</span>
+    </div>
+    <div class="sol-ce ce-ng">
+      <span>✕</span>
+      <span>３：誤り。<ruby>期限<rt>きげん</rt></ruby>は到来することが<b>確実</b>な事実にかからしめるもの。不確実なのは<ruby>条件<rt>じょうけん</rt></ruby>。定義が逆。</span>
+    </div>
+    <div class="sol-ce ce-ng">
+      <span>✕</span>
+      <span>４：誤り。判例・通説は、<ruby>負担<rt>ふたん</rt></ruby>は本体と分離して独立に取消訴訟の対象にできると解する（<ruby>可分性<rt>かぶんせい</rt></ruby>説）。</span>
+    </div>
+    <div class="sol-ce ce-ng">
+      <span>✕</span>
+      <span>５：誤り。<ruby>裁量処分<rt>さいりょうしょぶん</rt></ruby>については、裁量権の範囲内で法律の明文がなくても附款を付すことができるのが通説・判例。</span>
+    </div>
+    </div>
+  </div>
+</div>
+
 <div class="final" id="final">
   <div class="big" id="ftxt"></div>
   <div style="font-size:13px;color:#555;margin-top:5px" id="frec"></div>
@@ -470,12 +579,13 @@ function initRvBtn(pid,title,file){
 }
 
 const PID='g2ex', PT='1章の2　演習問題', PF='gyosei2-1.html';
-const ANS=[2,3,3], NQ=3;
+const ANS=[2,3,3,5,1], NQ=5;
 let done=new Array(NQ).fill(false), res=new Array(NQ).fill(null), ts=0, ti=null;
 
 document.addEventListener('DOMContentLoaded',()=>{
   ti=setInterval(()=>{ts++;const m=Math.floor(ts/60),s=ts%60;document.getElementById('tv').textContent=m+':'+String(s).padStart(2,'0');},1000);
   initChat('1章の2　演習問題'); initRvBtn(PID,PT,PF); renderSc();
+  if(window.GambaV2)window.GambaV2.initExerciseExtras(PID);
 });
 
 function pick(qi,ci){
@@ -489,6 +599,7 @@ function pick(qi,ci){
   const b=document.getElementById('qb'+qi);
   b.textContent=ok?'正解':'不正解'; b.className='qbadge '+(ok?'ok':'ng');
   document.getElementById('sol'+qi).style.display='block';
+  if(window.GambaV2)window.GambaV2.recordAnswer(PID, qi, ok);
   if(done.every(Boolean))finish();
 }
 

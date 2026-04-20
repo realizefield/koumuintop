@@ -178,7 +178,9 @@ a{color:inherit;text-decoration:none}
   .main{padding:12px 10px 60px}
   .hero h1{font-size:18px}
 }
-</style></head><body>
+</style><link rel="stylesheet" href="app.css">
+<script src="app.js" defer></script>
+</head><body>
 <nav class="nav"><div class="nav-in">
   <div class="nav-brand">行政法 第1章<small>江原予備校</small></div>
   <div class="nav-links"><a href="gyosei1.html" class="">1章の1</a><a href="gyosei1-1.html" class="ex">演習1</a><a href="gyosei2.html" class="">1章の2</a><a href="gyosei2-1.html" class="ex">演習2</a><a href="gyosei3.html" class="">1章の3</a><a href="gyosei3-1.html" class="ex">演習3</a><a href="gyosei4.html" class="">1章の4</a><a href="gyosei4-1.html" class="ex cur">演習4</a><a href="review.html" class="rv">復習</a></div>
@@ -363,6 +365,113 @@ a{color:inherit;text-decoration:none}
   </div>
 </div>
 
+<div class="card qcard">
+  <div class="qh">
+    <span class="qn">問題 4</span>
+    <span class="qd">★★☆</span>
+    <span class="qr">国家一般職・類題</span>
+    <span class="qbadge" id="qb3"></span>
+  </div>
+  <div class="qtxt"><ruby>代執行<rt>だいしっこう</rt></ruby>に関する次の記述のうち、<ruby>行政代執行法<rt>ぎょうせいだいしっこうほう</rt></ruby>に照らし妥当なものはどれか。</div>
+  <div class="choices">
+    <div class="cho" id="c3_0" onclick="pick(3,0)">
+      <span class="cnum">１</span><span><ruby>代執行<rt>だいしっこう</rt></ruby>は、<ruby>代替的作為義務<rt>だいたいてきさくいぎむ</rt></ruby>の不履行の場合に限られ、他の方法によってその履行を確保することが困難であり、かつその不履行を放置することが著しく公益に反することが要件となる。</span>
+    </div>
+    <div class="cho" id="c3_1" onclick="pick(3,1)">
+      <span class="cnum">２</span><span><ruby>代執行<rt>だいしっこう</rt></ruby>の対象となる義務には、金銭の給付義務も含まれる。</span>
+    </div>
+    <div class="cho" id="c3_2" onclick="pick(3,2)">
+      <span class="cnum">３</span><span><ruby>代執行<rt>だいしっこう</rt></ruby>を行うには、事前の戒告と<ruby>代執行<rt>だいしっこう</rt></ruby>令書による通知が必要であるが、非常の場合には戒告のみを省略できる。</span>
+    </div>
+    <div class="cho" id="c3_3" onclick="pick(3,3)">
+      <span class="cnum">４</span><span><ruby>代執行<rt>だいしっこう</rt></ruby>に要した費用は国庫の負担とし、義務者から徴収することはできない。</span>
+    </div>
+    <div class="cho" id="c3_4" onclick="pick(3,4)">
+      <span class="cnum">５</span><span><ruby>代執行<rt>だいしっこう</rt></ruby>は、作為義務のみならず<ruby>不作為義務<rt>ふさくいぎむ</rt></ruby>の不履行に対しても直接行うことができる。</span>
+    </div>
+  </div>
+  <div class="sol" id="sol3">
+    <div class="sol-h"><span>正解：</span><strong>１</strong><span>国家一般職・類題</span></div>
+    <div class="sol-b">
+      <div class="sol-exp"><b style="color:#1e8449">【解説】</b> 正解は肢１。<ruby>行政代執行法<rt>ぎょうせいだいしっこうほう</rt></ruby>2条は、<ruby>代執行<rt>だいしっこう</rt></ruby>の要件として①<ruby>代替的作為義務<rt>だいたいてきさくいぎむ</rt></ruby>の不履行、②他の手段による履行確保困難、③不履行放置が著しく公益に反すること、を定めています。</div>
+      
+    <div class="sol-ce ce-ok">
+      <span>✔</span>
+      <span>１：正しい。<ruby>行政代執行法<rt>ぎょうせいだいしっこうほう</rt></ruby>2条の要件の正確な記述。</span>
+    </div>
+    <div class="sol-ce ce-ng">
+      <span>✕</span>
+      <span>２：誤り。金銭給付義務は<ruby>代執行<rt>だいしっこう</rt></ruby>の対象とならず、<ruby>強制徴収<rt>きょうせいちょうしゅう</rt></ruby>（国税徴収法の例による）によって履行確保される。</span>
+    </div>
+    <div class="sol-ce ce-ng">
+      <span>✕</span>
+      <span>３：誤り。<ruby>行政代執行法<rt>ぎょうせいだいしっこうほう</rt></ruby>3条3項は、非常の場合等には戒告と<ruby>代執行<rt>だいしっこう</rt></ruby>令書の通知の<b>両方</b>を省略できるとする（戒告のみ省略ではない）。</span>
+    </div>
+    <div class="sol-ce ce-ng">
+      <span>✕</span>
+      <span>４：誤り。<ruby>代執行<rt>だいしっこう</rt></ruby>法5条・6条により、費用は義務者から徴収し、国税滞納処分の例による強制徴収もできる。</span>
+    </div>
+    <div class="sol-ce ce-ng">
+      <span>✕</span>
+      <span>５：誤り。<ruby>不作為義務<rt>ふさくいぎむ</rt></ruby>や<ruby>非代替的作為義務<rt>ひだいたいてきさくいぎむ</rt></ruby>は<ruby>代執行<rt>だいしっこう</rt></ruby>の対象外。作為義務に転換する別途の処分や間接強制が必要。</span>
+    </div>
+    </div>
+  </div>
+</div>
+<div class="card qcard">
+  <div class="qh">
+    <span class="qn">問題 5</span>
+    <span class="qd">★★★</span>
+    <span class="qr">地方上級・類題</span>
+    <span class="qbadge" id="qb4"></span>
+  </div>
+  <div class="qtxt">行政上の義務履行確保手段に関する次の記述のうち、妥当なものはどれか。</div>
+  <div class="choices">
+    <div class="cho" id="c4_0" onclick="pick(4,0)">
+      <span class="cnum">１</span><span><ruby>執行罰<rt>しっこうばつ</rt></ruby>は、<ruby>不作為義務<rt>ふさくいぎむ</rt></ruby>や<ruby>非代替的作為義務<rt>ひだいたいてきさくいぎむ</rt></ruby>の履行を心理的に強制するための手段であり、現行法上は広く一般的に用いられている。</span>
+    </div>
+    <div class="cho" id="c4_1" onclick="pick(4,1)">
+      <span class="cnum">２</span><span><ruby>直接強制<rt>ちょくせつきょうせい</rt></ruby>は、義務者の身体・財産に直接実力を加えて義務を実現する手段であり、<ruby>行政代執行法<rt>ぎょうせいだいしっこうほう</rt></ruby>に一般法として規定されている。</span>
+    </div>
+    <div class="cho" id="c4_2" onclick="pick(4,2)">
+      <span class="cnum">３</span><span>行政上の<ruby>強制徴収<rt>きょうせいちょうしゅう</rt></ruby>は、金銭債権の自力執行のための手段で、国税徴収法には規定があるが個別法の規定は特に要しない。</span>
+    </div>
+    <div class="cho" id="c4_3" onclick="pick(4,3)">
+      <span class="cnum">４</span><span><ruby>即時強制<rt>そくじきょうせい</rt></ruby>は、あらかじめ義務を課した上で、その不履行に対して実力を行使する点で<ruby>直接強制<rt>ちょくせつきょうせい</rt></ruby>と同じ性質を有する。</span>
+    </div>
+    <div class="cho" id="c4_4" onclick="pick(4,4)">
+      <span class="cnum">５</span><span><ruby>即時強制<rt>そくじきょうせい</rt></ruby>は、義務の不履行を前提とせず、目前急迫の必要から行政目的達成のため直接に実力を行使する作用であり、泥酔者の保護や感染症患者の強制入院などがその例である。</span>
+    </div>
+  </div>
+  <div class="sol" id="sol4">
+    <div class="sol-h"><span>正解：</span><strong>５</strong><span>地方上級・類題</span></div>
+    <div class="sol-b">
+      <div class="sol-exp"><b style="color:#1e8449">【解説】</b> 正解は肢５。<ruby>即時強制<rt>そくじきょうせい</rt></ruby>は、義務の不履行を前提としない点で<ruby>直接強制<rt>ちょくせつきょうせい</rt></ruby>と決定的に異なります。泥酔者保護・感染症患者の入院措置などが典型例です。</div>
+      
+    <div class="sol-ce ce-ng">
+      <span>✕</span>
+      <span>１：誤り。<ruby>執行罰<rt>しっこうばつ</rt></ruby>（砂防法の例など）は心理的強制手段だが、現行法上は<ruby>砂防法<rt>さぼうほう</rt></ruby>36条程度にしか残っておらず、一般的には用いられていない。</span>
+    </div>
+    <div class="sol-ce ce-ng">
+      <span>✕</span>
+      <span>２：誤り。<ruby>直接強制<rt>ちょくせつきょうせい</rt></ruby>は一般法がなく、個別法（成田新法など）が定める場合のみ認められる。<ruby>代執行<rt>だいしっこう</rt></ruby>のような一般法は存在しない。</span>
+    </div>
+    <div class="sol-ce ce-ng">
+      <span>✕</span>
+      <span>３：誤り。<ruby>強制徴収<rt>きょうせいちょうしゅう</rt></ruby>は法律の根拠が必要で、個別法が「国税滞納処分の例による」と準用規定を置くことで可能となる。</span>
+    </div>
+    <div class="sol-ce ce-ng">
+      <span>✕</span>
+      <span>４：誤り。<ruby>即時強制<rt>そくじきょうせい</rt></ruby>は義務の不履行を前提としない点で<ruby>直接強制<rt>ちょくせつきょうせい</rt></ruby>と異なる。定義を混同している。</span>
+    </div>
+    <div class="sol-ce ce-ok">
+      <span>✔</span>
+      <span>５：正しい。<ruby>即時強制<rt>そくじきょうせい</rt></ruby>の定義と典型例として正確。</span>
+    </div>
+    </div>
+  </div>
+</div>
+
 <div class="final" id="final">
   <div class="big" id="ftxt"></div>
   <div style="font-size:13px;color:#555;margin-top:5px" id="frec"></div>
@@ -470,12 +579,13 @@ function initRvBtn(pid,title,file){
 }
 
 const PID='g4ex', PT='1章の4　演習問題', PF='gyosei4-1.html';
-const ANS=[2,3,4], NQ=3;
+const ANS=[2,3,4,1,5], NQ=5;
 let done=new Array(NQ).fill(false), res=new Array(NQ).fill(null), ts=0, ti=null;
 
 document.addEventListener('DOMContentLoaded',()=>{
   ti=setInterval(()=>{ts++;const m=Math.floor(ts/60),s=ts%60;document.getElementById('tv').textContent=m+':'+String(s).padStart(2,'0');},1000);
   initChat('1章の4　演習問題'); initRvBtn(PID,PT,PF); renderSc();
+  if(window.GambaV2)window.GambaV2.initExerciseExtras(PID);
 });
 
 function pick(qi,ci){
@@ -489,6 +599,7 @@ function pick(qi,ci){
   const b=document.getElementById('qb'+qi);
   b.textContent=ok?'正解':'不正解'; b.className='qbadge '+(ok?'ok':'ng');
   document.getElementById('sol'+qi).style.display='block';
+  if(window.GambaV2)window.GambaV2.recordAnswer(PID, qi, ok);
   if(done.every(Boolean))finish();
 }
 

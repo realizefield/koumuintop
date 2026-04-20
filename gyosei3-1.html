@@ -178,7 +178,9 @@ a{color:inherit;text-decoration:none}
   .main{padding:12px 10px 60px}
   .hero h1{font-size:18px}
 }
-</style></head><body>
+</style><link rel="stylesheet" href="app.css">
+<script src="app.js" defer></script>
+</head><body>
 <nav class="nav"><div class="nav-in">
   <div class="nav-brand">行政法 第1章<small>江原予備校</small></div>
   <div class="nav-links"><a href="gyosei1.html" class="">1章の1</a><a href="gyosei1-1.html" class="ex">演習1</a><a href="gyosei2.html" class="">1章の2</a><a href="gyosei2-1.html" class="ex">演習2</a><a href="gyosei3.html" class="">1章の3</a><a href="gyosei3-1.html" class="ex cur">演習3</a><a href="gyosei4.html" class="">1章の4</a><a href="gyosei4-1.html" class="ex">演習4</a><a href="review.html" class="rv">復習</a></div>
@@ -363,6 +365,113 @@ a{color:inherit;text-decoration:none}
   </div>
 </div>
 
+<div class="card qcard">
+  <div class="qh">
+    <span class="qn">問題 4</span>
+    <span class="qd">★★☆</span>
+    <span class="qr">国家一般職・類題</span>
+    <span class="qbadge" id="qb3"></span>
+  </div>
+  <div class="qtxt"><ruby>行政行為<rt>ぎょうせいこうい</rt></ruby>の<ruby>公定力<rt>こうていりょく</rt></ruby>に関する次の記述のうち、判例・通説に照らし妥当なものはどれか。</div>
+  <div class="choices">
+    <div class="cho" id="c3_0" onclick="pick(3,0)">
+      <span class="cnum">１</span><span><ruby>公定力<rt>こうていりょく</rt></ruby>は、重大かつ明白な瑕疵がある行政行為にも及び、当該行為は取消しがあるまでは有効である。</span>
+    </div>
+    <div class="cho" id="c3_1" onclick="pick(3,1)">
+      <span class="cnum">２</span><span>行政行為に<ruby>公定力<rt>こうていりょく</rt></ruby>が認められることから、<ruby>国家賠償請求訴訟<rt>こっかばいしょうせいきゅうそしょう</rt></ruby>を提起するには、あらかじめ当該行為の<ruby>取消訴訟<rt>とりけしそしょう</rt></ruby>で取消判決を得ておく必要がある。</span>
+    </div>
+    <div class="cho" id="c3_2" onclick="pick(3,2)">
+      <span class="cnum">３</span><span><ruby>公定力<rt>こうていりょく</rt></ruby>の実定法上の根拠は、<ruby>行政事件訴訟法<rt>ぎょうじけんそしょうほう</rt></ruby>の明文規定に直接基礎を置く。</span>
+    </div>
+    <div class="cho" id="c3_3" onclick="pick(3,3)">
+      <span class="cnum">４</span><span><ruby>公定力<rt>こうていりょく</rt></ruby>とは、行政行為に瑕疵があっても、それが重大かつ明白な瑕疵で無効と認められない限り、権限ある機関が取り消すまでは一応有効なものとして通用する効力をいう。</span>
+    </div>
+    <div class="cho" id="c3_4" onclick="pick(3,4)">
+      <span class="cnum">５</span><span>刑事事件において、<ruby>公定力<rt>こうていりょく</rt></ruby>が及ぶ結果、前提問題である行政行為の違法性を裁判所は審理することができない。</span>
+    </div>
+  </div>
+  <div class="sol" id="sol3">
+    <div class="sol-h"><span>正解：</span><strong>４</strong><span>国家一般職・類題</span></div>
+    <div class="sol-b">
+      <div class="sol-exp"><b style="color:#1e8449">【解説】</b> 正解は肢４。<ruby>公定力<rt>こうていりょく</rt></ruby>とは、瑕疵があっても無効でない限り権限ある機関が取り消すまで有効に通用する効力のこと。無効原因（重大明白な瑕疵）がある場合には<ruby>公定力<rt>こうていりょく</rt></ruby>は認められません。</div>
+      
+    <div class="sol-ce ce-ng">
+      <span>✕</span>
+      <span>１：誤り。重大かつ明白な瑕疵は<b>無効原因</b>であり、その行政行為は初めから無効で<ruby>公定力<rt>こうていりょく</rt></ruby>は及ばない。</span>
+    </div>
+    <div class="sol-ce ce-ng">
+      <span>✕</span>
+      <span>２：誤り。判例（最判昭36.4.21）は、<ruby>国家賠償請求訴訟<rt>こっかばいしょうせいきゅうそしょう</rt></ruby>において、あらかじめ行政行為の取消判決を得る必要はないとする。<ruby>公定力<rt>こうていりょく</rt></ruby>は<ruby>国家賠償<rt>こっかばいしょう</rt></ruby>の前提として機能しない。</span>
+    </div>
+    <div class="sol-ce ce-ng">
+      <span>✕</span>
+      <span>３：誤り。<ruby>公定力<rt>こうていりょく</rt></ruby>の明文の実定法上の直接の根拠はなく、<ruby>取消訴訟<rt>とりけしそしょう</rt></ruby>制度（行訴法）の存在から反射的に認められるとするのが通説。</span>
+    </div>
+    <div class="sol-ce ce-ok">
+      <span>✔</span>
+      <span>４：正しい。<ruby>公定力<rt>こうていりょく</rt></ruby>の定義として正確。無効原因がある場合を除く、という限定も正しい。</span>
+    </div>
+    <div class="sol-ce ce-ng">
+      <span>✕</span>
+      <span>５：誤り。刑事事件において、裁判所は前提問題として行政行為の違法性を審理できるのが原則。<ruby>公定力<rt>こうていりょく</rt></ruby>は刑事裁判における違法性判断には及ばない。</span>
+    </div>
+    </div>
+  </div>
+</div>
+<div class="card qcard">
+  <div class="qh">
+    <span class="qn">問題 5</span>
+    <span class="qd">★★★</span>
+    <span class="qr">地方上級・類題</span>
+    <span class="qbadge" id="qb4"></span>
+  </div>
+  <div class="qtxt"><ruby>行政行為<rt>ぎょうせいこうい</rt></ruby>の<ruby>不可争力<rt>ふかそうりょく</rt></ruby>・<ruby>不可変更力<rt>ふかへんこうりょく</rt></ruby>に関する次の記述のうち、妥当なものはどれか。</div>
+  <div class="choices">
+    <div class="cho" id="c4_0" onclick="pick(4,0)">
+      <span class="cnum">１</span><span><ruby>不可争力<rt>ふかそうりょく</rt></ruby>は、行政行為をした行政庁自身が、一定期間経過後は自ら当該行為を取り消すことができなくなる効力をいう。</span>
+    </div>
+    <div class="cho" id="c4_1" onclick="pick(4,1)">
+      <span class="cnum">２</span><span><ruby>不可争力<rt>ふかそうりょく</rt></ruby>が生じると、無効な行政行為であっても、争訟をもって無効を主張することができなくなる。</span>
+    </div>
+    <div class="cho" id="c4_2" onclick="pick(4,2)">
+      <span class="cnum">３</span><span><ruby>不可変更力<rt>ふかへんこうりょく</rt></ruby>は、行政上の争訟裁断行為（審査請求に対する裁決など）について、処分庁・裁決庁自身がこれを取り消しまたは変更することができないとする効力である。</span>
+    </div>
+    <div class="cho" id="c4_3" onclick="pick(4,3)">
+      <span class="cnum">４</span><span><ruby>不可変更力<rt>ふかへんこうりょく</rt></ruby>は、すべての行政行為に一般的に認められる効力であり、租税賦課処分などにも当然に及ぶ。</span>
+    </div>
+    <div class="cho" id="c4_4" onclick="pick(4,4)">
+      <span class="cnum">５</span><span><ruby>不可争力<rt>ふかそうりょく</rt></ruby>が生じた後は、行政庁の側からも処分を職権で取り消すことは許されない。</span>
+    </div>
+  </div>
+  <div class="sol" id="sol4">
+    <div class="sol-h"><span>正解：</span><strong>３</strong><span>地方上級・類題</span></div>
+    <div class="sol-b">
+      <div class="sol-exp"><b style="color:#1e8449">【解説】</b> 正解は肢３。<ruby>不可変更力<rt>ふかへんこうりょく</rt></ruby>は、行政上の<ruby>争訟裁断行為<rt>そうしょうさいだんこうい</rt></ruby>（裁決など）について、判断した行政庁自身を拘束し自ら取り消せなくする効力です。</div>
+      
+    <div class="sol-ce ce-ng">
+      <span>✕</span>
+      <span>１：誤り。<ruby>不可争力<rt>ふかそうりょく</rt></ruby>は、一定期間経過後に<b>相手方・第三者の側から</b>争えなくなる効力。行政庁の側からの取消しを制約するのは<ruby>不可変更力<rt>ふかへんこうりょく</rt></ruby>。</span>
+    </div>
+    <div class="sol-ce ce-ng">
+      <span>✕</span>
+      <span>２：誤り。無効な行政行為には<ruby>不可争力<rt>ふかそうりょく</rt></ruby>は及ばず、いつでも無効確認訴訟等で無効を主張できる（出訴期間の制約なし）。</span>
+    </div>
+    <div class="sol-ce ce-ok">
+      <span>✔</span>
+      <span>３：正しい。<ruby>不可変更力<rt>ふかへんこうりょく</rt></ruby>の定義として正確。<ruby>争訟裁断行為<rt>そうしょうさいだんこうい</rt></ruby>に認められる特殊効力。</span>
+    </div>
+    <div class="sol-ce ce-ng">
+      <span>✕</span>
+      <span>４：誤り。<ruby>不可変更力<rt>ふかへんこうりょく</rt></ruby>はすべての行政行為に認められるのではなく、<ruby>争訟裁断行為<rt>そうしょうさいだんこうい</rt></ruby>に限って認められる。</span>
+    </div>
+    <div class="sol-ce ce-ng">
+      <span>✕</span>
+      <span>５：誤り。<ruby>不可争力<rt>ふかそうりょく</rt></ruby>が生じた後も、行政庁は職権で取り消すことができる（争訟制度と職権取消は別系統）。</span>
+    </div>
+    </div>
+  </div>
+</div>
+
 <div class="final" id="final">
   <div class="big" id="ftxt"></div>
   <div style="font-size:13px;color:#555;margin-top:5px" id="frec"></div>
@@ -470,12 +579,13 @@ function initRvBtn(pid,title,file){
 }
 
 const PID='g3ex', PT='1章の3　演習問題', PF='gyosei3-1.html';
-const ANS=[5,2,3], NQ=3;
+const ANS=[5,2,3,4,3], NQ=5;
 let done=new Array(NQ).fill(false), res=new Array(NQ).fill(null), ts=0, ti=null;
 
 document.addEventListener('DOMContentLoaded',()=>{
   ti=setInterval(()=>{ts++;const m=Math.floor(ts/60),s=ts%60;document.getElementById('tv').textContent=m+':'+String(s).padStart(2,'0');},1000);
   initChat('1章の3　演習問題'); initRvBtn(PID,PT,PF); renderSc();
+  if(window.GambaV2)window.GambaV2.initExerciseExtras(PID);
 });
 
 function pick(qi,ci){
@@ -489,6 +599,7 @@ function pick(qi,ci){
   const b=document.getElementById('qb'+qi);
   b.textContent=ok?'正解':'不正解'; b.className='qbadge '+(ok?'ok':'ng');
   document.getElementById('sol'+qi).style.display='block';
+  if(window.GambaV2)window.GambaV2.recordAnswer(PID, qi, ok);
   if(done.every(Boolean))finish();
 }
 
