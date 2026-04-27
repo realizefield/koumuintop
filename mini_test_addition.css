@@ -1,0 +1,230 @@
+/* ============================================ */
+/* ミニテスト機能 (mini-test)                    */
+/* ============================================ */
+
+.mini-test {
+  margin: 16px 0 28px;
+}
+
+/* 開閉ボタン */
+.mini-test .mini-btn {
+  display: block;
+  width: 100%;
+  padding: 14px 18px;
+  background: linear-gradient(135deg, #1B2A4A 0%, #2c4173 100%);
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+  letter-spacing: 0.05em;
+  box-shadow: 0 2px 6px rgba(27, 42, 74, 0.25);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.mini-test .mini-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(27, 42, 74, 0.35);
+}
+.mini-test .mini-btn.is-open {
+  background: linear-gradient(135deg, #444 0%, #666 100%);
+}
+.mini-test .mini-btn::after {
+  content: " ▼";
+  font-size: 12px;
+}
+.mini-test .mini-btn.is-open::after {
+  content: " ▲";
+}
+
+/* 本体(初期は非表示) */
+.mini-test .mini-body {
+  display: none;
+  margin-top: 14px;
+  padding: 18px;
+  background: #fbfcfe;
+  border: 2px solid #1B2A4A;
+  border-radius: 8px;
+}
+.mini-test.is-open .mini-body {
+  display: block;
+  animation: miniSlideDown 0.3s ease-out;
+}
+@keyframes miniSlideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* 各問 */
+.mini-q {
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  background: #fff;
+  border-radius: 6px;
+  border: 1px solid #e0e4ec;
+}
+.mini-q .mini-stem {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 10px;
+  color: #1B2A4A;
+}
+
+/* ○×ボタン */
+.mini-choices {
+  display: flex;
+  gap: 10px;
+}
+.mini-c {
+  flex: 1;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  border: 2px solid #ccc;
+  background: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.mini-c:hover {
+  background: #f0f4fa;
+}
+.mini-c.selected {
+  background: #1B2A4A;
+  color: #fff;
+  border-color: #1B2A4A;
+}
+.mini-c[data-v="o"].selected { background: #2d7a4e; border-color: #2d7a4e; }
+.mini-c[data-v="x"].selected { background: #C0392B; border-color: #C0392B; }
+
+/* 結果表示 */
+.mini-q.is-correct {
+  background: #e8f5ec;
+  border-color: #2d7a4e;
+}
+.mini-q.is-wrong {
+  background: #fdeff0;
+  border-color: #C0392B;
+}
+.mini-q.is-correct .mini-c.selected,
+.mini-q.is-wrong .mini-c.selected {
+  pointer-events: none;
+}
+
+/* 解説(初期は非表示) */
+.mini-exp {
+  display: none;
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: #fff9ed;
+  border-left: 3px solid #f4a62a;
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #333;
+}
+.mini-q.show-exp .mini-exp {
+  display: block;
+}
+
+/* 操作ボタン群 */
+.mini-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 14px;
+}
+.mini-judge,
+.mini-reset {
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+}
+.mini-judge {
+  background: #f4a62a;
+  color: #fff;
+}
+.mini-judge:hover { background: #e09715; }
+.mini-judge:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+.mini-reset {
+  background: #fff;
+  color: #1B2A4A;
+  border: 2px solid #1B2A4A;
+}
+.mini-reset:hover { background: #f0f4fa; }
+
+/* 結果メッセージ */
+.mini-result {
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  display: none;
+}
+.mini-result.show { display: block; }
+.mini-result.pass {
+  background: linear-gradient(135deg, #e8f5ec 0%, #fff9ed 100%);
+  color: #2d7a4e;
+  border: 2px solid #2d7a4e;
+}
+.mini-result.fail {
+  background: #fdeff0;
+  color: #C0392B;
+  border: 2px solid #C0392B;
+}
+.mini-result .big {
+  font-size: 22px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* ============================================ */
+/* 花吹雪アニメーション                          */
+/* ============================================ */
+.sakura-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+  display: none;
+}
+.sakura-overlay.show { display: block; }
+
+.sakura-petal {
+  position: absolute;
+  top: -30px;
+  width: 16px;
+  height: 16px;
+  background: radial-gradient(circle at 30% 30%, #ffd1dc 0%, #ff9eb5 60%, #ff7099 100%);
+  border-radius: 100% 0 100% 0;
+  opacity: 0.9;
+  animation: sakuraFall linear forwards;
+}
+.sakura-petal.alt {
+  background: radial-gradient(circle at 30% 30%, #fff5f8 0%, #ffd1dc 60%, #ffaecb 100%);
+  width: 12px;
+  height: 12px;
+}
+@keyframes sakuraFall {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) translateX(var(--drift, 80px)) rotate(720deg);
+    opacity: 0.3;
+  }
+}

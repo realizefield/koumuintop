@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第3章 行政立法 | GAMBA行政法</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body data-page="ch03">
+
+<nav class="topnav"><span class="brand">GAMBA 行政法</span><span class="sep">|</span><a href="index.html">目次</a><a href="review.html">復習リスト</a></nav>
+
+<div class="wrap">
+<header class="hero">
+  <div class="crumb">第3章 / 行政の組織と作用の入口</div>
+  <h1>行政立法<span class="stars">★★★</span></h1>
+  <p class="sub">行政が作る「法」のお話。<strong>法規命令</strong>と<strong>行政規則</strong>、そして<strong>委任命令</strong>と<strong>執行命令</strong>の区別が超重要!</p>
+</header>
+<main>
+
+<div class="challenge-bar">
+  <div class="cb-title">📝 穴埋めチャレンジ<span id="cb-status" class="cb-status"></span></div>
+  <div class="cb-buttons">
+    <button class="cb-btn" id="cb-start">チャレンジ開始</button>
+    <button class="cb-btn" id="cb-judge" style="display:none;">判定</button>
+    <button class="cb-btn" id="cb-reset" style="display:none;">リセット</button>
+    <button class="cb-btn" id="cb-cancel" style="display:none;">中止</button>
+  </div>
+</div>
+
+<section class="goals">
+  <h2>この単元で押さえる3つのポイント</h2>
+  <ol>
+    <li><span class="pk">法規命令</span>(法規たる性質あり)と<span class="pk">行政規則</span>(法規たる性質なし)の区別</li>
+    <li>法規命令はさらに<span class="pk">執行命令</span>(手続・細則)と<span class="pk">委任命令</span>(内容)に分かれる</li>
+    <li>判例:<span class="pk">サーベル/監獄法/認知児童扶養手当/医薬品ネット販売</span>(委任の限界)</li>
+  </ol>
+</section>
+
+<div class="audio-section">
+  <div class="audio-title">🎧 聞き流し音声(準備中)</div>
+  <audio id="ch-audio" controls preload="none"><source src="audio/ch03.mp3" type="audio/mpeg"></audio>
+  <div class="audio-credit">VOICEVOX:四国めたん</div>
+</div>
+
+<div class="sec"><span class="num">1</span>行政立法とは?</div>
+<div class="card">
+  <p><span class="kw" data-tip="行政が行う立法作用">行政立法</span>とは、行政が行う立法作用、つまり <strong>行政が作る「法」</strong> のことです。</p>
+  <div class="ex-box"><span class="label">なぜ必要?</span><p>本来、立法は国会の仕事(法規創造力の原則)。でも、現代社会は専門的・技術的な事柄が多く、<strong>国会だけでは細かいルールを作りきれない</strong> → 一定範囲で行政に立法を委ねる必要が出てきた。</p></div>
+  <div class="memo-box"><span class="label">前提</span><p>行政は<span class="pk">法律による授権(委任)</span>がない限り、法規(国民を直接拘束するルール)を作れない。逆に、授権があれば作れる!</p></div>
+</div>
+
+<!-- ミニテスト Section 1 -->
+<div class="mini-test" data-mini="s1">
+  <button class="mini-btn">✏️ ミニテストに挑戦(セクション1)</button>
+  <div class="mini-body">
+    <div class="mini-q" data-correct="o">
+      <div class="mini-stem">問1 行政立法とは、行政が行う立法作用、つまり行政が作る「法」のことをいう。</div>
+      <div class="mini-choices">
+        <button class="mini-c" data-v="o">○</button>
+        <button class="mini-c" data-v="x">×</button>
+      </div>
+      <div class="mini-exp">○ 本来は国会の仕事だが、専門的・技術的な事柄は行政に委ねる必要がある。</div>
+    </div>
+    <div class="mini-q" data-correct="x">
+      <div class="mini-stem">問2 行政は、法律による授権(委任)がなくても、国民を直接拘束する法規を自由に作ることができる。</div>
+      <div class="mini-choices">
+        <button class="mini-c" data-v="o">○</button>
+        <button class="mini-c" data-v="x">×</button>
+      </div>
+      <div class="mini-exp">✕ 行政は<span class="pk">法律による授権(委任)がない限り、法規を作れない</span>。これが法規創造力の原則の出発点。</div>
+    </div>
+    <div class="mini-actions">
+      <button class="mini-judge">答え合わせ</button>
+      <button class="mini-reset" style="display:none;">もう一度挑戦</button>
+    </div>
+    <div class="mini-result"></div>
+  </div>
+</div>
+
+<div class="sec"><span class="num">2</span>行政立法の全体像</div>
+<div class="card">
+  <div class="svg-box">
+    <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto;">
+      <rect x="10" y="10" width="580" height="260" fill="#fff" stroke="#1B2A4A" stroke-width="2" rx="6"/>
+      <text x="300" y="38" text-anchor="middle" font-size="16" font-weight="bold" fill="#1B2A4A">行政立法の分類</text>
+      <rect x="240" y="55" width="120" height="40" fill="#1B2A4A" rx="4"/>
+      <text x="300" y="80" text-anchor="middle" font-size="14" fill="#fff" font-weight="bold">行政立法</text>
+      <line x1="300" y1="95" x2="180" y2="120" stroke="#333" stroke-width="2"/>
+      <line x1="300" y1="95" x2="420" y2="120" stroke="#333" stroke-width="2"/>
+      <rect x="80" y="120" width="200" height="60" fill="#fbeae7" stroke="#C0392B" stroke-width="2" rx="4"/>
+      <text x="180" y="145" text-anchor="middle" font-size="14" font-weight="bold" fill="#C0392B">法規命令</text>
+      <text x="180" y="165" text-anchor="middle" font-size="11" fill="#333">法規たる性質あり</text>
+      <rect x="320" y="120" width="200" height="60" fill="#e8eef5" stroke="#1B2A4A" stroke-width="2" rx="4"/>
+      <text x="420" y="145" text-anchor="middle" font-size="14" font-weight="bold" fill="#1B2A4A">行政規則</text>
+      <text x="420" y="165" text-anchor="middle" font-size="11" fill="#333">法規たる性質なし</text>
+      <line x1="180" y1="180" x2="120" y2="210" stroke="#333" stroke-width="2"/>
+      <line x1="180" y1="180" x2="240" y2="210" stroke="#333" stroke-width="2"/>
+      <rect x="40" y="210" width="160" height="50" fill="#fff9ed" stroke="#f4a62a" rx="4"/>
+      <text x="120" y="232" text-anchor="middle" font-size="13" font-weight="bold" fill="#1B2A4A">執行命令</text>
+      <text x="120" y="250" text-anchor="middle" font-size="10" fill="#555">手続・細則</text>
+      <rect x="220" y="210" width="160" height="50" fill="#fff9ed" stroke="#f4a62a" rx="4"/>
+      <text x="300" y="232" text-anchor="middle" font-size="13" font-weight="bold" fill="#1B2A4A">委任命令</text>
+      <text x="300" y="250" text-anchor="middle" font-size="10" fill="#555">内容を定める</text>
+      <text x="420" y="220" text-anchor="middle" font-size="11" fill="#555">通達・告示・</text>
+      <text x="420" y="240" text-anchor="middle" font-size="11" fill="#555">訓令・要綱など</text>
+    </svg>
+  </div>
+  <div class="memo-box"><span class="label">ゴロ</span><p>「<span class="pk">ホウキ・ギョウキ</span>」(法規命令・行政規則)<br>「<span class="pk">親亀がこけたら子亀もこける</span>」(委任の根拠法が失効すると委任命令も失効)</p></div>
+</div>
+
+<!-- ミニテスト Section 2 -->
+<div class="mini-test" data-mini="s2">
+  <button class="mini-btn">✏️ ミニテストに挑戦(セクション2)</button>
+  <div class="mini-body">
+    <div class="mini-q" data-correct="o">
+      <div class="mini-stem">問1 法規命令は法規たる性質を持つが、行政規則は法規たる性質を持たない。</div>
+      <div class="mini-choices">
+        <button class="mini-c" data-v="o">○</button>
+        <button class="mini-c" data-v="x">×</button>
+      </div>
+      <div class="mini-exp">○ 法規命令=国民を直接拘束する/行政規則=行政内部のみ。これが2つの大きな違い。</div>
+    </div>
+    <div class="mini-q" data-correct="o">
+      <div class="mini-stem">問2 法規命令はさらに、執行命令と委任命令に分けられる。</div>
+      <div class="mini-choices">
+        <button class="mini-c" data-v="o">○</button>
+        <button class="mini-c" data-v="x">×</button>
+      </div>
+      <div class="mini-exp">○ 執行命令(手続・細則)+委任命令(内容)の2つに分かれる。</div>
+    </div>
+    <div class="mini-q" data-correct="o">
+      <div class="mini-stem">問3 通達・告示・訓令・要綱などは、行政規則に分類される。</div>
+      <div class="mini-choices">
+        <button class="mini-c" data-v="o">○</button>
+        <button class="mini-c" data-v="x">×</button>
+      </div>
+      <div class="mini-exp">○ いずれも行政内部の規律で、原則として国民を直接拘束しない。</div>
+    </div>
+    <div class="mini-actions">
+      <button class="mini-judge">答え合わせ</button>
+      <button class="mini-reset" style="display:none;">もう一度挑戦</button>
+    </div>
+    <div class="mini-result"></div>
+  </div>
+</div>
+
+<div class="sec"><span class="num">3</span>法規命令(超重要)</div>
+<div class="card">
+  <h3>📌 法規命令とは</h3>
+  <p><span class="pk">法規命令</span>とは、行政立法のうち <strong>「法規」たる性質を持つもの</strong> 。国民を直接拘束する効力があります。</p>
+  <div class="tbl">
+    <table>
+      <tr><th>名称</th><th>制定主体</th></tr>
+      <tr><td><strong>政令</strong></td><td>内閣</td></tr>
+      <tr><td><strong>内閣府令</strong></td><td>内閣総理大臣</td></tr>
+      <tr><td><strong>省令</strong></td><td>各省大臣</td></tr>
+      <tr><td><strong>規則</strong></td><td>委員会・庁の長、地方公共団体の長など</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- 執行命令と委任命令 -->
+<div class="card" style="border-left:5px solid #C0392B;background:#fbeae7;">
+  <h3>⭐ 執行命令 vs 委任命令(超頻出!)</h3>
+  <div class="tbl">
+    <table>
+      <tr><th></th><th><span class="pk">執行命令</span></th><th><span class="pk">委任命令</span></th></tr>
+      <tr><td>定めるもの</td><td><span class="pk">手続事項・細則事項</span></td><td><span class="pk">権利義務の内容</span></td></tr>
+      <tr><td>個別具体的な委任</td><td><span class="pk">不要</span>(一般的な委任で足りる)</td><td><span class="pk">必要</span></td></tr>
+      <tr><td>例</td><td>申請書の様式・提出方法</td><td>「税率は◯%とする」</td></tr>
+    </table>
+  </div>
+  <div class="ex-box"><span class="label">イメージ</span><p>執行命令=<strong>手続・書式</strong>を定める/委任命令=<strong>内容そのもの</strong>を定める</p></div>
+  <div class="tip-box"><span class="label">注意</span><p>実際は両者の区別は難しく、両方を兼ねていることも多い。試験的にはこの2つの違いをしっかり押さえましょう!</p></div>
+</div>
+
+<div class="card">
+  <h3>🔗 委任命令のルール</h3>
+  <ul style="margin-top:8px;">
+    <li>法律による<span class="pk">個別具体的な委任</span>が必要</li>
+    <li>国民への<span class="pk">公示(公布→施行)</span>が必要</li>
+    <li>罰則を定める委任もOK(罪刑法定主義の枠内で)</li>
+    <li>委任の根拠となる法律が失効すると、<span class="pk">委任命令も失効</span>する(親亀子亀)</li>
+    <li>法律で許す趣旨であれば、<span class="pk">下位の法規範に再委任</span>することも可能</li>
+  </ul>
+</div>
+
+<!-- ミニテスト Section 3 -->
+<div class="mini-test" data-mini="s3">
+  <button class="mini-btn">✏️ ミニテストに挑戦(セクション3)</button>
+  <div class="mini-body">
+    <div class="mini-q" data-correct="o">
+      <div class="mini-stem">問1 執行命令は手続事項・細則事項を定めるもので、個別具体的な委任は不要である。</div>
+      <div class="mini-choices">
+        <button class="mini-c" data-v="o">○</button>
+        <button class="mini-c" data-v="x">×</button>
+      </div>
+      <div class="mini-exp">○ 執行命令は申請書の様式・提出方法など「手続」を定めるだけなので、一般的な委任で足りる。</div>
+    </div>
+    <div class="mini-q" data-correct="x">
+      <div class="mini-stem">問2 委任命令は、法律による一般的な委任で足り、個別具体的な委任までは必要ない。</div>
+      <div class="mini-choices">
+        <button class="mini-c" data-v="o">○</button>
+        <button class="mini-c" data-v="x">×</button>
+      </div>
+      <div class="mini-exp">✕ 委任命令は権利義務の<span class="pk">「内容」</span>を定めるので、<span class="pk">個別具体的な委任が必要</span>。執行命令との大きな違い。試験頻出!</div>
+    </div>
+    <div class="mini-q" data-correct="o">
+      <div class="mini-stem">問3 委任の根拠となる法律が失効すると、それに基づく委任命令も失効する。</div>
+      <div class="mini-choices">
+        <button class="mini-c" data-v="o">○</button>
+        <button class="mini-c" data-v="x">×</button>
+      </div>
+      <div class="mini-exp">○ いわゆる「親亀子亀」の関係。親(根拠法)がこければ子(委任命令)もこける。</div>
+    </div>
+    <div class="mini-q" data-correct="o">
+      <div class="mini-stem">問4 政令は内閣が、内閣府令は内閣総理大臣が、省令は各省大臣が制定する。</div>
+      <div class="mini-choices">
+        <button class="mini-c" data-v="o">○</button>
+        <button class="mini-c" data-v="x">×</button>
+      </div>
+      <div class="mini-exp">○ 法規命令の制定主体の組み合わせ。これは正確に押さえる必要あり。</div>
+    </div>
+    <div class="mini-actions">
+      <button class="mini-judge">答え合わせ</button>
+      <button class="mini-reset" style="display:none;">もう一度挑戦</button>
+    </div>
+    <div class="mini-result"></div>
+  </div>
+</div>
+
+<div class="sec"><span class="num">4</span>行政規則</div>
+<div class="card">
+  <h3>📋 行政規則とは</h3>
+  <p><span class="pk">行政規則</span>とは、<strong>法規たる性質を持たない</strong>行政立法。国民を直接拘束しません。<span class="pk">行政内部</span>でのみ通用します。</p>
+  <div class="tbl">
+    <table>
+      <tr><th>名称</th><th>内容</th></tr>
+      <tr><td><strong>通達</strong></td><td>上級行政庁が下級行政庁に対して発する解釈・運用の指針</td></tr>
+      <tr><td><strong>訓令</strong></td><td>上級行政庁が下級行政庁の権限行使を指揮する命令</td></tr>
+      <tr><td><strong>告示</strong></td><td>行政機関が一般に向けて知らせる行為(法規たる性質を持つ場合もある)</td></tr>
+      <tr><td><strong>要綱</strong></td><td>行政指導の基準を定めたもの</td></tr>
+    </table>
+  </div>
+  <div class="tip-box"><span class="label">重要</span><p>行政規則は法規ではないので、<span class="pk">国民を直接拘束しない</span>。その変更は<span class="pk">国民に対する関係では原則として影響しない</span>。</p></div>
+</div>
+
+<!-- ミニテスト Section 4 -->
+<div class="mini-test" data-mini="s4">
+  <button class="mini-btn">✏️ ミニテストに挑戦(セクション4)</button>
+  <div class="mini-body">
+    <div class="mini-q" data-correct="x">
+      <div class="mini-stem">問1 行政規則は、国民を直接拘束する法規たる性質を持つ。</div>
+      <div class="mini-choices">
+        <button class="mini-c" data-v="o">○</button>
+        <button class="mini-c" data-v="x">×</button>
+      </div>
+      <div class="mini-exp">✕ 行政規則は<span class="pk">法規たる性質を持たない</span>。国民を直接拘束せず、行政内部のみで通用する。</div>
+    </div>
+    <div class="mini-q" data-correct="o">
+      <div class="mini-stem">問2 通達は、上級行政庁が下級行政庁に対して発する解釈・運用の指針である。</div>
+      <div class="mini-choices">
+        <button class="mini-c" data-v="o">○</button>
+        <button class="mini-c" data-v="x">×</button>
+      </div>
+      <div class="mini-exp">○ 通達は行政内部の指示で、原則として国民を直接拘束しない。</div>
+    </div>
+    <div class="mini-q" data-correct="o">
+      <div class="mini-stem">問3 行政規則の変更は、原則として国民に対する関係では影響しない。</div>
+      <div class="mini-choices">
+        <button class="mini-c" data-v="o">○</button>
+        <button class="mini-c" data-v="x">×</button>
+      </div>
+      <div class="mini-exp">○ 行政規則は法規ではないので、変更されても国民の権利義務に直接影響しないのが原則。</div>
+    </div>
+    <div class="mini-actions">
+      <button class="mini-judge">答え合わせ</button>
+      <button class="mini-reset" style="display:none;">もう一度挑戦</button>
+    </div>
+    <div class="mini-result"></div>
+  </div>
+</div>
+
+<div class="sec"><span class="num">5</span>重要判例(委任の限界)</div>
+
+<div class="card">
+  <div class="hanrei">
+    <h4>【サーベル登録拒否事件】(最判平2・2・1)</h4>
+    <p><span class="label">事案</span>銃砲刀剣類登録規則(文部省令)が、登録対象を「日本刀」に限定し、外国製の刀剣(サーベル等)を除外したことの可否。</p>
+    <p><span class="label">判旨</span>当該規則の登録対象限定は、<span class="pk">委任の趣旨を逸脱しない</span>として有効。</p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="hanrei">
+    <h4>【監獄法事件】(最判平3・7・9)</h4>
+    <p><span class="label">事案</span>監獄法施行規則が、被勾留者と14歳未満の者との接見を一律禁止していた事案。</p>
+    <p><span class="label">判旨</span>規則の規定は、<span class="pk">監獄法の委任の範囲を超え違法・無効</span>。<br>→ 法律が「接見の制限」を委任していても、年齢で一律禁止するのは行き過ぎ!</p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="hanrei">
+    <h4>【認知児童扶養手当事件】(最判平14・1・31)</h4>
+    <p><span class="label">事案</span>児童扶養手当法施行令が、<strong>認知された婚外子</strong>を支給対象から除外していた事案。</p>
+    <p><span class="label">判旨</span>当該施行令の規定は、<span class="pk">児童扶養手当法の委任の範囲を超え違法・無効</span>。</p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="hanrei">
+    <h4>【医薬品ネット販売禁止事件】(最判平25・1・11)</h4>
+    <p><span class="label">事案</span>薬事法施行規則が、第一類・第二類医薬品のインターネット販売を一律禁止した事案。</p>
+    <p><span class="label">判旨</span>当該施行規則は、<span class="pk">薬事法の委任の範囲を超え違法・無効</span>。<br>→ 法律自体に明確な根拠がないのに、規則で一律禁止するのは委任の範囲を超える!</p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="hanrei">
+    <h4>【パチンコ球遊器事件】(最判昭33・3・28)</h4>
+    <p><span class="label">事案</span>従来は課税対象としなかったパチンコ球遊器について、通達によって課税対象とした事案。</p>
+    <p><span class="label">判旨</span>従来の取り扱いを通達で変更しても、<strong>もともと法律上の課税要件</strong>を満たしていれば違法ではない。</p>
+    <p><span class="label">ポイント</span>通達は法規ではないが、<span class="pk">法解釈の結果として課税が変わるのはOK</span>。</p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="hanrei">
+    <h4>【猿払事件】(最大判昭49・11・6)★憲法でも頻出</h4>
+    <p><span class="label">事案</span>国家公務員法および人事院規則による政治的行為の禁止が、過度に広汎で違憲ではないかが争われた。</p>
+    <p><span class="label">判旨</span>人事院規則による政治的行為の限定列挙は、<span class="pk">国公法の委任の範囲を逸脱していない</span>として合憲。</p>
+  </div>
+</div>
+
+<!-- ミニテスト Section 5(判例) -->
+<div class="mini-test" data-mini="s5">
+  <button class="mini-btn">✏️ ミニテストに挑戦(セクション5・判例)</button>
+  <div class="mini-body">
+    <div class="mini-q" data-correct="o">
+      <div class="mini-stem">問1 監獄法施行規則が被勾留者と14歳未満の者の接見を一律禁止していたことについて、判例は委任の範囲を超え違法・無効とした。</div>
+      <div class="mini-choices">
+        <button class="mini-c" data-v="o">○</button>
+        <button class="mini-c" data-v="x">×</button>
+      </div>
+      <div class="mini-exp">○ 最判平3・7・9。法律が「接見の制限」を委任していても、年齢で一律禁止は行き過ぎ。</div>
+    </div>
+    <div class="mini-q" data-correct="o">
+      <div class="mini-stem">問2 児童扶養手当法施行令が認知された婚外子を支給対象から除外していたことについて、判例は委任の範囲を超え違法・無効とした。</div>
+      <div class="mini-choices">
+        <button class="mini-c" data-v="o">○</button>
+        <button class="mini-c" data-v="x">×</button>
+      </div>
+      <div class="mini-exp">○ 最判平14・1・31。認知児童扶養手当事件。委任の範囲を超える代表例。</div>
+    </div>
+    <div class="mini-q" data-correct="x">
+      <div class="mini-stem">問3 薬事法施行規則による医薬品のインターネット販売の一律禁止について、判例は委任の範囲内として有効とした。</div>
+      <div class="mini-choices">
+        <button class="mini-c" data-v="o">○</button>
+        <button class="mini-c" data-v="x">×</button>
+      </div>
+      <div class="mini-exp">✕ 最判平25・1・11。判例は<span class="pk">委任の範囲を超え違法・無効</span>とした。法律自体に明確な根拠がないのに規則で一律禁止するのは行き過ぎ。</div>
+    </div>
+    <div class="mini-q" data-correct="o">
+      <div class="mini-stem">問4 銃砲刀剣類登録規則が登録対象を日本刀に限定していたことについて、判例は委任の趣旨を逸脱しないとして有効とした。</div>
+      <div class="mini-choices">
+        <button class="mini-c" data-v="o">○</button>
+        <button class="mini-c" data-v="x">×</button>
+      </div>
+      <div class="mini-exp">○ 最判平2・2・1。サーベル登録拒否事件。「無効グループ」と「有効グループ」の区別が頻出。</div>
+    </div>
+    <div class="mini-actions">
+      <button class="mini-judge">答え合わせ</button>
+      <button class="mini-reset" style="display:none;">もう一度挑戦</button>
+    </div>
+    <div class="mini-result"></div>
+  </div>
+</div>
+
+<div class="card" style="border-left:5px solid #f4a62a;background:#fff9ed;">
+  <h3>⭐ 第3章 総まとめ</h3>
+  <ol>
+    <li>行政立法=法規命令(国民を拘束)+ 行政規則(行政内部のみ)</li>
+    <li>法規命令は<span class="pk">執行命令</span>(手続・細則)と<span class="pk">委任命令</span>(内容)</li>
+    <li>委任命令は<span class="pk">個別具体的な委任</span>が必要、執行命令は不要</li>
+    <li>判例で「委任の範囲を超える」とされたもの:監獄法/認知児童扶養手当/医薬品ネット販売</li>
+    <li>有効とされたもの:サーベル登録/猿払事件(政治的行為)</li>
+  </ol>
+</div>
+
+<div class="sec" style="margin-top:40px;"><span class="num">★</span>学習ツール</div>
+<div class="card" style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;">
+  <a href="gyosei_ch03_q.html" class="btn accent" style="text-decoration:none;">▶ 演習問題へ</a>
+  <button class="btn outline add-review" data-title="第3章 行政立法" data-url="gyosei_ch03.html">📌 復習リストに追加</button>
+  <a href="index.html" class="btn outline" style="text-decoration:none;">目次へ戻る</a>
+</div>
+
+<nav class="pagenav">
+  <a href="gyosei_ch02.html"><span class="label">◀ BACK</span><span class="title">第2章 行政法の法源</span></a>
+  <a href="gyosei_ch03_q.html" class="next"><span class="label">NEXT ▶</span><span class="title">第3章 演習問題</span></a>
+</nav>
+
+</main>
+</div>
+
+<script src="app.js"></script>
+<script>
+  (function() {
+    function run() { if (typeof gambaInit === 'function') { gambaInit('ch03'); } else { setTimeout(run, 50); } }
+    if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', run); } else { run(); }
+  })();
+</script>
+</body>
+</html>
