@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第28章 地方自治②｜GAMBA憲法</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Meiryo',sans-serif;background:#f0f2f5;color:#1B2A4A;line-height:1.8;}
+  header{background:#1B2A4A;color:#fff;padding:16px 24px;display:flex;align-items:center;gap:16px;}
+  header .chapter-num{background:#C0392B;color:#fff;font-size:1.4rem;font-weight:bold;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+  header h1{font-size:1.3rem;font-weight:bold;}
+  header p{font-size:0.85rem;opacity:0.8;margin-top:2px;}
+  .container{max-width:860px;margin:0 auto;padding:24px 16px;}
+  .section-card{background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.08);margin-bottom:24px;overflow:hidden;}
+  .section-header{background:#1B2A4A;color:#fff;padding:12px 20px;font-size:1rem;font-weight:bold;display:flex;align-items:center;gap:10px;}
+  .section-header .num{background:#C0392B;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;font-weight:bold;flex-shrink:0;}
+  .section-body{padding:20px;}
+  .article-box{background:#e8f0fb;border-left:4px solid #1B2A4A;border-radius:6px;padding:12px 16px;margin-bottom:16px;}
+  .article-box .art-label{font-size:0.8rem;color:#C0392B;font-weight:bold;margin-bottom:4px;}
+  .article-box p{font-size:0.95rem;line-height:1.7;}
+  .keyword{color:#C0392B;font-weight:bold;}
+  .blue-kw{color:#1B2A4A;font-weight:bold;text-decoration:underline;}
+  .point-box{background:#fff8e1;border:2px solid #f39c12;border-radius:8px;padding:14px 16px;margin:14px 0;}
+  .point-box .pt-title{font-weight:bold;color:#f39c12;margin-bottom:6px;}
+  .table-wrap{overflow-x:auto;margin:14px 0;}
+  table{width:100%;border-collapse:collapse;font-size:0.92rem;}
+  th{background:#1B2A4A;color:#fff;padding:10px 12px;text-align:left;}
+  td{padding:9px 12px;border-bottom:1px solid #e0e0e0;}
+  tr:nth-child(even) td{background:#f5f7fa;}
+  .case-box{background:#fff;border:2px solid #C0392B;border-radius:8px;padding:14px 16px;margin:16px 0;}
+  .case-box .case-title{background:#C0392B;color:#fff;padding:4px 12px;border-radius:4px;font-size:0.9rem;font-weight:bold;display:inline-block;margin-bottom:10px;}
+  .case-section{font-size:0.82rem;font-weight:bold;color:#1B2A4A;margin:8px 0 4px;}
+  .memo-box{background:#e8f5e9;border-left:4px solid #27ae60;border-radius:6px;padding:10px 14px;margin:12px 0;font-size:0.9rem;}
+  .memo-box .memo-label{font-weight:bold;color:#27ae60;margin-bottom:4px;}
+  .pyramid{background:#f5f7fa;border-radius:8px;padding:16px;margin:14px 0;text-align:center;}
+  .pyramid .py-row{display:flex;justify-content:center;margin-bottom:4px;}
+  .py-item{padding:6px 20px;border-radius:4px;font-size:0.88rem;font-weight:bold;color:#fff;}
+  .quiz-section{margin-top:10px;}
+  .quiz-title{font-size:1rem;font-weight:bold;color:#1B2A4A;margin-bottom:14px;padding-bottom:6px;border-bottom:2px solid #C0392B;}
+  .quiz-item{background:#f5f7fa;border-radius:8px;padding:14px 16px;margin-bottom:12px;}
+  .quiz-item .q-text{font-size:0.93rem;margin-bottom:10px;}
+  .quiz-btn-row{display:flex;gap:10px;}
+  .btn-maru{background:#27ae60;color:#fff;border:none;border-radius:6px;padding:8px 22px;font-size:0.9rem;font-weight:bold;cursor:pointer;}
+  .btn-batu{background:#C0392B;color:#fff;border:none;border-radius:6px;padding:8px 22px;font-size:0.9rem;font-weight:bold;cursor:pointer;}
+  .quiz-result{margin-top:10px;padding:8px 12px;border-radius:6px;font-size:0.88rem;display:none;}
+  .result-correct{background:#e8f5e9;border:1px solid #27ae60;color:#1a5e35;}
+  .result-wrong{background:#fdecea;border:1px solid #C0392B;color:#7b241c;}
+  .score-bar{background:#1B2A4A;color:#fff;border-radius:8px;padding:12px 18px;text-align:center;font-weight:bold;font-size:1rem;margin-top:16px;}
+  .score-bar span{color:#f1c40f;font-size:1.3rem;}
+  .complete-box{background:linear-gradient(135deg,#1B2A4A,#2c3e6b);color:#fff;border-radius:12px;padding:24px;text-align:center;margin-top:24px;}
+  .complete-box h2{font-size:1.4rem;color:#f1c40f;margin-bottom:8px;}
+  .complete-box p{font-size:0.95rem;opacity:0.9;}
+  footer{background:#1B2A4A;color:#aaa;text-align:center;padding:16px;font-size:0.8rem;margin-top:32px;}
+  footer a{color:#7fb3f5;text-decoration:none;}
+
+  /* 四択折りたたみミニテスト */
+  .fold-quiz{margin-top:18px;border-radius:8px;overflow:hidden;border:2px solid #1B2A4A;}
+  .fold-btn{width:100%;background:#1B2A4A;color:#fff;border:none;padding:11px 16px;text-align:left;font-family:'Meiryo',sans-serif;font-size:0.9rem;font-weight:bold;cursor:pointer;display:flex;align-items:center;gap:8px;}
+  .fold-btn .arrow{margin-left:auto;transition:transform .2s;}
+  .fold-btn.open .arrow{transform:rotate(180deg);}
+  .fold-body{display:none;padding:16px;}
+  .fold-body.show{display:block;}
+  .fq-item{background:#f5f7fa;border-radius:8px;padding:12px 14px;margin-bottom:12px;}
+  .fq-item:last-child{margin-bottom:0;}
+  .fq-stem{font-size:0.92rem;margin-bottom:10px;line-height:1.7;}
+  .fq-choices{display:flex;flex-direction:column;gap:6px;margin-bottom:8px;}
+  .fq-c{background:#fff;border:2px solid #dde1e8;border-radius:6px;padding:8px 12px;cursor:pointer;font-size:0.88rem;font-family:'Meiryo',sans-serif;text-align:left;transition:.15s;line-height:1.5;}
+  .fq-c:hover{border-color:#1B2A4A;background:#eef1f8;}
+  .fq-c.fc-ok{background:#e8f5e9;border-color:#27ae60;color:#1a5e35;}
+  .fq-c.fc-ng{background:#fdecea;border-color:#C0392B;color:#7b241c;}
+  .fq-c.fc-show{background:#e8f5e9;border-color:#27ae60;}
+  .fq-exp{background:#fff8e1;border-left:4px solid #f39c12;padding:9px 12px;font-size:0.86rem;border-radius:0 6px 6px 0;display:none;line-height:1.7;}
+  .fq-exp.show{display:block;}
+  .fold-score{background:#1B2A4A;color:#fff;border-radius:6px;padding:10px 14px;text-align:center;font-weight:bold;font-size:0.9rem;margin-top:12px;display:none;}
+  .fold-score span{color:#f1c40f;font-size:1.2rem;}
+  /* ===== ミニテスト 新UI ===== */
+  .mini-test { background: #f0f4fa; border: 2px solid #1B2A4A; border-radius: 10px; margin-top: 18px; overflow: hidden; }
+  .mini-test-header { background: #1B2A4A; color: white; padding: 8px 14px; font-size: 13px; font-weight: bold; letter-spacing: 1px; display: flex; align-items: center; gap: 6px; }
+  .mt-body { padding: 14px; }
+  .mt-preview { background: #eef2f8; border-radius: 6px; padding: 12px 14px; margin-bottom: 12px; font-size: 14px; line-height: 2.1; }
+  .mt-ans { display: inline; color: #C0392B; font-weight: bold; background: #fff0ee; border-radius: 3px; padding: 1px 5px; }
+  .mt-start-btn { width: 100%; padding: 10px; background: #1B2A4A; color: white; border: none; border-radius: 6px; font-size: 13px; font-weight: bold; cursor: pointer; font-family: inherit; }
+  .mt-start-btn:hover { background: #2D4070; }
+  .mt-quiz-text { font-size: 14px; line-height: 2.4; margin-bottom: 14px; }
+  .mt-blank { display: inline-flex; align-items: center; justify-content: center; min-width: 68px; height: 28px; border: 2px dashed #AAB8CC; border-radius: 5px; background: #eef2f8; color: #8FA8CC; font-size: 13px; padding: 0 6px; vertical-align: middle; cursor: pointer; transition: all 0.15s; }
+  .mt-blank.filled { border-style: solid; border-color: #1B2A4A; background: white; color: #1B2A4A; font-weight: bold; }
+  .mt-blank.correct { border-color: #27AE60; background: #e8f8f0; color: #27AE60; font-weight: bold; cursor: default; }
+  .mt-blank.wrong { border-color: #C0392B; background: #fff0ee; color: #C0392B; animation: mt-shake 0.3s ease; }
+  @keyframes mt-shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-4px)} 75%{transform:translateX(4px)} }
+  .mt-pool-label { font-size: 11px; color: #6B7E99; letter-spacing: 1px; margin-bottom: 6px; }
+  .mt-pool { display: flex; flex-wrap: wrap; gap: 6px; background: white; border-radius: 6px; padding: 8px; margin-bottom: 12px; min-height: 38px; border: 1px solid #dde3ed; }
+  .mt-chip { background: white; border: 1.5px solid #1B2A4A; border-radius: 5px; padding: 4px 10px; font-size: 13px; font-weight: bold; color: #1B2A4A; cursor: pointer; transition: all 0.12s; user-select: none; -webkit-user-select: none; }
+  .mt-chip:hover { background: #eef2f8; }
+  .mt-chip.mt-sel { background: #1B2A4A; color: white; }
+  .mt-chip.mt-used { opacity: 0.3; pointer-events: none; }
+  .mt-btn-row { display: flex; gap: 8px; }
+  .mt-judge-btn { flex: 2; padding: 9px; background: #C0392B; color: white; border: none; border-radius: 6px; font-size: 13px; font-weight: bold; cursor: pointer; font-family: inherit; }
+  .mt-judge-btn:hover { background: #A93226; }
+  .mt-hint-btn { flex: 1; padding: 9px; background: transparent; color: #6B7E99; border: 1px solid #dde3ed; border-radius: 6px; font-size: 12px; cursor: pointer; font-family: inherit; }
+  .mt-hint-btn:hover { background: #eef2f8; }
+  .mt-hint-note { font-size: 12px; color: #8B6914; background: #fff8e6; border-left: 3px solid #D4A017; padding: 8px 12px; border-radius: 0 5px 5px 0; margin-bottom: 10px; }
+  .mt-resume-btn { width: 100%; padding: 9px; background: #1B2A4A; color: white; border: none; border-radius: 6px; font-size: 13px; cursor: pointer; font-family: inherit; }
+  .mt-resume-btn:hover { background: #2D4070; }
+  .mt-result { text-align: center; padding: 16px 0 8px; position: relative; overflow: hidden; }
+  .mt-result-score { font-size: 32px; font-weight: bold; color: #D4A017; margin: 6px 0 4px; }
+  .mt-result-msg { font-size: 13px; color: #6B7E99; margin-bottom: 14px; }
+  .mt-retry-btn { padding: 9px 24px; background: #1B2A4A; color: white; border: none; border-radius: 6px; font-size: 13px; cursor: pointer; font-family: inherit; }
+  .mt-confetti { position: absolute; width: 7px; height: 7px; border-radius: 2px; animation: mt-fall linear forwards; pointer-events: none; }
+  @keyframes mt-fall { 0%{transform:translateY(-10px) rotate(0deg);opacity:1} 100%{transform:translateY(180px) rotate(720deg);opacity:0} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="chapter-num">28</div>
+  <div>
+    <h1>地方自治②</h1>
+    <p>条約・法令・法秩序の体系</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- セクション1：条約 -->
+  <div class="section-card">
+    <div class="section-header"><span class="num">1</span> 条約</div>
+    <div class="section-body">
+      <p>条約とは、<span class="keyword">文書による国家間の合意</span>をいいます。「条約」という名称の有無を問いません。ただし、条約を執行するために必要な技術的・細目的な協定や、条約の具体的な委任に基づく政府間取決め（行政協定）は含まれません。</p>
+
+      <p style="margin-top:14px;font-weight:bold;color:#1B2A4A;">（1）条約の締結・承認</p>
+      <div class="article-box">
+        <div class="art-label">第73条3号</div>
+        <p>内閣の職務として「条約を締結すること。但し、事前に、時宜によっては事後に、国会の承認を経ることを必要とする。」</p>
+      </div>
+      <p>条約の締結権は<span class="keyword">内閣</span>にあります。ただし、内閣が条約を締結するには、<span class="keyword">事前に（時宜によっては事後に）国会の承認</span>を経ることが必要です（事前承認が原則）。</p>
+      <p style="margin-top:8px;">条約の承認についても、<span class="keyword">衆議院の優越</span>が認められています（61条・60条2項）。ただし予算とは異なり衆議院の再可決は不要です。</p>
+
+      <p style="margin-top:14px;font-weight:bold;color:#1B2A4A;">（2）条約の国内法としての効力</p>
+      <p>条約は、天皇によって<span class="keyword">公布</span>（7条1号）されると、原則として直ちに国内法としての効力を持ちます。別に国内的立法措置は必要ありません。</p>
+
+      <p style="margin-top:14px;font-weight:bold;color:#1B2A4A;">（3）条約と法律の優劣関係</p>
+      <div class="point-box">
+        <div class="pt-title">通説：条約は法律に優位する</div>
+        <p>条約の遵守（98条2項）、条約締結における国会の承認権（73条3号但書）などから、<span class="keyword">条約は法律に優位する</span>と解するのが通説です。条約の効力は憲法と法律の中間にあります。</p>
+      </div>
+
+      <p style="margin-top:14px;font-weight:bold;color:#1B2A4A;">（4）国会による条約修正</p>
+      <div class="point-box">
+        <div class="pt-title">通説：国会は厳密な意味では修正権を有しない</div>
+        <p>国会は条約の一括承認か不承認しかできず、修正したとしても、それは<span class="keyword">内閣に再交渉を促す政治的意味</span>を持つにとどまります。修正された内容で条約が確定するわけではありません。</p>
+      </div>
+
+      <p style="margin-top:14px;font-weight:bold;color:#1B2A4A;">（5）条約の違憲審査</p>
+      <div class="case-box">
+        <span class="case-title">判例 砂川事件（最大判昭34・12・16）</span>
+        <div class="case-section">事案・判旨</div>
+        <p>日米安全保障条約が憲法9条に違反するとして争われた。</p>
+        <p style="margin-top:6px;">最高裁は、条約は<span class="keyword">違憲審査の対象になり得る</span>としつつも（違憲審査権が及ぶことを否定しない立場）、日米安保条約は<span class="keyword">高度の政治性</span>を有するものであり、「一見極めて明白に違憲無効であると認められない限りは」、その内容について違憲かどうかの法的判断をすることは<span class="keyword">司法裁判所の審査になじまない</span>とした（統治行為論）。</p>
+      </div>
+      <div class="memo-box">
+        <div class="memo-label">📌 注意：「一見明白に違憲無効」</div>
+        「一見明白に違憲無効である外観を呈する」としたのは誤り。砂川事件で最高裁はそのような判断はしていません。「一見極めて明白に違憲無効であるとは認められない」（→ 違憲でないとはいっていない）という表現に注意してください。
+      </div>
+
+      <!-- 四択 S1 -->
+<div class="mini-test" id="mt28a">
+  <div class="mini-test-header">✏️ ミニテスト — 条約の締結・効力・修正・違憲審査</div>
+  <div class="mt-body">
+    <div class="mt-ph mt-ph-preview">
+      <div class="mt-preview">1. 条約の締結権→<span class="mt-ans">内閣</span>。事前に（時宜によっては事後に）<span class="mt-ans">国会の承認</span>が必要。公布→<span class="mt-ans">天皇</span>の国事行為（7条1号）。<br>
+        2. 国会の条約修正権（通説）：厳密な意味では修正権を有せず→内閣に<span class="mt-ans">再交渉</span>を促す政治的意味にとどまる。<br>
+        3. 砂川事件（最大判昭34）：高度の政治性を有する条約は<span class="mt-ans">一見極めて明白に違憲無効でない限り</span>司法審査になじまない（統治行為論）。</div>
+      <button class="mt-start-btn" onclick="mtStart('mt28a')">▶ チャレンジ開始</button>
+    </div>
+    <div class="mt-ph mt-ph-quiz" style="display:none">
+      <div class="mt-quiz-text"></div>
+      <div class="mt-pool-label">語　群</div>
+      <div class="mt-pool"></div>
+      <div class="mt-btn-row">
+        <button class="mt-judge-btn" onclick="mtJudge('mt28a')">✔ 判定する</button>
+        <button class="mt-hint-btn" onclick="mtHint('mt28a')">👁 手本を見る</button>
+      </div>
+    </div>
+    <div class="mt-ph mt-ph-hint" style="display:none">
+      <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+      <div class="mt-preview">1. 条約の締結権→<span class="mt-ans">内閣</span>。事前に（時宜によっては事後に）<span class="mt-ans">国会の承認</span>が必要。公布→<span class="mt-ans">天皇</span>の国事行為（7条1号）。<br>
+        2. 国会の条約修正権（通説）：厳密な意味では修正権を有せず→内閣に<span class="mt-ans">再交渉</span>を促す政治的意味にとどまる。<br>
+        3. 砂川事件（最大判昭34）：高度の政治性を有する条約は<span class="mt-ans">一見極めて明白に違憲無効でない限り</span>司法審査になじまない（統治行為論）。</div>
+      <button class="mt-resume-btn" onclick="mtResume('mt28a')">◀ 手本を閉じて続きから再開</button>
+    </div>
+    <div class="mt-ph mt-ph-result" style="display:none">
+      <div class="mt-result">
+        <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+        <div class="mt-result-score"></div><div class="mt-result-msg"></div>
+        <button class="mt-retry-btn" onclick="mtRetry('mt28a')">↺ もう一度</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+  <!-- セクション2：法令 -->
+  <div class="section-card">
+    <div class="section-header"><span class="num">2</span> 法令（命令）</div>
+    <div class="section-body">
+      <p>「法令」とは一般に国会が制定する「法律」と行政機関が制定する「命令」をいいます。</p>
+
+      <p style="margin-top:14px;font-weight:bold;color:#1B2A4A;">命令の種類</p>
+      <div class="table-wrap">
+        <table>
+          <tr><th>種類</th><th>制定者</th><th>根拠</th></tr>
+          <tr><td><span class="keyword">政令</span></td><td>内閣</td><td>執行命令（法律の実施）・委任命令（法律の委任）</td></tr>
+          <tr><td>省令</td><td>各省大臣</td><td>国家行政組織法12条</td></tr>
+          <tr><td>規則</td><td>委員会等</td><td>各組織の根拠法</td></tr>
+        </table>
+      </div>
+      <div class="point-box">
+        <div class="pt-title">⚠️ 独立命令は認められない</div>
+        <p>日本国憲法下では、法律とかかわりなく行政権が独自に制定する<span class="keyword">独立命令</span>は認められていません（明治憲法下では独立命令が認められていた）。</p>
+      </div>
+
+      <p style="margin-top:14px;font-weight:bold;color:#1B2A4A;">政令と罰則</p>
+      <p>憲法73条6号但書により、政令には法律の委任がある場合に罰則を設けることができます。委任の程度は厳格に解されており、<span class="keyword">個別的・具体的な委任</span>が必要です（条例よりも厳格）。</p>
+
+<div class="mini-test" id="mt28b">
+  <div class="mini-test-header">✏️ ミニテスト — 法令（命令）・法秩序の体系</div>
+  <div class="mt-body">
+    <div class="mt-ph mt-ph-preview">
+      <div class="mt-preview">1. 法秩序の形式的効力の序列（通説）：<span class="mt-ans">憲法</span>→<span class="mt-ans">条約</span>→<span class="mt-ans">法律</span>→<span class="mt-ans">命令</span>→<span class="mt-ans">条例</span>。<br>
+        2. 日本国憲法下では<span class="mt-ans">独立命令</span>は認められない。政令に罰則を設けるには法律の<span class="mt-ans">個別的・具体的な委任</span>が必要（条例より厳格）。</div>
+      <button class="mt-start-btn" onclick="mtStart('mt28b')">▶ チャレンジ開始</button>
+    </div>
+    <div class="mt-ph mt-ph-quiz" style="display:none">
+      <div class="mt-quiz-text"></div>
+      <div class="mt-pool-label">語　群</div>
+      <div class="mt-pool"></div>
+      <div class="mt-btn-row">
+        <button class="mt-judge-btn" onclick="mtJudge('mt28b')">✔ 判定する</button>
+        <button class="mt-hint-btn" onclick="mtHint('mt28b')">👁 手本を見る</button>
+      </div>
+    </div>
+    <div class="mt-ph mt-ph-hint" style="display:none">
+      <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+      <div class="mt-preview">1. 法秩序の形式的効力の序列（通説）：<span class="mt-ans">憲法</span>→<span class="mt-ans">条約</span>→<span class="mt-ans">法律</span>→<span class="mt-ans">命令</span>→<span class="mt-ans">条例</span>。<br>
+        2. 日本国憲法下では<span class="mt-ans">独立命令</span>は認められない。政令に罰則を設けるには法律の<span class="mt-ans">個別的・具体的な委任</span>が必要（条例より厳格）。</div>
+      <button class="mt-resume-btn" onclick="mtResume('mt28b')">◀ 手本を閉じて続きから再開</button>
+    </div>
+    <div class="mt-ph mt-ph-result" style="display:none">
+      <div class="mt-result">
+        <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+        <div class="mt-result-score"></div><div class="mt-result-msg"></div>
+        <button class="mt-retry-btn" onclick="mtRetry('mt28b')">↺ もう一度</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+  <!-- セクション3：法秩序の体系 -->
+  <div class="section-card">
+    <div class="section-header"><span class="num">3</span> 法秩序の体系（形式的効力）</div>
+    <div class="section-body">
+      <p>日本の法秩序は、上位規範が下位規範に優位する階段構造をなしています。</p>
+      <div class="pyramid">
+        <div class="py-row"><span class="py-item" style="background:#C0392B;">憲法</span></div>
+        <div class="py-row"><span class="py-item" style="background:#8e44ad;">条約</span></div>
+        <div class="py-row"><span class="py-item" style="background:#2980b9;">法律</span></div>
+        <div class="py-row"><span class="py-item" style="background:#16a085;">命令（政令・省令等）</span></div>
+        <div class="py-row"><span class="py-item" style="background:#27ae60;">条例（法律の範囲内）</span></div>
+      </div>
+      <p style="text-align:center;font-size:0.88rem;color:#555;">上位規範が下位規範を拘束します</p>
+    </div>
+  </div>
+
+  <!-- セクション4：まとめ：出題頻出ポイント -->
+  <div class="section-card">
+    <div class="section-header"><span class="num">4</span> 条約に関する論点整理</div>
+    <div class="section-body">
+      <div class="table-wrap">
+        <table>
+          <tr><th>論点</th><th>通説の立場</th></tr>
+          <tr><td>事後に国会承認が得られなかった条約の効力</td><td>諸説あり（国内法的に無効、国際法的に有効とする説など）</td></tr>
+          <tr><td>国会による条約修正</td><td>厳密な意味では修正権を有しない（内閣に再交渉を促す政治的意味のみ）</td></tr>
+          <tr><td>条約と法律の優劣</td><td><span class="keyword">条約が法律に優位</span>する（通説）</td></tr>
+          <tr><td>条約と憲法の優劣</td><td><span class="keyword">憲法が条約に優位</span>する（通説）</td></tr>
+          <tr><td>条約の違憲審査</td><td>審査可能（ただし高度に政治的な条約は統治行為として司法審査になじまない）</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 理解度チェック -->
+  <div class="section-card">
+    <div class="section-header"><span class="num">✓</span> 理解度チェック</div>
+    <div class="section-body">
+<div class="mini-test" id="mt28c">
+  <div class="mini-test-header">✏️ ミニテスト — 理解度チェック 総まとめ</div>
+  <div class="mt-body">
+    <div class="mt-ph mt-ph-preview">
+      <div class="mt-preview">1. 条約の締結：事前に（時宜によっては<span class="mt-ans">事後</span>に）国会の承認が必要。<br>
+        2. 条約の国内法としての効力は<span class="mt-ans">天皇による公布</span>によって発生し、別に国内立法措置は不要。<br>
+        3. 条約と法律が抵触する場合：通説は<span class="mt-ans">条約が優先</span>する。<br>
+        4. 砂川事件で最高裁：日米安保条約が「一見明白に違憲無効である外観を呈する」とは<span class="mt-ans">していない</span>。<br>
+        5. 国会が条約案に修正を加えた場合（通説）：修正された内容で条約が確定する→<span class="mt-ans">誤り</span>（内閣への再交渉要請の政治的意味のみ）。<br>
+        6. 日本国憲法下では独立命令は<span class="mt-ans">認められない</span>。<br>
+        7. 法秩序の序列：憲法→<span class="mt-ans">条約</span>→法律→命令→条例（通説）。</div>
+      <button class="mt-start-btn" onclick="mtStart('mt28c')">▶ チャレンジ開始</button>
+    </div>
+    <div class="mt-ph mt-ph-quiz" style="display:none">
+      <div class="mt-quiz-text"></div>
+      <div class="mt-pool-label">語　群</div>
+      <div class="mt-pool"></div>
+      <div class="mt-btn-row">
+        <button class="mt-judge-btn" onclick="mtJudge('mt28c')">✔ 判定する</button>
+        <button class="mt-hint-btn" onclick="mtHint('mt28c')">👁 手本を見る</button>
+      </div>
+    </div>
+    <div class="mt-ph mt-ph-hint" style="display:none">
+      <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+      <div class="mt-preview">1. 条約の締結：事前に（時宜によっては<span class="mt-ans">事後</span>に）国会の承認が必要。<br>
+        2. 条約の国内法としての効力は<span class="mt-ans">天皇による公布</span>によって発生し、別に国内立法措置は不要。<br>
+        3. 条約と法律が抵触する場合：通説は<span class="mt-ans">条約が優先</span>する。<br>
+        4. 砂川事件で最高裁：日米安保条約が「一見明白に違憲無効である外観を呈する」とは<span class="mt-ans">していない</span>。<br>
+        5. 国会が条約案に修正を加えた場合（通説）：修正された内容で条約が確定する→<span class="mt-ans">誤り</span>（内閣への再交渉要請の政治的意味のみ）。<br>
+        6. 日本国憲法下では独立命令は<span class="mt-ans">認められない</span>。<br>
+        7. 法秩序の序列：憲法→<span class="mt-ans">条約</span>→法律→命令→条例（通説）。</div>
+      <button class="mt-resume-btn" onclick="mtResume('mt28c')">◀ 手本を閉じて続きから再開</button>
+    </div>
+    <div class="mt-ph mt-ph-result" style="display:none">
+      <div class="mt-result">
+        <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+        <div class="mt-result-score"></div><div class="mt-result-msg"></div>
+        <button class="mt-retry-btn" onclick="mtRetry('mt28c')">↺ もう一度</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+  <!-- 完了メッセージ -->
+  <div class="complete-box">
+    <h2>🎉 GAMBA憲法 全28章 完走！</h2>
+    <p>おめでとうございます！　第1章から第28章まで、すべての章を学習しました。</p>
+    <p style="margin-top:8px;">財政・地方自治・条約と法令まで、幅広い憲法の知識を習得しました。</p>
+    <p style="margin-top:8px;">引き続き演習問題で実力を磨いていきましょう！</p>
+  </div>
+
+</div><!-- /container -->
+
+<footer>
+  <p><a href="index.html">← GAMBA憲法 目次へ戻る</a></p>
+  <p style="margin-top:6px;">© GAMBA System / 江原予備校</p>
+</footer>
+
+
+</body>
+</html>
+<script>
+var MT_DATA = {
+  mt28a:{
+    answers:['内閣','国会の承認','天皇','再交渉','一見極めて明白に違憲無効でない限り'],
+    decoys:['国会','内閣の議決','内閣総理大臣','廃案','一見して違憲でない限り'],
+    parts:[
+      {t:'text',v:'1. 条約の締結権→'},{t:'blank',i:0},{t:'text',v:'。事前に（時宜によっては事後に）'},{t:'blank',i:1},{t:'text',v:'が必要。公布→'},{t:'blank',i:2},{t:'text',v:'の国事行為（7条1号）。'},{t:'br'},
+      {t:'text',v:'2. 国会の条約修正権（通説）：内閣に'},{t:'blank',i:3},{t:'text',v:'を促す政治的意味にとどまる。'},{t:'br'},
+      {t:'text',v:'3. 砂川事件：高度の政治性を有する条約は'},{t:'blank',i:4},{t:'text',v:'司法審査になじまない（統治行為論）。'}
+    ]
+  },
+  mt28b:{
+    answers:['憲法','条約','法律','命令','条例','独立命令','個別的・具体的な委任'],
+    decoys:['政令','省令','一般的委任'],
+    parts:[
+      {t:'text',v:'1. 法秩序の形式的効力の序列（通説）：'},{t:'blank',i:0},{t:'text',v:'→'},{t:'blank',i:1},{t:'text',v:'→'},{t:'blank',i:2},{t:'text',v:'→'},{t:'blank',i:3},{t:'text',v:'→'},{t:'blank',i:4},{t:'text',v:'。'},{t:'br'},
+      {t:'text',v:'2. 日本国憲法下では'},{t:'blank',i:5},{t:'text',v:'は認められない。政令に罰則を設けるには法律の'},{t:'blank',i:6},{t:'text',v:'が必要（条例より厳格）。'}
+    ]
+  },
+  mt28c:{
+    answers:['事後','天皇による公布','条約が優先','していない','誤り','認められない','条約'],
+    decoys:['事前のみ','内閣による公布','法律が優先','している','正しい','認められる','法律'],
+    parts:[
+      {t:'text',v:'1. 条約の締結：事前に（時宜によっては'},{t:'blank',i:0},{t:'text',v:'に）国会の承認が必要。'},{t:'br'},
+      {t:'text',v:'2. 条約の国内法としての効力は'},{t:'blank',i:1},{t:'text',v:'によって発生し、別に国内立法措置は不要。'},{t:'br'},
+      {t:'text',v:'3. 条約と法律が抵触する場合：通説は'},{t:'blank',i:2},{t:'text',v:'する。'},{t:'br'},
+      {t:'text',v:'4. 砂川事件で最高裁：日米安保条約が「一見明白に違憲無効である外観を呈する」とは'},{t:'blank',i:3},{t:'text',v:'。'},{t:'br'},
+      {t:'text',v:'5. 国会が条約案に修正を加えた場合（通説）：修正された内容で条約が確定する→'},{t:'blank',i:4},{t:'text',v:'（内閣への再交渉要請の政治的意味のみ）。'},{t:'br'},
+      {t:'text',v:'6. 日本国憲法下では独立命令は'},{t:'blank',i:5},{t:'text',v:'。'},{t:'br'},
+      {t:'text',v:'7. 法秩序の序列：憲法→'},{t:'blank',i:6},{t:'text',v:'→法律→命令→条例（通説）。'}
+    ]
+  }
+};
+var mtState = {};
+function mtShuffle(a){var b=[].concat(a);for(var i=b.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=b[i];b[i]=b[j];b[j]=t;}return b;}
+function mtStart(id){
+  var d=MT_DATA[id];
+  mtState[id]={filled:{},locked:{},sel:null,pool:mtShuffle(d.answers.concat(d.decoys))};
+  mtRenderQuiz(id);
+  mtSetPhase(id,'quiz');
+}
+function mtSetPhase(id,ph){
+  var el=document.getElementById(id);
+  el.querySelectorAll('.mt-ph').forEach(function(p){p.style.display='none';});
+  el.querySelector('.mt-ph-'+ph).style.display='block';
+}
+function mtRenderQuiz(id){
+  var d=MT_DATA[id],s=mtState[id];
+  var qt=document.getElementById(id).querySelector('.mt-quiz-text');
+  qt.innerHTML='';
+  d.parts.forEach(function(p){
+    if(p.t==='text'){
+      qt.appendChild(document.createTextNode(p.v));
+    } else if(p.t==='br'){
+      qt.appendChild(document.createElement('br'));
+    } else if(p.t==='blank'){
+      (function(i){
+        var btn=document.createElement('button');
+        btn.type='button';
+        var cls='mt-blank';
+        if(s.locked[i]===true) cls+=' correct';
+        else if(s.filled[i]) cls+=' filled';
+        btn.className=cls;
+        btn.dataset.bi=i;
+        btn.textContent=s.filled[i]||(s.locked[i]===true?d.answers[i]:'　　　');
+        if(s.locked[i]!==true){
+          btn.addEventListener('click',function(){mtBlankClick(id,i);});
+        }
+        qt.appendChild(btn);
+      })(p.i);
+    }
+  });
+  mtRenderPool(id);
+}
+function mtRenderPool(id){
+  var d=MT_DATA[id],s=mtState[id];
+  var pool=document.getElementById(id).querySelector('.mt-pool');
+  pool.innerHTML='';
+  s.pool.forEach(function(w,idx){
+    var lockedUsed=false;
+    for(var k in s.locked){if(s.locked[k]===true&&s.filled[k]===w){lockedUsed=true;break;}}
+    var placedUsed=false;
+    for(var k in s.filled){if(s.filled[k]===w&&s.locked[k]!==true){placedUsed=true;break;}}
+    var used=lockedUsed||placedUsed;
+    var chip=document.createElement('button');
+    chip.type='button';
+    chip.className='mt-chip'+(s.sel===idx?' mt-sel':'')+(used?' mt-used':'');
+    chip.textContent=w;
+    chip.dataset.ci=idx;
+    (function(ci){
+      chip.addEventListener('click',function(){
+        if(!this.classList.contains('mt-used')) mtChipClick(id,ci);
+      });
+    })(idx);
+    pool.appendChild(chip);
+  });
+}
+function mtChipClick(id,idx){
+  var s=mtState[id];
+  s.sel=(s.sel===idx)?null:idx;
+  mtRenderPool(id);
+}
+function mtBlankClick(id,bi){
+  var s=mtState[id];
+  if(s.locked[bi]===true) return;
+  if(s.sel!==null){
+    var w=s.pool[s.sel];
+    for(var k in s.filled){
+      if(s.filled[k]===w&&s.locked[k]!==true&&String(k)!==String(bi)){
+        s.filled[k]=null; break;
+      }
+    }
+    s.filled[bi]=w;
+    s.sel=null;
+    mtRenderQuiz(id);
+    return;
+  }
+  if(s.filled[bi]){s.filled[bi]=null; mtRenderQuiz(id);}
+}
+function mtJudge(id){
+  var d=MT_DATA[id],s=mtState[id],wrong=[];
+  d.answers.forEach(function(ans,i){
+    if(s.locked[i]===true) return;
+    if(s.filled[i]===ans){s.locked[i]=true;}
+    else if(s.filled[i]){s.locked[i]=false; wrong.push(i);}
+  });
+  mtRenderQuiz(id);
+  wrong.forEach(function(i){
+    var el=document.getElementById(id).querySelector('.mt-blank[data-bi="'+i+'"]');
+    if(el) el.classList.add('wrong');
+    setTimeout(function(){
+      if(mtState[id]){mtState[id].locked[i]=undefined; mtState[id].filled[i]=null; mtRenderQuiz(id);}
+    },800);
+  });
+  var allOk=d.answers.every(function(ans,i){return s.locked[i]===true;});
+  if(allOk) setTimeout(function(){mtShowResult(id,d.answers.length,d.answers.length);},500);
+}
+function mtHint(id){mtSetPhase(id,'hint');}
+function mtResume(id){mtRenderQuiz(id); mtSetPhase(id,'quiz');}
+function mtShowResult(id,sc,tot){
+  var el=document.getElementById(id);
+  el.querySelector('.mt-result-score').textContent=sc+' / '+tot+' 点';
+  var msg=sc===tot?'全問正解！完璧です！':sc>=tot*0.7?'あと少し！もう一度確認しましょう。':'解説をよく読んでから再挑戦！';
+  el.querySelector('.mt-result-msg').textContent=msg;
+  mtSetPhase(id,'result');
+  if(sc===tot) mtConfetti(el.querySelector('.mt-result'));
+}
+function mtConfetti(wrap){
+  var cols=['#C0392B','#D4A017','#27AE60','#1B2A4A','#3498DB'];
+  for(var i=0;i<36;i++){
+    var c=document.createElement('div'); c.className='mt-confetti';
+    c.style.left=Math.random()*100+'%';
+    c.style.background=cols[Math.floor(Math.random()*cols.length)];
+    c.style.animationDuration=(0.7+Math.random()*0.8)+'s';
+    c.style.animationDelay=(Math.random()*0.5)+'s';
+    wrap.appendChild(c);
+    setTimeout(function(x){x.remove();},1800,c);
+  }
+}
+function mtRetry(id){mtStart(id);}
+</script>ml lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第28章 地方自治②｜GAMBA憲法</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Meiryo',sans-serif;background:#f0f2f5;color:#1B2A4A;line-height:1.8;}
+  header{background:#1B2A4A;color:#fff;padding:16px 24px;display:flex;align-items:center;gap:16px;}
+  header .chapter-num{background:#C0392B;color:#fff;font-size:1.4rem;font-weight:bold;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+  header h1{font-size:1.3rem;font-weight:bold;}
+  header p{font-size:0.85rem;opacity:0.8;margin-top:2px;}
+  .container{max-width:860px;margin:0 auto;padding:24px 16px;}
+  .section-card{background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.08);margin-bottom:24px;overflow:hidden;}
+  .section-header{background:#1B2A4A;color:#fff;padding:12px 20px;font-size:1rem;font-weight:bold;display:flex;align-items:center;gap:10px;}
+  .section-header .num{background:#C0392B;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;font-weight:bold;flex-shrink:0;}
+  .section-body{padding:20px;}
+  .article-box{background:#e8f0fb;border-left:4px solid #1B2A4A;border-radius:6px;padding:12px 16px;margin-bottom:16px;}
+  .article-box .art-label{font-size:0.8rem;color:#C0392B;font-weight:bold;margin-bottom:4px;}
+  .article-box p{font-size:0.95rem;line-height:1.7;}
+  .keyword{color:#C0392B;font-weight:bold;}
+  .blue-kw{color:#1B2A4A;font-weight:bold;text-decoration:underline;}
+  .point-box{background:#fff8e1;border:2px solid #f39c12;border-radius:8px;padding:14px 16px;margin:14px 0;}
+  .point-box .pt-title{font-weight:bold;color:#f39c12;margin-bottom:6px;}
+  .table-wrap{overflow-x:auto;margin:14px 0;}
+  table{width:100%;border-collapse:collapse;font-size:0.92rem;}
+  th{background:#1B2A4A;color:#fff;padding:10px 12px;text-align:left;}
+  td{padding:9px 12px;border-bottom:1px solid #e0e0e0;}
+  tr:nth-child(even) td{background:#f5f7fa;}
+  .case-box{background:#fff;border:2px solid #C0392B;border-radius:8px;padding:14px 16px;margin:16px 0;}
+  .case-box .case-title{background:#C0392B;color:#fff;padding:4px 12px;border-radius:4px;font-size:0.9rem;font-weight:bold;display:inline-block;margin-bottom:10px;}
+  .case-section{font-size:0.82rem;font-weight:bold;color:#1B2A4A;margin:8px 0 4px;}
+  .memo-box{background:#e8f5e9;border-left:4px solid #27ae60;border-radius:6px;padding:10px 14px;margin:12px 0;font-size:0.9rem;}
+  .memo-box .memo-label{font-weight:bold;color:#27ae60;margin-bottom:4px;}
+  .pyramid{background:#f5f7fa;border-radius:8px;padding:16px;margin:14px 0;text-align:center;}
+  .pyramid .py-row{display:flex;justify-content:center;margin-bottom:4px;}
+  .py-item{padding:6px 20px;border-radius:4px;font-size:0.88rem;font-weight:bold;color:#fff;}
+  .quiz-section{margin-top:10px;}
+  .quiz-title{font-size:1rem;font-weight:bold;color:#1B2A4A;margin-bottom:14px;padding-bottom:6px;border-bottom:2px solid #C0392B;}
+  .quiz-item{background:#f5f7fa;border-radius:8px;padding:14px 16px;margin-bottom:12px;}
+  .quiz-item .q-text{font-size:0.93rem;margin-bottom:10px;}
+  .quiz-btn-row{display:flex;gap:10px;}
+  .btn-maru{background:#27ae60;color:#fff;border:none;border-radius:6px;padding:8px 22px;font-size:0.9rem;font-weight:bold;cursor:pointer;}
+  .btn-batu{background:#C0392B;color:#fff;border:none;border-radius:6px;padding:8px 22px;font-size:0.9rem;font-weight:bold;cursor:pointer;}
+  .quiz-result{margin-top:10px;padding:8px 12px;border-radius:6px;font-size:0.88rem;display:none;}
+  .result-correct{background:#e8f5e9;border:1px solid #27ae60;color:#1a5e35;}
+  .result-wrong{background:#fdecea;border:1px solid #C0392B;color:#7b241c;}
+  .score-bar{background:#1B2A4A;color:#fff;border-radius:8px;padding:12px 18px;text-align:center;font-weight:bold;font-size:1rem;margin-top:16px;}
+  .score-bar span{color:#f1c40f;font-size:1.3rem;}
+  .complete-box{background:linear-gradient(135deg,#1B2A4A,#2c3e6b);color:#fff;border-radius:12px;padding:24px;text-align:center;margin-top:24px;}
+  .complete-box h2{font-size:1.4rem;color:#f1c40f;margin-bottom:8px;}
+  .complete-box p{font-size:0.95rem;opacity:0.9;}
+  footer{background:#1B2A4A;color:#aaa;text-align:center;padding:16px;font-size:0.8rem;margin-top:32px;}
+  footer a{color:#7fb3f5;text-decoration:none;}
+
+  /* 四択折りたたみミニテスト */
+  .fold-quiz{margin-top:18px;border-radius:8px;overflow:hidden;border:2px solid #1B2A4A;}
+  .fold-btn{width:100%;background:#1B2A4A;color:#fff;border:none;padding:11px 16px;text-align:left;font-family:'Meiryo',sans-serif;font-size:0.9rem;font-weight:bold;cursor:pointer;display:flex;align-items:center;gap:8px;}
+  .fold-btn .arrow{margin-left:auto;transition:transform .2s;}
+  .fold-btn.open .arrow{transform:rotate(180deg);}
+  .fold-body{display:none;padding:16px;}
+  .fold-body.show{display:block;}
+  .fq-item{background:#f5f7fa;border-radius:8px;padding:12px 14px;margin-bottom:12px;}
+  .fq-item:last-child{margin-bottom:0;}
+  .fq-stem{font-size:0.92rem;margin-bottom:10px;line-height:1.7;}
+  .fq-choices{display:flex;flex-direction:column;gap:6px;margin-bottom:8px;}
+  .fq-c{background:#fff;border:2px solid #dde1e8;border-radius:6px;padding:8px 12px;cursor:pointer;font-size:0.88rem;font-family:'Meiryo',sans-serif;text-align:left;transition:.15s;line-height:1.5;}
+  .fq-c:hover{border-color:#1B2A4A;background:#eef1f8;}
+  .fq-c.fc-ok{background:#e8f5e9;border-color:#27ae60;color:#1a5e35;}
+  .fq-c.fc-ng{background:#fdecea;border-color:#C0392B;color:#7b241c;}
+  .fq-c.fc-show{background:#e8f5e9;border-color:#27ae60;}
+  .fq-exp{background:#fff8e1;border-left:4px solid #f39c12;padding:9px 12px;font-size:0.86rem;border-radius:0 6px 6px 0;display:none;line-height:1.7;}
+  .fq-exp.show{display:block;}
+  .fold-score{background:#1B2A4A;color:#fff;border-radius:6px;padding:10px 14px;text-align:center;font-weight:bold;font-size:0.9rem;margin-top:12px;display:none;}
+  .fold-score span{color:#f1c40f;font-size:1.2rem;}
+  /* ===== ミニテスト 新UI ===== */
+  .mini-test { background: #f0f4fa; border: 2px solid #1B2A4A; border-radius: 10px; margin-top: 18px; overflow: hidden; }
+  .mini-test-header { background: #1B2A4A; color: white; padding: 8px 14px; font-size: 13px; font-weight: bold; letter-spacing: 1px; display: flex; align-items: center; gap: 6px; }
+  .mt-body { padding: 14px; }
+  .mt-preview { background: #eef2f8; border-radius: 6px; padding: 12px 14px; margin-bottom: 12px; font-size: 14px; line-height: 2.1; }
+  .mt-ans { display: inline; color: #C0392B; font-weight: bold; background: #fff0ee; border-radius: 3px; padding: 1px 5px; }
+  .mt-start-btn { width: 100%; padding: 10px; background: #1B2A4A; color: white; border: none; border-radius: 6px; font-size: 13px; font-weight: bold; cursor: pointer; font-family: inherit; }
+  .mt-start-btn:hover { background: #2D4070; }
+  .mt-quiz-text { font-size: 14px; line-height: 2.4; margin-bottom: 14px; }
+  .mt-blank { display: inline-flex; align-items: center; justify-content: center; min-width: 68px; height: 28px; border: 2px dashed #AAB8CC; border-radius: 5px; background: #eef2f8; color: #8FA8CC; font-size: 13px; padding: 0 6px; vertical-align: middle; cursor: pointer; transition: all 0.15s; }
+  .mt-blank.filled { border-style: solid; border-color: #1B2A4A; background: white; color: #1B2A4A; font-weight: bold; }
+  .mt-blank.correct { border-color: #27AE60; background: #e8f8f0; color: #27AE60; font-weight: bold; cursor: default; }
+  .mt-blank.wrong { border-color: #C0392B; background: #fff0ee; color: #C0392B; animation: mt-shake 0.3s ease; }
+  @keyframes mt-shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-4px)} 75%{transform:translateX(4px)} }
+  .mt-pool-label { font-size: 11px; color: #6B7E99; letter-spacing: 1px; margin-bottom: 6px; }
+  .mt-pool { display: flex; flex-wrap: wrap; gap: 6px; background: white; border-radius: 6px; padding: 8px; margin-bottom: 12px; min-height: 38px; border: 1px solid #dde3ed; }
+  .mt-chip { background: white; border: 1.5px solid #1B2A4A; border-radius: 5px; padding: 4px 10px; font-size: 13px; font-weight: bold; color: #1B2A4A; cursor: pointer; transition: all 0.12s; user-select: none; -webkit-user-select: none; }
+  .mt-chip:hover { background: #eef2f8; }
+  .mt-chip.mt-sel { background: #1B2A4A; color: white; }
+  .mt-chip.mt-used { opacity: 0.3; pointer-events: none; }
+  .mt-btn-row { display: flex; gap: 8px; }
+  .mt-judge-btn { flex: 2; padding: 9px; background: #C0392B; color: white; border: none; border-radius: 6px; font-size: 13px; font-weight: bold; cursor: pointer; font-family: inherit; }
+  .mt-judge-btn:hover { background: #A93226; }
+  .mt-hint-btn { flex: 1; padding: 9px; background: transparent; color: #6B7E99; border: 1px solid #dde3ed; border-radius: 6px; font-size: 12px; cursor: pointer; font-family: inherit; }
+  .mt-hint-btn:hover { background: #eef2f8; }
+  .mt-hint-note { font-size: 12px; color: #8B6914; background: #fff8e6; border-left: 3px solid #D4A017; padding: 8px 12px; border-radius: 0 5px 5px 0; margin-bottom: 10px; }
+  .mt-resume-btn { width: 100%; padding: 9px; background: #1B2A4A; color: white; border: none; border-radius: 6px; font-size: 13px; cursor: pointer; font-family: inherit; }
+  .mt-resume-btn:hover { background: #2D4070; }
+  .mt-result { text-align: center; padding: 16px 0 8px; position: relative; overflow: hidden; }
+  .mt-result-score { font-size: 32px; font-weight: bold; color: #D4A017; margin: 6px 0 4px; }
+  .mt-result-msg { font-size: 13px; color: #6B7E99; margin-bottom: 14px; }
+  .mt-retry-btn { padding: 9px 24px; background: #1B2A4A; color: white; border: none; border-radius: 6px; font-size: 13px; cursor: pointer; font-family: inherit; }
+  .mt-confetti { position: absolute; width: 7px; height: 7px; border-radius: 2px; animation: mt-fall linear forwards; pointer-events: none; }
+  @keyframes mt-fall { 0%{transform:translateY(-10px) rotate(0deg);opacity:1} 100%{transform:translateY(180px) rotate(720deg);opacity:0} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="chapter-num">28</div>
+  <div>
+    <h1>地方自治②</h1>
+    <p>条約・法令・法秩序の体系</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- セクション1：条約 -->
+  <div class="section-card">
+    <div class="section-header"><span class="num">1</span> 条約</div>
+    <div class="section-body">
+      <p>条約とは、<span class="keyword">文書による国家間の合意</span>をいいます。「条約」という名称の有無を問いません。ただし、条約を執行するために必要な技術的・細目的な協定や、条約の具体的な委任に基づく政府間取決め（行政協定）は含まれません。</p>
+
+      <p style="margin-top:14px;font-weight:bold;color:#1B2A4A;">（1）条約の締結・承認</p>
+      <div class="article-box">
+        <div class="art-label">第73条3号</div>
+        <p>内閣の職務として「条約を締結すること。但し、事前に、時宜によっては事後に、国会の承認を経ることを必要とする。」</p>
+      </div>
+      <p>条約の締結権は<span class="keyword">内閣</span>にあります。ただし、内閣が条約を締結するには、<span class="keyword">事前に（時宜によっては事後に）国会の承認</span>を経ることが必要です（事前承認が原則）。</p>
+      <p style="margin-top:8px;">条約の承認についても、<span class="keyword">衆議院の優越</span>が認められています（61条・60条2項）。ただし予算とは異なり衆議院の再可決は不要です。</p>
+
+      <p style="margin-top:14px;font-weight:bold;color:#1B2A4A;">（2）条約の国内法としての効力</p>
+      <p>条約は、天皇によって<span class="keyword">公布</span>（7条1号）されると、原則として直ちに国内法としての効力を持ちます。別に国内的立法措置は必要ありません。</p>
+
+      <p style="margin-top:14px;font-weight:bold;color:#1B2A4A;">（3）条約と法律の優劣関係</p>
+      <div class="point-box">
+        <div class="pt-title">通説：条約は法律に優位する</div>
+        <p>条約の遵守（98条2項）、条約締結における国会の承認権（73条3号但書）などから、<span class="keyword">条約は法律に優位する</span>と解するのが通説です。条約の効力は憲法と法律の中間にあります。</p>
+      </div>
+
+      <p style="margin-top:14px;font-weight:bold;color:#1B2A4A;">（4）国会による条約修正</p>
+      <div class="point-box">
+        <div class="pt-title">通説：国会は厳密な意味では修正権を有しない</div>
+        <p>国会は条約の一括承認か不承認しかできず、修正したとしても、それは<span class="keyword">内閣に再交渉を促す政治的意味</span>を持つにとどまります。修正された内容で条約が確定するわけではありません。</p>
+      </div>
+
+      <p style="margin-top:14px;font-weight:bold;color:#1B2A4A;">（5）条約の違憲審査</p>
+      <div class="case-box">
+        <span class="case-title">判例 砂川事件（最大判昭34・12・16）</span>
+        <div class="case-section">事案・判旨</div>
+        <p>日米安全保障条約が憲法9条に違反するとして争われた。</p>
+        <p style="margin-top:6px;">最高裁は、条約は<span class="keyword">違憲審査の対象になり得る</span>としつつも（違憲審査権が及ぶことを否定しない立場）、日米安保条約は<span class="keyword">高度の政治性</span>を有するものであり、「一見極めて明白に違憲無効であると認められない限りは」、その内容について違憲かどうかの法的判断をすることは<span class="keyword">司法裁判所の審査になじまない</span>とした（統治行為論）。</p>
+      </div>
+      <div class="memo-box">
+        <div class="memo-label">📌 注意：「一見明白に違憲無効」</div>
+        「一見明白に違憲無効である外観を呈する」としたのは誤り。砂川事件で最高裁はそのような判断はしていません。「一見極めて明白に違憲無効であるとは認められない」（→ 違憲でないとはいっていない）という表現に注意してください。
+      </div>
+
+      <!-- 四択 S1 -->
+<div class="mini-test" id="mt28a">
+  <div class="mini-test-header">✏️ ミニテスト — 条約の締結・効力・修正・違憲審査</div>
+  <div class="mt-body">
+    <div class="mt-ph mt-ph-preview">
+      <div class="mt-preview">1. 条約の締結権→<span class="mt-ans">内閣</span>。事前に（時宜によっては事後に）<span class="mt-ans">国会の承認</span>が必要。公布→<span class="mt-ans">天皇</span>の国事行為（7条1号）。<br>
+        2. 国会の条約修正権（通説）：厳密な意味では修正権を有せず→内閣に<span class="mt-ans">再交渉</span>を促す政治的意味にとどまる。<br>
+        3. 砂川事件（最大判昭34）：高度の政治性を有する条約は<span class="mt-ans">一見極めて明白に違憲無効でない限り</span>司法審査になじまない（統治行為論）。</div>
+      <button class="mt-start-btn" onclick="mtStart('mt28a')">▶ チャレンジ開始</button>
+    </div>
+    <div class="mt-ph mt-ph-quiz" style="display:none">
+      <div class="mt-quiz-text"></div>
+      <div class="mt-pool-label">語　群</div>
+      <div class="mt-pool"></div>
+      <div class="mt-btn-row">
+        <button class="mt-judge-btn" onclick="mtJudge('mt28a')">✔ 判定する</button>
+        <button class="mt-hint-btn" onclick="mtHint('mt28a')">👁 手本を見る</button>
+      </div>
+    </div>
+    <div class="mt-ph mt-ph-hint" style="display:none">
+      <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+      <div class="mt-preview">1. 条約の締結権→<span class="mt-ans">内閣</span>。事前に（時宜によっては事後に）<span class="mt-ans">国会の承認</span>が必要。公布→<span class="mt-ans">天皇</span>の国事行為（7条1号）。<br>
+        2. 国会の条約修正権（通説）：厳密な意味では修正権を有せず→内閣に<span class="mt-ans">再交渉</span>を促す政治的意味にとどまる。<br>
+        3. 砂川事件（最大判昭34）：高度の政治性を有する条約は<span class="mt-ans">一見極めて明白に違憲無効でない限り</span>司法審査になじまない（統治行為論）。</div>
+      <button class="mt-resume-btn" onclick="mtResume('mt28a')">◀ 手本を閉じて続きから再開</button>
+    </div>
+    <div class="mt-ph mt-ph-result" style="display:none">
+      <div class="mt-result">
+        <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+        <div class="mt-result-score"></div><div class="mt-result-msg"></div>
+        <button class="mt-retry-btn" onclick="mtRetry('mt28a')">↺ もう一度</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+  <!-- セクション2：法令 -->
+  <div class="section-card">
+    <div class="section-header"><span class="num">2</span> 法令（命令）</div>
+    <div class="section-body">
+      <p>「法令」とは一般に国会が制定する「法律」と行政機関が制定する「命令」をいいます。</p>
+
+      <p style="margin-top:14px;font-weight:bold;color:#1B2A4A;">命令の種類</p>
+      <div class="table-wrap">
+        <table>
+          <tr><th>種類</th><th>制定者</th><th>根拠</th></tr>
+          <tr><td><span class="keyword">政令</span></td><td>内閣</td><td>執行命令（法律の実施）・委任命令（法律の委任）</td></tr>
+          <tr><td>省令</td><td>各省大臣</td><td>国家行政組織法12条</td></tr>
+          <tr><td>規則</td><td>委員会等</td><td>各組織の根拠法</td></tr>
+        </table>
+      </div>
+      <div class="point-box">
+        <div class="pt-title">⚠️ 独立命令は認められない</div>
+        <p>日本国憲法下では、法律とかかわりなく行政権が独自に制定する<span class="keyword">独立命令</span>は認められていません（明治憲法下では独立命令が認められていた）。</p>
+      </div>
+
+      <p style="margin-top:14px;font-weight:bold;color:#1B2A4A;">政令と罰則</p>
+      <p>憲法73条6号但書により、政令には法律の委任がある場合に罰則を設けることができます。委任の程度は厳格に解されており、<span class="keyword">個別的・具体的な委任</span>が必要です（条例よりも厳格）。</p>
+
+<div class="mini-test" id="mt28b">
+  <div class="mini-test-header">✏️ ミニテスト — 法令（命令）・法秩序の体系</div>
+  <div class="mt-body">
+    <div class="mt-ph mt-ph-preview">
+      <div class="mt-preview">1. 法秩序の形式的効力の序列（通説）：<span class="mt-ans">憲法</span>→<span class="mt-ans">条約</span>→<span class="mt-ans">法律</span>→<span class="mt-ans">命令</span>→<span class="mt-ans">条例</span>。<br>
+        2. 日本国憲法下では<span class="mt-ans">独立命令</span>は認められない。政令に罰則を設けるには法律の<span class="mt-ans">個別的・具体的な委任</span>が必要（条例より厳格）。</div>
+      <button class="mt-start-btn" onclick="mtStart('mt28b')">▶ チャレンジ開始</button>
+    </div>
+    <div class="mt-ph mt-ph-quiz" style="display:none">
+      <div class="mt-quiz-text"></div>
+      <div class="mt-pool-label">語　群</div>
+      <div class="mt-pool"></div>
+      <div class="mt-btn-row">
+        <button class="mt-judge-btn" onclick="mtJudge('mt28b')">✔ 判定する</button>
+        <button class="mt-hint-btn" onclick="mtHint('mt28b')">👁 手本を見る</button>
+      </div>
+    </div>
+    <div class="mt-ph mt-ph-hint" style="display:none">
+      <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+      <div class="mt-preview">1. 法秩序の形式的効力の序列（通説）：<span class="mt-ans">憲法</span>→<span class="mt-ans">条約</span>→<span class="mt-ans">法律</span>→<span class="mt-ans">命令</span>→<span class="mt-ans">条例</span>。<br>
+        2. 日本国憲法下では<span class="mt-ans">独立命令</span>は認められない。政令に罰則を設けるには法律の<span class="mt-ans">個別的・具体的な委任</span>が必要（条例より厳格）。</div>
+      <button class="mt-resume-btn" onclick="mtResume('mt28b')">◀ 手本を閉じて続きから再開</button>
+    </div>
+    <div class="mt-ph mt-ph-result" style="display:none">
+      <div class="mt-result">
+        <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+        <div class="mt-result-score"></div><div class="mt-result-msg"></div>
+        <button class="mt-retry-btn" onclick="mtRetry('mt28b')">↺ もう一度</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+  <!-- セクション3：法秩序の体系 -->
+  <div class="section-card">
+    <div class="section-header"><span class="num">3</span> 法秩序の体系（形式的効力）</div>
+    <div class="section-body">
+      <p>日本の法秩序は、上位規範が下位規範に優位する階段構造をなしています。</p>
+      <div class="pyramid">
+        <div class="py-row"><span class="py-item" style="background:#C0392B;">憲法</span></div>
+        <div class="py-row"><span class="py-item" style="background:#8e44ad;">条約</span></div>
+        <div class="py-row"><span class="py-item" style="background:#2980b9;">法律</span></div>
+        <div class="py-row"><span class="py-item" style="background:#16a085;">命令（政令・省令等）</span></div>
+        <div class="py-row"><span class="py-item" style="background:#27ae60;">条例（法律の範囲内）</span></div>
+      </div>
+      <p style="text-align:center;font-size:0.88rem;color:#555;">上位規範が下位規範を拘束します</p>
+    </div>
+  </div>
+
+  <!-- セクション4：まとめ：出題頻出ポイント -->
+  <div class="section-card">
+    <div class="section-header"><span class="num">4</span> 条約に関する論点整理</div>
+    <div class="section-body">
+      <div class="table-wrap">
+        <table>
+          <tr><th>論点</th><th>通説の立場</th></tr>
+          <tr><td>事後に国会承認が得られなかった条約の効力</td><td>諸説あり（国内法的に無効、国際法的に有効とする説など）</td></tr>
+          <tr><td>国会による条約修正</td><td>厳密な意味では修正権を有しない（内閣に再交渉を促す政治的意味のみ）</td></tr>
+          <tr><td>条約と法律の優劣</td><td><span class="keyword">条約が法律に優位</span>する（通説）</td></tr>
+          <tr><td>条約と憲法の優劣</td><td><span class="keyword">憲法が条約に優位</span>する（通説）</td></tr>
+          <tr><td>条約の違憲審査</td><td>審査可能（ただし高度に政治的な条約は統治行為として司法審査になじまない）</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 理解度チェック -->
+  <div class="section-card">
+    <div class="section-header"><span class="num">✓</span> 理解度チェック</div>
+    <div class="section-body">
+<div class="mini-test" id="mt28c">
+  <div class="mini-test-header">✏️ ミニテスト — 理解度チェック 総まとめ</div>
+  <div class="mt-body">
+    <div class="mt-ph mt-ph-preview">
+      <div class="mt-preview">1. 条約の締結：事前に（時宜によっては<span class="mt-ans">事後</span>に）国会の承認が必要。<br>
+        2. 条約の国内法としての効力は<span class="mt-ans">天皇による公布</span>によって発生し、別に国内立法措置は不要。<br>
+        3. 条約と法律が抵触する場合：通説は<span class="mt-ans">条約が優先</span>する。<br>
+        4. 砂川事件で最高裁：日米安保条約が「一見明白に違憲無効である外観を呈する」とは<span class="mt-ans">していない</span>。<br>
+        5. 国会が条約案に修正を加えた場合（通説）：修正された内容で条約が確定する→<span class="mt-ans">誤り</span>（内閣への再交渉要請の政治的意味のみ）。<br>
+        6. 日本国憲法下では独立命令は<span class="mt-ans">認められない</span>。<br>
+        7. 法秩序の序列：憲法→<span class="mt-ans">条約</span>→法律→命令→条例（通説）。</div>
+      <button class="mt-start-btn" onclick="mtStart('mt28c')">▶ チャレンジ開始</button>
+    </div>
+    <div class="mt-ph mt-ph-quiz" style="display:none">
+      <div class="mt-quiz-text"></div>
+      <div class="mt-pool-label">語　群</div>
+      <div class="mt-pool"></div>
+      <div class="mt-btn-row">
+        <button class="mt-judge-btn" onclick="mtJudge('mt28c')">✔ 判定する</button>
+        <button class="mt-hint-btn" onclick="mtHint('mt28c')">👁 手本を見る</button>
+      </div>
+    </div>
+    <div class="mt-ph mt-ph-hint" style="display:none">
+      <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+      <div class="mt-preview">1. 条約の締結：事前に（時宜によっては<span class="mt-ans">事後</span>に）国会の承認が必要。<br>
+        2. 条約の国内法としての効力は<span class="mt-ans">天皇による公布</span>によって発生し、別に国内立法措置は不要。<br>
+        3. 条約と法律が抵触する場合：通説は<span class="mt-ans">条約が優先</span>する。<br>
+        4. 砂川事件で最高裁：日米安保条約が「一見明白に違憲無効である外観を呈する」とは<span class="mt-ans">していない</span>。<br>
+        5. 国会が条約案に修正を加えた場合（通説）：修正された内容で条約が確定する→<span class="mt-ans">誤り</span>（内閣への再交渉要請の政治的意味のみ）。<br>
+        6. 日本国憲法下では独立命令は<span class="mt-ans">認められない</span>。<br>
+        7. 法秩序の序列：憲法→<span class="mt-ans">条約</span>→法律→命令→条例（通説）。</div>
+      <button class="mt-resume-btn" onclick="mtResume('mt28c')">◀ 手本を閉じて続きから再開</button>
+    </div>
+    <div class="mt-ph mt-ph-result" style="display:none">
+      <div class="mt-result">
+        <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+        <div class="mt-result-score"></div><div class="mt-result-msg"></div>
+        <button class="mt-retry-btn" onclick="mtRetry('mt28c')">↺ もう一度</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+  <!-- 完了メッセージ -->
+  <div class="complete-box">
+    <h2>🎉 GAMBA憲法 全28章 完走！</h2>
+    <p>おめでとうございます！　第1章から第28章まで、すべての章を学習しました。</p>
+    <p style="margin-top:8px;">財政・地方自治・条約と法令まで、幅広い憲法の知識を習得しました。</p>
+    <p style="margin-top:8px;">引き続き演習問題で実力を磨いていきましょう！</p>
+  </div>
+
+</div><!-- /container -->
+
+<footer>
+  <p><a href="index.html">← GAMBA憲法 目次へ戻る</a></p>
+  <p style="margin-top:6px;">© GAMBA System / 江原予備校</p>
+</footer>
+
+
+</body>
+</html>

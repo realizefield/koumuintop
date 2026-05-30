@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GAMBA憲法 第23章 内閣</title>
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --crimson: #C0392B;
+    --gold: #D4A017;
+    --light-bg: #F4F6F9;
+    --white: #FFFFFF;
+    --text: #2C3E50;
+    --border: #DDE3ED;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Meiryo', 'メイリオ', 'MS PGothic', sans-serif;
+    background: var(--light-bg);
+    color: var(--text);
+    line-height: 1.8;
+  }
+  .header {
+    background: var(--navy);
+    color: var(--white);
+    padding: 24px 20px 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    background: rgba(192,57,43,0.15);
+    border-radius: 50%;
+  }
+  .chapter-label { font-size: 13px; letter-spacing: 3px; color: #8FA8CC; margin-bottom: 6px; }
+  .chapter-title { font-size: 26px; font-weight: bold; letter-spacing: 2px; margin-bottom: 8px; }
+  .chapter-title span { color: var(--crimson); }
+  .chapter-sub { font-size: 13px; color: #8FA8CC; letter-spacing: 1px; }
+  .progress-bar {
+    background: #2D3F60;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: #8FA8CC;
+  }
+  .progress-track { flex: 1; height: 4px; background: #3D5070; border-radius: 2px; }
+  .progress-fill { height: 100%; width: 82%; background: var(--crimson); border-radius: 2px; }
+  .container { max-width: 800px; margin: 0 auto; padding: 20px 16px 60px; }
+
+  .section { background: var(--white); border-radius: 10px; margin-bottom: 20px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .section-header {
+    background: var(--navy);
+    color: var(--white);
+    padding: 12px 18px;
+    font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-header .num {
+    background: var(--crimson);
+    color: white;
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: bold; flex-shrink: 0;
+  }
+  .section-body { padding: 18px; }
+
+  .article-box {
+    background: #EEF2F8;
+    border-left: 4px solid var(--navy);
+    border-radius: 0 6px 6px 0;
+    padding: 12px 15px;
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+  .article-box .art-num { font-weight: bold; color: var(--navy); font-size: 13px; margin-bottom: 4px; }
+
+  .point-card { border: 2px solid var(--border); border-radius: 8px; margin-bottom: 14px; overflow: hidden; }
+  .point-card-title { background: #EEF2F8; padding: 8px 14px; font-size: 13px; font-weight: bold; color: var(--navy); border-bottom: 1px solid var(--border); }
+  .point-card-body { padding: 12px 14px; font-size: 14px; }
+
+  .kw { color: var(--crimson); font-weight: bold; }
+  .kw-blue { color: var(--navy); font-weight: bold; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 12px 0; }
+  th { background: var(--navy); color: white; padding: 8px 10px; text-align: center; font-weight: bold; }
+  td { padding: 8px 10px; border: 1px solid var(--border); vertical-align: top; line-height: 1.6; }
+  tr:nth-child(even) td { background: #F8FAFC; }
+  .td-label { background: #EEF2F8; font-weight: bold; color: var(--navy); text-align: center; white-space: nowrap; }
+
+  .goryo {
+    background: #FFF8E6;
+    border: 2px solid var(--gold);
+    border-radius: 8px;
+    padding: 12px 15px;
+    margin: 12px 0;
+    font-size: 14px;
+  }
+  .goryo-title { font-size: 12px; color: var(--gold); font-weight: bold; margin-bottom: 6px; letter-spacing: 1px; }
+  .goryo-main { font-size: 17px; font-weight: bold; color: #7D5A00; letter-spacing: 1px; margin-bottom: 4px; }
+  .goryo-sub { font-size: 12px; color: #8B6914; }
+
+  .caution {
+    background: #FFF0EE;
+    border-left: 4px solid var(--crimson);
+    border-radius: 0 6px 6px 0;
+    padding: 10px 14px;
+    margin: 10px 0;
+    font-size: 13px;
+  }
+  .caution-title { font-weight: bold; color: var(--crimson); margin-bottom: 4px; }
+
+  .info {
+    background: #EEF2F8;
+    border-left: 4px solid var(--navy);
+    border-radius: 0 6px 6px 0;
+    padding: 10px 14px;
+    margin: 10px 0;
+    font-size: 13px;
+  }
+
+  .summary-box {
+    background: var(--navy);
+    color: white;
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  .summary-box ul { padding-left: 18px; line-height: 2; }
+  .summary-box li::marker { color: var(--crimson); }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+  @media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+  .col-box { background: #F0F4FA; border-radius: 8px; padding: 12px 14px; font-size: 13px; }
+  .col-box-title { font-weight: bold; color: var(--navy); margin-bottom: 6px; font-size: 13px; border-bottom: 2px solid var(--crimson); padding-bottom: 4px; }
+
+  .mini-test { background: #F0F4FA; border: 2px solid var(--navy); border-radius: 10px; margin-top: 18px; overflow: hidden; }
+  .mini-test-header { background: var(--navy); color: white; padding: 8px 14px; font-size: 13px; font-weight: bold; letter-spacing: 1px; display: flex; align-items: center; gap: 6px; }
+  .mt-body { padding: 14px; }
+  .mt-preview { background: #EEF2F8; border-radius: 6px; padding: 12px 14px; margin-bottom: 12px; font-size: 14px; line-height: 2.1; }
+  .mt-ans { display: inline; color: var(--crimson); font-weight: bold; background: #FFF0EE; border-radius: 3px; padding: 1px 5px; }
+  .mt-start-btn { width: 100%; padding: 10px; background: var(--navy); color: white; border: none; border-radius: 6px; font-size: 13px; font-weight: bold; cursor: pointer; font-family: inherit; }
+  .mt-start-btn:hover { background: #2D4070; }
+  .mt-quiz-text { font-size: 14px; line-height: 2.4; margin-bottom: 14px; }
+  .mt-blank { display: inline-flex; align-items: center; justify-content: center; min-width: 68px; height: 28px; border: 2px dashed #AAB8CC; border-radius: 5px; background: #EEF2F8; color: #8FA8CC; font-size: 13px; padding: 0 6px; vertical-align: middle; cursor: pointer; transition: all 0.15s; }
+  .mt-blank.filled { border-style: solid; border-color: var(--navy); background: white; color: var(--navy); font-weight: bold; }
+  .mt-blank.correct { border-color: #27AE60; background: #E8F8F0; color: #27AE60; font-weight: bold; cursor: default; }
+  .mt-blank.wrong { border-color: var(--crimson); background: #FFF0EE; color: var(--crimson); animation: mt-shake 0.3s ease; }
+  @keyframes mt-shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-4px)} 75%{transform:translateX(4px)} }
+  .mt-pool-label { font-size: 11px; color: #6B7E99; letter-spacing: 1px; margin-bottom: 6px; }
+  .mt-pool { display: flex; flex-wrap: wrap; gap: 6px; background: white; border-radius: 6px; padding: 8px; margin-bottom: 12px; min-height: 38px; border: 1px solid var(--border); }
+  .mt-chip { background: white; border: 1.5px solid var(--navy); border-radius: 5px; padding: 4px 10px; font-size: 13px; font-weight: bold; color: var(--navy); cursor: pointer; transition: all 0.12s; user-select: none; -webkit-user-select: none; }
+  .mt-chip:hover { background: #EEF2F8; }
+  .mt-chip.mt-sel { background: var(--navy); color: white; }
+  .mt-chip.mt-used { opacity: 0.3; pointer-events: none; }
+  .mt-btn-row { display: flex; gap: 8px; }
+  .mt-judge-btn { flex: 2; padding: 9px; background: var(--crimson); color: white; border: none; border-radius: 6px; font-size: 13px; font-weight: bold; cursor: pointer; font-family: inherit; }
+  .mt-judge-btn:hover { background: #A93226; }
+  .mt-hint-btn { flex: 1; padding: 9px; background: transparent; color: #6B7E99; border: 1px solid var(--border); border-radius: 6px; font-size: 12px; cursor: pointer; font-family: inherit; }
+  .mt-hint-btn:hover { background: #EEF2F8; }
+  .mt-hint-note { font-size: 12px; color: #8B6914; background: #FFF8E6; border-left: 3px solid var(--gold); padding: 8px 12px; border-radius: 0 5px 5px 0; margin-bottom: 10px; }
+  .mt-resume-btn { width: 100%; padding: 9px; background: var(--navy); color: white; border: none; border-radius: 6px; font-size: 13px; cursor: pointer; font-family: inherit; }
+  .mt-resume-btn:hover { background: #2D4070; }
+  .mt-result { text-align: center; padding: 16px 0 8px; position: relative; overflow: hidden; }
+  .mt-result-score { font-size: 32px; font-weight: bold; color: var(--gold); margin: 6px 0 4px; }
+  .mt-result-msg { font-size: 13px; color: #6B7E99; margin-bottom: 14px; }
+  .mt-retry-btn { padding: 9px 24px; background: var(--navy); color: white; border: none; border-radius: 6px; font-size: 13px; cursor: pointer; font-family: inherit; }
+  .mt-confetti { position: absolute; width: 7px; height: 7px; border-radius: 2px; animation: mt-fall linear forwards; pointer-events: none; }
+  @keyframes mt-fall { 0%{transform:translateY(-10px) rotate(0deg);opacity:1} 100%{transform:translateY(180px) rotate(720deg);opacity:0} }
+  .footer { background: var(--navy); color: #8FA8CC; text-align: center; padding: 16px; font-size: 12px; margin-top: 30px; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="chapter-label">GAMBA 憲法 ▶ 第23章</div>
+  <div class="chapter-title">内 <span>閣</span></div>
+  <div class="chapter-sub">内閣の組織・権能・内閣総理大臣・議院内閣制・衆議院の解散</div>
+</div>
+
+<div class="progress-bar">
+  <span>23/28</span>
+  <div class="progress-track"><div class="progress-fill"></div></div>
+  <span>82%</span>
+</div>
+
+<div class="container">
+
+  <!-- セクション1: 内閣の組織 -->
+  <div class="section">
+    <div class="section-header"><div class="num">1</div>内閣の組織</div>
+    <div class="section-body">
+
+      <div class="article-box">
+        <div class="art-num">憲法66条1項・2項・3項</div>
+        <p><strong>1項</strong> 内閣は、法律の定めるところにより、その首長たる内閣総理大臣及びその他の国務大臣でこれを組織する。<br>
+        <strong>2項</strong> 内閣総理大臣その他の国務大臣は、<strong>文民</strong>でなければならない。<br>
+        <strong>3項</strong> 内閣は、行政権の行使について、<strong>国会に対し連帯して責任</strong>を負ふ。</p>
+      </div>
+
+      <div class="point-card">
+        <div class="point-card-title">内閣の構成</div>
+        <div class="point-card-body">
+          <p style="margin-bottom:10px">内閣は<span class="kw">内閣総理大臣（首長）＋その他の国務大臣</span>で組織される合議体（66条1項）。国務大臣は原則<span class="kw">14人以内</span>（内閣法2条2項、特別に必要な場合は17人まで）。</p>
+          <table>
+            <tr><th>要件</th><th>内容</th><th>注意点</th></tr>
+            <tr>
+              <td class="td-label">文民要件（66条2項）</td>
+              <td>全員が<span class="kw">文民</span>でなければならない<br>（職業軍人の経歴のない者）</td>
+              <td>内閣総理大臣<strong>のみ</strong>ではなく全員</td>
+            </tr>
+            <tr>
+              <td class="td-label">国会議員要件（68条1項）</td>
+              <td>国務大臣の<span class="kw">過半数</span>は国会議員でなければならない</td>
+              <td>衆議院議員に限らない（参議院議員・民間人も可）</td>
+            </tr>
+          </table>
+          <div class="caution">
+            <div class="caution-title">⚠ 国会議員の過半数を下回っても直ちに総辞職不要</div>
+            国会議員である国務大臣が辞職して過半数を割っても、内閣総理大臣が速やかに補充（任命または罷免）すれば足り、直ちに総辞職する必要はない。
+          </div>
+        </div>
+      </div>
+
+      <div class="point-card">
+        <div class="point-card-title">閣議</div>
+        <div class="point-card-body">
+          <p>内閣の意思決定は<span class="kw">閣議</span>による（内閣法4条1項）。閣議の定足数・表決数は憲法・法律に規定なく、慣例上<span class="kw">全会一致制</span>（非公開）。</p>
+          <div class="info">署名・連署（74条）は法律・政令の効力発生要件ではない。欠いても法律・政令の効力は否定されない（執行責任の明確化のための規定）。</div>
+        </div>
+      </div>
+
+      <div class="point-card">
+        <div class="point-card-title">内閣の連帯責任（66条3項）</div>
+        <div class="point-card-body">
+          <p>内閣は行政権の行使について<span class="kw">国会に対し連帯して政治責任</span>を負う。ここで言う「責任」は<span class="kw">政治的責任</span>（法的責任ではない）。</p>
+          <div class="info">連帯責任は個別の国務大臣の<span class="kw">単独責任を否定しない</span>。個別の国務大臣に対する不信任決議（問責決議）も法的効力はないが可能。</div>
+        </div>
+      </div>
+
+      <!-- ミニテスト1 -->
+      <div class="mini-test" id="mt23a">
+        <div class="mini-test-header">✏️ ミニテスト — 内閣の組織</div>
+        <div class="mt-body">
+          <div class="mt-ph mt-ph-preview">
+            <div class="mt-preview">
+              1. 国務大臣は<span class="mt-ans">全員</span>が文民でなければならない（内閣総理大臣のみではない）。<br>
+              2. 国務大臣の<span class="mt-ans">過半数</span>は国会議員（衆参どちらでも可）でなければならない。<br>
+              3. 閣議の決定方法は慣例上<span class="mt-ans">全会一致</span>。法律・政令の署名・連署を欠いても効力は<span class="mt-ans">否定されない</span>。<br>
+              4. 内閣の連帯責任（66条3項）の「責任」とは<span class="mt-ans">政治的責任</span>であり、法的責任ではない。
+            </div>
+            <button class="mt-start-btn" onclick="mtStart('mt23a')">▶ チャレンジ開始</button>
+          </div>
+          <div class="mt-ph mt-ph-quiz" style="display:none">
+            <div class="mt-quiz-text"></div>
+            <div class="mt-pool-label">語　群</div>
+            <div class="mt-pool"></div>
+            <div class="mt-btn-row">
+              <button class="mt-judge-btn" onclick="mtJudge('mt23a')">✔ 判定する</button>
+              <button class="mt-hint-btn" onclick="mtHint('mt23a')">👁 手本を見る</button>
+            </div>
+          </div>
+          <div class="mt-ph mt-ph-hint" style="display:none">
+            <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+            <div class="mt-preview">
+              1. 国務大臣は<span class="mt-ans">全員</span>が文民でなければならない（内閣総理大臣のみではない）。<br>
+              2. 国務大臣の<span class="mt-ans">過半数</span>は国会議員（衆参どちらでも可）でなければならない。<br>
+              3. 閣議の決定方法は慣例上<span class="mt-ans">全会一致</span>。法律・政令の署名・連署を欠いても効力は<span class="mt-ans">否定されない</span>。<br>
+              4. 内閣の連帯責任（66条3項）の「責任」とは<span class="mt-ans">政治的責任</span>であり、法的責任ではない。
+            </div>
+            <button class="mt-resume-btn" onclick="mtResume('mt23a')">◀ 手本を閉じて続きから再開</button>
+          </div>
+          <div class="mt-ph mt-ph-result" style="display:none">
+            <div class="mt-result">
+              <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+              <div class="mt-result-score"></div>
+              <div class="mt-result-msg"></div>
+              <button class="mt-retry-btn" onclick="mtRetry('mt23a')">↺ もう一度</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- セクション2: 内閣総理大臣の権能 -->
+  <div class="section">
+    <div class="section-header"><div class="num">2</div>内閣総理大臣の権能</div>
+    <div class="section-body">
+
+      <div class="point-card">
+        <div class="point-card-title">内閣総理大臣の地位・選出</div>
+        <div class="point-card-body">
+          <p>内閣の<span class="kw">首長</span>（66条1項）。<span class="kw">国会議員</span>の中から<span class="kw">国会の議決</span>で指名され（67条1項）、<span class="kw">天皇が任命</span>する（6条1項）。</p>
+          <div class="info">
+            <strong>明治憲法との比較</strong><br>
+            明治憲法では内閣総理大臣は「同輩中の首席」にすぎず他の国務大臣と同格。日本国憲法では「<span class="kw">首長</span>」として他の国務大臣の上に位置する。
+          </div>
+        </div>
+      </div>
+
+      <div class="point-card">
+        <div class="point-card-title">内閣総理大臣の憲法上の権能</div>
+        <div class="point-card-body">
+          <table>
+            <tr><th>権能</th><th>根拠</th><th>重要ポイント</th></tr>
+            <tr>
+              <td class="td-label">国務大臣の<br>任免権</td>
+              <td>68条</td>
+              <td><span class="kw">閣議決定不要・天皇の認証は必要</span>（7条5号）。内閣総理大臣の専権事項。臨時代理はこの権限を行使できない（通説）。</td>
+            </tr>
+            <tr>
+              <td class="td-label">内閣の<br>代表権</td>
+              <td>72条</td>
+              <td>内閣を代表して①議案を国会に提出、②一般国務・外交関係を国会に報告、③行政各部を指揮監督。「代表して」＝閣議決定を経て行う。</td>
+            </tr>
+            <tr>
+              <td class="td-label">指導・助言の<br>指示権限</td>
+              <td>内閣法6条</td>
+              <td>閣議にかけて決定した方針がなくても、<span class="kw">内閣の明示の意思に反しない限り</span>、行政各部へ指導・助言できる（弱い権限）。閣議決定不要（ロッキード事件・最大判平7・2・22）。</td>
+            </tr>
+            <tr>
+              <td class="td-label">国務大臣の<br>訴追同意権</td>
+              <td>75条</td>
+              <td>国務大臣は在任中、<span class="kw">内閣総理大臣の同意なく訴追されない</span>。ただし<span class="kw">訴追の権利は害されない</span>→<span class="kw">公訴時効は停止</span>する。</td>
+            </tr>
+            <tr>
+              <td class="td-label">署名・連署権</td>
+              <td>74条</td>
+              <td>法律・政令には主任国務大臣が署名し、内閣総理大臣が連署。<span class="kw">欠いても効力に影響なし</span>。</td>
+            </tr>
+            <tr>
+              <td class="td-label">議院出席権<br>・出席義務</td>
+              <td>63条</td>
+              <td>いつでも議案について発言するために議院に出席できる（権利）。答弁・説明のために出席を求められたときは出席しなければならない（義務）。</td>
+            </tr>
+          </table>
+
+          <div class="caution">
+            <div class="caution-title">⚠ 指揮監督権（強）vs 指示権限（弱）の違い</div>
+            <strong>指揮監督権（72条）</strong>：閣議決定を経て行使する強い権限。<br>
+            <strong>指導・助言の指示権限（内閣法6条）</strong>：閣議決定なしで行使できる弱い権限。ただし内閣の明示の意思に反してはならない。
+          </div>
+        </div>
+      </div>
+
+      <!-- ミニテスト2 -->
+      <div class="mini-test" id="mt23b">
+        <div class="mini-test-header">✏️ ミニテスト — 内閣総理大臣の権能</div>
+        <div class="mt-body">
+          <div class="mt-ph mt-ph-preview">
+            <div class="mt-preview">
+              1. 国務大臣の罷免は内閣総理大臣の専権事項で<span class="mt-ans">閣議決定不要</span>。ただし<span class="mt-ans">天皇の認証</span>は必要。<br>
+              2. 内閣総理大臣の指導・助言の指示権限は<span class="mt-ans">閣議決定なし</span>で行使できるが、<span class="mt-ans">内閣の明示の意思に反しない</span>限りという要件がある。<br>
+              3. 国務大臣訴追への同意を内閣総理大臣が拒否した場合、<span class="mt-ans">公訴時効が停止</span>する（訴追の権利は害されないため）。<br>
+              4. 内閣総理大臣の臨時代理は、国務大臣の任免権を行使<span class="mt-ans">できない</span>（通説）。
+            </div>
+            <button class="mt-start-btn" onclick="mtStart('mt23b')">▶ チャレンジ開始</button>
+          </div>
+          <div class="mt-ph mt-ph-quiz" style="display:none">
+            <div class="mt-quiz-text"></div>
+            <div class="mt-pool-label">語　群</div>
+            <div class="mt-pool"></div>
+            <div class="mt-btn-row">
+              <button class="mt-judge-btn" onclick="mtJudge('mt23b')">✔ 判定する</button>
+              <button class="mt-hint-btn" onclick="mtHint('mt23b')">👁 手本を見る</button>
+            </div>
+          </div>
+          <div class="mt-ph mt-ph-hint" style="display:none">
+            <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+            <div class="mt-preview">
+              1. 国務大臣の罷免は内閣総理大臣の専権事項で<span class="mt-ans">閣議決定不要</span>。ただし<span class="mt-ans">天皇の認証</span>は必要。<br>
+              2. 内閣総理大臣の指導・助言の指示権限は<span class="mt-ans">閣議決定なし</span>で行使できるが、<span class="mt-ans">内閣の明示の意思に反しない</span>限りという要件がある。<br>
+              3. 国務大臣訴追への同意を内閣総理大臣が拒否した場合、<span class="mt-ans">公訴時効が停止</span>する（訴追の権利は害されないため）。<br>
+              4. 内閣総理大臣の臨時代理は、国務大臣の任免権を行使<span class="mt-ans">できない</span>（通説）。
+            </div>
+            <button class="mt-resume-btn" onclick="mtResume('mt23b')">◀ 手本を閉じて続きから再開</button>
+          </div>
+          <div class="mt-ph mt-ph-result" style="display:none">
+            <div class="mt-result">
+              <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+              <div class="mt-result-score"></div>
+              <div class="mt-result-msg"></div>
+              <button class="mt-retry-btn" onclick="mtRetry('mt23b')">↺ もう一度</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- セクション3: 内閣の権能（73条） -->
+  <div class="section">
+    <div class="section-header"><div class="num">3</div>内閣の権能（73条）</div>
+    <div class="section-body">
+
+      <div class="point-card">
+        <div class="point-card-title">73条が定める内閣の主要な権能</div>
+        <div class="point-card-body">
+          <table>
+            <tr><th>号</th><th>権能</th><th>重要ポイント</th></tr>
+            <tr>
+              <td class="td-label">1号</td>
+              <td>法律の誠実な執行と国務の総理</td>
+              <td>違憲と判断する法律でも<span class="kw">執行を拒否できない</span>（違憲審査権は裁判所に属するから）</td>
+            </tr>
+            <tr>
+              <td class="td-label">2号</td>
+              <td>外交関係の処理</td>
+              <td>条約締結以外の外交事務も内閣が処理</td>
+            </tr>
+            <tr>
+              <td class="td-label">3号</td>
+              <td>条約の締結</td>
+              <td>事前に、時宜によっては<span class="kw">事後に</span>国会の承認が必要（必ずしも事前ではない）</td>
+            </tr>
+            <tr>
+              <td class="td-label">4号</td>
+              <td>官吏に関する事務の掌理</td>
+              <td>「官吏」＝国の行政権の活動に従事する公務員（国会・裁判所の職員・地方公務員は含まない）</td>
+            </tr>
+            <tr>
+              <td class="td-label">5号</td>
+              <td>予算の作成と国会への提出</td>
+              <td>予算作成は<span class="kw">内閣の専権</span>（衆院先議）</td>
+            </tr>
+            <tr>
+              <td class="td-label">6号</td>
+              <td>政令の制定</td>
+              <td>「憲法及び法律の規定を実施するため」に制定→<span class="kw">憲法直接実施の政令は不可</span>（通説）。<span class="kw">法律の委任がある場合のみ罰則</span>を設けられる</td>
+            </tr>
+            <tr>
+              <td class="td-label">7号</td>
+              <td>恩赦の決定</td>
+              <td>大赦・特赦・減刑・刑の執行免除・復権の5種。天皇が認証（7条6号）</td>
+            </tr>
+          </table>
+
+          <div class="goryo">
+            <div class="goryo-title">🎵 語呂合わせ：73条の権能</div>
+            <div class="goryo-main">「ほー（法律）・が（外交）・じょ（条約）・か（官吏）・よ（予算）・せ（政令）・お（恩赦）」</div>
+            <div class="goryo-sub">1号法律誠実執行→2号外交処理→3号条約→4号官吏→5号予算→6号政令→7号恩赦</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="point-card">
+        <div class="point-card-title">独立行政委員会の合憲性</div>
+        <div class="point-card-body">
+          <p style="margin-bottom:8px">人事院・公正取引委員会・国家公安委員会など、内閣から独立して職権を行使する行政機関。「<span class="kw">行政権は内閣に属する</span>」（65条）との関係が問題となる。</p>
+          <div class="two-col">
+            <div class="col-box">
+              <div class="col-box-title">A説（合憲・内閣帰属説）</div>
+              内閣が人事権・予算編成権を掌握しているため、「属する」と言って構わないとする説。<br>
+              <span style="color:var(--crimson); font-size:12px">批判：裁判所も同様になってしまう</span>
+            </div>
+            <div class="col-box">
+              <div class="col-box-title">B説（合憲・例外認容説）通説</div>
+              65条は一定の例外を認めており、国会の直接コントロールが及べば合憲。①65条に「すべて」の文言なし ②権力分立の趣旨 ③民主的責任行政の観点から合憲。
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ミニテスト3 -->
+      <div class="mini-test" id="mt23c">
+        <div class="mini-test-header">✏️ ミニテスト — 内閣の権能</div>
+        <div class="mt-body">
+          <div class="mt-ph mt-ph-preview">
+            <div class="mt-preview">
+              1. 内閣は、ある法律が違憲と判断した場合でもその執行を<span class="mt-ans">拒否できない</span>（違憲審査権は裁判所に属するため）。<br>
+              2. 政令に罰則を設けるには<span class="mt-ans">法律の委任</span>が必要。憲法の規定を直接実施する政令は<span class="mt-ans">認められない</span>（通説）。<br>
+              3. 73条4号の「官吏」には、<span class="mt-ans">国会</span>・<span class="mt-ans">裁判所</span>の職員は含まれない（行政権の活動に従事する者）。<br>
+              4. 独立行政委員会の合憲性について通説は<span class="mt-ans">B説（例外認容説）</span>をとる。
+            </div>
+            <button class="mt-start-btn" onclick="mtStart('mt23c')">▶ チャレンジ開始</button>
+          </div>
+          <div class="mt-ph mt-ph-quiz" style="display:none">
+            <div class="mt-quiz-text"></div>
+            <div class="mt-pool-label">語　群</div>
+            <div class="mt-pool"></div>
+            <div class="mt-btn-row">
+              <button class="mt-judge-btn" onclick="mtJudge('mt23c')">✔ 判定する</button>
+              <button class="mt-hint-btn" onclick="mtHint('mt23c')">👁 手本を見る</button>
+            </div>
+          </div>
+          <div class="mt-ph mt-ph-hint" style="display:none">
+            <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+            <div class="mt-preview">
+              1. 内閣は、ある法律が違憲と判断した場合でもその執行を<span class="mt-ans">拒否できない</span>（違憲審査権は裁判所に属するため）。<br>
+              2. 政令に罰則を設けるには<span class="mt-ans">法律の委任</span>が必要。憲法の規定を直接実施する政令は<span class="mt-ans">認められない</span>（通説）。<br>
+              3. 73条4号の「官吏」には、<span class="mt-ans">国会</span>・<span class="mt-ans">裁判所</span>の職員は含まれない（行政権の活動に従事する者）。<br>
+              4. 独立行政委員会の合憲性について通説は<span class="mt-ans">B説（例外認容説）</span>をとる。
+            </div>
+            <button class="mt-resume-btn" onclick="mtResume('mt23c')">◀ 手本を閉じて続きから再開</button>
+          </div>
+          <div class="mt-ph mt-ph-result" style="display:none">
+            <div class="mt-result">
+              <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+              <div class="mt-result-score"></div>
+              <div class="mt-result-msg"></div>
+              <button class="mt-retry-btn" onclick="mtRetry('mt23c')">↺ もう一度</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- セクション4: 議院内閣制・総辞職・衆議院の解散 -->
+  <div class="section">
+    <div class="section-header"><div class="num">4</div>議院内閣制・内閣の総辞職・衆議院の解散</div>
+    <div class="section-body">
+
+      <div class="point-card">
+        <div class="point-card-title">議院内閣制の本質</div>
+        <div class="point-card-body">
+          <div class="two-col">
+            <div class="col-box">
+              <div class="col-box-title">責任本質説（I説）</div>
+              政府が議会の信任に依拠することを本質とする説。解散権は議院内閣制の本質的要素ではない。民主的コントロールを重視。
+            </div>
+            <div class="col-box">
+              <div class="col-box-title">均衡本質説（II説）</div>
+              政府が議会の信任に依拠することに加え、内閣の解散権も本質とする説。議会と内閣の権力均衡を重視。
+            </div>
+          </div>
+          <div class="info" style="margin-top:10px">日本国憲法が議院内閣制を採用していることを示す条文：63条（議院出席権・義務）、66条3項（連帯責任）、67条1項（首相指名）、68条1項ただし書（国務大臣の過半数は国会議員）、69条（不信任と総辞職・解散）、70条（総辞職）、71条（総辞職後の職務執行）</div>
+        </div>
+      </div>
+
+      <div class="point-card">
+        <div class="point-card-title">内閣の総辞職</div>
+        <div class="point-card-body">
+          <p style="margin-bottom:10px">内閣はいつでも<span class="kw">任意に総辞職</span>できる。ただし次の3つは<span class="kw">必ず総辞職</span>しなければならない（義務的総辞職）。</p>
+          <table>
+            <tr><th>場面</th><th>根拠</th><th>注意点</th></tr>
+            <tr>
+              <td class="td-label">①衆院で不信任決議が可決<br>（または信任決議が否決）</td>
+              <td>69条</td>
+              <td>10日以内に衆院を解散しない限り総辞職。解散した場合は総選挙後の特別会で総辞職。</td>
+            </tr>
+            <tr>
+              <td class="td-label">②内閣総理大臣が欠けたとき</td>
+              <td>70条</td>
+              <td>死亡・辞職等により「欠けた」場合。<span class="kw">病気や生死不明</span>は「欠けた」に当たらない（臨時代理が職務を行う）</td>
+            </tr>
+            <tr>
+              <td class="td-label">③衆院議員総選挙後に初めて国会の召集があったとき</td>
+              <td>70条</td>
+              <td>解散総選挙後→特別会での総辞職。任期満了総選挙後→臨時会での総辞職。<span class="kw">参議院議員通常選挙後は総辞職不要</span>。</td>
+            </tr>
+          </table>
+          <div class="info">総辞職した内閣は、<span class="kw">新たな内閣総理大臣が任命されるまで</span>引き続き職務を行う（71条）。</div>
+        </div>
+      </div>
+
+      <div class="point-card">
+        <div class="point-card-title">衆議院の解散</div>
+        <div class="point-card-body">
+          <p style="margin-bottom:10px">衆議院の解散は、衆議院議員全員の任期満了前に議員の資格を失わせる行為。解散により<span class="kw">参議院も同時に閉会</span>する（54条2項）。</p>
+
+          <div class="two-col" style="margin-bottom:12px">
+            <div class="col-box">
+              <div class="col-box-title">69条限定説（少数説）</div>
+              解散は69条（不信任決議）の場合のみに限られる。
+            </div>
+            <div class="col-box">
+              <div class="col-box-title">非限定説（通説・判例）</div>
+              69条以外でも解散できる。国民の意思を問う正当な理由があれば解散可。
+            </div>
+          </div>
+
+          <p style="font-size:14px; margin-bottom:8px"><strong>解散権の実質的主体（内閣説・通説）</strong><br>
+          解散は7条3号の天皇の国事行為だが、天皇には実質的決定権がない。内閣の「助言と承認」によって内閣（×内閣総理大臣単独）が実質的に決定するとするのが通説（<span class="kw">7条3号説</span>）。</p>
+
+          <table>
+            <tr><th>説</th><th>根拠</th><th>批判</th></tr>
+            <tr>
+              <td class="td-label">7条3号説（多数説）</td>
+              <td>天皇の国事行為への内閣の助言と承認に解散の実質的決定権を見出す</td>
+              <td>国事行為は本来形式的行為→そこに実質的決定権を見出すのは矛盾</td>
+            </tr>
+            <tr>
+              <td class="td-label">65条説</td>
+              <td>行政控除説から解散は行政→内閣に帰属</td>
+              <td>循環論法との批判（行政＝行政だから内閣）</td>
+            </tr>
+            <tr>
+              <td class="td-label">制度説</td>
+              <td>議院内閣制の制度から解散権が内閣に帰属</td>
+              <td>議院内閣制を根拠に解散権を導くのは循環論法（制度説＝均衡本質説と親和的）</td>
+            </tr>
+          </table>
+
+          <div class="caution">
+            <div class="caution-title">⚠ 苫米地事件（最大判昭35・6・8）</div>
+            衆議院の解散は<span class="kw">統治行為</span>として裁判所の審査権の外にある。解散の効力を争う訴えは却下。
+          </div>
+        </div>
+      </div>
+
+      <!-- ミニテスト4 -->
+      <div class="mini-test" id="mt23d">
+        <div class="mini-test-header">✏️ ミニテスト — 議院内閣制・総辞職・解散</div>
+        <div class="mt-body">
+          <div class="mt-ph mt-ph-preview">
+            <div class="mt-preview">
+              1. 内閣が必ず総辞職しなければならない3つのケースは①衆院の<span class="mt-ans">不信任決議</span>（解散なき場合）、②内閣総理大臣が<span class="mt-ans">欠けた</span>とき、③<span class="mt-ans">衆院議員総選挙</span>後に初めて国会召集があったとき。<br>
+              2. 内閣総理大臣が病気の場合は「欠けた」に当たら<span class="mt-ans">ない</span>ため総辞職不要。<span class="mt-ans">臨時代理</span>が職務を代行する。<br>
+              3. 衆院解散の通説は<span class="mt-ans">非限定説</span>（69条以外でも解散可）で、実質的主体は<span class="mt-ans">内閣</span>（7条3号説）。<br>
+              4. 苫米地事件で最高裁は衆院の解散を<span class="mt-ans">統治行為</span>として司法審査の対象外とした。
+            </div>
+            <button class="mt-start-btn" onclick="mtStart('mt23d')">▶ チャレンジ開始</button>
+          </div>
+          <div class="mt-ph mt-ph-quiz" style="display:none">
+            <div class="mt-quiz-text"></div>
+            <div class="mt-pool-label">語　群</div>
+            <div class="mt-pool"></div>
+            <div class="mt-btn-row">
+              <button class="mt-judge-btn" onclick="mtJudge('mt23d')">✔ 判定する</button>
+              <button class="mt-hint-btn" onclick="mtHint('mt23d')">👁 手本を見る</button>
+            </div>
+          </div>
+          <div class="mt-ph mt-ph-hint" style="display:none">
+            <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+            <div class="mt-preview">
+              1. 内閣が必ず総辞職しなければならない3つのケースは①衆院の<span class="mt-ans">不信任決議</span>（解散なき場合）、②内閣総理大臣が<span class="mt-ans">欠けた</span>とき、③<span class="mt-ans">衆院議員総選挙</span>後に初めて国会召集があったとき。<br>
+              2. 内閣総理大臣が病気の場合は「欠けた」に当たら<span class="mt-ans">ない</span>ため総辞職不要。<span class="mt-ans">臨時代理</span>が職務を代行する。<br>
+              3. 衆院解散の通説は<span class="mt-ans">非限定説</span>（69条以外でも解散可）で、実質的主体は<span class="mt-ans">内閣</span>（7条3号説）。<br>
+              4. 苫米地事件で最高裁は衆院の解散を<span class="mt-ans">統治行為</span>として司法審査の対象外とした。
+            </div>
+            <button class="mt-resume-btn" onclick="mtResume('mt23d')">◀ 手本を閉じて続きから再開</button>
+          </div>
+          <div class="mt-ph mt-ph-result" style="display:none">
+            <div class="mt-result">
+              <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+              <div class="mt-result-score"></div>
+              <div class="mt-result-msg"></div>
+              <button class="mt-retry-btn" onclick="mtRetry('mt23d')">↺ もう一度</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- まとめ -->
+  <div class="summary-box">
+    <strong style="font-size:15px; letter-spacing:1px">📌 第23章 最重要まとめ</strong>
+    <ul>
+      <li>国務大臣は<strong>全員</strong>文民。過半数は国会議員（衆参どちらも可）</li>
+      <li>国務大臣の罷免は内閣総理大臣の専権（閣議決定不要・天皇の認証は必要）</li>
+      <li>法律を違憲と判断しても内閣は執行を拒否できない</li>
+      <li>政令に罰則を設けるには法律の委任が必要。憲法直接実施の政令は不可（通説）</li>
+      <li>73条4号の「官吏」＝国の行政権活動に従事する公務員（国会・裁判所・地方公務員除く）</li>
+      <li>総辞職が必要な3ケース：①不信任（解散なき場合）②総理が欠けた③衆院総選挙後の国会召集</li>
+      <li>病気・生死不明は「欠けた」に当たらない→総辞職不要</li>
+      <li>参議院議員通常選挙後は総辞職不要</li>
+      <li>衆院解散：通説は非限定説・内閣説（7条3号説）。苫米地事件で統治行為として司法審査対象外</li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="footer">GAMBA憲法 第23章 内閣 ｜ 江原予備校</div>
+
+<script>
+var MT_DATA = {
+  mt23a: {
+    answers: ['全員','過半数','全会一致','否定されない','政治的責任'],
+    decoys:  ['過半数以上','全員以上','多数決','否定される','法的責任'],
+    parts: [
+      {t:'text',v:'1. 国務大臣は'},
+      {t:'blank',i:0},{t:'text',v:'が文民でなければならない（内閣総理大臣のみではない）。'},
+      {t:'br'},
+      {t:'text',v:'2. 国務大臣の'},
+      {t:'blank',i:1},{t:'text',v:'は国会議員（衆参どちらでも可）でなければならない。'},
+      {t:'br'},
+      {t:'text',v:'3. 閣議の決定方法は慣例上'},
+      {t:'blank',i:2},{t:'text',v:'。法律・政令の署名・連署を欠いても効力は'},
+      {t:'blank',i:3},{t:'text',v:'。'},
+      {t:'br'},
+      {t:'text',v:'4. 内閣の連帯責任（66条3項）の「責任」とは'},
+      {t:'blank',i:4},{t:'text',v:'であり、法的責任ではない。'}
+    ]
+  },
+  mt23b: {
+    answers: ['閣議決定不要','天皇の認証','閣議決定なし','内閣の明示の意思に反しない','公訴時効が停止','できない'],
+    decoys:  ['閣議決定必要','国会の承認','閣議決定あり','公訴時効が延長','できる'],
+    parts: [
+      {t:'text',v:'1. 国務大臣の罷免は内閣総理大臣の専権事項で'},
+      {t:'blank',i:0},{t:'text',v:'。ただし'},
+      {t:'blank',i:1},{t:'text',v:'は必要。'},
+      {t:'br'},
+      {t:'text',v:'2. 内閣総理大臣の指導・助言の指示権限は'},
+      {t:'blank',i:2},{t:'text',v:'で行使できるが、'},
+      {t:'blank',i:3},{t:'text',v:'限りという要件がある。'},
+      {t:'br'},
+      {t:'text',v:'3. 国務大臣訴追への同意を内閣総理大臣が拒否した場合、'},
+      {t:'blank',i:4},{t:'text',v:'する（訴追の権利は害されないため）。'},
+      {t:'br'},
+      {t:'text',v:'4. 内閣総理大臣の臨時代理は、国務大臣の任免権を行使'},
+      {t:'blank',i:5},{t:'text',v:'（通説）。'}
+    ]
+  },
+  mt23c: {
+    answers: ['拒否できない','法律の委任','認められない','国会','裁判所','B説（例外認容説）'],
+    decoys:  ['拒否できる','命令の委任','認められる','内閣','A説（全面否定説）'],
+    parts: [
+      {t:'text',v:'1. 内閣は、ある法律が違憲と判断した場合でもその執行を'},
+      {t:'blank',i:0},{t:'text',v:'（違憲審査権は裁判所に属するため）。'},
+      {t:'br'},
+      {t:'text',v:'2. 政令に罰則を設けるには'},
+      {t:'blank',i:1},{t:'text',v:'が必要。憲法の規定を直接実施する政令は'},
+      {t:'blank',i:2},{t:'text',v:'（通説）。'},
+      {t:'br'},
+      {t:'text',v:'3. 73条4号の「官吏」には、'},
+      {t:'blank',i:3},{t:'text',v:'・'},
+      {t:'blank',i:4},{t:'text',v:'の職員は含まれない（行政権の活動に従事する者）。'},
+      {t:'br'},
+      {t:'text',v:'4. 独立行政委員会の合憲性について通説は'},
+      {t:'blank',i:5},{t:'text',v:'をとる。'}
+    ]
+  },
+  mt23d: {
+    answers: ['不信任決議','欠けた','衆院議員総選挙','ない','臨時代理','非限定説','内閣','統治行為'],
+    decoys:  ['信任決議','死亡した','参院議員通常選挙','ある','副総理','限定説','国会'],
+    parts: [
+      {t:'text',v:'1. 内閣が必ず総辞職しなければならない3つのケースは①衆院の'},
+      {t:'blank',i:0},{t:'text',v:'（解散なき場合）、②内閣総理大臣が'},
+      {t:'blank',i:1},{t:'text',v:'とき、③'},
+      {t:'blank',i:2},{t:'text',v:'後に初めて国会召集があったとき。'},
+      {t:'br'},
+      {t:'text',v:'2. 内閣総理大臣が病気の場合は「欠けた」に当たら'},
+      {t:'blank',i:3},{t:'text',v:'ため総辞職不要。'},
+      {t:'blank',i:4},{t:'text',v:'が職務を代行する。'},
+      {t:'br'},
+      {t:'text',v:'3. 衆院解散の通説は'},
+      {t:'blank',i:5},{t:'text',v:'（69条以外でも解散可）で、実質的主体は'},
+      {t:'blank',i:6},{t:'text',v:'（7条3号説）。'},
+      {t:'br'},
+      {t:'text',v:'4. 苫米地事件で最高裁は衆院の解散を'},
+      {t:'blank',i:7},{t:'text',v:'として司法審査の対象外とした。'}
+    ]
+  }
+};
+
+var mtState = {};
+
+function mtShuffle(a){var b=[].concat(a);for(var i=b.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=b[i];b[i]=b[j];b[j]=t;}return b;}
+function mtStart(id){
+  var d=MT_DATA[id];
+  mtState[id]={filled:{},locked:{},sel:null,pool:mtShuffle(d.answers.concat(d.decoys))};
+  mtRenderQuiz(id);
+  mtSetPhase(id,'quiz');
+}
+function mtSetPhase(id,ph){
+  var el=document.getElementById(id);
+  el.querySelectorAll('.mt-ph').forEach(function(p){p.style.display='none';});
+  el.querySelector('.mt-ph-'+ph).style.display='block';
+}
+function mtRenderQuiz(id){
+  var d=MT_DATA[id],s=mtState[id];
+  var qt=document.getElementById(id).querySelector('.mt-quiz-text');
+  qt.innerHTML='';
+  d.parts.forEach(function(p){
+    if(p.t==='text'){
+      qt.appendChild(document.createTextNode(p.v));
+    } else if(p.t==='br'){
+      qt.appendChild(document.createElement('br'));
+    } else if(p.t==='blank'){
+      (function(i){
+        var btn=document.createElement('button');
+        btn.type='button';
+        var cls='mt-blank';
+        if(s.locked[i]===true) cls+=' correct';
+        else if(s.filled[i]) cls+=' filled';
+        btn.className=cls;
+        btn.dataset.bi=i;
+        btn.textContent=s.filled[i]||(s.locked[i]===true?d.answers[i]:'　　　');
+        if(s.locked[i]!==true){
+          btn.addEventListener('click',function(){mtBlankClick(id,i);});
+        }
+        qt.appendChild(btn);
+      })(p.i);
+    }
+  });
+  mtRenderPool(id);
+}
+function mtRenderPool(id){
+  var d=MT_DATA[id],s=mtState[id];
+  var pool=document.getElementById(id).querySelector('.mt-pool');
+  pool.innerHTML='';
+  s.pool.forEach(function(w,idx){
+    var lockedUsed=false;
+    for(var k in s.locked){if(s.locked[k]===true&&s.filled[k]===w){lockedUsed=true;break;}}
+    var placedUsed=false;
+    for(var k in s.filled){if(s.filled[k]===w&&s.locked[k]!==true){placedUsed=true;break;}}
+    var used=lockedUsed||placedUsed;
+    var chip=document.createElement('button');
+    chip.type='button';
+    chip.className='mt-chip'+(s.sel===idx?' mt-sel':'')+(used?' mt-used':'');
+    chip.textContent=w;
+    chip.dataset.ci=idx;
+    (function(ci){
+      chip.addEventListener('click',function(){
+        if(!this.classList.contains('mt-used')) mtChipClick(id,ci);
+      });
+    })(idx);
+    pool.appendChild(chip);
+  });
+}
+function mtChipClick(id,idx){
+  var s=mtState[id];
+  s.sel=(s.sel===idx)?null:idx;
+  mtRenderPool(id);
+}
+function mtBlankClick(id,bi){
+  var s=mtState[id];
+  if(s.locked[bi]===true) return;
+  if(s.sel!==null){
+    var w=s.pool[s.sel];
+    for(var k in s.filled){
+      if(s.filled[k]===w&&s.locked[k]!==true&&String(k)!==String(bi)){
+        s.filled[k]=null; break;
+      }
+    }
+    s.filled[bi]=w;
+    s.sel=null;
+    mtRenderQuiz(id);
+    return;
+  }
+  if(s.filled[bi]){s.filled[bi]=null; mtRenderQuiz(id);}
+}
+function mtJudge(id){
+  var d=MT_DATA[id],s=mtState[id],wrong=[];
+  d.answers.forEach(function(ans,i){
+    if(s.locked[i]===true) return;
+    if(s.filled[i]===ans){s.locked[i]=true;}
+    else if(s.filled[i]){s.locked[i]=false; wrong.push(i);}
+  });
+  mtRenderQuiz(id);
+  wrong.forEach(function(i){
+    var el=document.getElementById(id).querySelector('.mt-blank[data-bi="'+i+'"]');
+    if(el) el.classList.add('wrong');
+    setTimeout(function(){
+      if(mtState[id]){mtState[id].locked[i]=undefined; mtState[id].filled[i]=null; mtRenderQuiz(id);}
+    },800);
+  });
+  var allOk=d.answers.every(function(ans,i){return s.locked[i]===true;});
+  if(allOk) setTimeout(function(){mtShowResult(id,d.answers.length,d.answers.length);},500);
+}
+function mtHint(id){mtSetPhase(id,'hint');}
+function mtResume(id){mtRenderQuiz(id); mtSetPhase(id,'quiz');}
+function mtShowResult(id,sc,tot){
+  var el=document.getElementById(id);
+  el.querySelector('.mt-result-score').textContent=sc+' / '+tot+' 点';
+  var msg=sc===tot?'全問正解！完璧です！':sc>=tot*0.7?'あと少し！もう一度確認しましょう。':'解説をよく読んでから再挑戦！';
+  el.querySelector('.mt-result-msg').textContent=msg;
+  mtSetPhase(id,'result');
+  if(sc===tot) mtConfetti(el.querySelector('.mt-result'));
+}
+function mtConfetti(wrap){
+  var cols=['#C0392B','#D4A017','#27AE60','#1B2A4A','#3498DB'];
+  for(var i=0;i<36;i++){
+    var c=document.createElement('div'); c.className='mt-confetti';
+    c.style.left=Math.random()*100+'%';
+    c.style.background=cols[Math.floor(Math.random()*cols.length)];
+    c.style.animationDuration=(0.7+Math.random()*0.8)+'s';
+    c.style.animationDelay=(Math.random()*0.5)+'s';
+    wrap.appendChild(c);
+    setTimeout(function(x){x.remove();},1800,c);
+  }
+}
+function mtRetry(id){mtStart(id);}
+</script>
+</body>
+</html>

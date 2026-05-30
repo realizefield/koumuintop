@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第27章 地方自治①｜GAMBA憲法</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Meiryo',sans-serif;background:#f0f2f5;color:#1B2A4A;line-height:1.8;}
+  header{background:#1B2A4A;color:#fff;padding:16px 24px;display:flex;align-items:center;gap:16px;}
+  header .chapter-num{background:#C0392B;color:#fff;font-size:1.4rem;font-weight:bold;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+  header h1{font-size:1.3rem;font-weight:bold;}
+  header p{font-size:0.85rem;opacity:0.8;margin-top:2px;}
+  .container{max-width:860px;margin:0 auto;padding:24px 16px;}
+
+  .section-card{background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.08);margin-bottom:24px;overflow:hidden;}
+  .section-header{background:#1B2A4A;color:#fff;padding:12px 20px;font-size:1rem;font-weight:bold;display:flex;align-items:center;gap:10px;}
+  .section-header .num{background:#C0392B;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;font-weight:bold;flex-shrink:0;}
+  .section-body{padding:20px;}
+
+  .article-box{background:#e8f0fb;border-left:4px solid #1B2A4A;border-radius:6px;padding:12px 16px;margin-bottom:16px;}
+  .article-box .art-label{font-size:0.8rem;color:#C0392B;font-weight:bold;margin-bottom:4px;}
+  .article-box p{font-size:0.95rem;line-height:1.7;}
+
+  .keyword{color:#C0392B;font-weight:bold;}
+  .blue-kw{color:#1B2A4A;font-weight:bold;text-decoration:underline;}
+
+  .point-box{background:#fff8e1;border:2px solid #f39c12;border-radius:8px;padding:14px 16px;margin:14px 0;}
+  .point-box .pt-title{font-weight:bold;color:#f39c12;margin-bottom:6px;}
+
+  .table-wrap{overflow-x:auto;margin:14px 0;}
+  table{width:100%;border-collapse:collapse;font-size:0.92rem;}
+  th{background:#1B2A4A;color:#fff;padding:10px 12px;text-align:left;}
+  td{padding:9px 12px;border-bottom:1px solid #e0e0e0;}
+  tr:nth-child(even) td{background:#f5f7fa;}
+
+  .case-box{background:#fff;border:2px solid #C0392B;border-radius:8px;padding:14px 16px;margin:16px 0;}
+  .case-box .case-title{background:#C0392B;color:#fff;padding:4px 12px;border-radius:4px;font-size:0.9rem;font-weight:bold;display:inline-block;margin-bottom:10px;}
+  .case-section{font-size:0.82rem;font-weight:bold;color:#1B2A4A;margin:8px 0 4px;}
+
+  .memo-box{background:#e8f5e9;border-left:4px solid #27ae60;border-radius:6px;padding:10px 14px;margin:12px 0;font-size:0.9rem;}
+  .memo-box .memo-label{font-weight:bold;color:#27ae60;margin-bottom:4px;}
+
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;}
+  .col-box{background:#f5f7fa;border-radius:8px;padding:14px;}
+  .col-box .col-title{font-weight:bold;color:#1B2A4A;border-bottom:2px solid #C0392B;padding-bottom:4px;margin-bottom:8px;}
+
+  /* ○×クイズ */
+  .quiz-section{margin-top:10px;}
+  .quiz-title{font-size:1rem;font-weight:bold;color:#1B2A4A;margin-bottom:14px;padding-bottom:6px;border-bottom:2px solid #C0392B;}
+  .quiz-item{background:#f5f7fa;border-radius:8px;padding:14px 16px;margin-bottom:12px;}
+  .quiz-item .q-text{font-size:0.93rem;margin-bottom:10px;}
+  .quiz-btn-row{display:flex;gap:10px;}
+  .btn-maru{background:#27ae60;color:#fff;border:none;border-radius:6px;padding:8px 22px;font-size:0.9rem;font-weight:bold;cursor:pointer;}
+  .btn-batu{background:#C0392B;color:#fff;border:none;border-radius:6px;padding:8px 22px;font-size:0.9rem;font-weight:bold;cursor:pointer;}
+  .quiz-result{margin-top:10px;padding:8px 12px;border-radius:6px;font-size:0.88rem;display:none;}
+  .result-correct{background:#e8f5e9;border:1px solid #27ae60;color:#1a5e35;}
+  .result-wrong{background:#fdecea;border:1px solid #C0392B;color:#7b241c;}
+  .score-bar{background:#1B2A4A;color:#fff;border-radius:8px;padding:12px 18px;text-align:center;font-weight:bold;font-size:1rem;margin-top:16px;}
+  .score-bar span{color:#f1c40f;font-size:1.3rem;}
+
+  footer{background:#1B2A4A;color:#aaa;text-align:center;padding:16px;font-size:0.8rem;margin-top:32px;}
+  footer a{color:#7fb3f5;text-decoration:none;}
+
+  /* 四択折りたたみミニテスト */
+  .fold-quiz{margin-top:18px;border-radius:8px;overflow:hidden;border:2px solid #1B2A4A;}
+  .fold-btn{width:100%;background:#1B2A4A;color:#fff;border:none;padding:11px 16px;text-align:left;font-family:'Meiryo',sans-serif;font-size:0.9rem;font-weight:bold;cursor:pointer;display:flex;align-items:center;gap:8px;}
+  .fold-btn .arrow{margin-left:auto;transition:transform .2s;}
+  .fold-btn.open .arrow{transform:rotate(180deg);}
+  .fold-body{display:none;padding:16px;}
+  .fold-body.show{display:block;}
+  .fq-item{background:#f5f7fa;border-radius:8px;padding:12px 14px;margin-bottom:12px;}
+  .fq-item:last-child{margin-bottom:0;}
+  .fq-stem{font-size:0.92rem;margin-bottom:10px;line-height:1.7;}
+  .fq-choices{display:flex;flex-direction:column;gap:6px;margin-bottom:8px;}
+  .fq-c{background:#fff;border:2px solid #dde1e8;border-radius:6px;padding:8px 12px;cursor:pointer;font-size:0.88rem;font-family:'Meiryo',sans-serif;text-align:left;transition:.15s;line-height:1.5;}
+  .fq-c:hover{border-color:#1B2A4A;background:#eef1f8;}
+  .fq-c.fc-ok{background:#e8f5e9;border-color:#27ae60;color:#1a5e35;}
+  .fq-c.fc-ng{background:#fdecea;border-color:#C0392B;color:#7b241c;}
+  .fq-c.fc-show{background:#e8f5e9;border-color:#27ae60;}
+  .fq-exp{background:#fff8e1;border-left:4px solid #f39c12;padding:9px 12px;font-size:0.86rem;border-radius:0 6px 6px 0;display:none;line-height:1.7;}
+  .fq-exp.show{display:block;}
+  .fold-score{background:#1B2A4A;color:#fff;border-radius:6px;padding:10px 14px;text-align:center;font-weight:bold;font-size:0.9rem;margin-top:12px;display:none;}
+  .fold-score span{color:#f1c40f;font-size:1.2rem;}
+  /* ===== ミニテスト 新UI ===== */
+  .mini-test { background: #f0f4fa; border: 2px solid #1B2A4A; border-radius: 10px; margin-top: 18px; overflow: hidden; }
+  .mini-test-header { background: #1B2A4A; color: white; padding: 8px 14px; font-size: 13px; font-weight: bold; letter-spacing: 1px; display: flex; align-items: center; gap: 6px; }
+  .mt-body { padding: 14px; }
+  .mt-preview { background: #eef2f8; border-radius: 6px; padding: 12px 14px; margin-bottom: 12px; font-size: 14px; line-height: 2.1; }
+  .mt-ans { display: inline; color: #C0392B; font-weight: bold; background: #fff0ee; border-radius: 3px; padding: 1px 5px; }
+  .mt-start-btn { width: 100%; padding: 10px; background: #1B2A4A; color: white; border: none; border-radius: 6px; font-size: 13px; font-weight: bold; cursor: pointer; font-family: inherit; }
+  .mt-start-btn:hover { background: #2D4070; }
+  .mt-quiz-text { font-size: 14px; line-height: 2.4; margin-bottom: 14px; }
+  .mt-blank { display: inline-flex; align-items: center; justify-content: center; min-width: 68px; height: 28px; border: 2px dashed #AAB8CC; border-radius: 5px; background: #eef2f8; color: #8FA8CC; font-size: 13px; padding: 0 6px; vertical-align: middle; cursor: pointer; transition: all 0.15s; }
+  .mt-blank.filled { border-style: solid; border-color: #1B2A4A; background: white; color: #1B2A4A; font-weight: bold; }
+  .mt-blank.correct { border-color: #27AE60; background: #e8f8f0; color: #27AE60; font-weight: bold; cursor: default; }
+  .mt-blank.wrong { border-color: #C0392B; background: #fff0ee; color: #C0392B; animation: mt-shake 0.3s ease; }
+  @keyframes mt-shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-4px)} 75%{transform:translateX(4px)} }
+  .mt-pool-label { font-size: 11px; color: #6B7E99; letter-spacing: 1px; margin-bottom: 6px; }
+  .mt-pool { display: flex; flex-wrap: wrap; gap: 6px; background: white; border-radius: 6px; padding: 8px; margin-bottom: 12px; min-height: 38px; border: 1px solid #dde3ed; }
+  .mt-chip { background: white; border: 1.5px solid #1B2A4A; border-radius: 5px; padding: 4px 10px; font-size: 13px; font-weight: bold; color: #1B2A4A; cursor: pointer; transition: all 0.12s; user-select: none; -webkit-user-select: none; }
+  .mt-chip:hover { background: #eef2f8; }
+  .mt-chip.mt-sel { background: #1B2A4A; color: white; }
+  .mt-chip.mt-used { opacity: 0.3; pointer-events: none; }
+  .mt-btn-row { display: flex; gap: 8px; }
+  .mt-judge-btn { flex: 2; padding: 9px; background: #C0392B; color: white; border: none; border-radius: 6px; font-size: 13px; font-weight: bold; cursor: pointer; font-family: inherit; }
+  .mt-judge-btn:hover { background: #A93226; }
+  .mt-hint-btn { flex: 1; padding: 9px; background: transparent; color: #6B7E99; border: 1px solid #dde3ed; border-radius: 6px; font-size: 12px; cursor: pointer; font-family: inherit; }
+  .mt-hint-btn:hover { background: #eef2f8; }
+  .mt-hint-note { font-size: 12px; color: #8B6914; background: #fff8e6; border-left: 3px solid #D4A017; padding: 8px 12px; border-radius: 0 5px 5px 0; margin-bottom: 10px; }
+  .mt-resume-btn { width: 100%; padding: 9px; background: #1B2A4A; color: white; border: none; border-radius: 6px; font-size: 13px; cursor: pointer; font-family: inherit; }
+  .mt-resume-btn:hover { background: #2D4070; }
+  .mt-result { text-align: center; padding: 16px 0 8px; position: relative; overflow: hidden; }
+  .mt-result-score { font-size: 32px; font-weight: bold; color: #D4A017; margin: 6px 0 4px; }
+  .mt-result-msg { font-size: 13px; color: #6B7E99; margin-bottom: 14px; }
+  .mt-retry-btn { padding: 9px 24px; background: #1B2A4A; color: white; border: none; border-radius: 6px; font-size: 13px; cursor: pointer; font-family: inherit; }
+  .mt-confetti { position: absolute; width: 7px; height: 7px; border-radius: 2px; animation: mt-fall linear forwards; pointer-events: none; }
+  @keyframes mt-fall { 0%{transform:translateY(-10px) rotate(0deg);opacity:1} 100%{transform:translateY(180px) rotate(720deg);opacity:0} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="chapter-num">27</div>
+  <div>
+    <h1>地方自治①</h1>
+    <p>地方自治の本旨・地方公共団体・条例制定権・法令との関係</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- セクション1：地方自治とは -->
+  <div class="section-card">
+    <div class="section-header"><span class="num">1</span> 地方自治とは？（92条）</div>
+    <div class="section-body">
+      <div class="article-box">
+        <div class="art-label">第92条</div>
+        <p>地方公共団体の組織及び運営に関する事項は、<span class="keyword">地方自治の本旨</span>に基いて、法律でこれを定める。</p>
+      </div>
+      <p>明治憲法には地方自治に関する規定が置かれておらず、すべて法律で定められていました。日本国憲法は第8章という独立した章を設けて、地方自治を制度として厚く保障しています（<span class="keyword">制度的保障</span>）。</p>
+
+      <p style="margin-top:14px;font-weight:bold;color:#1B2A4A;">「地方自治の本旨」とは？</p>
+      <p>92条にいう「地方自治の本旨」は、<span class="keyword">①住民自治</span>と<span class="keyword">②団体自治</span>の2つを指します。</p>
+
+      <div class="two-col">
+        <div class="col-box">
+          <div class="col-title">①住民自治</div>
+          <p>地方自治が住民の意思に基づいて行われるという<span class="keyword">民主主義的要素</span>。国の議会制民主主義を補完する。</p>
+          <p style="margin-top:8px;font-size:0.88rem;color:#555;">具体例：長・議員の直接選挙（93条2項）、地方自治特別法の住民投票（95条）</p>
+        </div>
+        <div class="col-box">
+          <div class="col-title">②団体自治</div>
+          <p>地方自治が国から独立した団体に委ねられ、団体自らの意思と責任の下で行われるという<span class="keyword">自由主義的・地方分権的要素</span>。国との関係では抑制・均衡の役割。</p>
+          <p style="margin-top:8px;font-size:0.88rem;color:#555;">具体例：議会設置義務（93条1項）、条例制定権（94条）</p>
+        </div>
+      </div>
+
+      <div class="point-box">
+        <div class="pt-title">⚠️ 制度的保障説（通説）</div>
+        <p>通説は「承認説」を前提としつつ、「地方自治の本旨」という核心的部分だけは法律によっても侵すことができないという「<span class="keyword">制度的保障説</span>」を採用します（判例・通説）。</p>
+        <p style="margin-top:6px;">地方議会を諮問機関とすることは地方自治の本旨に反し違憲となります。</p>
+      </div>
+
+      <!-- 四択 S1 -->
+<div class="mini-test" id="mt27a">
+  <div class="mini-test-header">✏️ ミニテスト — 地方自治の本旨・制度的保障</div>
+  <div class="mt-body">
+    <div class="mt-ph mt-ph-preview">
+      <div class="mt-preview">1. 「地方自治の本旨」＝<span class="mt-ans">住民自治</span>＋<span class="mt-ans">団体自治</span>の2要素。<br>
+        2. 長・議員の直接選挙・住民投票→住民自治の例。議会設置・条例制定権→団体自治の例。<br>
+        3. 地方自治の法的性格（通説・判例）：<span class="mt-ans">制度的保障説</span>（地方自治の本旨という核心部分は法律でも侵せない）。</div>
+      <button class="mt-start-btn" onclick="mtStart('mt27a')">▶ チャレンジ開始</button>
+    </div>
+    <div class="mt-ph mt-ph-quiz" style="display:none">
+      <div class="mt-quiz-text"></div>
+      <div class="mt-pool-label">語　群</div>
+      <div class="mt-pool"></div>
+      <div class="mt-btn-row">
+        <button class="mt-judge-btn" onclick="mtJudge('mt27a')">✔ 判定する</button>
+        <button class="mt-hint-btn" onclick="mtHint('mt27a')">👁 手本を見る</button>
+      </div>
+    </div>
+    <div class="mt-ph mt-ph-hint" style="display:none">
+      <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+      <div class="mt-preview">1. 「地方自治の本旨」＝<span class="mt-ans">住民自治</span>＋<span class="mt-ans">団体自治</span>の2要素。<br>
+        2. 長・議員の直接選挙・住民投票→住民自治の例。議会設置・条例制定権→団体自治の例。<br>
+        3. 地方自治の法的性格（通説・判例）：<span class="mt-ans">制度的保障説</span>（地方自治の本旨という核心部分は法律でも侵せない）。</div>
+      <button class="mt-resume-btn" onclick="mtResume('mt27a')">◀ 手本を閉じて続きから再開</button>
+    </div>
+    <div class="mt-ph mt-ph-result" style="display:none">
+      <div class="mt-result">
+        <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+        <div class="mt-result-score"></div><div class="mt-result-msg"></div>
+        <button class="mt-retry-btn" onclick="mtRetry('mt27a')">↺ もう一度</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+  <!-- セクション2：地方公共団体の機関 -->
+  <div class="section-card">
+    <div class="section-header"><span class="num">2</span> 憲法上の「地方公共団体」（93条）</div>
+    <div class="section-body">
+      <div class="article-box">
+        <div class="art-label">第93条1項</div>
+        <p><span class="keyword">地方公共団体</span>には、法律の定めるところにより、その議事機関として<span class="keyword">議会</span>を設置する。</p>
+        <div class="art-label" style="margin-top:8px;">第93条2項</div>
+        <p>地方公共団体の<span class="keyword">長</span>、その議会の<span class="keyword">議員</span>及び法律の定めるその他の吏員は、その地方公共団体の<span class="keyword">住民</span>が、<span class="keyword">直接</span>これを<span class="keyword">選挙</span>する。</p>
+      </div>
+
+      <p>93条の「地方公共団体」とは何を指すのでしょうか？　東京都の特別区（区）は93条2項の「地方公共団体」にあたるのでしょうか。</p>
+
+      <div class="case-box">
+        <span class="case-title">判例 特別区区長公選制廃止事件（最大判昭38・3・27）</span>
+        <div class="case-section">事案</div>
+        <p>特別区では昔、区長選任制（区長を議会が知事の同意を得て選任する間接選挙方式）を採用していた時期があった。特別区が93条2項の「地方公共団体」にあたるなら区長は住民の直接選挙で選ばれなければならず、区長選任制は違憲となる。</p>
+        <div class="case-section">判旨</div>
+        <p>憲法93条2項の「地方公共団体」というためには、単に法律で地方公共団体として取り扱われているだけでなく、</p>
+        <p>①事実上住民が経済的文化的に密接な共同生活を営み、<span class="keyword">共同体意識</span>を持っているという<span class="keyword">社会的基盤</span>が存在し、</p>
+        <p>②沿革的に見ても、また現実の行政においても、相当程度の<span class="keyword">自主立法権・自主行政権・自主財政権</span>等地方自治の基本的権能を付与された地域団体であることが必要。</p>
+        <p style="margin-top:8px;">東京都特別区は93条2項の<span class="keyword">地方公共団体にはあたらない</span>ので、区長選任制は違憲ではない。</p>
+      </div>
+
+      <div class="memo-box">
+        <div class="memo-label">📌 特別区の現在</div>
+        なお、現在は昭和49年に公選制が復活しており、特別区の区長は住民の直接選挙で選ばれています。
+      </div>
+      <div class="memo-box">
+        <div class="memo-label">📌 「その他の吏員」の直接選挙</div>
+        93条2項では「その他の吏員」も直接選挙で選ぶ旨規定されていますが、現在のところ具体的に定めた法律はありません。法律で定めれば「その他の吏員」を選挙で選ぶことができることを明示したに過ぎず、必ず選ばなければならないわけではありません。
+      </div>
+
+<div class="mini-test" id="mt27b">
+  <div class="mini-test-header">✏️ ミニテスト — 憲法上の地方公共団体</div>
+  <div class="mt-body">
+    <div class="mt-ph mt-ph-preview">
+      <div class="mt-preview">1. 特別区区長公選制廃止事件（最大判昭38）：93条2項の「地方公共団体」の要件は①<span class="mt-ans">社会的基盤</span>の存在＋②相当程度の<span class="mt-ans">自主立法権・自主行政権・自主財政権</span>等の付与。<br>
+        2. 東京都特別区は93条2項の地方公共団体に<span class="mt-ans">あたらない</span>→区長選任制は合憲。</div>
+      <button class="mt-start-btn" onclick="mtStart('mt27b')">▶ チャレンジ開始</button>
+    </div>
+    <div class="mt-ph mt-ph-quiz" style="display:none">
+      <div class="mt-quiz-text"></div>
+      <div class="mt-pool-label">語　群</div>
+      <div class="mt-pool"></div>
+      <div class="mt-btn-row">
+        <button class="mt-judge-btn" onclick="mtJudge('mt27b')">✔ 判定する</button>
+        <button class="mt-hint-btn" onclick="mtHint('mt27b')">👁 手本を見る</button>
+      </div>
+    </div>
+    <div class="mt-ph mt-ph-hint" style="display:none">
+      <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+      <div class="mt-preview">1. 特別区区長公選制廃止事件（最大判昭38）：93条2項の「地方公共団体」の要件は①<span class="mt-ans">社会的基盤</span>の存在＋②相当程度の<span class="mt-ans">自主立法権・自主行政権・自主財政権</span>等の付与。<br>
+        2. 東京都特別区は93条2項の地方公共団体に<span class="mt-ans">あたらない</span>→区長選任制は合憲。</div>
+      <button class="mt-resume-btn" onclick="mtResume('mt27b')">◀ 手本を閉じて続きから再開</button>
+    </div>
+    <div class="mt-ph mt-ph-result" style="display:none">
+      <div class="mt-result">
+        <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+        <div class="mt-result-score"></div><div class="mt-result-msg"></div>
+        <button class="mt-retry-btn" onclick="mtRetry('mt27b')">↺ もう一度</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+  <!-- セクション3：条例制定権 -->
+  <div class="section-card">
+    <div class="section-header"><span class="num">3</span> 条例制定権（94条）</div>
+    <div class="section-body">
+      <div class="article-box">
+        <div class="art-label">第94条</div>
+        <p>地方公共団体は、その財産を管理し、事務を処理し、及び行政を執行する権能を有し、<span class="keyword">法律の範囲内</span>で条例を制定することができる。</p>
+      </div>
+      <p>94条では、地方の自主立法（自治立法）である<span class="keyword">条例制定権</span>について規定しています。</p>
+      <p>「条例」には、地方公共団体の議会が制定する条例のみならず、長が制定する規則や委員会が制定する規則も含まれます。</p>
+
+      <p style="margin-top:14px;font-weight:bold;color:#1B2A4A;">（1）法律留保事項と条例</p>
+      <div class="table-wrap">
+        <table>
+          <tr><th>論点</th><th>結論</th><th>根拠判例等</th></tr>
+          <tr><td><span class="keyword">条例による財産権制約</span></td><td>許される（法律の委任不要）</td><td>奈良県ため池条例事件（最大判昭38・6・26）</td></tr>
+          <tr><td><span class="keyword">条例による課税</span></td><td>許される（租税条例主義）</td><td>地方税法2条・3条</td></tr>
+          <tr><td><span class="keyword">条例による罰則</span></td><td>許される（法律の委任は必要）</td><td>最大判昭37・5・30</td></tr>
+        </table>
+      </div>
+      <div class="point-box">
+        <div class="pt-title">⚠️ 条例による罰則の委任の程度</div>
+        <p>条例で罰則を定める場合、法律の委任が必要です。ただし、その程度は政令への委任（73条6号但書）の場合とは異なり、<span class="keyword">相当な程度に具体的であり限定されていれば足りる</span>とされています（最大判昭37・5・30）。</p>
+        <p style="margin-top:6px;">条例は、公選の議員をもって組織する地方公共団体の議会の議決を経て制定される<span class="keyword">民主的立法</span>であり、行政府の制定する命令等とは性質を異にし、むしろ法律に類するものであるからです。</p>
+      </div>
+
+      <p style="margin-top:14px;font-weight:bold;color:#1B2A4A;">（2）「法律の範囲内」か否かの判断基準</p>
+      <p>条例は「法律の範囲内」で制定することが求められています（94条）。では、条例が「法律の範囲内」かどうかはどのように判断するのでしょうか。</p>
+
+      <div class="case-box">
+        <span class="case-title">判例 徳島市公安条例事件（最大判昭50・9・10）</span>
+        <div class="case-section">判旨</div>
+        <p>条例が国の法令に違反するかどうかは、<span class="keyword">両者の対象事項と規定文言を対比するのみでなく</span>、それぞれの<span class="keyword">趣旨・目的・内容及び効果</span>を比較し、両者の間に矛盾抵触があるかどうかによって決しなければならない。</p>
+        <p style="margin-top:10px;">具体的には：</p>
+        <p>①ある事項について国の法令中にこれを規律する<span class="keyword">明文の規定がない場合</span>でも、当該法令全体から見て、その事項について規制を施すことなく<span class="keyword">放置すべき趣旨</span>であると解されるときは、条例の規定は国の法令に違反することとなる。</p>
+        <p style="margin-top:6px;">②特定事項について国の法令と条例が並存する場合でも、条例が国の法令とは<span class="keyword">別の目的に基づく規律</span>を意図するものであり、条例を適用することで国の法令の目的と効果を<span class="keyword">何ら阻害することがない</span>ときや、両者が同一の目的に出たものであっても、国の法令が必ずしもその規定によって全国一律に同一内容の規制を施す趣旨ではなく、それぞれの地方の実情に応じて<span class="keyword">別段の規制を施すことを容認する趣旨</span>と解されるときは、国の法令と条例の間には矛盾抵触はなく、条例の規定は国の法令に違反する問題は生じえない。</p>
+      </div>
+
+      <p style="margin-top:14px;font-weight:bold;color:#1B2A4A;">上乗せ条例・横だし条例</p>
+      <div class="table-wrap">
+        <table>
+          <tr><th>種類</th><th>内容</th><th>許否</th></tr>
+          <tr><td><span class="keyword">上乗せ条例</span></td><td>法律の規制よりも<span class="keyword">厳しい基準</span>を定める条例</td><td>許される場合あり（徳島市公安条例事件の基準で判断）</td></tr>
+          <tr><td><span class="keyword">横だし条例</span></td><td>法律の規制対象<span class="keyword">以外</span>について規制を行う条例</td><td>許される場合あり（同上）</td></tr>
+        </table>
+      </div>
+      <p>形式的に文言だけ見ると明らかに違反しているように見えても、実質的に比較して矛盾抵触がなければ許されます。</p>
+
+<div class="mini-test" id="mt27c">
+  <div class="mini-test-header">✏️ ミニテスト — 条例制定権・徳島市公安条例事件</div>
+  <div class="mt-body">
+    <div class="mt-ph mt-ph-preview">
+      <div class="mt-preview">1. 条例による財産権制約→許される（法律の委任<span class="mt-ans">不要</span>）。条例による罰則→法律の委任<span class="mt-ans">必要</span>。<br>
+        2. 罰則委任の程度（最大判昭37）：<span class="mt-ans">相当な程度に具体的であり限定されていれば足りる</span>（政令より緩やか）。<br>
+        3. 徳島市公安条例事件（最大判昭50）：条例が法令に違反するかは<span class="mt-ans">趣旨・目的・内容及び効果</span>を比較して矛盾抵触があるかで決する。</div>
+      <button class="mt-start-btn" onclick="mtStart('mt27c')">▶ チャレンジ開始</button>
+    </div>
+    <div class="mt-ph mt-ph-quiz" style="display:none">
+      <div class="mt-quiz-text"></div>
+      <div class="mt-pool-label">語　群</div>
+      <div class="mt-pool"></div>
+      <div class="mt-btn-row">
+        <button class="mt-judge-btn" onclick="mtJudge('mt27c')">✔ 判定する</button>
+        <button class="mt-hint-btn" onclick="mtHint('mt27c')">👁 手本を見る</button>
+      </div>
+    </div>
+    <div class="mt-ph mt-ph-hint" style="display:none">
+      <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+      <div class="mt-preview">1. 条例による財産権制約→許される（法律の委任<span class="mt-ans">不要</span>）。条例による罰則→法律の委任<span class="mt-ans">必要</span>。<br>
+        2. 罰則委任の程度（最大判昭37）：<span class="mt-ans">相当な程度に具体的であり限定されていれば足りる</span>（政令より緩やか）。<br>
+        3. 徳島市公安条例事件（最大判昭50）：条例が法令に違反するかは<span class="mt-ans">趣旨・目的・内容及び効果</span>を比較して矛盾抵触があるかで決する。</div>
+      <button class="mt-resume-btn" onclick="mtResume('mt27c')">◀ 手本を閉じて続きから再開</button>
+    </div>
+    <div class="mt-ph mt-ph-result" style="display:none">
+      <div class="mt-result">
+        <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+        <div class="mt-result-score"></div><div class="mt-result-msg"></div>
+        <button class="mt-retry-btn" onclick="mtRetry('mt27c')">↺ もう一度</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+  <!-- セクション4：地方自治特別法 -->
+  <div class="section-card">
+    <div class="section-header"><span class="num">4</span> 地方自治特別法（95条）</div>
+    <div class="section-body">
+      <div class="article-box">
+        <div class="art-label">第95条</div>
+        <p><span class="keyword">一の</span>地方公共団体のみに適用される特別法は、法律の定めるところにより、その地方公共団体の<span class="keyword">住民の投票</span>においてその<span class="keyword">過半数の同意</span>を得なければ、国会は、これを制定することができない。</p>
+      </div>
+      <p>特定の地方公共団体だけに適用される地方自治特別法を制定する場合には、通常の法律とは異なり、<span class="keyword">国会の議決の外にその地方公共団体の住民投票で過半数の同意</span>が必要です。</p>
+      <p style="margin-top:8px;">これは<span class="keyword">国会単独立法の原則の例外</span>です。</p>
+      <div class="memo-box">
+        <div class="memo-label">📌 「一の」の意味</div>
+        「一の」とは「1つの地方公共団体」という意味ではなく、「<span class="keyword">特定の</span>」という意味です。実際の例は19件にのぼり、すべて賛成多数で成立しています。
+      </div>
+      <div class="memo-box">
+        <div class="memo-label">📌 住民投票は住民自治の例</div>
+        長・議員の直接選挙（93条2項）や地方自治特別法の住民投票（95条）は、<span class="keyword">住民自治</span>の具体例です（団体自治ではありません）。
+      </div>
+
+<div class="mini-test" id="mt27d">
+  <div class="mini-test-header">✏️ ミニテスト — 地方自治特別法</div>
+  <div class="mt-body">
+    <div class="mt-ph mt-ph-preview">
+      <div class="mt-preview">1. 地方自治特別法は国会の議決＋その地方公共団体の住民投票で<span class="mt-ans">過半数</span>の同意が必要（3分の2ではない）。<br>
+        2. 「一の」地方公共団体とは「<span class="mt-ans">特定の</span>」地方公共団体という意味。<br>
+        3. 地方自治特別法は国会単独立法の原則の<span class="mt-ans">例外</span>。</div>
+      <button class="mt-start-btn" onclick="mtStart('mt27d')">▶ チャレンジ開始</button>
+    </div>
+    <div class="mt-ph mt-ph-quiz" style="display:none">
+      <div class="mt-quiz-text"></div>
+      <div class="mt-pool-label">語　群</div>
+      <div class="mt-pool"></div>
+      <div class="mt-btn-row">
+        <button class="mt-judge-btn" onclick="mtJudge('mt27d')">✔ 判定する</button>
+        <button class="mt-hint-btn" onclick="mtHint('mt27d')">👁 手本を見る</button>
+      </div>
+    </div>
+    <div class="mt-ph mt-ph-hint" style="display:none">
+      <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+      <div class="mt-preview">1. 地方自治特別法は国会の議決＋その地方公共団体の住民投票で<span class="mt-ans">過半数</span>の同意が必要（3分の2ではない）。<br>
+        2. 「一の」地方公共団体とは「<span class="mt-ans">特定の</span>」地方公共団体という意味。<br>
+        3. 地方自治特別法は国会単独立法の原則の<span class="mt-ans">例外</span>。</div>
+      <button class="mt-resume-btn" onclick="mtResume('mt27d')">◀ 手本を閉じて続きから再開</button>
+    </div>
+    <div class="mt-ph mt-ph-result" style="display:none">
+      <div class="mt-result">
+        <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+        <div class="mt-result-score"></div><div class="mt-result-msg"></div>
+        <button class="mt-retry-btn" onclick="mtRetry('mt27d')">↺ もう一度</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+
+  <!-- 理解度チェック -->
+  <div class="section-card">
+    <div class="section-header"><span class="num">✓</span> 理解度チェック</div>
+    <div class="section-body">
+<div class="mini-test" id="mt27e">
+  <div class="mini-test-header">✏️ ミニテスト — 理解度チェック 総まとめ</div>
+  <div class="mt-body">
+    <div class="mt-ph mt-ph-preview">
+      <div class="mt-preview">1. 「地方自治の本旨」とは<span class="mt-ans">住民自治</span>と<span class="mt-ans">団体自治</span>の2つを指す。<br>
+        2. 地方自治制度の法的性格（通説）：<span class="mt-ans">制度的保障</span>説。地方自治の本旨という核心部分は法律によっても侵せない。<br>
+        3. 東京都特別区は93条2項の「地方公共団体」に<span class="mt-ans">あたらない</span>（最大判昭38）。<br>
+        4. 長・議員の直接選挙・住民投票は「住民自治」の例。条例制定権・議会設置は「団体自治」の例。<br>
+        5. 条例による財産権制約：法律の個別委任<span class="mt-ans">不要</span>（最大判昭38）。<br>
+        6. 条例で罰則を定める場合の委任の程度：「<span class="mt-ans">相当な程度に具体的であり限定されていれば足りる</span>」（最大判昭37）。<br>
+        7. 条例が法律に違反するかの基準（最大判昭50）：文言対比のみでなく<span class="mt-ans">趣旨・目的・内容及び効果</span>を比較する。<br>
+        8. 地方自治特別法の住民投票の可決要件：<span class="mt-ans">過半数</span>の同意（95条）。</div>
+      <button class="mt-start-btn" onclick="mtStart('mt27e')">▶ チャレンジ開始</button>
+    </div>
+    <div class="mt-ph mt-ph-quiz" style="display:none">
+      <div class="mt-quiz-text"></div>
+      <div class="mt-pool-label">語　群</div>
+      <div class="mt-pool"></div>
+      <div class="mt-btn-row">
+        <button class="mt-judge-btn" onclick="mtJudge('mt27e')">✔ 判定する</button>
+        <button class="mt-hint-btn" onclick="mtHint('mt27e')">👁 手本を見る</button>
+      </div>
+    </div>
+    <div class="mt-ph mt-ph-hint" style="display:none">
+      <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+      <div class="mt-preview">1. 「地方自治の本旨」とは<span class="mt-ans">住民自治</span>と<span class="mt-ans">団体自治</span>の2つを指す。<br>
+        2. 地方自治制度の法的性格（通説）：<span class="mt-ans">制度的保障</span>説。地方自治の本旨という核心部分は法律によっても侵せない。<br>
+        3. 東京都特別区は93条2項の「地方公共団体」に<span class="mt-ans">あたらない</span>（最大判昭38）。<br>
+        4. 長・議員の直接選挙・住民投票は「住民自治」の例。条例制定権・議会設置は「団体自治」の例。<br>
+        5. 条例による財産権制約：法律の個別委任<span class="mt-ans">不要</span>（最大判昭38）。<br>
+        6. 条例で罰則を定める場合の委任の程度：「<span class="mt-ans">相当な程度に具体的であり限定されていれば足りる</span>」（最大判昭37）。<br>
+        7. 条例が法律に違反するかの基準（最大判昭50）：文言対比のみでなく<span class="mt-ans">趣旨・目的・内容及び効果</span>を比較する。<br>
+        8. 地方自治特別法の住民投票の可決要件：<span class="mt-ans">過半数</span>の同意（95条）。</div>
+      <button class="mt-resume-btn" onclick="mtResume('mt27e')">◀ 手本を閉じて続きから再開</button>
+    </div>
+    <div class="mt-ph mt-ph-result" style="display:none">
+      <div class="mt-result">
+        <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+        <div class="mt-result-score"></div><div class="mt-result-msg"></div>
+        <button class="mt-retry-btn" onclick="mtRetry('mt27e')">↺ もう一度</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p><a href="index.html">← GAMBA憲法 目次へ戻る</a></p>
+  <p style="margin-top:6px;">© GAMBA System / 江原予備校</p>
+</footer>
+
+
+</body>
+</html>
+<script>
+var MT_DATA = {
+  mt27a:{
+    answers:['住民自治','団体自治','制度的保障説'],
+    decoys:['固有権説','承認説','中央集権'],
+    parts:[
+      {t:'text',v:'1. 「地方自治の本旨」＝'},{t:'blank',i:0},{t:'text',v:'＋'},{t:'blank',i:1},{t:'text',v:'の2要素。'},{t:'br'},
+      {t:'text',v:'2. 長・議員の直接選挙・住民投票→住民自治の例。議会設置・条例制定権→団体自治の例。'},{t:'br'},
+      {t:'text',v:'3. 地方自治の法的性格（通説・判例）：'},{t:'blank',i:2},{t:'text',v:'（地方自治の本旨という核心部分は法律でも侵せない）。'}
+    ]
+  },
+  mt27b:{
+    answers:['社会的基盤','自主立法権・自主行政権・自主財政権','あたらない'],
+    decoys:['経済的基盤','行政執行権のみ','あたる'],
+    parts:[
+      {t:'text',v:'1. 93条2項の「地方公共団体」の要件：①'},{t:'blank',i:0},{t:'text',v:'の存在＋②相当程度の'},{t:'blank',i:1},{t:'text',v:'等の付与。'},{t:'br'},
+      {t:'text',v:'2. 東京都特別区は93条2項の地方公共団体に'},{t:'blank',i:2},{t:'text',v:'→区長選任制は合憲。'}
+    ]
+  },
+  mt27c:{
+    answers:['不要','必要','相当な程度に具体的であり限定されていれば足りる','趣旨・目的・内容及び効果'],
+    decoys:['個別具体的な委任が必要','一般的委任で足りる','文言の対比のみで決する'],
+    parts:[
+      {t:'text',v:'1. 条例による財産権制約→法律の委任'},{t:'blank',i:0},{t:'text',v:'。条例による罰則→法律の委任'},{t:'blank',i:1},{t:'text',v:'。'},{t:'br'},
+      {t:'text',v:'2. 罰則委任の程度（最大判昭37）：'},{t:'blank',i:2},{t:'text',v:'（政令より緩やか）。'},{t:'br'},
+      {t:'text',v:'3. 徳島市公安条例事件：条例が法令に違反するかは'},{t:'blank',i:3},{t:'text',v:'を比較して矛盾抵触があるかで決する。'}
+    ]
+  },
+  mt27d:{
+    answers:['過半数','特定の','例外'],
+    decoys:['3分の2以上','1つの','原則'],
+    parts:[
+      {t:'text',v:'1. 地方自治特別法は国会の議決＋住民投票で'},{t:'blank',i:0},{t:'text',v:'の同意が必要（3分の2ではない）。'},{t:'br'},
+      {t:'text',v:'2. 「一の」地方公共団体とは「'},{t:'blank',i:1},{t:'text',v:'の」地方公共団体という意味。'},{t:'br'},
+      {t:'text',v:'3. 地方自治特別法は国会単独立法の原則の'},{t:'blank',i:2},{t:'text',v:'。'}
+    ]
+  },
+  mt27e:{
+    answers:['住民自治','団体自治','制度的保障','あたらない','不要','相当な程度に具体的であり限定されていれば足りる','趣旨・目的・内容及び効果','過半数'],
+    decoys:['固有権','承認説','あたる','個別委任が必要','文言対比のみ','3分の2','団体自治の例'],
+    parts:[
+      {t:'text',v:'1. 「地方自治の本旨」とは'},{t:'blank',i:0},{t:'text',v:'と'},{t:'blank',i:1},{t:'text',v:'の2つを指す。'},{t:'br'},
+      {t:'text',v:'2. 地方自治制度の法的性格（通説）：'},{t:'blank',i:2},{t:'text',v:'説。地方自治の本旨という核心部分は法律によっても侵せない。'},{t:'br'},
+      {t:'text',v:'3. 東京都特別区は93条2項の「地方公共団体」に'},{t:'blank',i:3},{t:'text',v:'（最大判昭38）。'},{t:'br'},
+      {t:'text',v:'4. 長・議員の直接選挙・住民投票は「住民自治」の例。条例制定権・議会設置は「団体自治」の例。'},{t:'br'},
+      {t:'text',v:'5. 条例による財産権制約：法律の個別委任'},{t:'blank',i:4},{t:'text',v:'（最大判昭38）。'},{t:'br'},
+      {t:'text',v:'6. 条例で罰則を定める場合の委任の程度：「'},{t:'blank',i:5},{t:'text',v:'」（最大判昭37）。'},{t:'br'},
+      {t:'text',v:'7. 条例が法律に違反するかの基準（最大判昭50）：'},{t:'blank',i:6},{t:'text',v:'を比較する。'},{t:'br'},
+      {t:'text',v:'8. 地方自治特別法の住民投票の可決要件：'},{t:'blank',i:7},{t:'text',v:'の同意（95条）。'}
+    ]
+  }
+};
+var mtState = {};
+function mtShuffle(a){var b=[].concat(a);for(var i=b.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=b[i];b[i]=b[j];b[j]=t;}return b;}
+function mtStart(id){
+  var d=MT_DATA[id];
+  mtState[id]={filled:{},locked:{},sel:null,pool:mtShuffle(d.answers.concat(d.decoys))};
+  mtRenderQuiz(id);
+  mtSetPhase(id,'quiz');
+}
+function mtSetPhase(id,ph){
+  var el=document.getElementById(id);
+  el.querySelectorAll('.mt-ph').forEach(function(p){p.style.display='none';});
+  el.querySelector('.mt-ph-'+ph).style.display='block';
+}
+function mtRenderQuiz(id){
+  var d=MT_DATA[id],s=mtState[id];
+  var qt=document.getElementById(id).querySelector('.mt-quiz-text');
+  qt.innerHTML='';
+  d.parts.forEach(function(p){
+    if(p.t==='text'){
+      qt.appendChild(document.createTextNode(p.v));
+    } else if(p.t==='br'){
+      qt.appendChild(document.createElement('br'));
+    } else if(p.t==='blank'){
+      (function(i){
+        var btn=document.createElement('button');
+        btn.type='button';
+        var cls='mt-blank';
+        if(s.locked[i]===true) cls+=' correct';
+        else if(s.filled[i]) cls+=' filled';
+        btn.className=cls;
+        btn.dataset.bi=i;
+        btn.textContent=s.filled[i]||(s.locked[i]===true?d.answers[i]:'　　　');
+        if(s.locked[i]!==true){
+          btn.addEventListener('click',function(){mtBlankClick(id,i);});
+        }
+        qt.appendChild(btn);
+      })(p.i);
+    }
+  });
+  mtRenderPool(id);
+}
+function mtRenderPool(id){
+  var d=MT_DATA[id],s=mtState[id];
+  var pool=document.getElementById(id).querySelector('.mt-pool');
+  pool.innerHTML='';
+  s.pool.forEach(function(w,idx){
+    var lockedUsed=false;
+    for(var k in s.locked){if(s.locked[k]===true&&s.filled[k]===w){lockedUsed=true;break;}}
+    var placedUsed=false;
+    for(var k in s.filled){if(s.filled[k]===w&&s.locked[k]!==true){placedUsed=true;break;}}
+    var used=lockedUsed||placedUsed;
+    var chip=document.createElement('button');
+    chip.type='button';
+    chip.className='mt-chip'+(s.sel===idx?' mt-sel':'')+(used?' mt-used':'');
+    chip.textContent=w;
+    chip.dataset.ci=idx;
+    (function(ci){
+      chip.addEventListener('click',function(){
+        if(!this.classList.contains('mt-used')) mtChipClick(id,ci);
+      });
+    })(idx);
+    pool.appendChild(chip);
+  });
+}
+function mtChipClick(id,idx){
+  var s=mtState[id];
+  s.sel=(s.sel===idx)?null:idx;
+  mtRenderPool(id);
+}
+function mtBlankClick(id,bi){
+  var s=mtState[id];
+  if(s.locked[bi]===true) return;
+  if(s.sel!==null){
+    var w=s.pool[s.sel];
+    for(var k in s.filled){
+      if(s.filled[k]===w&&s.locked[k]!==true&&String(k)!==String(bi)){
+        s.filled[k]=null; break;
+      }
+    }
+    s.filled[bi]=w;
+    s.sel=null;
+    mtRenderQuiz(id);
+    return;
+  }
+  if(s.filled[bi]){s.filled[bi]=null; mtRenderQuiz(id);}
+}
+function mtJudge(id){
+  var d=MT_DATA[id],s=mtState[id],wrong=[];
+  d.answers.forEach(function(ans,i){
+    if(s.locked[i]===true) return;
+    if(s.filled[i]===ans){s.locked[i]=true;}
+    else if(s.filled[i]){s.locked[i]=false; wrong.push(i);}
+  });
+  mtRenderQuiz(id);
+  wrong.forEach(function(i){
+    var el=document.getElementById(id).querySelector('.mt-blank[data-bi="'+i+'"]');
+    if(el) el.classList.add('wrong');
+    setTimeout(function(){
+      if(mtState[id]){mtState[id].locked[i]=undefined; mtState[id].filled[i]=null; mtRenderQuiz(id);}
+    },800);
+  });
+  var allOk=d.answers.every(function(ans,i){return s.locked[i]===true;});
+  if(allOk) setTimeout(function(){mtShowResult(id,d.answers.length,d.answers.length);},500);
+}
+function mtHint(id){mtSetPhase(id,'hint');}
+function mtResume(id){mtRenderQuiz(id); mtSetPhase(id,'quiz');}
+function mtShowResult(id,sc,tot){
+  var el=document.getElementById(id);
+  el.querySelector('.mt-result-score').textContent=sc+' / '+tot+' 点';
+  var msg=sc===tot?'全問正解！完璧です！':sc>=tot*0.7?'あと少し！もう一度確認しましょう。':'解説をよく読んでから再挑戦！';
+  el.querySelector('.mt-result-msg').textContent=msg;
+  mtSetPhase(id,'result');
+  if(sc===tot) mtConfetti(el.querySelector('.mt-result'));
+}
+function mtConfetti(wrap){
+  var cols=['#C0392B','#D4A017','#27AE60','#1B2A4A','#3498DB'];
+  for(var i=0;i<36;i++){
+    var c=document.createElement('div'); c.className='mt-confetti';
+    c.style.left=Math.random()*100+'%';
+    c.style.background=cols[Math.floor(Math.random()*cols.length)];
+    c.style.animationDuration=(0.7+Math.random()*0.8)+'s';
+    c.style.animationDelay=(Math.random()*0.5)+'s';
+    wrap.appendChild(c);
+    setTimeout(function(x){x.remove();},1800,c);
+  }
+}
+function mtRetry(id){mtStart(id);}
+</script>ml lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第27章 地方自治①｜GAMBA憲法</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Meiryo',sans-serif;background:#f0f2f5;color:#1B2A4A;line-height:1.8;}
+  header{background:#1B2A4A;color:#fff;padding:16px 24px;display:flex;align-items:center;gap:16px;}
+  header .chapter-num{background:#C0392B;color:#fff;font-size:1.4rem;font-weight:bold;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+  header h1{font-size:1.3rem;font-weight:bold;}
+  header p{font-size:0.85rem;opacity:0.8;margin-top:2px;}
+  .container{max-width:860px;margin:0 auto;padding:24px 16px;}
+
+  .section-card{background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.08);margin-bottom:24px;overflow:hidden;}
+  .section-header{background:#1B2A4A;color:#fff;padding:12px 20px;font-size:1rem;font-weight:bold;display:flex;align-items:center;gap:10px;}
+  .section-header .num{background:#C0392B;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;font-weight:bold;flex-shrink:0;}
+  .section-body{padding:20px;}
+
+  .article-box{background:#e8f0fb;border-left:4px solid #1B2A4A;border-radius:6px;padding:12px 16px;margin-bottom:16px;}
+  .article-box .art-label{font-size:0.8rem;color:#C0392B;font-weight:bold;margin-bottom:4px;}
+  .article-box p{font-size:0.95rem;line-height:1.7;}
+
+  .keyword{color:#C0392B;font-weight:bold;}
+  .blue-kw{color:#1B2A4A;font-weight:bold;text-decoration:underline;}
+
+  .point-box{background:#fff8e1;border:2px solid #f39c12;border-radius:8px;padding:14px 16px;margin:14px 0;}
+  .point-box .pt-title{font-weight:bold;color:#f39c12;margin-bottom:6px;}
+
+  .table-wrap{overflow-x:auto;margin:14px 0;}
+  table{width:100%;border-collapse:collapse;font-size:0.92rem;}
+  th{background:#1B2A4A;color:#fff;padding:10px 12px;text-align:left;}
+  td{padding:9px 12px;border-bottom:1px solid #e0e0e0;}
+  tr:nth-child(even) td{background:#f5f7fa;}
+
+  .case-box{background:#fff;border:2px solid #C0392B;border-radius:8px;padding:14px 16px;margin:16px 0;}
+  .case-box .case-title{background:#C0392B;color:#fff;padding:4px 12px;border-radius:4px;font-size:0.9rem;font-weight:bold;display:inline-block;margin-bottom:10px;}
+  .case-section{font-size:0.82rem;font-weight:bold;color:#1B2A4A;margin:8px 0 4px;}
+
+  .memo-box{background:#e8f5e9;border-left:4px solid #27ae60;border-radius:6px;padding:10px 14px;margin:12px 0;font-size:0.9rem;}
+  .memo-box .memo-label{font-weight:bold;color:#27ae60;margin-bottom:4px;}
+
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0;}
+  .col-box{background:#f5f7fa;border-radius:8px;padding:14px;}
+  .col-box .col-title{font-weight:bold;color:#1B2A4A;border-bottom:2px solid #C0392B;padding-bottom:4px;margin-bottom:8px;}
+
+  /* ○×クイズ */
+  .quiz-section{margin-top:10px;}
+  .quiz-title{font-size:1rem;font-weight:bold;color:#1B2A4A;margin-bottom:14px;padding-bottom:6px;border-bottom:2px solid #C0392B;}
+  .quiz-item{background:#f5f7fa;border-radius:8px;padding:14px 16px;margin-bottom:12px;}
+  .quiz-item .q-text{font-size:0.93rem;margin-bottom:10px;}
+  .quiz-btn-row{display:flex;gap:10px;}
+  .btn-maru{background:#27ae60;color:#fff;border:none;border-radius:6px;padding:8px 22px;font-size:0.9rem;font-weight:bold;cursor:pointer;}
+  .btn-batu{background:#C0392B;color:#fff;border:none;border-radius:6px;padding:8px 22px;font-size:0.9rem;font-weight:bold;cursor:pointer;}
+  .quiz-result{margin-top:10px;padding:8px 12px;border-radius:6px;font-size:0.88rem;display:none;}
+  .result-correct{background:#e8f5e9;border:1px solid #27ae60;color:#1a5e35;}
+  .result-wrong{background:#fdecea;border:1px solid #C0392B;color:#7b241c;}
+  .score-bar{background:#1B2A4A;color:#fff;border-radius:8px;padding:12px 18px;text-align:center;font-weight:bold;font-size:1rem;margin-top:16px;}
+  .score-bar span{color:#f1c40f;font-size:1.3rem;}
+
+  footer{background:#1B2A4A;color:#aaa;text-align:center;padding:16px;font-size:0.8rem;margin-top:32px;}
+  footer a{color:#7fb3f5;text-decoration:none;}
+
+  /* 四択折りたたみミニテスト */
+  .fold-quiz{margin-top:18px;border-radius:8px;overflow:hidden;border:2px solid #1B2A4A;}
+  .fold-btn{width:100%;background:#1B2A4A;color:#fff;border:none;padding:11px 16px;text-align:left;font-family:'Meiryo',sans-serif;font-size:0.9rem;font-weight:bold;cursor:pointer;display:flex;align-items:center;gap:8px;}
+  .fold-btn .arrow{margin-left:auto;transition:transform .2s;}
+  .fold-btn.open .arrow{transform:rotate(180deg);}
+  .fold-body{display:none;padding:16px;}
+  .fold-body.show{display:block;}
+  .fq-item{background:#f5f7fa;border-radius:8px;padding:12px 14px;margin-bottom:12px;}
+  .fq-item:last-child{margin-bottom:0;}
+  .fq-stem{font-size:0.92rem;margin-bottom:10px;line-height:1.7;}
+  .fq-choices{display:flex;flex-direction:column;gap:6px;margin-bottom:8px;}
+  .fq-c{background:#fff;border:2px solid #dde1e8;border-radius:6px;padding:8px 12px;cursor:pointer;font-size:0.88rem;font-family:'Meiryo',sans-serif;text-align:left;transition:.15s;line-height:1.5;}
+  .fq-c:hover{border-color:#1B2A4A;background:#eef1f8;}
+  .fq-c.fc-ok{background:#e8f5e9;border-color:#27ae60;color:#1a5e35;}
+  .fq-c.fc-ng{background:#fdecea;border-color:#C0392B;color:#7b241c;}
+  .fq-c.fc-show{background:#e8f5e9;border-color:#27ae60;}
+  .fq-exp{background:#fff8e1;border-left:4px solid #f39c12;padding:9px 12px;font-size:0.86rem;border-radius:0 6px 6px 0;display:none;line-height:1.7;}
+  .fq-exp.show{display:block;}
+  .fold-score{background:#1B2A4A;color:#fff;border-radius:6px;padding:10px 14px;text-align:center;font-weight:bold;font-size:0.9rem;margin-top:12px;display:none;}
+  .fold-score span{color:#f1c40f;font-size:1.2rem;}
+  /* ===== ミニテスト 新UI ===== */
+  .mini-test { background: #f0f4fa; border: 2px solid #1B2A4A; border-radius: 10px; margin-top: 18px; overflow: hidden; }
+  .mini-test-header { background: #1B2A4A; color: white; padding: 8px 14px; font-size: 13px; font-weight: bold; letter-spacing: 1px; display: flex; align-items: center; gap: 6px; }
+  .mt-body { padding: 14px; }
+  .mt-preview { background: #eef2f8; border-radius: 6px; padding: 12px 14px; margin-bottom: 12px; font-size: 14px; line-height: 2.1; }
+  .mt-ans { display: inline; color: #C0392B; font-weight: bold; background: #fff0ee; border-radius: 3px; padding: 1px 5px; }
+  .mt-start-btn { width: 100%; padding: 10px; background: #1B2A4A; color: white; border: none; border-radius: 6px; font-size: 13px; font-weight: bold; cursor: pointer; font-family: inherit; }
+  .mt-start-btn:hover { background: #2D4070; }
+  .mt-quiz-text { font-size: 14px; line-height: 2.4; margin-bottom: 14px; }
+  .mt-blank { display: inline-flex; align-items: center; justify-content: center; min-width: 68px; height: 28px; border: 2px dashed #AAB8CC; border-radius: 5px; background: #eef2f8; color: #8FA8CC; font-size: 13px; padding: 0 6px; vertical-align: middle; cursor: pointer; transition: all 0.15s; }
+  .mt-blank.filled { border-style: solid; border-color: #1B2A4A; background: white; color: #1B2A4A; font-weight: bold; }
+  .mt-blank.correct { border-color: #27AE60; background: #e8f8f0; color: #27AE60; font-weight: bold; cursor: default; }
+  .mt-blank.wrong { border-color: #C0392B; background: #fff0ee; color: #C0392B; animation: mt-shake 0.3s ease; }
+  @keyframes mt-shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-4px)} 75%{transform:translateX(4px)} }
+  .mt-pool-label { font-size: 11px; color: #6B7E99; letter-spacing: 1px; margin-bottom: 6px; }
+  .mt-pool { display: flex; flex-wrap: wrap; gap: 6px; background: white; border-radius: 6px; padding: 8px; margin-bottom: 12px; min-height: 38px; border: 1px solid #dde3ed; }
+  .mt-chip { background: white; border: 1.5px solid #1B2A4A; border-radius: 5px; padding: 4px 10px; font-size: 13px; font-weight: bold; color: #1B2A4A; cursor: pointer; transition: all 0.12s; user-select: none; -webkit-user-select: none; }
+  .mt-chip:hover { background: #eef2f8; }
+  .mt-chip.mt-sel { background: #1B2A4A; color: white; }
+  .mt-chip.mt-used { opacity: 0.3; pointer-events: none; }
+  .mt-btn-row { display: flex; gap: 8px; }
+  .mt-judge-btn { flex: 2; padding: 9px; background: #C0392B; color: white; border: none; border-radius: 6px; font-size: 13px; font-weight: bold; cursor: pointer; font-family: inherit; }
+  .mt-judge-btn:hover { background: #A93226; }
+  .mt-hint-btn { flex: 1; padding: 9px; background: transparent; color: #6B7E99; border: 1px solid #dde3ed; border-radius: 6px; font-size: 12px; cursor: pointer; font-family: inherit; }
+  .mt-hint-btn:hover { background: #eef2f8; }
+  .mt-hint-note { font-size: 12px; color: #8B6914; background: #fff8e6; border-left: 3px solid #D4A017; padding: 8px 12px; border-radius: 0 5px 5px 0; margin-bottom: 10px; }
+  .mt-resume-btn { width: 100%; padding: 9px; background: #1B2A4A; color: white; border: none; border-radius: 6px; font-size: 13px; cursor: pointer; font-family: inherit; }
+  .mt-resume-btn:hover { background: #2D4070; }
+  .mt-result { text-align: center; padding: 16px 0 8px; position: relative; overflow: hidden; }
+  .mt-result-score { font-size: 32px; font-weight: bold; color: #D4A017; margin: 6px 0 4px; }
+  .mt-result-msg { font-size: 13px; color: #6B7E99; margin-bottom: 14px; }
+  .mt-retry-btn { padding: 9px 24px; background: #1B2A4A; color: white; border: none; border-radius: 6px; font-size: 13px; cursor: pointer; font-family: inherit; }
+  .mt-confetti { position: absolute; width: 7px; height: 7px; border-radius: 2px; animation: mt-fall linear forwards; pointer-events: none; }
+  @keyframes mt-fall { 0%{transform:translateY(-10px) rotate(0deg);opacity:1} 100%{transform:translateY(180px) rotate(720deg);opacity:0} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="chapter-num">27</div>
+  <div>
+    <h1>地方自治①</h1>
+    <p>地方自治の本旨・地方公共団体・条例制定権・法令との関係</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- セクション1：地方自治とは -->
+  <div class="section-card">
+    <div class="section-header"><span class="num">1</span> 地方自治とは？（92条）</div>
+    <div class="section-body">
+      <div class="article-box">
+        <div class="art-label">第92条</div>
+        <p>地方公共団体の組織及び運営に関する事項は、<span class="keyword">地方自治の本旨</span>に基いて、法律でこれを定める。</p>
+      </div>
+      <p>明治憲法には地方自治に関する規定が置かれておらず、すべて法律で定められていました。日本国憲法は第8章という独立した章を設けて、地方自治を制度として厚く保障しています（<span class="keyword">制度的保障</span>）。</p>
+
+      <p style="margin-top:14px;font-weight:bold;color:#1B2A4A;">「地方自治の本旨」とは？</p>
+      <p>92条にいう「地方自治の本旨」は、<span class="keyword">①住民自治</span>と<span class="keyword">②団体自治</span>の2つを指します。</p>
+
+      <div class="two-col">
+        <div class="col-box">
+          <div class="col-title">①住民自治</div>
+          <p>地方自治が住民の意思に基づいて行われるという<span class="keyword">民主主義的要素</span>。国の議会制民主主義を補完する。</p>
+          <p style="margin-top:8px;font-size:0.88rem;color:#555;">具体例：長・議員の直接選挙（93条2項）、地方自治特別法の住民投票（95条）</p>
+        </div>
+        <div class="col-box">
+          <div class="col-title">②団体自治</div>
+          <p>地方自治が国から独立した団体に委ねられ、団体自らの意思と責任の下で行われるという<span class="keyword">自由主義的・地方分権的要素</span>。国との関係では抑制・均衡の役割。</p>
+          <p style="margin-top:8px;font-size:0.88rem;color:#555;">具体例：議会設置義務（93条1項）、条例制定権（94条）</p>
+        </div>
+      </div>
+
+      <div class="point-box">
+        <div class="pt-title">⚠️ 制度的保障説（通説）</div>
+        <p>通説は「承認説」を前提としつつ、「地方自治の本旨」という核心的部分だけは法律によっても侵すことができないという「<span class="keyword">制度的保障説</span>」を採用します（判例・通説）。</p>
+        <p style="margin-top:6px;">地方議会を諮問機関とすることは地方自治の本旨に反し違憲となります。</p>
+      </div>
+
+      <!-- 四択 S1 -->
+<div class="mini-test" id="mt27a">
+  <div class="mini-test-header">✏️ ミニテスト — 地方自治の本旨・制度的保障</div>
+  <div class="mt-body">
+    <div class="mt-ph mt-ph-preview">
+      <div class="mt-preview">1. 「地方自治の本旨」＝<span class="mt-ans">住民自治</span>＋<span class="mt-ans">団体自治</span>の2要素。<br>
+        2. 長・議員の直接選挙・住民投票→住民自治の例。議会設置・条例制定権→団体自治の例。<br>
+        3. 地方自治の法的性格（通説・判例）：<span class="mt-ans">制度的保障説</span>（地方自治の本旨という核心部分は法律でも侵せない）。</div>
+      <button class="mt-start-btn" onclick="mtStart('mt27a')">▶ チャレンジ開始</button>
+    </div>
+    <div class="mt-ph mt-ph-quiz" style="display:none">
+      <div class="mt-quiz-text"></div>
+      <div class="mt-pool-label">語　群</div>
+      <div class="mt-pool"></div>
+      <div class="mt-btn-row">
+        <button class="mt-judge-btn" onclick="mtJudge('mt27a')">✔ 判定する</button>
+        <button class="mt-hint-btn" onclick="mtHint('mt27a')">👁 手本を見る</button>
+      </div>
+    </div>
+    <div class="mt-ph mt-ph-hint" style="display:none">
+      <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+      <div class="mt-preview">1. 「地方自治の本旨」＝<span class="mt-ans">住民自治</span>＋<span class="mt-ans">団体自治</span>の2要素。<br>
+        2. 長・議員の直接選挙・住民投票→住民自治の例。議会設置・条例制定権→団体自治の例。<br>
+        3. 地方自治の法的性格（通説・判例）：<span class="mt-ans">制度的保障説</span>（地方自治の本旨という核心部分は法律でも侵せない）。</div>
+      <button class="mt-resume-btn" onclick="mtResume('mt27a')">◀ 手本を閉じて続きから再開</button>
+    </div>
+    <div class="mt-ph mt-ph-result" style="display:none">
+      <div class="mt-result">
+        <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+        <div class="mt-result-score"></div><div class="mt-result-msg"></div>
+        <button class="mt-retry-btn" onclick="mtRetry('mt27a')">↺ もう一度</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+  <!-- セクション2：地方公共団体の機関 -->
+  <div class="section-card">
+    <div class="section-header"><span class="num">2</span> 憲法上の「地方公共団体」（93条）</div>
+    <div class="section-body">
+      <div class="article-box">
+        <div class="art-label">第93条1項</div>
+        <p><span class="keyword">地方公共団体</span>には、法律の定めるところにより、その議事機関として<span class="keyword">議会</span>を設置する。</p>
+        <div class="art-label" style="margin-top:8px;">第93条2項</div>
+        <p>地方公共団体の<span class="keyword">長</span>、その議会の<span class="keyword">議員</span>及び法律の定めるその他の吏員は、その地方公共団体の<span class="keyword">住民</span>が、<span class="keyword">直接</span>これを<span class="keyword">選挙</span>する。</p>
+      </div>
+
+      <p>93条の「地方公共団体」とは何を指すのでしょうか？　東京都の特別区（区）は93条2項の「地方公共団体」にあたるのでしょうか。</p>
+
+      <div class="case-box">
+        <span class="case-title">判例 特別区区長公選制廃止事件（最大判昭38・3・27）</span>
+        <div class="case-section">事案</div>
+        <p>特別区では昔、区長選任制（区長を議会が知事の同意を得て選任する間接選挙方式）を採用していた時期があった。特別区が93条2項の「地方公共団体」にあたるなら区長は住民の直接選挙で選ばれなければならず、区長選任制は違憲となる。</p>
+        <div class="case-section">判旨</div>
+        <p>憲法93条2項の「地方公共団体」というためには、単に法律で地方公共団体として取り扱われているだけでなく、</p>
+        <p>①事実上住民が経済的文化的に密接な共同生活を営み、<span class="keyword">共同体意識</span>を持っているという<span class="keyword">社会的基盤</span>が存在し、</p>
+        <p>②沿革的に見ても、また現実の行政においても、相当程度の<span class="keyword">自主立法権・自主行政権・自主財政権</span>等地方自治の基本的権能を付与された地域団体であることが必要。</p>
+        <p style="margin-top:8px;">東京都特別区は93条2項の<span class="keyword">地方公共団体にはあたらない</span>ので、区長選任制は違憲ではない。</p>
+      </div>
+
+      <div class="memo-box">
+        <div class="memo-label">📌 特別区の現在</div>
+        なお、現在は昭和49年に公選制が復活しており、特別区の区長は住民の直接選挙で選ばれています。
+      </div>
+      <div class="memo-box">
+        <div class="memo-label">📌 「その他の吏員」の直接選挙</div>
+        93条2項では「その他の吏員」も直接選挙で選ぶ旨規定されていますが、現在のところ具体的に定めた法律はありません。法律で定めれば「その他の吏員」を選挙で選ぶことができることを明示したに過ぎず、必ず選ばなければならないわけではありません。
+      </div>
+
+<div class="mini-test" id="mt27b">
+  <div class="mini-test-header">✏️ ミニテスト — 憲法上の地方公共団体</div>
+  <div class="mt-body">
+    <div class="mt-ph mt-ph-preview">
+      <div class="mt-preview">1. 特別区区長公選制廃止事件（最大判昭38）：93条2項の「地方公共団体」の要件は①<span class="mt-ans">社会的基盤</span>の存在＋②相当程度の<span class="mt-ans">自主立法権・自主行政権・自主財政権</span>等の付与。<br>
+        2. 東京都特別区は93条2項の地方公共団体に<span class="mt-ans">あたらない</span>→区長選任制は合憲。</div>
+      <button class="mt-start-btn" onclick="mtStart('mt27b')">▶ チャレンジ開始</button>
+    </div>
+    <div class="mt-ph mt-ph-quiz" style="display:none">
+      <div class="mt-quiz-text"></div>
+      <div class="mt-pool-label">語　群</div>
+      <div class="mt-pool"></div>
+      <div class="mt-btn-row">
+        <button class="mt-judge-btn" onclick="mtJudge('mt27b')">✔ 判定する</button>
+        <button class="mt-hint-btn" onclick="mtHint('mt27b')">👁 手本を見る</button>
+      </div>
+    </div>
+    <div class="mt-ph mt-ph-hint" style="display:none">
+      <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+      <div class="mt-preview">1. 特別区区長公選制廃止事件（最大判昭38）：93条2項の「地方公共団体」の要件は①<span class="mt-ans">社会的基盤</span>の存在＋②相当程度の<span class="mt-ans">自主立法権・自主行政権・自主財政権</span>等の付与。<br>
+        2. 東京都特別区は93条2項の地方公共団体に<span class="mt-ans">あたらない</span>→区長選任制は合憲。</div>
+      <button class="mt-resume-btn" onclick="mtResume('mt27b')">◀ 手本を閉じて続きから再開</button>
+    </div>
+    <div class="mt-ph mt-ph-result" style="display:none">
+      <div class="mt-result">
+        <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+        <div class="mt-result-score"></div><div class="mt-result-msg"></div>
+        <button class="mt-retry-btn" onclick="mtRetry('mt27b')">↺ もう一度</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+  <!-- セクション3：条例制定権 -->
+  <div class="section-card">
+    <div class="section-header"><span class="num">3</span> 条例制定権（94条）</div>
+    <div class="section-body">
+      <div class="article-box">
+        <div class="art-label">第94条</div>
+        <p>地方公共団体は、その財産を管理し、事務を処理し、及び行政を執行する権能を有し、<span class="keyword">法律の範囲内</span>で条例を制定することができる。</p>
+      </div>
+      <p>94条では、地方の自主立法（自治立法）である<span class="keyword">条例制定権</span>について規定しています。</p>
+      <p>「条例」には、地方公共団体の議会が制定する条例のみならず、長が制定する規則や委員会が制定する規則も含まれます。</p>
+
+      <p style="margin-top:14px;font-weight:bold;color:#1B2A4A;">（1）法律留保事項と条例</p>
+      <div class="table-wrap">
+        <table>
+          <tr><th>論点</th><th>結論</th><th>根拠判例等</th></tr>
+          <tr><td><span class="keyword">条例による財産権制約</span></td><td>許される（法律の委任不要）</td><td>奈良県ため池条例事件（最大判昭38・6・26）</td></tr>
+          <tr><td><span class="keyword">条例による課税</span></td><td>許される（租税条例主義）</td><td>地方税法2条・3条</td></tr>
+          <tr><td><span class="keyword">条例による罰則</span></td><td>許される（法律の委任は必要）</td><td>最大判昭37・5・30</td></tr>
+        </table>
+      </div>
+      <div class="point-box">
+        <div class="pt-title">⚠️ 条例による罰則の委任の程度</div>
+        <p>条例で罰則を定める場合、法律の委任が必要です。ただし、その程度は政令への委任（73条6号但書）の場合とは異なり、<span class="keyword">相当な程度に具体的であり限定されていれば足りる</span>とされています（最大判昭37・5・30）。</p>
+        <p style="margin-top:6px;">条例は、公選の議員をもって組織する地方公共団体の議会の議決を経て制定される<span class="keyword">民主的立法</span>であり、行政府の制定する命令等とは性質を異にし、むしろ法律に類するものであるからです。</p>
+      </div>
+
+      <p style="margin-top:14px;font-weight:bold;color:#1B2A4A;">（2）「法律の範囲内」か否かの判断基準</p>
+      <p>条例は「法律の範囲内」で制定することが求められています（94条）。では、条例が「法律の範囲内」かどうかはどのように判断するのでしょうか。</p>
+
+      <div class="case-box">
+        <span class="case-title">判例 徳島市公安条例事件（最大判昭50・9・10）</span>
+        <div class="case-section">判旨</div>
+        <p>条例が国の法令に違反するかどうかは、<span class="keyword">両者の対象事項と規定文言を対比するのみでなく</span>、それぞれの<span class="keyword">趣旨・目的・内容及び効果</span>を比較し、両者の間に矛盾抵触があるかどうかによって決しなければならない。</p>
+        <p style="margin-top:10px;">具体的には：</p>
+        <p>①ある事項について国の法令中にこれを規律する<span class="keyword">明文の規定がない場合</span>でも、当該法令全体から見て、その事項について規制を施すことなく<span class="keyword">放置すべき趣旨</span>であると解されるときは、条例の規定は国の法令に違反することとなる。</p>
+        <p style="margin-top:6px;">②特定事項について国の法令と条例が並存する場合でも、条例が国の法令とは<span class="keyword">別の目的に基づく規律</span>を意図するものであり、条例を適用することで国の法令の目的と効果を<span class="keyword">何ら阻害することがない</span>ときや、両者が同一の目的に出たものであっても、国の法令が必ずしもその規定によって全国一律に同一内容の規制を施す趣旨ではなく、それぞれの地方の実情に応じて<span class="keyword">別段の規制を施すことを容認する趣旨</span>と解されるときは、国の法令と条例の間には矛盾抵触はなく、条例の規定は国の法令に違反する問題は生じえない。</p>
+      </div>
+
+      <p style="margin-top:14px;font-weight:bold;color:#1B2A4A;">上乗せ条例・横だし条例</p>
+      <div class="table-wrap">
+        <table>
+          <tr><th>種類</th><th>内容</th><th>許否</th></tr>
+          <tr><td><span class="keyword">上乗せ条例</span></td><td>法律の規制よりも<span class="keyword">厳しい基準</span>を定める条例</td><td>許される場合あり（徳島市公安条例事件の基準で判断）</td></tr>
+          <tr><td><span class="keyword">横だし条例</span></td><td>法律の規制対象<span class="keyword">以外</span>について規制を行う条例</td><td>許される場合あり（同上）</td></tr>
+        </table>
+      </div>
+      <p>形式的に文言だけ見ると明らかに違反しているように見えても、実質的に比較して矛盾抵触がなければ許されます。</p>
+
+<div class="mini-test" id="mt27c">
+  <div class="mini-test-header">✏️ ミニテスト — 条例制定権・徳島市公安条例事件</div>
+  <div class="mt-body">
+    <div class="mt-ph mt-ph-preview">
+      <div class="mt-preview">1. 条例による財産権制約→許される（法律の委任<span class="mt-ans">不要</span>）。条例による罰則→法律の委任<span class="mt-ans">必要</span>。<br>
+        2. 罰則委任の程度（最大判昭37）：<span class="mt-ans">相当な程度に具体的であり限定されていれば足りる</span>（政令より緩やか）。<br>
+        3. 徳島市公安条例事件（最大判昭50）：条例が法令に違反するかは<span class="mt-ans">趣旨・目的・内容及び効果</span>を比較して矛盾抵触があるかで決する。</div>
+      <button class="mt-start-btn" onclick="mtStart('mt27c')">▶ チャレンジ開始</button>
+    </div>
+    <div class="mt-ph mt-ph-quiz" style="display:none">
+      <div class="mt-quiz-text"></div>
+      <div class="mt-pool-label">語　群</div>
+      <div class="mt-pool"></div>
+      <div class="mt-btn-row">
+        <button class="mt-judge-btn" onclick="mtJudge('mt27c')">✔ 判定する</button>
+        <button class="mt-hint-btn" onclick="mtHint('mt27c')">👁 手本を見る</button>
+      </div>
+    </div>
+    <div class="mt-ph mt-ph-hint" style="display:none">
+      <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+      <div class="mt-preview">1. 条例による財産権制約→許される（法律の委任<span class="mt-ans">不要</span>）。条例による罰則→法律の委任<span class="mt-ans">必要</span>。<br>
+        2. 罰則委任の程度（最大判昭37）：<span class="mt-ans">相当な程度に具体的であり限定されていれば足りる</span>（政令より緩やか）。<br>
+        3. 徳島市公安条例事件（最大判昭50）：条例が法令に違反するかは<span class="mt-ans">趣旨・目的・内容及び効果</span>を比較して矛盾抵触があるかで決する。</div>
+      <button class="mt-resume-btn" onclick="mtResume('mt27c')">◀ 手本を閉じて続きから再開</button>
+    </div>
+    <div class="mt-ph mt-ph-result" style="display:none">
+      <div class="mt-result">
+        <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+        <div class="mt-result-score"></div><div class="mt-result-msg"></div>
+        <button class="mt-retry-btn" onclick="mtRetry('mt27c')">↺ もう一度</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+  <!-- セクション4：地方自治特別法 -->
+  <div class="section-card">
+    <div class="section-header"><span class="num">4</span> 地方自治特別法（95条）</div>
+    <div class="section-body">
+      <div class="article-box">
+        <div class="art-label">第95条</div>
+        <p><span class="keyword">一の</span>地方公共団体のみに適用される特別法は、法律の定めるところにより、その地方公共団体の<span class="keyword">住民の投票</span>においてその<span class="keyword">過半数の同意</span>を得なければ、国会は、これを制定することができない。</p>
+      </div>
+      <p>特定の地方公共団体だけに適用される地方自治特別法を制定する場合には、通常の法律とは異なり、<span class="keyword">国会の議決の外にその地方公共団体の住民投票で過半数の同意</span>が必要です。</p>
+      <p style="margin-top:8px;">これは<span class="keyword">国会単独立法の原則の例外</span>です。</p>
+      <div class="memo-box">
+        <div class="memo-label">📌 「一の」の意味</div>
+        「一の」とは「1つの地方公共団体」という意味ではなく、「<span class="keyword">特定の</span>」という意味です。実際の例は19件にのぼり、すべて賛成多数で成立しています。
+      </div>
+      <div class="memo-box">
+        <div class="memo-label">📌 住民投票は住民自治の例</div>
+        長・議員の直接選挙（93条2項）や地方自治特別法の住民投票（95条）は、<span class="keyword">住民自治</span>の具体例です（団体自治ではありません）。
+      </div>
+
+<div class="mini-test" id="mt27d">
+  <div class="mini-test-header">✏️ ミニテスト — 地方自治特別法</div>
+  <div class="mt-body">
+    <div class="mt-ph mt-ph-preview">
+      <div class="mt-preview">1. 地方自治特別法は国会の議決＋その地方公共団体の住民投票で<span class="mt-ans">過半数</span>の同意が必要（3分の2ではない）。<br>
+        2. 「一の」地方公共団体とは「<span class="mt-ans">特定の</span>」地方公共団体という意味。<br>
+        3. 地方自治特別法は国会単独立法の原則の<span class="mt-ans">例外</span>。</div>
+      <button class="mt-start-btn" onclick="mtStart('mt27d')">▶ チャレンジ開始</button>
+    </div>
+    <div class="mt-ph mt-ph-quiz" style="display:none">
+      <div class="mt-quiz-text"></div>
+      <div class="mt-pool-label">語　群</div>
+      <div class="mt-pool"></div>
+      <div class="mt-btn-row">
+        <button class="mt-judge-btn" onclick="mtJudge('mt27d')">✔ 判定する</button>
+        <button class="mt-hint-btn" onclick="mtHint('mt27d')">👁 手本を見る</button>
+      </div>
+    </div>
+    <div class="mt-ph mt-ph-hint" style="display:none">
+      <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+      <div class="mt-preview">1. 地方自治特別法は国会の議決＋その地方公共団体の住民投票で<span class="mt-ans">過半数</span>の同意が必要（3分の2ではない）。<br>
+        2. 「一の」地方公共団体とは「<span class="mt-ans">特定の</span>」地方公共団体という意味。<br>
+        3. 地方自治特別法は国会単独立法の原則の<span class="mt-ans">例外</span>。</div>
+      <button class="mt-resume-btn" onclick="mtResume('mt27d')">◀ 手本を閉じて続きから再開</button>
+    </div>
+    <div class="mt-ph mt-ph-result" style="display:none">
+      <div class="mt-result">
+        <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+        <div class="mt-result-score"></div><div class="mt-result-msg"></div>
+        <button class="mt-retry-btn" onclick="mtRetry('mt27d')">↺ もう一度</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+
+  <!-- 理解度チェック -->
+  <div class="section-card">
+    <div class="section-header"><span class="num">✓</span> 理解度チェック</div>
+    <div class="section-body">
+<div class="mini-test" id="mt27e">
+  <div class="mini-test-header">✏️ ミニテスト — 理解度チェック 総まとめ</div>
+  <div class="mt-body">
+    <div class="mt-ph mt-ph-preview">
+      <div class="mt-preview">1. 「地方自治の本旨」とは<span class="mt-ans">住民自治</span>と<span class="mt-ans">団体自治</span>の2つを指す。<br>
+        2. 地方自治制度の法的性格（通説）：<span class="mt-ans">制度的保障</span>説。地方自治の本旨という核心部分は法律によっても侵せない。<br>
+        3. 東京都特別区は93条2項の「地方公共団体」に<span class="mt-ans">あたらない</span>（最大判昭38）。<br>
+        4. 長・議員の直接選挙・住民投票は「住民自治」の例。条例制定権・議会設置は「団体自治」の例。<br>
+        5. 条例による財産権制約：法律の個別委任<span class="mt-ans">不要</span>（最大判昭38）。<br>
+        6. 条例で罰則を定める場合の委任の程度：「<span class="mt-ans">相当な程度に具体的であり限定されていれば足りる</span>」（最大判昭37）。<br>
+        7. 条例が法律に違反するかの基準（最大判昭50）：文言対比のみでなく<span class="mt-ans">趣旨・目的・内容及び効果</span>を比較する。<br>
+        8. 地方自治特別法の住民投票の可決要件：<span class="mt-ans">過半数</span>の同意（95条）。</div>
+      <button class="mt-start-btn" onclick="mtStart('mt27e')">▶ チャレンジ開始</button>
+    </div>
+    <div class="mt-ph mt-ph-quiz" style="display:none">
+      <div class="mt-quiz-text"></div>
+      <div class="mt-pool-label">語　群</div>
+      <div class="mt-pool"></div>
+      <div class="mt-btn-row">
+        <button class="mt-judge-btn" onclick="mtJudge('mt27e')">✔ 判定する</button>
+        <button class="mt-hint-btn" onclick="mtHint('mt27e')">👁 手本を見る</button>
+      </div>
+    </div>
+    <div class="mt-ph mt-ph-hint" style="display:none">
+      <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+      <div class="mt-preview">1. 「地方自治の本旨」とは<span class="mt-ans">住民自治</span>と<span class="mt-ans">団体自治</span>の2つを指す。<br>
+        2. 地方自治制度の法的性格（通説）：<span class="mt-ans">制度的保障</span>説。地方自治の本旨という核心部分は法律によっても侵せない。<br>
+        3. 東京都特別区は93条2項の「地方公共団体」に<span class="mt-ans">あたらない</span>（最大判昭38）。<br>
+        4. 長・議員の直接選挙・住民投票は「住民自治」の例。条例制定権・議会設置は「団体自治」の例。<br>
+        5. 条例による財産権制約：法律の個別委任<span class="mt-ans">不要</span>（最大判昭38）。<br>
+        6. 条例で罰則を定める場合の委任の程度：「<span class="mt-ans">相当な程度に具体的であり限定されていれば足りる</span>」（最大判昭37）。<br>
+        7. 条例が法律に違反するかの基準（最大判昭50）：文言対比のみでなく<span class="mt-ans">趣旨・目的・内容及び効果</span>を比較する。<br>
+        8. 地方自治特別法の住民投票の可決要件：<span class="mt-ans">過半数</span>の同意（95条）。</div>
+      <button class="mt-resume-btn" onclick="mtResume('mt27e')">◀ 手本を閉じて続きから再開</button>
+    </div>
+    <div class="mt-ph mt-ph-result" style="display:none">
+      <div class="mt-result">
+        <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+        <div class="mt-result-score"></div><div class="mt-result-msg"></div>
+        <button class="mt-retry-btn" onclick="mtRetry('mt27e')">↺ もう一度</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p><a href="index.html">← GAMBA憲法 目次へ戻る</a></p>
+  <p style="margin-top:6px;">© GAMBA System / 江原予備校</p>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第25章 司法② | GAMBA憲法</title>
+<style>
+/* GAMBA憲法 共通スタイル（インライン用） */
+:root {
+  --navy: #1B2A4A;
+  --crimson: #C0392B;
+  --gold: #D4A017;
+  --bg: #F4F6F9;
+  --text: #2C3E50;
+  --border: #DDE3ED;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Meiryo','メイリオ','MS PGothic',sans-serif; background:var(--bg); color:var(--text); font-size:14px; line-height:1.8; }
+
+/* ナビ */
+.topnav { background:var(--navy); color:#fff; padding:10px 16px; display:flex; align-items:center; gap:10px; font-size:13px; position:sticky; top:0; z-index:100; }
+.topnav .brand { font-weight:bold; letter-spacing:1px; }
+.topnav .sep { opacity:0.4; }
+.topnav a { color:#8FA8CC; text-decoration:none; }
+.topnav a:hover { color:#fff; }
+
+/* ラップ */
+.wrap { max-width:860px; margin:0 auto; padding:0 16px 60px; }
+
+/* ヒーロー */
+.hero { background:linear-gradient(135deg,var(--navy) 0%,#2c3e6e 100%); color:#fff; padding:24px 20px; margin:0 -16px 24px; }
+.hero .crumb { font-size:11px; opacity:0.6; margin-bottom:6px; letter-spacing:1px; text-transform:uppercase; }
+.hero h1 { font-size:26px; font-weight:bold; display:flex; align-items:center; gap:8px; }
+.hero .stars { font-size:16px; color:var(--gold); }
+.hero .chapter-num { font-size:22px; }
+.hero .sub { font-size:13px; opacity:0.85; margin-top:8px; line-height:1.7; }
+
+/* goals */
+.goals { background:#EBF0FA; border-left:4px solid var(--navy); border-radius:0 8px 8px 0; padding:14px 18px; margin-bottom:20px; }
+.goals h2 { font-size:13px; font-weight:bold; color:var(--navy); margin-bottom:8px; }
+.goals li { font-size:13px; margin-left:16px; margin-bottom:4px; }
+
+/* sec見出し */
+.sec { background:var(--navy); color:#fff; padding:10px 16px; border-radius:6px; font-size:14px; font-weight:bold; margin:24px 0 12px; display:flex; align-items:center; gap:8px; }
+.sec .num { background:var(--crimson); width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:bold; flex-shrink:0; }
+
+/* card */
+.card { background:#fff; border-radius:8px; padding:18px; margin-bottom:16px; box-shadow:0 2px 6px rgba(0,0,0,0.06); }
+
+/* subsec */
+.subsec { font-size:13px; font-weight:bold; color:var(--navy); border-bottom:2px solid var(--border); padding-bottom:4px; margin:14px 0 8px; }
+.card > p { font-size:13px; margin-bottom:8px; }
+
+/* ex-box */
+.ex-box { background:#F0F4FA; border:1px solid #C5D3E8; border-radius:6px; padding:12px 14px; margin:10px 0; }
+.ex-box .label { display:inline-block; background:var(--navy); color:#fff; font-size:11px; padding:2px 8px; border-radius:10px; margin-bottom:6px; }
+.ex-box p { font-size:13px; line-height:1.8; }
+
+/* warning */
+.warning { background:#FFF8F0; border-left:3px solid #E67E22; border-radius:0 6px 6px 0; padding:10px 14px; margin:10px 0; }
+.warning .label { display:inline-block; background:#E67E22; color:#fff; font-size:11px; padding:2px 8px; border-radius:10px; margin-bottom:4px; }
+.warning p { font-size:13px; }
+
+/* pk（ピンクハイライト） */
+.pk { background:#FFF0EE; color:var(--crimson); font-weight:bold; padding:1px 4px; border-radius:3px; }
+
+/* table */
+.tbl { width:100%; border-collapse:collapse; margin:10px 0; font-size:13px; }
+.tbl th { background:var(--navy); color:#fff; padding:8px 10px; text-align:left; }
+.tbl td { padding:8px 10px; border-bottom:1px solid var(--border); vertical-align:top; }
+.tbl tr:nth-child(even) td { background:#F5F7FC; }
+
+  /* ===== ミニテスト 新UI ===== */
+  .mini-test { background: #F0F4FA; border: 2px solid var(--navy); border-radius: 10px; margin-top: 18px; overflow: hidden; }
+  .mini-test-header { background: var(--navy); color: white; padding: 8px 14px; font-size: 13px; font-weight: bold; letter-spacing: 1px; display: flex; align-items: center; gap: 6px; }
+  .mt-body { padding: 14px; }
+  .mt-preview { background: #EEF2F8; border-radius: 6px; padding: 12px 14px; margin-bottom: 12px; font-size: 14px; line-height: 2.1; }
+  .mt-ans { display: inline; color: var(--crimson); font-weight: bold; background: #FFF0EE; border-radius: 3px; padding: 1px 5px; }
+  .mt-start-btn { width: 100%; padding: 10px; background: var(--navy); color: white; border: none; border-radius: 6px; font-size: 13px; font-weight: bold; cursor: pointer; font-family: inherit; }
+  .mt-start-btn:hover { background: #2D4070; }
+  .mt-quiz-text { font-size: 14px; line-height: 2.4; margin-bottom: 14px; }
+  .mt-blank { display: inline-flex; align-items: center; justify-content: center; min-width: 68px; height: 28px; border: 2px dashed #AAB8CC; border-radius: 5px; background: #EEF2F8; color: #8FA8CC; font-size: 13px; padding: 0 6px; vertical-align: middle; cursor: pointer; transition: all 0.15s; }
+  .mt-blank.filled { border-style: solid; border-color: var(--navy); background: white; color: var(--navy); font-weight: bold; }
+  .mt-blank.correct { border-color: #27AE60; background: #E8F8F0; color: #27AE60; font-weight: bold; cursor: default; }
+  .mt-blank.wrong { border-color: var(--crimson); background: #FFF0EE; color: var(--crimson); animation: mt-shake 0.3s ease; }
+  @keyframes mt-shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-4px)} 75%{transform:translateX(4px)} }
+  .mt-pool-label { font-size: 11px; color: #6B7E99; letter-spacing: 1px; margin-bottom: 6px; }
+  .mt-pool { display: flex; flex-wrap: wrap; gap: 6px; background: white; border-radius: 6px; padding: 8px; margin-bottom: 12px; min-height: 38px; border: 1px solid var(--border); }
+  .mt-chip { background: white; border: 1.5px solid var(--navy); border-radius: 5px; padding: 4px 10px; font-size: 13px; font-weight: bold; color: var(--navy); cursor: pointer; transition: all 0.12s; user-select: none; -webkit-user-select: none; }
+  .mt-chip:hover { background: #EEF2F8; }
+  .mt-chip.mt-sel { background: var(--navy); color: white; }
+  .mt-chip.mt-used { opacity: 0.3; pointer-events: none; }
+  .mt-btn-row { display: flex; gap: 8px; }
+  .mt-judge-btn { flex: 2; padding: 9px; background: var(--crimson); color: white; border: none; border-radius: 6px; font-size: 13px; font-weight: bold; cursor: pointer; font-family: inherit; }
+  .mt-judge-btn:hover { background: #A93226; }
+  .mt-hint-btn { flex: 1; padding: 9px; background: transparent; color: #6B7E99; border: 1px solid var(--border); border-radius: 6px; font-size: 12px; cursor: pointer; font-family: inherit; }
+  .mt-hint-btn:hover { background: #EEF2F8; }
+  .mt-hint-note { font-size: 12px; color: #8B6914; background: #FFF8E6; border-left: 3px solid var(--gold); padding: 8px 12px; border-radius: 0 5px 5px 0; margin-bottom: 10px; }
+  .mt-resume-btn { width: 100%; padding: 9px; background: var(--navy); color: white; border: none; border-radius: 6px; font-size: 13px; cursor: pointer; font-family: inherit; }
+  .mt-resume-btn:hover { background: #2D4070; }
+  .mt-result { text-align: center; padding: 16px 0 8px; position: relative; overflow: hidden; }
+  .mt-result-score { font-size: 32px; font-weight: bold; color: var(--gold); margin: 6px 0 4px; }
+  .mt-result-msg { font-size: 13px; color: #6B7E99; margin-bottom: 14px; }
+  .mt-retry-btn { padding: 9px 24px; background: var(--navy); color: white; border: none; border-radius: 6px; font-size: 13px; cursor: pointer; font-family: inherit; }
+  .mt-confetti { position: absolute; width: 7px; height: 7px; border-radius: 2px; animation: mt-fall linear forwards; pointer-events: none; }
+  @keyframes mt-fall { 0%{transform:translateY(-10px) rotate(0deg);opacity:1} 100%{transform:translateY(180px) rotate(720deg);opacity:0} }
+
+/* nav-buttons */
+.nav-buttons { display:flex; justify-content:space-between; margin-top:28px; }
+.btn { display:inline-block; padding:10px 24px; background:var(--crimson); color:#fff; text-decoration:none; border-radius:6px; font-size:13px; font-weight:bold; }
+.btn.outline { background:#fff; color:var(--navy); border:2px solid var(--navy); }
+.btn:hover { opacity:0.85; }
+
+</style>
+</head>
+<body data-page="kenpo_ch25">
+
+<nav class="topnav">
+  <span class="brand">GAMBA 憲法</span>
+  <span class="sep">|</span>
+  <a href="index.html">目次</a>
+  <a href="kenpo_ch25_q.html">演習へ</a>
+  <a href="review.html">復習リスト</a>
+</nav>
+
+<div class="wrap">
+<header class="hero">
+  <div class="crumb">第25章 / 統治機構⑦</div>
+  <h1>司法 <span class="chapter-num">②</span><span class="stars">★★☆</span></h1>
+  <p class="sub">裁判所の組織・権能は条文知識が中心です。<span class="pk">最高裁判所長官と判事の選任方法の違い</span>・<span class="pk">国民審査の性質と時期</span>・<span class="pk">裁判の公開（絶対公開事由3つ）</span>・<span class="pk">違憲審査制（付随的審査制・個別的効力説）</span>をしっかり覚えましょう。</p>
+</header>
+<main>
+
+<section class="goals">
+  <h2>この単元で押さえる5つのポイント</h2>
+  <ol>
+    <li>長官：<span class="pk">内閣が指名・天皇が任命</span>　判事：<span class="pk">内閣が任命・天皇が認証</span>　下級裁：<span class="pk">最高裁名簿・内閣が任命</span></li>
+    <li>最高裁判所裁判官は<span class="pk">任期なし</span>（定年70歳）。下級裁判所裁判官は<span class="pk">任期10年</span></li>
+    <li>絶対公開事由3つ：①政治犯罪　②出版に関する犯罪　③憲法第3章の人権が問題の対審</li>
+    <li>国民審査は<span class="pk">最高裁判所裁判官だけ</span>。<span class="pk">衆議院議員総選挙</span>の際に実施</li>
+    <li>違憲審査制：<span class="pk">付随的審査制（通説・判例）</span>・<span class="pk">個別的効力説（通説）</span></li>
+  </ol>
+</section>
+
+<!-- ================= SECTION 1 ================= -->
+<div class="sec"><span class="num">1</span>裁判所の組織・選任</div>
+
+<div class="card">
+<div class="warning">
+<span class="label">⚠️ 家庭裁判所は特別裁判所か？</span>
+<p>家庭裁判所は<span class="pk">特別裁判所ではない</span>（最大判昭31）。通常裁判所の系列に属し上訴できる。弾劾裁判所（64条）は特別裁判所だが憲法自身が認める例外。</p>
+</div>
+
+<h3 class="subsec">最高裁判所の構成・選任方法</h3>
+<table class="tbl">
+<thead><tr><th>役職</th><th>選任</th><th>任期</th><th>定年</th><th>国民審査</th></tr></thead>
+<tbody>
+<tr><td><strong>最高裁判所長官</strong></td><td><strong>内閣が指名</strong>・<strong>天皇が任命</strong></td><td>なし</td><td>70歳</td><td>あり</td></tr>
+<tr><td><strong>最高裁判所判事</strong>（14名）</td><td><strong>内閣が任命</strong>・<strong>天皇が認証</strong></td><td>なし</td><td>70歳</td><td>あり</td></tr>
+<tr><td><strong>下級裁判所裁判官</strong></td><td><strong>最高裁の指名名簿</strong>により<strong>内閣が任命</strong>（高等裁判所長官のみ天皇の認証あり）</td><td><strong>10年</strong>（再任可）</td><td>簡易裁70歳・他65歳</td><td>なし</td></tr>
+</tbody>
+</table>
+
+<div class="ex-box">
+<span class="label">🎵 語呂合わせ：最高裁の選任</span>
+<p>長官は「<strong>内閣が指名・天皇が任命</strong>」　判事は「<strong>内閣が任命・天皇が認証</strong>」<br>
+「指名→任命」と「任命→認証」の順番の違いを意識。各機関のトップは「指名」から始まる。</p>
+</div>
+
+<h3 class="subsec">大法廷・小法廷</h3>
+<p>必ず大法廷で行わなければならない場合（<span class="pk">大法廷プロパー</span>）：<br>
+①初めて憲法判断をするとき　②違憲判断を下すとき　③判例変更をしようとするとき</p>
+</div>
+
+<!-- ▼ 裁判所の組織 ▼ -->
+<div class="mini-test" id="mt25a">
+  <div class="mini-test-header">✏️ ミニテスト — 裁判所の組織</div>
+  <div class="mt-body">
+    <div class="mt-ph mt-ph-preview">
+      <div class="mt-preview">1. 家庭裁判所は通常裁判所系列内（特別裁判所では<span class="mt-ans">ない</span>）。<br>
+        2. 最高裁長官：<span class="mt-ans">内閣が指名</span>し天皇が任命。その他の最高裁判事：<span class="mt-ans">内閣が任命</span>して天皇が認証。<br>
+        3. 下級裁判所の裁判官：<span class="mt-ans">最高裁が指名</span>した名簿によって内閣が任命。<br>
+        4. 最高裁判所裁判官には<span class="mt-ans">任期なし</span>（定年：70歳）。</div>
+      <button class="mt-start-btn" onclick="mtStart('mt25a')">▶ チャレンジ開始</button>
+    </div>
+    <div class="mt-ph mt-ph-quiz" style="display:none">
+      <div class="mt-quiz-text"></div>
+      <div class="mt-pool-label">語　群</div>
+      <div class="mt-pool"></div>
+      <div class="mt-btn-row">
+        <button class="mt-judge-btn" onclick="mtJudge('mt25a')">✔ 判定する</button>
+        <button class="mt-hint-btn" onclick="mtHint('mt25a')">👁 手本を見る</button>
+      </div>
+    </div>
+    <div class="mt-ph mt-ph-hint" style="display:none">
+      <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+      <div class="mt-preview">1. 家庭裁判所は通常裁判所系列内（特別裁判所では<span class="mt-ans">ない</span>）。<br>
+        2. 最高裁長官：<span class="mt-ans">内閣が指名</span>し天皇が任命。その他の最高裁判事：<span class="mt-ans">内閣が任命</span>して天皇が認証。<br>
+        3. 下級裁判所の裁判官：<span class="mt-ans">最高裁が指名</span>した名簿によって内閣が任命。<br>
+        4. 最高裁判所裁判官には<span class="mt-ans">任期なし</span>（定年：70歳）。</div>
+      <button class="mt-resume-btn" onclick="mtResume('mt25a')">◀ 手本を閉じて続きから再開</button>
+    </div>
+    <div class="mt-ph mt-ph-result" style="display:none">
+      <div class="mt-result">
+        <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+        <div class="mt-result-score"></div><div class="mt-result-msg"></div>
+        <button class="mt-retry-btn" onclick="mtRetry('mt25a')">↺ もう一度</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ================= SECTION 2 ================= -->
+<div class="sec"><span class="num">2</span>裁判の公開・司法権の独立・国民審査</div>
+
+<div class="card">
+<h3 class="subsec">裁判の公開（82条）</h3>
+<table class="tbl">
+<thead><tr><th>種類</th><th>原則</th><th>例外</th></tr></thead>
+<tbody>
+<tr><td><strong>判決</strong></td><td><strong>絶対公開</strong>（例外なし）</td><td>なし</td></tr>
+<tr><td><strong>対審</strong>（口頭弁論・公判）</td><td>原則公開</td><td>裁判官<strong>全員一致</strong>で公序良俗を害するおそれありと決した場合→非公開可。ただし絶対公開事由3つあり</td></tr>
+</tbody>
+</table>
+
+<div class="ex-box">
+<span class="label">🔑 絶対公開事由3つ（非公開にできない対審）</span>
+<p>①<strong>政治犯罪</strong>に関する事件の対審<br>
+②<strong>出版に関する犯罪</strong>に関する事件の対審<br>
+③<strong>憲法第3章で保障する国民の権利（人権）</strong>が問題となっている事件の対審</p>
+</div>
+
+<div class="warning">
+<span class="label">⚠️ 法廷メモ採取事件（最大判平元・3・8）</span>
+<p>傍聴人に対して法廷においてメモを取ることを<span class="pk">権利として保障しているものではない</span>。ただし憲法21条1項の精神に照らし尊重されるべきで故なく妨げられてはならない。</p>
+</div>
+
+<h3 class="subsec">裁判官の罷免事由</h3>
+<table class="tbl">
+<thead><tr><th>対象</th><th>罷免事由</th></tr></thead>
+<tbody>
+<tr><td>すべての裁判官</td><td>①<strong>心身の故障</strong>（分限裁判）　②<strong>公の弾劾</strong>（弾劾裁判所）</td></tr>
+<tr><td>最高裁判所裁判官のみ（上記に加え）</td><td>③<strong>国民審査</strong>による罷免</td></tr>
+</tbody>
+</table>
+<p>懲戒処分は行政機関が行えず、種類は<span class="pk">戒告と過料のみ</span>（免職・減給不可）。報酬は在任中<span class="pk">減額不可</span>。</p>
+
+<h3 class="subsec">国民審査（79条）</h3>
+<p>対象：<span class="pk">最高裁判所裁判官だけ</span>。時期：<span class="pk">衆議院議員総選挙</span>の際（参議院議員通常選挙では行われない）。<br>
+性質：判例はリコール制度と解する（最大判昭27）。現行の×印制度は合憲。</p>
+</div>
+
+<!-- ▼ 公開・独立・国民審査 ▼ -->
+<div class="mini-test" id="mt25b">
+  <div class="mini-test-header">✏️ ミニテスト — 公開・独立・国民審査</div>
+  <div class="mt-body">
+    <div class="mt-ph mt-ph-preview">
+      <div class="mt-preview">1. 政治犯罪・出版に関する犯罪・憲法3章の人権事件の対審は<span class="mt-ans">絶対公開</span>（例外なし）。<br>
+        2. 法廷メモ採取事件：傍聴人のメモは権利として<span class="mt-ans">保障していない</span>が、尊重される（憲法21条の趣旨）。<br>
+        3. 全裁判官共通の罷免事由：①<span class="mt-ans">心身の故障</span>による分限裁判、②公の<span class="mt-ans">弾劾</span>（弾劾裁判）。<br>
+        4. 国民審査（リコール）は<span class="mt-ans">最高裁判所裁判官</span>のみ。下級裁判所裁判官には存在しない。</div>
+      <button class="mt-start-btn" onclick="mtStart('mt25b')">▶ チャレンジ開始</button>
+    </div>
+    <div class="mt-ph mt-ph-quiz" style="display:none">
+      <div class="mt-quiz-text"></div>
+      <div class="mt-pool-label">語　群</div>
+      <div class="mt-pool"></div>
+      <div class="mt-btn-row">
+        <button class="mt-judge-btn" onclick="mtJudge('mt25b')">✔ 判定する</button>
+        <button class="mt-hint-btn" onclick="mtHint('mt25b')">👁 手本を見る</button>
+      </div>
+    </div>
+    <div class="mt-ph mt-ph-hint" style="display:none">
+      <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+      <div class="mt-preview">1. 政治犯罪・出版に関する犯罪・憲法3章の人権事件の対審は<span class="mt-ans">絶対公開</span>（例外なし）。<br>
+        2. 法廷メモ採取事件：傍聴人のメモは権利として<span class="mt-ans">保障していない</span>が、尊重される（憲法21条の趣旨）。<br>
+        3. 全裁判官共通の罷免事由：①<span class="mt-ans">心身の故障</span>による分限裁判、②公の<span class="mt-ans">弾劾</span>（弾劾裁判）。<br>
+        4. 国民審査（リコール）は<span class="mt-ans">最高裁判所裁判官</span>のみ。下級裁判所裁判官には存在しない。</div>
+      <button class="mt-resume-btn" onclick="mtResume('mt25b')">◀ 手本を閉じて続きから再開</button>
+    </div>
+    <div class="mt-ph mt-ph-result" style="display:none">
+      <div class="mt-result">
+        <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+        <div class="mt-result-score"></div><div class="mt-result-msg"></div>
+        <button class="mt-retry-btn" onclick="mtRetry('mt25b')">↺ もう一度</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ================= SECTION 3 ================= -->
+<div class="sec"><span class="num">3</span>違憲審査制（81条）</div>
+
+<div class="card">
+<div class="ex-box">
+<span class="label">📜 憲法81条</span>
+<p>最高裁判所は、一切の<strong>法律、命令、規則又は処分</strong>が憲法に適合するかしないかを決定する権限を有する<strong>終審裁判所</strong>である。</p>
+</div>
+
+<h3 class="subsec">違憲審査制の性格</h3>
+<table class="tbl">
+<thead><tr><th>学説</th><th>内容</th><th>採否</th></tr></thead>
+<tbody>
+<tr><td><strong>付随的審査制説</strong></td><td>具体的な争訟事件を裁判する際にその前提として違憲審査を行う（アメリカ型）</td><td><strong>通説・判例</strong></td></tr>
+<tr><td>抽象的審査制説</td><td>具体的争訟と関係なく憲法裁判所が抽象的に審査（ドイツ型）</td><td>少数説（日本は不採用）</td></tr>
+</tbody>
+</table>
+<p>判例（警察予備隊事件）：「具体的な争訟事件を離れて抽象的に法律命令等の合憲性を判断する権限を有するとの見解には、憲法上及び法令上なんらの根拠も存しない。」</p>
+
+<h3 class="subsec">違憲審査権の主体・対象・効力</h3>
+<p><strong>主体：</strong>最高裁判所のみが終審裁判所（81条）だが、<span class="pk">下級裁判所も当然に違憲審査権を行使できる</span>（最大判昭25）。<br>
+<strong>対象：</strong>「法律、命令、規則又は処分」は<span class="pk">例示列挙</span>。条例・裁判所の裁判・条約なども対象となり得る。<br>
+<strong>違憲判決の効力（通説）：</strong><span class="pk">個別的効力説</span>＝当該事件限りで当該法令の適用が排除される。</p>
+
+<div class="warning">
+<span class="label">⚠️ 違憲判断の方法</span>
+<p>①<strong>法令違憲</strong>：法令そのものを違憲と判断<br>
+②<strong>適用違憲</strong>：法令は合憲でも当該事件への適用だけを違憲と判断</p>
+</div>
+</div>
+
+<!-- ▼ 違憲審査制 ▼ -->
+<div class="mini-test" id="mt25c">
+  <div class="mini-test-header">✏️ ミニテスト — 違憲審査制</div>
+  <div class="mt-body">
+    <div class="mt-ph mt-ph-preview">
+      <div class="mt-preview">1. 違憲審査制の性格：通説・判例は<span class="mt-ans">付随的審査制説</span>（具体的争訟の前提として審査）。<br>
+        2. 下級裁判所も<span class="mt-ans">当然に</span>違憲審査権を行使できる（最大判昭25）。<br>
+        3. 違憲判決の効力（通説）：<span class="mt-ans">個別的効力説</span>（当該事件限り。法律は消滅しない）。<br>
+        4. 81条の列挙は<span class="mt-ans">例示列挙</span>で、条例・裁判所の裁判・条約なども審査対象になり得る。</div>
+      <button class="mt-start-btn" onclick="mtStart('mt25c')">▶ チャレンジ開始</button>
+    </div>
+    <div class="mt-ph mt-ph-quiz" style="display:none">
+      <div class="mt-quiz-text"></div>
+      <div class="mt-pool-label">語　群</div>
+      <div class="mt-pool"></div>
+      <div class="mt-btn-row">
+        <button class="mt-judge-btn" onclick="mtJudge('mt25c')">✔ 判定する</button>
+        <button class="mt-hint-btn" onclick="mtHint('mt25c')">👁 手本を見る</button>
+      </div>
+    </div>
+    <div class="mt-ph mt-ph-hint" style="display:none">
+      <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+      <div class="mt-preview">1. 違憲審査制の性格：通説・判例は<span class="mt-ans">付随的審査制説</span>（具体的争訟の前提として審査）。<br>
+        2. 下級裁判所も<span class="mt-ans">当然に</span>違憲審査権を行使できる（最大判昭25）。<br>
+        3. 違憲判決の効力（通説）：<span class="mt-ans">個別的効力説</span>（当該事件限り。法律は消滅しない）。<br>
+        4. 81条の列挙は<span class="mt-ans">例示列挙</span>で、条例・裁判所の裁判・条約なども審査対象になり得る。</div>
+      <button class="mt-resume-btn" onclick="mtResume('mt25c')">◀ 手本を閉じて続きから再開</button>
+    </div>
+    <div class="mt-ph mt-ph-result" style="display:none">
+      <div class="mt-result">
+        <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+        <div class="mt-result-score"></div><div class="mt-result-msg"></div>
+        <button class="mt-retry-btn" onclick="mtRetry('mt25c')">↺ もう一度</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 章末まとめ -->
+<div class="sec"><span class="num">★</span>第25章まとめ</div>
+
+<div class="card">
+<table class="tbl">
+<thead><tr><th>論点</th><th>結論・キーワード</th></tr></thead>
+<tbody>
+<tr><td>家庭裁判所</td><td>特別裁判所<strong>ではない</strong>（通常裁判所の系列）</td></tr>
+<tr><td>最高裁判所長官の選任</td><td><strong>内閣が指名</strong>・<strong>天皇が任命</strong></td></tr>
+<tr><td>最高裁判所判事の選任</td><td><strong>内閣が任命</strong>・<strong>天皇が認証</strong></td></tr>
+<tr><td>下級裁判所裁判官の選任</td><td>最高裁の指名名簿により<strong>内閣が任命</strong></td></tr>
+<tr><td>任期</td><td>最高裁：<strong>なし</strong>（定年70歳）　下級裁：<strong>10年</strong>（再任可）</td></tr>
+<tr><td>絶対公開事由</td><td>①政治犯罪　②出版に関する犯罪　③憲法第3章の人権が問題の対審</td></tr>
+<tr><td>罷免事由</td><td>全員：①心身故障（分限）　②弾劾裁判　最高裁のみ③国民審査</td></tr>
+<tr><td>国民審査</td><td>最高裁判所裁判官<strong>だけ</strong>・<strong>衆院議員総選挙</strong>の際・リコール制度</td></tr>
+<tr><td>違憲審査制の性格</td><td><strong>付随的審査制説</strong>（通説・判例）</td></tr>
+<tr><td>違憲判決の効力</td><td><strong>個別的効力説</strong>（通説）：当該事件限り</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="nav-buttons">
+  <a class="btn outline" href="kenpo_ch24.html">← 第24章</a>
+  <a class="btn" href="kenpo_ch25_q.html">演習問題へ →</a>
+</div>
+
+</main>
+</div>
+
+<script>
+var MT_DATA = {
+  mt25a:{
+    answers:['ない','内閣が指名','内閣が任命','最高裁が指名','任期なし'],
+    decoys:['ある','国会が指名','最高裁が任命','天皇が指名','任期あり'],
+    parts:[
+      {t:'text',v:'1. 家庭裁判所は通常裁判所系列内（特別裁判所では'},{t:'blank',i:0},{t:'text',v:'）。'},{t:'br'},
+      {t:'text',v:'2. 最高裁長官：'},{t:'blank',i:1},{t:'text',v:'し天皇が任命。その他の最高裁判事：'},{t:'blank',i:2},{t:'text',v:'して天皇が認証。'},{t:'br'},
+      {t:'text',v:'3. 下級裁判所の裁判官：'},{t:'blank',i:3},{t:'text',v:'した名簿によって内閣が任命。'},{t:'br'},
+      {t:'text',v:'4. 最高裁判所裁判官には'},{t:'blank',i:4},{t:'text',v:'（定年：70歳）。'}
+    ]
+  },
+  mt25b:{
+    answers:['絶対公開','保障していない','心身の故障','弾劾','最高裁判所裁判官'],
+    decoys:['非公開にできる','保障している','国民審査','内閣不信任','全裁判官'],
+    parts:[
+      {t:'text',v:'1. 政治犯罪・出版に関する犯罪・憲法3章の人権事件の対審は'},{t:'blank',i:0},{t:'text',v:'（例外なし）。'},{t:'br'},
+      {t:'text',v:'2. 法廷メモ採取事件：傍聴人のメモは権利として'},{t:'blank',i:1},{t:'text',v:'が、尊重される（憲法21条の趣旨）。'},{t:'br'},
+      {t:'text',v:'3. 全裁判官共通の罷免事由：①'},{t:'blank',i:2},{t:'text',v:'による分限裁判、②公の'},{t:'blank',i:3},{t:'text',v:'（弾劾裁判）。'},{t:'br'},
+      {t:'text',v:'4. 国民審査（リコール）は'},{t:'blank',i:4},{t:'text',v:'のみ。下級裁判所裁判官には存在しない。'}
+    ]
+  },
+  mt25c:{
+    answers:['付随的審査制説','当然に','個別的効力説','例示列挙'],
+    decoys:['抽象的審査制説','当然には','一般的効力説','限定列挙'],
+    parts:[
+      {t:'text',v:'1. 違憲審査制の性格：通説・判例は'},{t:'blank',i:0},{t:'text',v:'（具体的争訟の前提として審査）。'},{t:'br'},
+      {t:'text',v:'2. 下級裁判所も'},{t:'blank',i:1},{t:'text',v:'違憲審査権を行使できる（最大判昭25）。'},{t:'br'},
+      {t:'text',v:'3. 違憲判決の効力（通説）：'},{t:'blank',i:2},{t:'text',v:'（当該事件限り。法律は消滅しない）。'},{t:'br'},
+      {t:'text',v:'4. 81条の列挙は'},{t:'blank',i:3},{t:'text',v:'で、条例・裁判所の裁判・条約なども審査対象になり得る。'}
+    ]
+  }
+};
+var mtState = {};
+function mtShuffle(a){var b=[].concat(a);for(var i=b.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=b[i];b[i]=b[j];b[j]=t;}return b;}
+function mtStart(id){
+  var d=MT_DATA[id];
+  mtState[id]={filled:{},locked:{},sel:null,pool:mtShuffle(d.answers.concat(d.decoys))};
+  mtRenderQuiz(id);
+  mtSetPhase(id,'quiz');
+}
+function mtSetPhase(id,ph){
+  var el=document.getElementById(id);
+  el.querySelectorAll('.mt-ph').forEach(function(p){p.style.display='none';});
+  el.querySelector('.mt-ph-'+ph).style.display='block';
+}
+function mtRenderQuiz(id){
+  var d=MT_DATA[id],s=mtState[id];
+  var qt=document.getElementById(id).querySelector('.mt-quiz-text');
+  qt.innerHTML='';
+  d.parts.forEach(function(p){
+    if(p.t==='text'){
+      qt.appendChild(document.createTextNode(p.v));
+    } else if(p.t==='br'){
+      qt.appendChild(document.createElement('br'));
+    } else if(p.t==='blank'){
+      (function(i){
+        var btn=document.createElement('button');
+        btn.type='button';
+        var cls='mt-blank';
+        if(s.locked[i]===true) cls+=' correct';
+        else if(s.filled[i]) cls+=' filled';
+        btn.className=cls;
+        btn.dataset.bi=i;
+        btn.textContent=s.filled[i]||(s.locked[i]===true?d.answers[i]:'　　　');
+        if(s.locked[i]!==true){
+          btn.addEventListener('click',function(){mtBlankClick(id,i);});
+        }
+        qt.appendChild(btn);
+      })(p.i);
+    }
+  });
+  mtRenderPool(id);
+}
+function mtRenderPool(id){
+  var d=MT_DATA[id],s=mtState[id];
+  var pool=document.getElementById(id).querySelector('.mt-pool');
+  pool.innerHTML='';
+  s.pool.forEach(function(w,idx){
+    var lockedUsed=false;
+    for(var k in s.locked){if(s.locked[k]===true&&s.filled[k]===w){lockedUsed=true;break;}}
+    var placedUsed=false;
+    for(var k in s.filled){if(s.filled[k]===w&&s.locked[k]!==true){placedUsed=true;break;}}
+    var used=lockedUsed||placedUsed;
+    var chip=document.createElement('button');
+    chip.type='button';
+    chip.className='mt-chip'+(s.sel===idx?' mt-sel':'')+(used?' mt-used':'');
+    chip.textContent=w;
+    chip.dataset.ci=idx;
+    (function(ci){
+      chip.addEventListener('click',function(){
+        if(!this.classList.contains('mt-used')) mtChipClick(id,ci);
+      });
+    })(idx);
+    pool.appendChild(chip);
+  });
+}
+function mtChipClick(id,idx){
+  var s=mtState[id];
+  s.sel=(s.sel===idx)?null:idx;
+  mtRenderPool(id);
+}
+function mtBlankClick(id,bi){
+  var s=mtState[id];
+  if(s.locked[bi]===true) return;
+  if(s.sel!==null){
+    var w=s.pool[s.sel];
+    for(var k in s.filled){
+      if(s.filled[k]===w&&s.locked[k]!==true&&String(k)!==String(bi)){
+        s.filled[k]=null; break;
+      }
+    }
+    s.filled[bi]=w;
+    s.sel=null;
+    mtRenderQuiz(id);
+    return;
+  }
+  if(s.filled[bi]){s.filled[bi]=null; mtRenderQuiz(id);}
+}
+function mtJudge(id){
+  var d=MT_DATA[id],s=mtState[id],wrong=[];
+  d.answers.forEach(function(ans,i){
+    if(s.locked[i]===true) return;
+    if(s.filled[i]===ans){s.locked[i]=true;}
+    else if(s.filled[i]){s.locked[i]=false; wrong.push(i);}
+  });
+  mtRenderQuiz(id);
+  wrong.forEach(function(i){
+    var el=document.getElementById(id).querySelector('.mt-blank[data-bi="'+i+'"]');
+    if(el) el.classList.add('wrong');
+    setTimeout(function(){
+      if(mtState[id]){mtState[id].locked[i]=undefined; mtState[id].filled[i]=null; mtRenderQuiz(id);}
+    },800);
+  });
+  var allOk=d.answers.every(function(ans,i){return s.locked[i]===true;});
+  if(allOk) setTimeout(function(){mtShowResult(id,d.answers.length,d.answers.length);},500);
+}
+function mtHint(id){mtSetPhase(id,'hint');}
+function mtResume(id){mtRenderQuiz(id); mtSetPhase(id,'quiz');}
+function mtShowResult(id,sc,tot){
+  var el=document.getElementById(id);
+  el.querySelector('.mt-result-score').textContent=sc+' / '+tot+' 点';
+  var msg=sc===tot?'全問正解！完璧です！':sc>=tot*0.7?'あと少し！もう一度確認しましょう。':'解説をよく読んでから再挑戦！';
+  el.querySelector('.mt-result-msg').textContent=msg;
+  mtSetPhase(id,'result');
+  if(sc===tot) mtConfetti(el.querySelector('.mt-result'));
+}
+function mtConfetti(wrap){
+  var cols=['#C0392B','#D4A017','#27AE60','#1B2A4A','#3498DB'];
+  for(var i=0;i<36;i++){
+    var c=document.createElement('div'); c.className='mt-confetti';
+    c.style.left=Math.random()*100+'%';
+    c.style.background=cols[Math.floor(Math.random()*cols.length)];
+    c.style.animationDuration=(0.7+Math.random()*0.8)+'s';
+    c.style.animationDelay=(Math.random()*0.5)+'s';
+    wrap.appendChild(c);
+    setTimeout(function(x){x.remove();},1800,c);
+  }
+}
+function mtRetry(id){mtStart(id);}
+</script>
+</body>
+</html>

@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第26章 財政｜GAMBA憲法</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Meiryo',sans-serif;background:#f0f2f5;color:#1B2A4A;line-height:1.8;}
+  header{background:#1B2A4A;color:#fff;padding:16px 24px;display:flex;align-items:center;gap:16px;}
+  header .chapter-num{background:#C0392B;color:#fff;font-size:1.4rem;font-weight:bold;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+  header h1{font-size:1.3rem;font-weight:bold;}
+  header p{font-size:0.85rem;opacity:0.8;margin-top:2px;}
+  .container{max-width:860px;margin:0 auto;padding:24px 16px;}
+
+  .section-card{background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.08);margin-bottom:24px;overflow:hidden;}
+  .section-header{background:#1B2A4A;color:#fff;padding:12px 20px;font-size:1rem;font-weight:bold;display:flex;align-items:center;gap:10px;}
+  .section-header .num{background:#C0392B;color:#fff;border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center;font-size:0.9rem;font-weight:bold;flex-shrink:0;}
+  .section-body{padding:20px;}
+
+  .article-box{background:#e8f0fb;border-left:4px solid #1B2A4A;border-radius:6px;padding:12px 16px;margin-bottom:16px;}
+  .article-box .art-label{font-size:0.8rem;color:#C0392B;font-weight:bold;margin-bottom:4px;}
+  .article-box p{font-size:0.95rem;line-height:1.7;}
+
+  .keyword{color:#C0392B;font-weight:bold;}
+  .blue-kw{color:#1B2A4A;font-weight:bold;text-decoration:underline;}
+
+  .point-box{background:#fff8e1;border:2px solid #f39c12;border-radius:8px;padding:14px 16px;margin:14px 0;}
+  .point-box .pt-title{font-weight:bold;color:#f39c12;margin-bottom:6px;}
+
+  .table-wrap{overflow-x:auto;margin:14px 0;}
+  table{width:100%;border-collapse:collapse;font-size:0.92rem;}
+  th{background:#1B2A4A;color:#fff;padding:10px 12px;text-align:left;}
+  td{padding:9px 12px;border-bottom:1px solid #e0e0e0;}
+  tr:nth-child(even) td{background:#f5f7fa;}
+  tr.highlight td{background:#fdecea;}
+
+  .flow-box{background:#f0f4ff;border-radius:8px;padding:14px 16px;margin:14px 0;}
+  .flow-box .flow-title{font-weight:bold;color:#1B2A4A;margin-bottom:10px;}
+  .flow-steps{display:flex;flex-wrap:wrap;align-items:center;gap:8px;}
+  .flow-step{background:#1B2A4A;color:#fff;padding:8px 14px;border-radius:6px;font-size:0.88rem;text-align:center;}
+  .flow-arrow{color:#C0392B;font-size:1.3rem;font-weight:bold;}
+
+  .case-box{background:#fff;border:2px solid #C0392B;border-radius:8px;padding:14px 16px;margin:16px 0;}
+  .case-box .case-title{background:#C0392B;color:#fff;padding:4px 12px;border-radius:4px;font-size:0.9rem;font-weight:bold;display:inline-block;margin-bottom:10px;}
+  .case-section{font-size:0.82rem;font-weight:bold;color:#1B2A4A;margin:8px 0 4px;}
+
+  .memo-box{background:#e8f5e9;border-left:4px solid #27ae60;border-radius:6px;padding:10px 14px;margin:12px 0;font-size:0.9rem;}
+  .memo-box .memo-label{font-weight:bold;color:#27ae60;margin-bottom:4px;}
+
+  /* ○×クイズ */
+  .quiz-section{margin-top:10px;}
+  .quiz-title{font-size:1rem;font-weight:bold;color:#1B2A4A;margin-bottom:14px;padding-bottom:6px;border-bottom:2px solid #C0392B;}
+  .quiz-item{background:#f5f7fa;border-radius:8px;padding:14px 16px;margin-bottom:12px;}
+  .quiz-item .q-text{font-size:0.93rem;margin-bottom:10px;}
+  .quiz-btn-row{display:flex;gap:10px;}
+  .btn-maru{background:#27ae60;color:#fff;border:none;border-radius:6px;padding:8px 22px;font-size:0.9rem;font-weight:bold;cursor:pointer;transition:0.2s;}
+  .btn-batu{background:#C0392B;color:#fff;border:none;border-radius:6px;padding:8px 22px;font-size:0.9rem;font-weight:bold;cursor:pointer;transition:0.2s;}
+  .btn-maru:hover{background:#219a52;}
+  .btn-batu:hover{background:#a93226;}
+  .quiz-result{margin-top:10px;padding:8px 12px;border-radius:6px;font-size:0.88rem;display:none;}
+  .result-correct{background:#e8f5e9;border:1px solid #27ae60;color:#1a5e35;}
+  .result-wrong{background:#fdecea;border:1px solid #C0392B;color:#7b241c;}
+
+  .score-bar{background:#1B2A4A;color:#fff;border-radius:8px;padding:12px 18px;text-align:center;font-weight:bold;font-size:1rem;margin-top:16px;}
+  .score-bar span{color:#f1c40f;font-size:1.3rem;}
+
+  footer{background:#1B2A4A;color:#aaa;text-align:center;padding:16px;font-size:0.8rem;margin-top:32px;}
+  footer a{color:#7fb3f5;text-decoration:none;}
+
+  /* 四択折りたたみミニテスト */
+  .fold-quiz{margin-top:18px;border-radius:8px;overflow:hidden;border:2px solid #1B2A4A;}
+  .fold-btn{width:100%;background:#1B2A4A;color:#fff;border:none;padding:11px 16px;text-align:left;font-family:'Meiryo',sans-serif;font-size:0.9rem;font-weight:bold;cursor:pointer;display:flex;align-items:center;gap:8px;}
+  .fold-btn .arrow{margin-left:auto;transition:transform .2s;}
+  .fold-btn.open .arrow{transform:rotate(180deg);}
+  .fold-body{display:none;padding:16px;}
+  .fold-body.show{display:block;}
+  .fq-item{background:#f5f7fa;border-radius:8px;padding:12px 14px;margin-bottom:12px;}
+  .fq-item:last-child{margin-bottom:0;}
+  .fq-stem{font-size:0.92rem;margin-bottom:10px;line-height:1.7;}
+  .fq-choices{display:flex;flex-direction:column;gap:6px;margin-bottom:8px;}
+  .fq-c{background:#fff;border:2px solid #dde1e8;border-radius:6px;padding:8px 12px;cursor:pointer;font-size:0.88rem;font-family:'Meiryo',sans-serif;text-align:left;transition:.15s;line-height:1.5;}
+  .fq-c:hover{border-color:#1B2A4A;background:#eef1f8;}
+  .fq-c.fc-ok{background:#e8f5e9;border-color:#27ae60;color:#1a5e35;}
+  .fq-c.fc-ng{background:#fdecea;border-color:#C0392B;color:#7b241c;}
+  .fq-c.fc-show{background:#e8f5e9;border-color:#27ae60;}
+  .fq-exp{background:#fff8e1;border-left:4px solid #f39c12;padding:9px 12px;font-size:0.86rem;border-radius:0 6px 6px 0;display:none;line-height:1.7;}
+  .fq-exp.show{display:block;}
+  .fold-score{background:#1B2A4A;color:#fff;border-radius:6px;padding:10px 14px;text-align:center;font-weight:bold;font-size:0.9rem;margin-top:12px;display:none;}
+  .fold-score span{color:#f1c40f;font-size:1.2rem;}
+  /* ===== ミニテスト 新UI ===== */
+  .mini-test { background: #f0f4fa; border: 2px solid #1B2A4A; border-radius: 10px; margin-top: 18px; overflow: hidden; }
+  .mini-test-header { background: #1B2A4A; color: white; padding: 8px 14px; font-size: 13px; font-weight: bold; letter-spacing: 1px; display: flex; align-items: center; gap: 6px; }
+  .mt-body { padding: 14px; }
+  .mt-preview { background: #eef2f8; border-radius: 6px; padding: 12px 14px; margin-bottom: 12px; font-size: 14px; line-height: 2.1; }
+  .mt-ans { display: inline; color: #C0392B; font-weight: bold; background: #fff0ee; border-radius: 3px; padding: 1px 5px; }
+  .mt-start-btn { width: 100%; padding: 10px; background: #1B2A4A; color: white; border: none; border-radius: 6px; font-size: 13px; font-weight: bold; cursor: pointer; font-family: inherit; }
+  .mt-start-btn:hover { background: #2D4070; }
+  .mt-quiz-text { font-size: 14px; line-height: 2.4; margin-bottom: 14px; }
+  .mt-blank { display: inline-flex; align-items: center; justify-content: center; min-width: 68px; height: 28px; border: 2px dashed #AAB8CC; border-radius: 5px; background: #eef2f8; color: #8FA8CC; font-size: 13px; padding: 0 6px; vertical-align: middle; cursor: pointer; transition: all 0.15s; }
+  .mt-blank.filled { border-style: solid; border-color: #1B2A4A; background: white; color: #1B2A4A; font-weight: bold; }
+  .mt-blank.correct { border-color: #27AE60; background: #e8f8f0; color: #27AE60; font-weight: bold; cursor: default; }
+  .mt-blank.wrong { border-color: #C0392B; background: #fff0ee; color: #C0392B; animation: mt-shake 0.3s ease; }
+  @keyframes mt-shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-4px)} 75%{transform:translateX(4px)} }
+  .mt-pool-label { font-size: 11px; color: #6B7E99; letter-spacing: 1px; margin-bottom: 6px; }
+  .mt-pool { display: flex; flex-wrap: wrap; gap: 6px; background: white; border-radius: 6px; padding: 8px; margin-bottom: 12px; min-height: 38px; border: 1px solid #dde3ed; }
+  .mt-chip { background: white; border: 1.5px solid #1B2A4A; border-radius: 5px; padding: 4px 10px; font-size: 13px; font-weight: bold; color: #1B2A4A; cursor: pointer; transition: all 0.12s; user-select: none; -webkit-user-select: none; }
+  .mt-chip:hover { background: #eef2f8; }
+  .mt-chip.mt-sel { background: #1B2A4A; color: white; }
+  .mt-chip.mt-used { opacity: 0.3; pointer-events: none; }
+  .mt-btn-row { display: flex; gap: 8px; }
+  .mt-judge-btn { flex: 2; padding: 9px; background: #C0392B; color: white; border: none; border-radius: 6px; font-size: 13px; font-weight: bold; cursor: pointer; font-family: inherit; }
+  .mt-judge-btn:hover { background: #A93226; }
+  .mt-hint-btn { flex: 1; padding: 9px; background: transparent; color: #6B7E99; border: 1px solid #dde3ed; border-radius: 6px; font-size: 12px; cursor: pointer; font-family: inherit; }
+  .mt-hint-btn:hover { background: #eef2f8; }
+  .mt-hint-note { font-size: 12px; color: #8B6914; background: #fff8e6; border-left: 3px solid #D4A017; padding: 8px 12px; border-radius: 0 5px 5px 0; margin-bottom: 10px; }
+  .mt-resume-btn { width: 100%; padding: 9px; background: #1B2A4A; color: white; border: none; border-radius: 6px; font-size: 13px; cursor: pointer; font-family: inherit; }
+  .mt-resume-btn:hover { background: #2D4070; }
+  .mt-result { text-align: center; padding: 16px 0 8px; position: relative; overflow: hidden; }
+  .mt-result-score { font-size: 32px; font-weight: bold; color: #D4A017; margin: 6px 0 4px; }
+  .mt-result-msg { font-size: 13px; color: #6B7E99; margin-bottom: 14px; }
+  .mt-retry-btn { padding: 9px 24px; background: #1B2A4A; color: white; border: none; border-radius: 6px; font-size: 13px; cursor: pointer; font-family: inherit; }
+  .mt-confetti { position: absolute; width: 7px; height: 7px; border-radius: 2px; animation: mt-fall linear forwards; pointer-events: none; }
+  @keyframes mt-fall { 0%{transform:translateY(-10px) rotate(0deg);opacity:1} 100%{transform:translateY(180px) rotate(720deg);opacity:0} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="chapter-num">26</div>
+  <div>
+    <h1>財政</h1>
+    <p>財政民主主義・租税法律主義・予算・予備費・決算</p>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- セクション1：財政民主主義 -->
+  <div class="section-card">
+    <div class="section-header"><span class="num">1</span> 財政民主主義（83条）</div>
+    <div class="section-body">
+      <div class="article-box">
+        <div class="art-label">第83条</div>
+        <p>国の財政を処理する権限は、<span class="keyword">国会の議決</span>に基いて、これを行使しなければならない。</p>
+      </div>
+      <p>財政民主主義とは、財政が国民の負担に関係するため、<span class="blue-kw">国会（国民の代表機関）</span>が民主的にコントロールするという原則です。<span class="keyword">財政国会中心主義・財政立憲主義</span>とも呼ばれます。</p>
+      <div class="memo-box">
+        <div class="memo-label">📌 明治憲法との違い</div>
+        明治憲法下でも財政民主主義の原則は一応ありましたが、例外が多数あり実質的に形骸化していました。日本国憲法では徹底して保障されています。
+      </div>
+
+<div class="mini-test" id="mt26a">
+  <div class="mini-test-header">✏️ ミニテスト — 財政民主主義・租税法律主義</div>
+  <div class="mt-body">
+    <div class="mt-ph mt-ph-preview">
+      <div class="mt-preview">1. 課税要件法定主義：課税要件の法定＋税の賦課・徴収の<span class="mt-ans">手続の法定</span>（課税要件だけでは不十分）。<br>
+        2. 細目については<span class="mt-ans">明示的・個別的・具体的な委任</span>があれば命令で定めることができる。<br>
+        3. 「租税」の定義（旭川市国保条例事件）：課税権に基づき、<span class="mt-ans">特別の給付への反対給付としてではなく</span>課す金銭給付。国民健康保険の保険料は租税に<span class="mt-ans">該当しない</span>（反対給付あり）。</div>
+      <button class="mt-start-btn" onclick="mtStart('mt26a')">▶ チャレンジ開始</button>
+    </div>
+    <div class="mt-ph mt-ph-quiz" style="display:none">
+      <div class="mt-quiz-text"></div>
+      <div class="mt-pool-label">語　群</div>
+      <div class="mt-pool"></div>
+      <div class="mt-btn-row">
+        <button class="mt-judge-btn" onclick="mtJudge('mt26a')">✔ 判定する</button>
+        <button class="mt-hint-btn" onclick="mtHint('mt26a')">👁 手本を見る</button>
+      </div>
+    </div>
+    <div class="mt-ph mt-ph-hint" style="display:none">
+      <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+      <div class="mt-preview">1. 課税要件法定主義：課税要件の法定＋税の賦課・徴収の<span class="mt-ans">手続の法定</span>（課税要件だけでは不十分）。<br>
+        2. 細目については<span class="mt-ans">明示的・個別的・具体的な委任</span>があれば命令で定めることができる。<br>
+        3. 「租税」の定義（旭川市国保条例事件）：課税権に基づき、<span class="mt-ans">特別の給付への反対給付としてではなく</span>課す金銭給付。国民健康保険の保険料は租税に<span class="mt-ans">該当しない</span>（反対給付あり）。</div>
+      <button class="mt-resume-btn" onclick="mtResume('mt26a')">◀ 手本を閉じて続きから再開</button>
+    </div>
+    <div class="mt-ph mt-ph-result" style="display:none">
+      <div class="mt-result">
+        <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+        <div class="mt-result-score"></div><div class="mt-result-msg"></div>
+        <button class="mt-retry-btn" onclick="mtRetry('mt26a')">↺ もう一度</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+  <!-- セクション2：租税法律主義 -->
+  <div class="section-card">
+    <div class="section-header"><span class="num">2</span> 租税法律主義（84条）</div>
+    <div class="section-body">
+      <div class="article-box">
+        <div class="art-label">第84条</div>
+        <p>あらたに<span class="keyword">租税を課し</span>、又は現行の<span class="keyword">租税を変更</span>するには、<span class="keyword">法律</span>又は法律の定める条件によることを必要とする。</p>
+      </div>
+      <p>租税の賦課・変更は、民意が反映された<span class="blue-kw">法律</span>でなければならない、という原則です。内容は2つあります。</p>
+      <div class="table-wrap">
+        <table>
+          <tr><th>原理</th><th>内容</th></tr>
+          <tr><td><span class="keyword">①課税要件法定主義</span></td><td>納税義務者・課税物件・税率等の課税要件と、税の賦課・徴収の<span class="keyword">手続</span>が法定されていなければならない</td></tr>
+          <tr><td><span class="keyword">②課税要件明確主義</span></td><td>課税要件や手続が法定されていることを前提として、それが<span class="keyword">明確</span>でなければならない</td></tr>
+        </table>
+      </div>
+      <div class="point-box">
+        <div class="pt-title">⚠️ 重要ポイント</div>
+        <p>①の「手続の法定」を忘れずに！　<span class="keyword">課税要件の法定＋課税手続の法定＝課税要件法定主義</span></p>
+        <p style="margin-top:8px;">租税法律主義は、租税に関する事項の<span class="keyword">細目</span>についてまで全て法律で定めることを要求するものではありません。細目については、<span class="blue-kw">明示的・個別的・具体的な法律の委任</span>に基いて、<span class="keyword">命令</span>で定めることができます。</p>
+      </div>
+
+      <p style="margin-top:12px;"><span class="blue-kw">（1）「法律」には条例・条約も含まれる</span></p>
+      <p>地方税については<span class="keyword">条例</span>で課すことができます（租税条例主義）。また、条約によって特別の定めをすることも可能です。</p>
+
+      <p style="margin-top:12px;"><span class="blue-kw">（2）「租税」の定義</span></p>
+      <p>国または地方公共団体が、課税権に基づき、その経費に充てるための資金を調達する目的をもって、<span class="keyword">特別の給付に対する反対給付としてではなく</span>、一定の要件に該当するすべての者に対して課する金銭給付（旭川市国保条例事件・最大判平18・3・1）。</p>
+
+      <div class="case-box">
+        <span class="case-title">判例 旭川市国民健康保険条例事件（最大判平18・3・1）</span>
+        <div class="case-section">事案</div>
+        <p>国民健康保険の保険料が、法律や条例ではなく、告示によって定められていたため、憲法84条の租税法律主義に違反するのではないかが争われた。</p>
+        <div class="case-section">判旨</div>
+        <p>国民健康保険の保険料は<span class="keyword">反対給付として徴収される</span>もの（被保険者が保険給付を受け得ることに対する反対給付）であるから、「租税」には該当しない。したがって84条は直接適用されない。</p>
+        <p style="margin-top:8px;">ただし、租税以外の公課であっても、賦課徴収の強制の度合い等の点で<span class="keyword">租税に類似する性質を有するもの</span>については、<span class="keyword">憲法84条の趣旨が及ぶ</span>と解すべきである。</p>
+        <p style="margin-top:8px;">本件保険料率の決定等を市長に委任したことは84条の趣旨に違反しない。</p>
+      </div>
+
+      <div class="case-box">
+        <span class="case-title">判例 パチンコ球遊器事件（最判昭33・3・28）</span>
+        <p>法律上課税できるにもかかわらず、実際は非課税として取り扱われてきた物品（パチンコ球遊器）を、<span class="keyword">通達</span>で新しく課税対象としてよいか。</p>
+        <p style="margin-top:8px;">→ 最高裁は、通達の内容が<span class="keyword">法の正しい解釈に合致する</span>ものであれば違憲ではないとした。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- セクション3：国費の支出・債務負担行為 -->
+  <div class="section-card">
+    <div class="section-header"><span class="num">3</span> 国費の支出・債務負担行為（85条）</div>
+    <div class="section-body">
+      <div class="article-box">
+        <div class="art-label">第85条</div>
+        <p><span class="keyword">国費を支出</span>し、又は国が<span class="keyword">債務を負担</span>するには、<span class="keyword">国会の議決</span>に基くことを必要とする。</p>
+      </div>
+      <p>「債務」とは<span class="blue-kw">金銭債務</span>を意味しますが、直接に金銭を支払う債務に限らず、<span class="keyword">債務の支払いの保証や損失補償の承認</span>も含まれます。</p>
+    </div>
+  </div>
+
+  <!-- セクション4：予算 -->
+  <div class="section-card">
+    <div class="section-header"><span class="num">4</span> 予算（86条）</div>
+    <div class="section-body">
+      <div class="article-box">
+        <div class="art-label">第86条</div>
+        <p><span class="keyword">内閣</span>は、毎会計年度の<span class="keyword">予算を作成</span>し、<span class="keyword">国会に提出</span>して、その審議を受け議決を経なければならない。</p>
+      </div>
+      <p>予算は一会計年度における国の財政行為の準則（歳入歳出の見積書）です。予算の<span class="keyword">作成・提出権は内閣に専属</span>します。</p>
+      <div class="memo-box">
+        <div class="memo-label">📌 予算先議権</div>
+        予算は<span class="keyword">衆議院から先に審議・議決</span>することになっています（予算先議権・60条）。
+      </div>
+
+      <p style="margin-top:14px;font-weight:bold;color:#1B2A4A;">（1）予算の種類</p>
+      <div class="table-wrap">
+        <table>
+          <tr><th>種類</th><th>内容</th></tr>
+          <tr><td>本予算</td><td>通常の会計年度予算</td></tr>
+          <tr><td>補正予算</td><td>追加予算・修正予算</td></tr>
+          <tr><td class="keyword"><strong>暫定予算</strong></td><td>本予算が新会計年度開始までに成立しない場合に作成。<span class="keyword">義務的経費の支出のみ</span>可能。本予算成立後は吸収されて消滅</td></tr>
+        </table>
+      </div>
+      <div class="point-box">
+        <div class="pt-title">⚠️ 重要：暫定予算と前年度予算</div>
+        <p><span class="keyword">明治憲法下</span>では本予算が成立しない場合に<span class="keyword">前年度の予算を施行</span>できる制度がありましたが、<span class="keyword">日本国憲法下ではこれが認められていない</span>ため、暫定予算の制度が財政法上用意されています。</p>
+      </div>
+
+      <p style="margin-top:14px;font-weight:bold;color:#1B2A4A;">（2）予算の法的性格</p>
+      <div class="table-wrap">
+        <table>
+          <tr><th>学説</th><th>予算の位置付け</th><th>特徴</th></tr>
+          <tr><td>予算行政説</td><td>行政行為（行政の専権）</td><td>法規範性を認めない。財政民主主義に反するとの批判あり</td></tr>
+          <tr><td>予算法律説</td><td>法律と全く同じ</td><td>法律と予算で成立手続が異なる等の批判あり</td></tr>
+          <tr class="highlight"><td><strong>予算法形式説（通説）</strong></td><td>法規範だが法律とは異なる独自の法形式</td><td>民主的コントロールを重視しつつ法律との違いにも配慮。批判：<span class="keyword">予算と法律の不一致</span>を生じる</td></tr>
+        </table>
+      </div>
+
+      <p style="margin-top:14px;font-weight:bold;color:#1B2A4A;">（3）国会の予算修正権</p>
+      <p>内閣から提出された予算案を国会が修正できるかについて：</p>
+      <div class="point-box">
+        <div class="pt-title">修正権の範囲（通説）</div>
+        <p>・<span class="keyword">減額修正</span>：無制限に認められる（否決の一部として当然認められる）</p>
+        <p>・<span class="keyword">増額修正</span>：原則認められるが、<span class="keyword">予算の同一性を損なうような大増額修正</span>はできない（内閣の予算提出権を侵害するため）</p>
+      </div>
+
+<div class="mini-test" id="mt26b">
+  <div class="mini-test-header">✏️ ミニテスト — 予算の法的性格・修正権</div>
+  <div class="mt-body">
+    <div class="mt-ph mt-ph-preview">
+      <div class="mt-preview">1. 予算の法的性格（通説）：<span class="mt-ans">予算法形式説</span>（法律とは異なる独自の法形式）→予算と法律の<span class="mt-ans">不一致</span>が生じる問題がある。<br>
+        2. 国会の予算修正権：<span class="mt-ans">減額修正</span>は無制限に、<span class="mt-ans">増額修正</span>は予算の同一性を損なわない範囲で認められる。</div>
+      <button class="mt-start-btn" onclick="mtStart('mt26b')">▶ チャレンジ開始</button>
+    </div>
+    <div class="mt-ph mt-ph-quiz" style="display:none">
+      <div class="mt-quiz-text"></div>
+      <div class="mt-pool-label">語　群</div>
+      <div class="mt-pool"></div>
+      <div class="mt-btn-row">
+        <button class="mt-judge-btn" onclick="mtJudge('mt26b')">✔ 判定する</button>
+        <button class="mt-hint-btn" onclick="mtHint('mt26b')">👁 手本を見る</button>
+      </div>
+    </div>
+    <div class="mt-ph mt-ph-hint" style="display:none">
+      <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+      <div class="mt-preview">1. 予算の法的性格（通説）：<span class="mt-ans">予算法形式説</span>（法律とは異なる独自の法形式）→予算と法律の<span class="mt-ans">不一致</span>が生じる問題がある。<br>
+        2. 国会の予算修正権：<span class="mt-ans">減額修正</span>は無制限に、<span class="mt-ans">増額修正</span>は予算の同一性を損なわない範囲で認められる。</div>
+      <button class="mt-resume-btn" onclick="mtResume('mt26b')">◀ 手本を閉じて続きから再開</button>
+    </div>
+    <div class="mt-ph mt-ph-result" style="display:none">
+      <div class="mt-result">
+        <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+        <div class="mt-result-score"></div><div class="mt-result-msg"></div>
+        <button class="mt-retry-btn" onclick="mtRetry('mt26b')">↺ もう一度</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+  <!-- セクション5：予備費 -->
+  <div class="section-card">
+    <div class="section-header"><span class="num">5</span> 予備費（87条）</div>
+    <div class="section-body">
+      <div class="article-box">
+        <div class="art-label">第87条1項</div>
+        <p>予見し難い予算の不足に充てるため、<span class="keyword">国会の議決</span>に基いて予備費を設け、<span class="keyword">内閣の責任</span>でこれを支出することができる。</p>
+        <div class="art-label" style="margin-top:8px;">第87条2項</div>
+        <p>すべて予備費の支出については、内閣は、<span class="keyword">事後に国会の承諾</span>を得なければならない。</p>
+      </div>
+      <p>予備費を設けるか否かは<span class="keyword">任意</span>です（明治憲法下では義務）。</p>
+      <div class="flow-box">
+        <div class="flow-title">予備費の流れ（3ステップ）</div>
+        <div class="flow-steps">
+          <div class="flow-step">①国会の議決で<br>予備費を設ける</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">②内閣の責任で<br>支出（国会議決不要）</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">③事後に国会の<br>承諾を得る</div>
+        </div>
+      </div>
+      <div class="point-box">
+        <div class="pt-title">⚠️ 重要：事後承諾の性格</div>
+        <p>③の承諾は<span class="keyword">報告案件</span>としての議決です。したがって、<span class="keyword">承諾されなくても既になされた支出の法的効果には影響がありません</span>。承諾が得られなかった場合は内閣が事実上の政治責任を負うにとどまります。</p>
+      </div>
+
+<div class="mini-test" id="mt26c">
+  <div class="mini-test-header">✏️ ミニテスト — 予備費・決算</div>
+  <div class="mt-body">
+    <div class="mt-ph mt-ph-preview">
+      <div class="mt-preview">1. 予備費の支出について事後の国会承諾が得られなかった場合→既になされた支出の法的効果に<span class="mt-ans">影響なし</span>（内閣が政治責任を負うのみ）。<br>
+        2. 決算の手続：<span class="mt-ans">会計検査院</span>が毎年検査→<span class="mt-ans">内閣</span>が次の年度に検査報告とともに国会に提出。</div>
+      <button class="mt-start-btn" onclick="mtStart('mt26c')">▶ チャレンジ開始</button>
+    </div>
+    <div class="mt-ph mt-ph-quiz" style="display:none">
+      <div class="mt-quiz-text"></div>
+      <div class="mt-pool-label">語　群</div>
+      <div class="mt-pool"></div>
+      <div class="mt-btn-row">
+        <button class="mt-judge-btn" onclick="mtJudge('mt26c')">✔ 判定する</button>
+        <button class="mt-hint-btn" onclick="mtHint('mt26c')">👁 手本を見る</button>
+      </div>
+    </div>
+    <div class="mt-ph mt-ph-hint" style="display:none">
+      <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+      <div class="mt-preview">1. 予備費の支出について事後の国会承諾が得られなかった場合→既になされた支出の法的効果に<span class="mt-ans">影響なし</span>（内閣が政治責任を負うのみ）。<br>
+        2. 決算の手続：<span class="mt-ans">会計検査院</span>が毎年検査→<span class="mt-ans">内閣</span>が次の年度に検査報告とともに国会に提出。</div>
+      <button class="mt-resume-btn" onclick="mtResume('mt26c')">◀ 手本を閉じて続きから再開</button>
+    </div>
+    <div class="mt-ph mt-ph-result" style="display:none">
+      <div class="mt-result">
+        <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+        <div class="mt-result-score"></div><div class="mt-result-msg"></div>
+        <button class="mt-retry-btn" onclick="mtRetry('mt26c')">↺ もう一度</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+
+  <!-- セクション6：公金その他の公の財産 -->
+  <div class="section-card">
+    <div class="section-header"><span class="num">6</span> 公金その他の公の財産（89条）</div>
+    <div class="section-body">
+      <div class="article-box">
+        <div class="art-label">第89条</div>
+        <p>公金その他の公の財産は、<span class="keyword">宗教上の組織若しくは団体</span>の使用、便益若しくは維持のため、又は<span class="keyword">公の支配</span>に属しない慈善、教育若しくは博愛の事業に対し、これを支出し、又はその利用に供してはならない。</p>
+      </div>
+      <p><span class="blue-kw">前段</span>：政教分離原則を財政面から保障する規定。宗教上の組織・団体への公金支出禁止。</p>
+      <p style="margin-top:8px;"><span class="blue-kw">後段</span>：慈善・教育・博愛事業という美名の下での公の財産の濫用を防止。</p>
+      <p style="margin-top:8px;">「<span class="keyword">公の支配</span>」＝国または地方公共団体の「<span class="keyword">ある程度の監督が及んでいる状態</span>」（公費濫用防止説）。したがって、ある程度の弱い監督すら及んでいない事業への公金支出は禁止されます。</p>
+      <div class="memo-box">
+        <div class="memo-label">📌 私学助成は合憲</div>
+        私立学校には国や地方公共団体のある程度の監督が及んでいるため、私学助成は合憲とされています。
+      </div>
+    </div>
+  </div>
+
+  <!-- セクション7：決算 -->
+  <div class="section-card">
+    <div class="section-header"><span class="num">7</span> 決算（90条）・財政状況の報告（91条）</div>
+    <div class="section-body">
+      <div class="article-box">
+        <div class="art-label">第90条1項</div>
+        <p>国の収入支出の決算は、すべて毎年<span class="keyword">会計検査院</span>がこれを検査し、<span class="keyword">内閣</span>は、<span class="keyword">次の年度</span>に、その検査報告とともに、これを<span class="keyword">国会に提出</span>しなければならない。</p>
+      </div>
+      <p>決算とは、一会計年度における国の収入・支出の実績を示す確定的計算書です。</p>
+      <div class="flow-box">
+        <div class="flow-title">決算の流れ</div>
+        <div class="flow-steps">
+          <div class="flow-step">①会計検査院が<br>毎年検査</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">②内閣が次の年度に<br>検査報告とともに<br>国会へ提出</div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-step">③国会が決算審査<br>（報告案件）</div>
+        </div>
+      </div>
+      <div class="point-box">
+        <div class="pt-title">⚠️ 要注意ポイント</div>
+        <p>・検査の主体：<span class="keyword">会計検査院</span>（内閣から独立）</p>
+        <p>・国会へ提出する主体：<span class="keyword">内閣</span>（会計検査院ではない！）</p>
+        <p>・国会の決算審査は<span class="keyword">報告案件</span>→否決されても既になされた支出の効力には<span class="keyword">影響なし</span></p>
+      </div>
+
+      <div class="article-box" style="margin-top:14px;">
+        <div class="art-label">第91条</div>
+        <p>内閣は、国会及び<span class="keyword">国民</span>に対し、定期に、<span class="keyword">少なくとも毎年一回</span>、国の財政状況について報告しなければならない。</p>
+      </div>
+      <p>報告の主体は<span class="keyword">内閣</span>（内閣総理大臣ではない）。「<span class="keyword">少なくとも毎年一回</span>」（四半期ごとに、ではない）。</p>
+    </div>
+  </div>
+
+
+  <!-- 理解度チェック -->
+  <div class="section-card">
+    <div class="section-header"><span class="num">✓</span> 理解度チェック</div>
+    <div class="section-body">
+<div class="mini-test" id="mt26d">
+  <div class="mini-test-header">✏️ ミニテスト — 理解度チェック 総まとめ</div>
+  <div class="mt-body">
+    <div class="mt-ph mt-ph-preview">
+      <div class="mt-preview">1. 課税要件法定主義：課税要件の法定＋賦課・徴収の<span class="mt-ans">手続の法定</span>も必要（要件だけでは足りない）。<br>
+        2. 租税法律主義の「法律」には<span class="mt-ans">条例</span>も含まれる（租税条例主義）。<br>
+        3. 本予算が成立しない場合→<span class="mt-ans">暫定予算</span>を作成（前年度予算施行は不可）。<br>
+        4. 予算法形式説（通説）→予算と法律の<span class="mt-ans">不一致</span>の問題が生じる。<br>
+        5. 予備費の事後承諾が得られなくても既支出の法的効力は<span class="mt-ans">影響なし</span>。<br>
+        6. 決算の国会提出主体→<span class="mt-ans">内閣</span>（会計検査院ではない）。<br>
+        7. 旭川市国保条例事件：保険料は反対給付があるため「租税」に<span class="mt-ans">該当しない</span>。</div>
+      <button class="mt-start-btn" onclick="mtStart('mt26d')">▶ チャレンジ開始</button>
+    </div>
+    <div class="mt-ph mt-ph-quiz" style="display:none">
+      <div class="mt-quiz-text"></div>
+      <div class="mt-pool-label">語　群</div>
+      <div class="mt-pool"></div>
+      <div class="mt-btn-row">
+        <button class="mt-judge-btn" onclick="mtJudge('mt26d')">✔ 判定する</button>
+        <button class="mt-hint-btn" onclick="mtHint('mt26d')">👁 手本を見る</button>
+      </div>
+    </div>
+    <div class="mt-ph mt-ph-hint" style="display:none">
+      <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+      <div class="mt-preview">1. 課税要件法定主義：課税要件の法定＋賦課・徴収の<span class="mt-ans">手続の法定</span>も必要（要件だけでは足りない）。<br>
+        2. 租税法律主義の「法律」には<span class="mt-ans">条例</span>も含まれる（租税条例主義）。<br>
+        3. 本予算が成立しない場合→<span class="mt-ans">暫定予算</span>を作成（前年度予算施行は不可）。<br>
+        4. 予算法形式説（通説）→予算と法律の<span class="mt-ans">不一致</span>の問題が生じる。<br>
+        5. 予備費の事後承諾が得られなくても既支出の法的効力は<span class="mt-ans">影響なし</span>。<br>
+        6. 決算の国会提出主体→<span class="mt-ans">内閣</span>（会計検査院ではない）。<br>
+        7. 旭川市国保条例事件：保険料は反対給付があるため「租税」に<span class="mt-ans">該当しない</span>。</div>
+      <button class="mt-resume-btn" onclick="mtResume('mt26d')">◀ 手本を閉じて続きから再開</button>
+    </div>
+    <div class="mt-ph mt-ph-result" style="display:none">
+      <div class="mt-result">
+        <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+        <div class="mt-result-score"></div><div class="mt-result-msg"></div>
+        <button class="mt-retry-btn" onclick="mtRetry('mt26d')">↺ もう一度</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</div><!-- /container -->
+
+<footer>
+  <p><a href="index.html">← GAMBA憲法 目次へ戻る</a></p>
+  <p style="margin-top:6px;">© GAMBA System / 江原予備校</p>
+</footer>
+
+<script>
+var MT_DATA = {
+  mt26a:{
+    answers:['手続の法定','明示的・個別的・具体的な委任','特別の給付への反対給付としてではなく','該当しない'],
+    decoys:['要件の法定のみ','一般的・包括的な委任','特別の給付の反対給付として','該当する'],
+    parts:[
+      {t:'text',v:'1. 課税要件法定主義：課税要件の法定＋税の賦課・徴収の'},{t:'blank',i:0},{t:'text',v:'（課税要件だけでは不十分）。'},{t:'br'},
+      {t:'text',v:'2. 細目については'},{t:'blank',i:1},{t:'text',v:'があれば命令で定めることができる。'},{t:'br'},
+      {t:'text',v:'3. 「租税」の定義：課税権に基づき、'},{t:'blank',i:2},{t:'text',v:'課す金銭給付。国民健康保険の保険料は租税に'},{t:'blank',i:3},{t:'text',v:'（反対給付あり）。'}
+    ]
+  },
+  mt26b:{
+    answers:['予算法形式説','不一致','減額修正','増額修正'],
+    decoys:['予算法律説','予算行政説','一致','修正不可'],
+    parts:[
+      {t:'text',v:'1. 予算の法的性格（通説）：'},{t:'blank',i:0},{t:'text',v:'（法律とは異なる独自の法形式）→予算と法律の'},{t:'blank',i:1},{t:'text',v:'が生じる問題がある。'},{t:'br'},
+      {t:'text',v:'2. 国会の予算修正権：'},{t:'blank',i:2},{t:'text',v:'は無制限に、'},{t:'blank',i:3},{t:'text',v:'は予算の同一性を損なわない範囲で認められる。'}
+    ]
+  },
+  mt26c:{
+    answers:['影響なし','会計検査院','内閣'],
+    decoys:['法的に無効','最高裁判所','財務省'],
+    parts:[
+      {t:'text',v:'1. 予備費の事後承諾が得られなかった場合→既支出の法的効果に'},{t:'blank',i:0},{t:'text',v:'（内閣が政治責任を負うのみ）。'},{t:'br'},
+      {t:'text',v:'2. 決算の手続：'},{t:'blank',i:1},{t:'text',v:'が毎年検査→'},{t:'blank',i:2},{t:'text',v:'が次の年度に検査報告とともに国会に提出。'}
+    ]
+  },
+  mt26d:{
+    answers:['手続の法定','条例','暫定予算','不一致','影響なし','内閣','該当しない'],
+    decoys:['要件の法定','命令','前年度予算','一致','法的に無効','会計検査院','該当する'],
+    parts:[
+      {t:'text',v:'1. 課税要件法定主義：課税要件の法定＋賦課・徴収の'},{t:'blank',i:0},{t:'text',v:'も必要（要件だけでは足りない）。'},{t:'br'},
+      {t:'text',v:'2. 租税法律主義の「法律」には'},{t:'blank',i:1},{t:'text',v:'も含まれる（租税条例主義）。'},{t:'br'},
+      {t:'text',v:'3. 本予算が成立しない場合→'},{t:'blank',i:2},{t:'text',v:'を作成（前年度予算施行は不可）。'},{t:'br'},
+      {t:'text',v:'4. 予算法形式説（通説）→予算と法律の'},{t:'blank',i:3},{t:'text',v:'の問題が生じる。'},{t:'br'},
+      {t:'text',v:'5. 予備費の事後承諾が得られなくても既支出の法的効力は'},{t:'blank',i:4},{t:'text',v:'。'},{t:'br'},
+      {t:'text',v:'6. 決算の国会提出主体→'},{t:'blank',i:5},{t:'text',v:'（会計検査院ではない）。'},{t:'br'},
+      {t:'text',v:'7. 旭川市国保条例事件：保険料は反対給付があるため「租税」に'},{t:'blank',i:6},{t:'text',v:'。'}
+    ]
+  }
+};
+var mtState = {};
+function mtShuffle(a){var b=[].concat(a);for(var i=b.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=b[i];b[i]=b[j];b[j]=t;}return b;}
+function mtStart(id){
+  var d=MT_DATA[id];
+  mtState[id]={filled:{},locked:{},sel:null,pool:mtShuffle(d.answers.concat(d.decoys))};
+  mtRenderQuiz(id);
+  mtSetPhase(id,'quiz');
+}
+function mtSetPhase(id,ph){
+  var el=document.getElementById(id);
+  el.querySelectorAll('.mt-ph').forEach(function(p){p.style.display='none';});
+  el.querySelector('.mt-ph-'+ph).style.display='block';
+}
+function mtRenderQuiz(id){
+  var d=MT_DATA[id],s=mtState[id];
+  var qt=document.getElementById(id).querySelector('.mt-quiz-text');
+  qt.innerHTML='';
+  d.parts.forEach(function(p){
+    if(p.t==='text'){
+      qt.appendChild(document.createTextNode(p.v));
+    } else if(p.t==='br'){
+      qt.appendChild(document.createElement('br'));
+    } else if(p.t==='blank'){
+      (function(i){
+        var btn=document.createElement('button');
+        btn.type='button';
+        var cls='mt-blank';
+        if(s.locked[i]===true) cls+=' correct';
+        else if(s.filled[i]) cls+=' filled';
+        btn.className=cls;
+        btn.dataset.bi=i;
+        btn.textContent=s.filled[i]||(s.locked[i]===true?d.answers[i]:'　　　');
+        if(s.locked[i]!==true){
+          btn.addEventListener('click',function(){mtBlankClick(id,i);});
+        }
+        qt.appendChild(btn);
+      })(p.i);
+    }
+  });
+  mtRenderPool(id);
+}
+function mtRenderPool(id){
+  var d=MT_DATA[id],s=mtState[id];
+  var pool=document.getElementById(id).querySelector('.mt-pool');
+  pool.innerHTML='';
+  s.pool.forEach(function(w,idx){
+    var lockedUsed=false;
+    for(var k in s.locked){if(s.locked[k]===true&&s.filled[k]===w){lockedUsed=true;break;}}
+    var placedUsed=false;
+    for(var k in s.filled){if(s.filled[k]===w&&s.locked[k]!==true){placedUsed=true;break;}}
+    var used=lockedUsed||placedUsed;
+    var chip=document.createElement('button');
+    chip.type='button';
+    chip.className='mt-chip'+(s.sel===idx?' mt-sel':'')+(used?' mt-used':'');
+    chip.textContent=w;
+    chip.dataset.ci=idx;
+    (function(ci){
+      chip.addEventListener('click',function(){
+        if(!this.classList.contains('mt-used')) mtChipClick(id,ci);
+      });
+    })(idx);
+    pool.appendChild(chip);
+  });
+}
+function mtChipClick(id,idx){
+  var s=mtState[id];
+  s.sel=(s.sel===idx)?null:idx;
+  mtRenderPool(id);
+}
+function mtBlankClick(id,bi){
+  var s=mtState[id];
+  if(s.locked[bi]===true) return;
+  if(s.sel!==null){
+    var w=s.pool[s.sel];
+    for(var k in s.filled){
+      if(s.filled[k]===w&&s.locked[k]!==true&&String(k)!==String(bi)){
+        s.filled[k]=null; break;
+      }
+    }
+    s.filled[bi]=w;
+    s.sel=null;
+    mtRenderQuiz(id);
+    return;
+  }
+  if(s.filled[bi]){s.filled[bi]=null; mtRenderQuiz(id);}
+}
+function mtJudge(id){
+  var d=MT_DATA[id],s=mtState[id],wrong=[];
+  d.answers.forEach(function(ans,i){
+    if(s.locked[i]===true) return;
+    if(s.filled[i]===ans){s.locked[i]=true;}
+    else if(s.filled[i]){s.locked[i]=false; wrong.push(i);}
+  });
+  mtRenderQuiz(id);
+  wrong.forEach(function(i){
+    var el=document.getElementById(id).querySelector('.mt-blank[data-bi="'+i+'"]');
+    if(el) el.classList.add('wrong');
+    setTimeout(function(){
+      if(mtState[id]){mtState[id].locked[i]=undefined; mtState[id].filled[i]=null; mtRenderQuiz(id);}
+    },800);
+  });
+  var allOk=d.answers.every(function(ans,i){return s.locked[i]===true;});
+  if(allOk) setTimeout(function(){mtShowResult(id,d.answers.length,d.answers.length);},500);
+}
+function mtHint(id){mtSetPhase(id,'hint');}
+function mtResume(id){mtRenderQuiz(id); mtSetPhase(id,'quiz');}
+function mtShowResult(id,sc,tot){
+  var el=document.getElementById(id);
+  el.querySelector('.mt-result-score').textContent=sc+' / '+tot+' 点';
+  var msg=sc===tot?'全問正解！完璧です！':sc>=tot*0.7?'あと少し！もう一度確認しましょう。':'解説をよく読んでから再挑戦！';
+  el.querySelector('.mt-result-msg').textContent=msg;
+  mtSetPhase(id,'result');
+  if(sc===tot) mtConfetti(el.querySelector('.mt-result'));
+}
+function mtConfetti(wrap){
+  var cols=['#C0392B','#D4A017','#27AE60','#1B2A4A','#3498DB'];
+  for(var i=0;i<36;i++){
+    var c=document.createElement('div'); c.className='mt-confetti';
+    c.style.left=Math.random()*100+'%';
+    c.style.background=cols[Math.floor(Math.random()*cols.length)];
+    c.style.animationDuration=(0.7+Math.random()*0.8)+'s';
+    c.style.animationDelay=(Math.random()*0.5)+'s';
+    wrap.appendChild(c);
+    setTimeout(function(x){x.remove();},1800,c);
+  }
+}
+function mtRetry(id){mtStart(id);}
+</script>/html>

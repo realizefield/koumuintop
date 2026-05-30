@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第21章 国会② | GAMBA憲法</title>
+<style>
+/* GAMBA憲法 共通スタイル（インライン用） */
+:root {
+  --navy: #1B2A4A;
+  --crimson: #C0392B;
+  --gold: #D4A017;
+  --bg: #F4F6F9;
+  --text: #2C3E50;
+  --border: #DDE3ED;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Meiryo','メイリオ','MS PGothic',sans-serif; background:var(--bg); color:var(--text); font-size:14px; line-height:1.8; }
+
+/* ナビ */
+.topnav { background:var(--navy); color:#fff; padding:10px 16px; display:flex; align-items:center; gap:10px; font-size:13px; position:sticky; top:0; z-index:100; }
+.topnav .brand { font-weight:bold; letter-spacing:1px; }
+.topnav .sep { opacity:0.4; }
+.topnav a { color:#8FA8CC; text-decoration:none; }
+.topnav a:hover { color:#fff; }
+
+/* ラップ */
+.wrap { max-width:860px; margin:0 auto; padding:0 16px 60px; }
+
+/* ヒーロー */
+.hero { background:linear-gradient(135deg,var(--navy) 0%,#2c3e6e 100%); color:#fff; padding:24px 20px; margin:0 -16px 24px; }
+.hero .crumb { font-size:11px; opacity:0.6; margin-bottom:6px; letter-spacing:1px; text-transform:uppercase; }
+.hero h1 { font-size:26px; font-weight:bold; display:flex; align-items:center; gap:8px; }
+.hero .stars { font-size:16px; color:var(--gold); }
+.hero .chapter-num { font-size:22px; }
+.hero .sub { font-size:13px; opacity:0.85; margin-top:8px; line-height:1.7; }
+
+/* goals */
+.goals { background:#EBF0FA; border-left:4px solid var(--navy); border-radius:0 8px 8px 0; padding:14px 18px; margin-bottom:20px; }
+.goals h2 { font-size:13px; font-weight:bold; color:var(--navy); margin-bottom:8px; }
+.goals li { font-size:13px; margin-left:16px; margin-bottom:4px; }
+
+/* sec見出し */
+.sec { background:var(--navy); color:#fff; padding:10px 16px; border-radius:6px; font-size:14px; font-weight:bold; margin:24px 0 12px; display:flex; align-items:center; gap:8px; }
+.sec .num { background:var(--crimson); width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:bold; flex-shrink:0; }
+
+/* card */
+.card { background:#fff; border-radius:8px; padding:18px; margin-bottom:16px; box-shadow:0 2px 6px rgba(0,0,0,0.06); }
+
+/* subsec */
+.subsec { font-size:13px; font-weight:bold; color:var(--navy); border-bottom:2px solid var(--border); padding-bottom:4px; margin:14px 0 8px; }
+.card > p { font-size:13px; margin-bottom:8px; }
+
+/* ex-box */
+.ex-box { background:#F0F4FA; border:1px solid #C5D3E8; border-radius:6px; padding:12px 14px; margin:10px 0; }
+.ex-box .label { display:inline-block; background:var(--navy); color:#fff; font-size:11px; padding:2px 8px; border-radius:10px; margin-bottom:6px; }
+.ex-box p { font-size:13px; line-height:1.8; }
+
+/* warning */
+.warning { background:#FFF8F0; border-left:3px solid #E67E22; border-radius:0 6px 6px 0; padding:10px 14px; margin:10px 0; }
+.warning .label { display:inline-block; background:#E67E22; color:#fff; font-size:11px; padding:2px 8px; border-radius:10px; margin-bottom:4px; }
+.warning p { font-size:13px; }
+
+/* pk（ピンクハイライト） */
+.pk { background:#FFF0EE; color:var(--crimson); font-weight:bold; padding:1px 4px; border-radius:3px; }
+
+/* table */
+.tbl { width:100%; border-collapse:collapse; margin:10px 0; font-size:13px; }
+.tbl th { background:var(--navy); color:#fff; padding:8px 10px; text-align:left; }
+.tbl td { padding:8px 10px; border-bottom:1px solid var(--border); vertical-align:top; }
+.tbl tr:nth-child(even) td { background:#F5F7FC; }
+
+  /* ===== ミニテスト 新UI ===== */
+  .mini-test { background: #F0F4FA; border: 2px solid var(--navy); border-radius: 10px; margin-top: 18px; overflow: hidden; }
+  .mini-test-header { background: var(--navy); color: white; padding: 8px 14px; font-size: 13px; font-weight: bold; letter-spacing: 1px; display: flex; align-items: center; gap: 6px; }
+  .mt-body { padding: 14px; }
+  .mt-preview { background: #EEF2F8; border-radius: 6px; padding: 12px 14px; margin-bottom: 12px; font-size: 14px; line-height: 2.1; }
+  .mt-ans { display: inline; color: var(--crimson); font-weight: bold; background: #FFF0EE; border-radius: 3px; padding: 1px 5px; }
+  .mt-start-btn { width: 100%; padding: 10px; background: var(--navy); color: white; border: none; border-radius: 6px; font-size: 13px; font-weight: bold; cursor: pointer; font-family: inherit; }
+  .mt-start-btn:hover { background: #2D4070; }
+  .mt-quiz-text { font-size: 14px; line-height: 2.4; margin-bottom: 14px; }
+  .mt-blank { display: inline-flex; align-items: center; justify-content: center; min-width: 68px; height: 28px; border: 2px dashed #AAB8CC; border-radius: 5px; background: #EEF2F8; color: #8FA8CC; font-size: 13px; padding: 0 6px; vertical-align: middle; cursor: pointer; transition: all 0.15s; }
+  .mt-blank.filled { border-style: solid; border-color: var(--navy); background: white; color: var(--navy); font-weight: bold; }
+  .mt-blank.correct { border-color: #27AE60; background: #E8F8F0; color: #27AE60; font-weight: bold; cursor: default; }
+  .mt-blank.wrong { border-color: var(--crimson); background: #FFF0EE; color: var(--crimson); animation: mt-shake 0.3s ease; }
+  @keyframes mt-shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-4px)} 75%{transform:translateX(4px)} }
+  .mt-pool-label { font-size: 11px; color: #6B7E99; letter-spacing: 1px; margin-bottom: 6px; }
+  .mt-pool { display: flex; flex-wrap: wrap; gap: 6px; background: white; border-radius: 6px; padding: 8px; margin-bottom: 12px; min-height: 38px; border: 1px solid var(--border); }
+  .mt-chip { background: white; border: 1.5px solid var(--navy); border-radius: 5px; padding: 4px 10px; font-size: 13px; font-weight: bold; color: var(--navy); cursor: pointer; transition: all 0.12s; user-select: none; -webkit-user-select: none; }
+  .mt-chip:hover { background: #EEF2F8; }
+  .mt-chip.mt-sel { background: var(--navy); color: white; }
+  .mt-chip.mt-used { opacity: 0.3; pointer-events: none; }
+  .mt-btn-row { display: flex; gap: 8px; }
+  .mt-judge-btn { flex: 2; padding: 9px; background: var(--crimson); color: white; border: none; border-radius: 6px; font-size: 13px; font-weight: bold; cursor: pointer; font-family: inherit; }
+  .mt-judge-btn:hover { background: #A93226; }
+  .mt-hint-btn { flex: 1; padding: 9px; background: transparent; color: #6B7E99; border: 1px solid var(--border); border-radius: 6px; font-size: 12px; cursor: pointer; font-family: inherit; }
+  .mt-hint-btn:hover { background: #EEF2F8; }
+  .mt-hint-note { font-size: 12px; color: #8B6914; background: #FFF8E6; border-left: 3px solid var(--gold); padding: 8px 12px; border-radius: 0 5px 5px 0; margin-bottom: 10px; }
+  .mt-resume-btn { width: 100%; padding: 9px; background: var(--navy); color: white; border: none; border-radius: 6px; font-size: 13px; cursor: pointer; font-family: inherit; }
+  .mt-resume-btn:hover { background: #2D4070; }
+  .mt-result { text-align: center; padding: 16px 0 8px; position: relative; overflow: hidden; }
+  .mt-result-score { font-size: 32px; font-weight: bold; color: var(--gold); margin: 6px 0 4px; }
+  .mt-result-msg { font-size: 13px; color: #6B7E99; margin-bottom: 14px; }
+  .mt-retry-btn { padding: 9px 24px; background: var(--navy); color: white; border: none; border-radius: 6px; font-size: 13px; cursor: pointer; font-family: inherit; }
+  .mt-confetti { position: absolute; width: 7px; height: 7px; border-radius: 2px; animation: mt-fall linear forwards; pointer-events: none; }
+  @keyframes mt-fall { 0%{transform:translateY(-10px) rotate(0deg);opacity:1} 100%{transform:translateY(180px) rotate(720deg);opacity:0} }
+
+/* nav-buttons */
+.nav-buttons { display:flex; justify-content:space-between; margin-top:28px; }
+.btn { display:inline-block; padding:10px 24px; background:var(--crimson); color:#fff; text-decoration:none; border-radius:6px; font-size:13px; font-weight:bold; }
+.btn.outline { background:#fff; color:var(--navy); border:2px solid var(--navy); }
+.btn:hover { opacity:0.85; }
+
+</style>
+</head>
+<body data-page="kenpo_ch21">
+
+<nav class="topnav">
+  <span class="brand">GAMBA 憲法</span>
+  <span class="sep">|</span>
+  <a href="index.html">目次</a>
+  <a href="kenpo_ch21_q.html">演習へ</a>
+  <a href="review.html">復習リスト</a>
+</nav>
+
+<div class="wrap">
+<header class="hero">
+  <div class="crumb">第21章 / 統治機構③</div>
+  <h1>国会 <span class="chapter-num">②</span><span class="stars">★★☆</span></h1>
+  <p class="sub">議員の特権（不逮捕・免責・歳費）、会期制、会議の原則、国政調査権はいずれも頻出です。特に<span class="pk">不逮捕特権の例外2つ</span>・<span class="pk">免責特権の「責任」の範囲</span>・<span class="pk">国政調査権の限界3つ</span>は必ず押さえましょう。</p>
+</header>
+<main>
+
+<section class="goals">
+  <h2>この単元で押さえる5つのポイント</h2>
+  <ol>
+    <li>不逮捕特権の例外：①<span class="pk">院外の現行犯</span>　②<span class="pk">議院の許諾</span></li>
+    <li>免責特権で免除される「責任」は<span class="pk">法的責任</span>のみ。政治責任・政党除名は許される</li>
+    <li>特別会：解散から<span class="pk">40日以内</span>に総選挙→<span class="pk">30日以内</span>に召集</li>
+    <li>国政調査権の主体は<span class="pk">各議院</span>。要求できるのは証人の出頭・証言・記録提出の<span class="pk">3つ</span>のみ</li>
+    <li>議員の除名には<span class="pk">出席議員の3分の2以上</span>の議決が必要</li>
+  </ol>
+</section>
+
+<!-- ================= SECTION 1 ================= -->
+<div class="sec"><span class="num">1</span>国会議員の特権</div>
+
+<div class="card">
+<h3 class="subsec">① 不逮捕特権（50条）</h3>
+<div class="ex-box">
+<span class="label">📜 憲法50条</span>
+<p>両議院の議員は、法律の定める場合を除いては、国会の<strong>会期中</strong>逮捕されず、会期前に逮捕された議員は、その<strong>議院の要求</strong>があれば、会期中これを釈放しなければならない。</p>
+</div>
+
+<table class="tbl">
+<thead><tr><th>要件・文言</th><th>解釈</th></tr></thead>
+<tbody>
+<tr><td>「法律の定める場合」（例外）</td><td>①<strong>院外における現行犯</strong>　②<strong>議院の許諾</strong>がある場合（国会法33条）</td></tr>
+<tr><td>「逮捕」の意味</td><td>刑事訴訟法上の逮捕のみならず<strong>広く身柄拘束一般</strong>（勾引・勾留・行政的拘束も含む）</td></tr>
+<tr><td>「会期中」の範囲</td><td>参議院の緊急集会中も適用。閉会中の継続審議委員会には及ばない</td></tr>
+</tbody>
+</table>
+
+<h3 class="subsec">② 免責特権（51条）</h3>
+<div class="ex-box">
+<span class="label">📜 憲法51条</span>
+<p>両議院の議員は、議院で行つた演説、討論又は表決について、<strong>院外で責任を問はれない</strong>。</p>
+</div>
+
+<table class="tbl">
+<thead><tr><th>ポイント</th><th>内容</th></tr></thead>
+<tbody>
+<tr><td>「責任」の範囲</td><td><strong>法的責任</strong>（民事・刑事・懲戒）のみ免除。<strong>政治責任は免除されない</strong>。政党からの除名も許される</td></tr>
+<tr><td>「議院で行った」</td><td>場所的意味ではなく活動的意味。地方公聴会・緊急集会での発言にも及ぶ</td></tr>
+<tr><td>国務大臣としての発言</td><td>免責特権は<strong>及ばない</strong>（議員としての活動のみが対象）</td></tr>
+<tr><td>地方議会議員</td><td>憲法上の免責特権の保障は<strong>なし</strong>（判例：最大判昭42）</td></tr>
+</tbody>
+</table>
+
+<h3 class="subsec">③ 歳費受領権（49条）</h3>
+<p>歳費の具体的内容は<span class="pk">法律事項</span>であるため、法律改正によって<span class="pk">減額できる</span>。<br>
+※ 裁判官の報酬は憲法上在任中減額不可（79条6項・80条2項）と異なる。</p>
+</div>
+
+<!-- ▼ 国会議員の特権 ▼ -->
+<div class="mini-test" id="mt21a">
+  <div class="mini-test-header">✏️ ミニテスト — 国会議員の特権</div>
+  <div class="mt-body">
+    <div class="mt-ph mt-ph-preview">
+      <div class="mt-preview">1. 不逮捕特権の例外（法律の定める場合）：①<span class="mt-ans">院外における現行犯</span>と②<span class="mt-ans">議院の許諾</span>がある場合（院内の現行犯は含まない）。<br>
+        2. 「逮捕」の意味：刑事訴訟法上の逮捕だけでなく<span class="mt-ans">広く身柄拘束一般</span>を指す（通説）。<br>
+        3. 免責特権で免除される「責任」：<span class="mt-ans">法的責任</span>（民事・刑事・懲戒）のみ。<span class="mt-ans">政治責任は免除されない</span>。<br>
+        4. 国務大臣の立場で国会で行った発言には、免責特権は<span class="mt-ans">及ばない</span>（議員としての活動のみ）。<br>
+        5. 議員の歳費は<span class="mt-ans">法律事項</span>のため、法律改正により減額できる（裁判官の報酬とは異なる）。</div>
+      <button class="mt-start-btn" onclick="mtStart('mt21a')">▶ チャレンジ開始</button>
+    </div>
+    <div class="mt-ph mt-ph-quiz" style="display:none">
+      <div class="mt-quiz-text"></div>
+      <div class="mt-pool-label">語　群</div>
+      <div class="mt-pool"></div>
+      <div class="mt-btn-row">
+        <button class="mt-judge-btn" onclick="mtJudge('mt21a')">✔ 判定する</button>
+        <button class="mt-hint-btn" onclick="mtHint('mt21a')">👁 手本を見る</button>
+      </div>
+    </div>
+    <div class="mt-ph mt-ph-hint" style="display:none">
+      <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+      <div class="mt-preview">1. 不逮捕特権の例外（法律の定める場合）：①<span class="mt-ans">院外における現行犯</span>と②<span class="mt-ans">議院の許諾</span>がある場合（院内の現行犯は含まない）。<br>
+        2. 「逮捕」の意味：刑事訴訟法上の逮捕だけでなく<span class="mt-ans">広く身柄拘束一般</span>を指す（通説）。<br>
+        3. 免責特権で免除される「責任」：<span class="mt-ans">法的責任</span>（民事・刑事・懲戒）のみ。<span class="mt-ans">政治責任は免除されない</span>。<br>
+        4. 国務大臣の立場で国会で行った発言には、免責特権は<span class="mt-ans">及ばない</span>（議員としての活動のみ）。<br>
+        5. 議員の歳費は<span class="mt-ans">法律事項</span>のため、法律改正により減額できる（裁判官の報酬とは異なる）。</div>
+      <button class="mt-resume-btn" onclick="mtResume('mt21a')">◀ 手本を閉じて続きから再開</button>
+    </div>
+    <div class="mt-ph mt-ph-result" style="display:none">
+      <div class="mt-result">
+        <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+        <div class="mt-result-score"></div><div class="mt-result-msg"></div>
+        <button class="mt-retry-btn" onclick="mtRetry('mt21a')">↺ もう一度</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ▼ 会期制 ▼ -->
+<div class="mini-test" id="mt21b">
+  <div class="mini-test-header">✏️ ミニテスト — 会期制</div>
+  <div class="mt-body">
+    <div class="mt-ph mt-ph-preview">
+      <div class="mt-preview">1. 常会の会期は<span class="mt-ans">150日</span>（延長は<span class="mt-ans">1回</span>まで。180日・2回は誤り）。<br>
+        2. 衆議院解散→<span class="mt-ans">40日</span>以内に総選挙→選挙の日から<span class="mt-ans">30日</span>以内に特別会を召集（54条1項）。<br>
+        3. 緊急集会を求めることができるのは<span class="mt-ans">内閣のみ</span>（参議院議員・参議院議長には請求権なし）。<br>
+        4. 緊急集会の措置は、次の国会開会後<span class="mt-ans">10日</span>以内に衆議院の同意がなければ<span class="mt-ans">将来に向かって</span>効力を失う。<br>
+        5. 会期不継続の原則は<span class="mt-ans">憲法に明文なし</span>（国会法68条に規定）。委員会の継続審議案件は次会期に引き継がれる（例外）。</div>
+      <button class="mt-start-btn" onclick="mtStart('mt21b')">▶ チャレンジ開始</button>
+    </div>
+    <div class="mt-ph mt-ph-quiz" style="display:none">
+      <div class="mt-quiz-text"></div>
+      <div class="mt-pool-label">語　群</div>
+      <div class="mt-pool"></div>
+      <div class="mt-btn-row">
+        <button class="mt-judge-btn" onclick="mtJudge('mt21b')">✔ 判定する</button>
+        <button class="mt-hint-btn" onclick="mtHint('mt21b')">👁 手本を見る</button>
+      </div>
+    </div>
+    <div class="mt-ph mt-ph-hint" style="display:none">
+      <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+      <div class="mt-preview">1. 常会の会期は<span class="mt-ans">150日</span>（延長は<span class="mt-ans">1回</span>まで。180日・2回は誤り）。<br>
+        2. 衆議院解散→<span class="mt-ans">40日</span>以内に総選挙→選挙の日から<span class="mt-ans">30日</span>以内に特別会を召集（54条1項）。<br>
+        3. 緊急集会を求めることができるのは<span class="mt-ans">内閣のみ</span>（参議院議員・参議院議長には請求権なし）。<br>
+        4. 緊急集会の措置は、次の国会開会後<span class="mt-ans">10日</span>以内に衆議院の同意がなければ<span class="mt-ans">将来に向かって</span>効力を失う。<br>
+        5. 会期不継続の原則は<span class="mt-ans">憲法に明文なし</span>（国会法68条に規定）。委員会の継続審議案件は次会期に引き継がれる（例外）。</div>
+      <button class="mt-resume-btn" onclick="mtResume('mt21b')">◀ 手本を閉じて続きから再開</button>
+    </div>
+    <div class="mt-ph mt-ph-result" style="display:none">
+      <div class="mt-result">
+        <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+        <div class="mt-result-score"></div><div class="mt-result-msg"></div>
+        <button class="mt-retry-btn" onclick="mtRetry('mt21b')">↺ もう一度</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ▼ 会議の原則 ▼ -->
+<div class="mini-test" id="mt21c">
+  <div class="mini-test-header">✏️ ミニテスト — 会議の原則</div>
+  <div class="mt-body">
+    <div class="mt-ph mt-ph-preview">
+      <div class="mt-preview">1. 定足数は<span class="mt-ans">総議員の3分の1</span>以上、表決は原則<span class="mt-ans">出席議員の過半数</span>（56条）。<br>
+        2. 議員の除名：<span class="mt-ans">出席議員</span>の3分の2以上の議決（<span class="mt-ans">総議員</span>ではない）（58条2項）。<br>
+        3. 本会議の秘密会：<span class="mt-ans">出席議員の3分の2</span>以上の議決で開くことができる（57条1項ただし書）。<br>
+        4. 委員会は<span class="mt-ans">非公開が原則</span>（委員長が許可した場合のみ傍聴可能。本会議とは逆）。</div>
+      <button class="mt-start-btn" onclick="mtStart('mt21c')">▶ チャレンジ開始</button>
+    </div>
+    <div class="mt-ph mt-ph-quiz" style="display:none">
+      <div class="mt-quiz-text"></div>
+      <div class="mt-pool-label">語　群</div>
+      <div class="mt-pool"></div>
+      <div class="mt-btn-row">
+        <button class="mt-judge-btn" onclick="mtJudge('mt21c')">✔ 判定する</button>
+        <button class="mt-hint-btn" onclick="mtHint('mt21c')">👁 手本を見る</button>
+      </div>
+    </div>
+    <div class="mt-ph mt-ph-hint" style="display:none">
+      <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+      <div class="mt-preview">1. 定足数は<span class="mt-ans">総議員の3分の1</span>以上、表決は原則<span class="mt-ans">出席議員の過半数</span>（56条）。<br>
+        2. 議員の除名：<span class="mt-ans">出席議員</span>の3分の2以上の議決（<span class="mt-ans">総議員</span>ではない）（58条2項）。<br>
+        3. 本会議の秘密会：<span class="mt-ans">出席議員の3分の2</span>以上の議決で開くことができる（57条1項ただし書）。<br>
+        4. 委員会は<span class="mt-ans">非公開が原則</span>（委員長が許可した場合のみ傍聴可能。本会議とは逆）。</div>
+      <button class="mt-resume-btn" onclick="mtResume('mt21c')">◀ 手本を閉じて続きから再開</button>
+    </div>
+    <div class="mt-ph mt-ph-result" style="display:none">
+      <div class="mt-result">
+        <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+        <div class="mt-result-score"></div><div class="mt-result-msg"></div>
+        <button class="mt-retry-btn" onclick="mtRetry('mt21c')">↺ もう一度</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ▼ 議院の権能 ▼ -->
+<div class="mini-test" id="mt21d">
+  <div class="mini-test-header">✏️ ミニテスト — 議院の権能</div>
+  <div class="mt-body">
+    <div class="mt-ph mt-ph-preview">
+      <div class="mt-preview">1. 国政調査権の主体は<span class="mt-ans">各議院</span>。要求できるのは<span class="mt-ans">証人の出頭・証言・記録の提出</span>の3つ。捜索・押収などの強制手段は<span class="mt-ans">不可</span>。<br>
+        2. 裁判所と異なる目的（立法・行政監督目的）からの<span class="mt-ans">並行調査は許される</span>（ロッキード事件）。<br>
+        3. 検察の起訴・不起訴の判断に<span class="mt-ans">政治的圧力を加える</span>ような調査は許されない（国政調査権の限界）。<br>
+        4. 除名（出席議員の3分の2以上）→除名された議員は<span class="mt-ans">司法裁判所に出訴できない</span>（55条・資格争訟裁判）。</div>
+      <button class="mt-start-btn" onclick="mtStart('mt21d')">▶ チャレンジ開始</button>
+    </div>
+    <div class="mt-ph mt-ph-quiz" style="display:none">
+      <div class="mt-quiz-text"></div>
+      <div class="mt-pool-label">語　群</div>
+      <div class="mt-pool"></div>
+      <div class="mt-btn-row">
+        <button class="mt-judge-btn" onclick="mtJudge('mt21d')">✔ 判定する</button>
+        <button class="mt-hint-btn" onclick="mtHint('mt21d')">👁 手本を見る</button>
+      </div>
+    </div>
+    <div class="mt-ph mt-ph-hint" style="display:none">
+      <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+      <div class="mt-preview">1. 国政調査権の主体は<span class="mt-ans">各議院</span>。要求できるのは<span class="mt-ans">証人の出頭・証言・記録の提出</span>の3つ。捜索・押収などの強制手段は<span class="mt-ans">不可</span>。<br>
+        2. 裁判所と異なる目的（立法・行政監督目的）からの<span class="mt-ans">並行調査は許される</span>（ロッキード事件）。<br>
+        3. 検察の起訴・不起訴の判断に<span class="mt-ans">政治的圧力を加える</span>ような調査は許されない（国政調査権の限界）。<br>
+        4. 除名（出席議員の3分の2以上）→除名された議員は<span class="mt-ans">司法裁判所に出訴できない</span>（55条・資格争訟裁判）。</div>
+      <button class="mt-resume-btn" onclick="mtResume('mt21d')">◀ 手本を閉じて続きから再開</button>
+    </div>
+    <div class="mt-ph mt-ph-result" style="display:none">
+      <div class="mt-result">
+        <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+        <div class="mt-result-score"></div><div class="mt-result-msg"></div>
+        <button class="mt-retry-btn" onclick="mtRetry('mt21d')">↺ もう一度</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</main>
+</div>
+
+<script>
+var MT_DATA = {
+  mt21a:{
+    answers:['院外における現行犯','議院の許諾','広く身柄拘束一般','法的責任','政治責任は免除されない','及ばない','法律事項'],
+    decoys:['院内における現行犯','内閣の許諾','刑事訴訟法上の逮捕のみ','政治責任','法的責任も免除される','及ぶ','憲法事項'],
+    parts:[
+      {t:'text',v:'1. 不逮捕特権の例外：①'},{t:'blank',i:0},{t:'text',v:'と②'},{t:'blank',i:1},{t:'text',v:'がある場合（院内の現行犯は含まない）。'},{t:'br'},
+      {t:'text',v:'2. 「逮捕」の意味：刑事訴訟法上の逮捕だけでなく'},{t:'blank',i:2},{t:'text',v:'を指す（通説）。'},{t:'br'},
+      {t:'text',v:'3. 免責される「責任」：'},{t:'blank',i:3},{t:'text',v:'のみ。'},{t:'blank',i:4},{t:'text',v:'。'},{t:'br'},
+      {t:'text',v:'4. 国務大臣の立場での国会発言には、免責特権は'},{t:'blank',i:5},{t:'text',v:'（議員としての活動のみ）。'},{t:'br'},
+      {t:'text',v:'5. 議員の歳費は'},{t:'blank',i:6},{t:'text',v:'のため、法律改正により減額できる。'}
+    ]
+  },
+  mt21b:{
+    answers:['150日','1回','40日','30日','内閣のみ','10日','将来に向かって','憲法に明文なし'],
+    decoys:['180日','2回','60日','50日','参議院議長','20日','遡及して','法律に規定'],
+    parts:[
+      {t:'text',v:'1. 常会の会期は'},{t:'blank',i:0},{t:'text',v:'（延長は'},{t:'blank',i:1},{t:'text',v:'まで）。'},{t:'br'},
+      {t:'text',v:'2. 衆議院解散→'},{t:'blank',i:2},{t:'text',v:'以内に総選挙→選挙の日から'},{t:'blank',i:3},{t:'text',v:'以内に特別会を召集（54条1項）。'},{t:'br'},
+      {t:'text',v:'3. 緊急集会を求めることができるのは'},{t:'blank',i:4},{t:'text',v:'（参議院議員・参議院議長には請求権なし）。'},{t:'br'},
+      {t:'text',v:'4. 緊急集会の措置は、次の国会開会後'},{t:'blank',i:5},{t:'text',v:'以内に衆議院の同意がなければ'},{t:'blank',i:6},{t:'text',v:'効力を失う。'},{t:'br'},
+      {t:'text',v:'5. 会期不継続の原則は'},{t:'blank',i:7},{t:'text',v:'（国会法68条に規定）。'}
+    ]
+  },
+  mt21c:{
+    answers:['総議員の3分の1','出席議員の過半数','出席議員','総議員','出席議員の3分の2','非公開が原則'],
+    decoys:['総議員の過半数','出席議員の3分の1','在籍議員','選挙区の代表','総議員の3分の2','公開が原則'],
+    parts:[
+      {t:'text',v:'1. 定足数は'},{t:'blank',i:0},{t:'text',v:'以上、表決は原則'},{t:'blank',i:1},{t:'text',v:'（56条）。'},{t:'br'},
+      {t:'text',v:'2. 議員の除名：'},{t:'blank',i:2},{t:'text',v:'の3分の2以上の議決（'},{t:'blank',i:3},{t:'text',v:'ではない）（58条2項）。'},{t:'br'},
+      {t:'text',v:'3. 本会議の秘密会：'},{t:'blank',i:4},{t:'text',v:'以上の議決で開くことができる（57条1項ただし書）。'},{t:'br'},
+      {t:'text',v:'4. 委員会は'},{t:'blank',i:5},{t:'text',v:'（委員長が許可した場合のみ傍聴可能）。'}
+    ]
+  },
+  mt21d:{
+    answers:['各議院','証人の出頭・証言・記録の提出','不可','並行調査は許される','政治的圧力を加える','司法裁判所に出訴できない'],
+    decoys:['内閣','証人の出頭・捜索・押収','可能','並行調査も禁止','真相を解明する','司法裁判所に出訴できる'],
+    parts:[
+      {t:'text',v:'1. 国政調査権の主体は'},{t:'blank',i:0},{t:'text',v:'。要求できるのは'},{t:'blank',i:1},{t:'text',v:'の3つ。強制手段は'},{t:'blank',i:2},{t:'text',v:'。'},{t:'br'},
+      {t:'text',v:'2. 裁判所と異なる目的（立法・行政監督目的）からの'},{t:'blank',i:3},{t:'text',v:'（ロッキード事件）。'},{t:'br'},
+      {t:'text',v:'3. 検察の起訴・不起訴の判断に'},{t:'blank',i:4},{t:'text',v:'ような調査は許されない（国政調査権の限界）。'},{t:'br'},
+      {t:'text',v:'4. 除名された議員は'},{t:'blank',i:5},{t:'text',v:'（55条・資格争訟裁判）。'}
+    ]
+  }
+};
+var mtState = {};
+function mtShuffle(a){var b=[].concat(a);for(var i=b.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=b[i];b[i]=b[j];b[j]=t;}return b;}
+function mtStart(id){
+  var d=MT_DATA[id];
+  mtState[id]={filled:{},locked:{},sel:null,pool:mtShuffle(d.answers.concat(d.decoys))};
+  mtRenderQuiz(id);
+  mtSetPhase(id,'quiz');
+}
+function mtSetPhase(id,ph){
+  var el=document.getElementById(id);
+  el.querySelectorAll('.mt-ph').forEach(function(p){p.style.display='none';});
+  el.querySelector('.mt-ph-'+ph).style.display='block';
+}
+function mtRenderQuiz(id){
+  var d=MT_DATA[id],s=mtState[id];
+  var qt=document.getElementById(id).querySelector('.mt-quiz-text');
+  qt.innerHTML='';
+  d.parts.forEach(function(p){
+    if(p.t==='text'){
+      qt.appendChild(document.createTextNode(p.v));
+    } else if(p.t==='br'){
+      qt.appendChild(document.createElement('br'));
+    } else if(p.t==='blank'){
+      (function(i){
+        var btn=document.createElement('button');
+        btn.type='button';
+        var cls='mt-blank';
+        if(s.locked[i]===true) cls+=' correct';
+        else if(s.filled[i]) cls+=' filled';
+        btn.className=cls;
+        btn.dataset.bi=i;
+        btn.textContent=s.filled[i]||(s.locked[i]===true?d.answers[i]:'　　　');
+        if(s.locked[i]!==true){
+          btn.addEventListener('click',function(){mtBlankClick(id,i);});
+        }
+        qt.appendChild(btn);
+      })(p.i);
+    }
+  });
+  mtRenderPool(id);
+}
+function mtRenderPool(id){
+  var d=MT_DATA[id],s=mtState[id];
+  var pool=document.getElementById(id).querySelector('.mt-pool');
+  pool.innerHTML='';
+  s.pool.forEach(function(w,idx){
+    var lockedUsed=false;
+    for(var k in s.locked){if(s.locked[k]===true&&s.filled[k]===w){lockedUsed=true;break;}}
+    var placedUsed=false;
+    for(var k in s.filled){if(s.filled[k]===w&&s.locked[k]!==true){placedUsed=true;break;}}
+    var used=lockedUsed||placedUsed;
+    var chip=document.createElement('button');
+    chip.type='button';
+    chip.className='mt-chip'+(s.sel===idx?' mt-sel':'')+(used?' mt-used':'');
+    chip.textContent=w;
+    chip.dataset.ci=idx;
+    (function(ci){
+      chip.addEventListener('click',function(){
+        if(!this.classList.contains('mt-used')) mtChipClick(id,ci);
+      });
+    })(idx);
+    pool.appendChild(chip);
+  });
+}
+function mtChipClick(id,idx){
+  var s=mtState[id];
+  s.sel=(s.sel===idx)?null:idx;
+  mtRenderPool(id);
+}
+function mtBlankClick(id,bi){
+  var s=mtState[id];
+  if(s.locked[bi]===true) return;
+  if(s.sel!==null){
+    var w=s.pool[s.sel];
+    for(var k in s.filled){
+      if(s.filled[k]===w&&s.locked[k]!==true&&String(k)!==String(bi)){
+        s.filled[k]=null; break;
+      }
+    }
+    s.filled[bi]=w;
+    s.sel=null;
+    mtRenderQuiz(id);
+    return;
+  }
+  if(s.filled[bi]){s.filled[bi]=null; mtRenderQuiz(id);}
+}
+function mtJudge(id){
+  var d=MT_DATA[id],s=mtState[id],wrong=[];
+  d.answers.forEach(function(ans,i){
+    if(s.locked[i]===true) return;
+    if(s.filled[i]===ans){s.locked[i]=true;}
+    else if(s.filled[i]){s.locked[i]=false; wrong.push(i);}
+  });
+  mtRenderQuiz(id);
+  wrong.forEach(function(i){
+    var el=document.getElementById(id).querySelector('.mt-blank[data-bi="'+i+'"]');
+    if(el) el.classList.add('wrong');
+    setTimeout(function(){
+      if(mtState[id]){mtState[id].locked[i]=undefined; mtState[id].filled[i]=null; mtRenderQuiz(id);}
+    },800);
+  });
+  var allOk=d.answers.every(function(ans,i){return s.locked[i]===true;});
+  if(allOk) setTimeout(function(){mtShowResult(id,d.answers.length,d.answers.length);},500);
+}
+function mtHint(id){mtSetPhase(id,'hint');}
+function mtResume(id){mtRenderQuiz(id); mtSetPhase(id,'quiz');}
+function mtShowResult(id,sc,tot){
+  var el=document.getElementById(id);
+  el.querySelector('.mt-result-score').textContent=sc+' / '+tot+' 点';
+  var msg=sc===tot?'全問正解！完璧です！':sc>=tot*0.7?'あと少し！もう一度確認しましょう。':'解説をよく読んでから再挑戦！';
+  el.querySelector('.mt-result-msg').textContent=msg;
+  mtSetPhase(id,'result');
+  if(sc===tot) mtConfetti(el.querySelector('.mt-result'));
+}
+function mtConfetti(wrap){
+  var cols=['#C0392B','#D4A017','#27AE60','#1B2A4A','#3498DB'];
+  for(var i=0;i<36;i++){
+    var c=document.createElement('div'); c.className='mt-confetti';
+    c.style.left=Math.random()*100+'%';
+    c.style.background=cols[Math.floor(Math.random()*cols.length)];
+    c.style.animationDuration=(0.7+Math.random()*0.8)+'s';
+    c.style.animationDelay=(Math.random()*0.5)+'s';
+    wrap.appendChild(c);
+    setTimeout(function(x){x.remove();},1800,c);
+  }
+}
+function mtRetry(id){mtStart(id);}
+</script></html>

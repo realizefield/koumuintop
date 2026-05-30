@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>第24章 司法① | GAMBA憲法</title>
+<style>
+/* GAMBA憲法 共通スタイル（インライン用） */
+:root {
+  --navy: #1B2A4A;
+  --crimson: #C0392B;
+  --gold: #D4A017;
+  --bg: #F4F6F9;
+  --text: #2C3E50;
+  --border: #DDE3ED;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'Meiryo','メイリオ','MS PGothic',sans-serif; background:var(--bg); color:var(--text); font-size:14px; line-height:1.8; }
+
+/* ナビ */
+.topnav { background:var(--navy); color:#fff; padding:10px 16px; display:flex; align-items:center; gap:10px; font-size:13px; position:sticky; top:0; z-index:100; }
+.topnav .brand { font-weight:bold; letter-spacing:1px; }
+.topnav .sep { opacity:0.4; }
+.topnav a { color:#8FA8CC; text-decoration:none; }
+.topnav a:hover { color:#fff; }
+
+/* ラップ */
+.wrap { max-width:860px; margin:0 auto; padding:0 16px 60px; }
+
+/* ヒーロー */
+.hero { background:linear-gradient(135deg,var(--navy) 0%,#2c3e6e 100%); color:#fff; padding:24px 20px; margin:0 -16px 24px; }
+.hero .crumb { font-size:11px; opacity:0.6; margin-bottom:6px; letter-spacing:1px; text-transform:uppercase; }
+.hero h1 { font-size:26px; font-weight:bold; display:flex; align-items:center; gap:8px; }
+.hero .stars { font-size:16px; color:var(--gold); }
+.hero .chapter-num { font-size:22px; }
+.hero .sub { font-size:13px; opacity:0.85; margin-top:8px; line-height:1.7; }
+
+/* goals */
+.goals { background:#EBF0FA; border-left:4px solid var(--navy); border-radius:0 8px 8px 0; padding:14px 18px; margin-bottom:20px; }
+.goals h2 { font-size:13px; font-weight:bold; color:var(--navy); margin-bottom:8px; }
+.goals li { font-size:13px; margin-left:16px; margin-bottom:4px; }
+
+/* sec見出し */
+.sec { background:var(--navy); color:#fff; padding:10px 16px; border-radius:6px; font-size:14px; font-weight:bold; margin:24px 0 12px; display:flex; align-items:center; gap:8px; }
+.sec .num { background:var(--crimson); width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:bold; flex-shrink:0; }
+
+/* card */
+.card { background:#fff; border-radius:8px; padding:18px; margin-bottom:16px; box-shadow:0 2px 6px rgba(0,0,0,0.06); }
+
+/* subsec */
+.subsec { font-size:13px; font-weight:bold; color:var(--navy); border-bottom:2px solid var(--border); padding-bottom:4px; margin:14px 0 8px; }
+.card > p { font-size:13px; margin-bottom:8px; }
+
+/* ex-box */
+.ex-box { background:#F0F4FA; border:1px solid #C5D3E8; border-radius:6px; padding:12px 14px; margin:10px 0; }
+.ex-box .label { display:inline-block; background:var(--navy); color:#fff; font-size:11px; padding:2px 8px; border-radius:10px; margin-bottom:6px; }
+.ex-box p { font-size:13px; line-height:1.8; }
+
+/* warning */
+.warning { background:#FFF8F0; border-left:3px solid #E67E22; border-radius:0 6px 6px 0; padding:10px 14px; margin:10px 0; }
+.warning .label { display:inline-block; background:#E67E22; color:#fff; font-size:11px; padding:2px 8px; border-radius:10px; margin-bottom:4px; }
+.warning p { font-size:13px; }
+
+/* pk（ピンクハイライト） */
+.pk { background:#FFF0EE; color:var(--crimson); font-weight:bold; padding:1px 4px; border-radius:3px; }
+
+/* table */
+.tbl { width:100%; border-collapse:collapse; margin:10px 0; font-size:13px; }
+.tbl th { background:var(--navy); color:#fff; padding:8px 10px; text-align:left; }
+.tbl td { padding:8px 10px; border-bottom:1px solid var(--border); vertical-align:top; }
+.tbl tr:nth-child(even) td { background:#F5F7FC; }
+
+  /* ===== ミニテスト 新UI ===== */
+  .mini-test { background: #F0F4FA; border: 2px solid var(--navy); border-radius: 10px; margin-top: 18px; overflow: hidden; }
+  .mini-test-header { background: var(--navy); color: white; padding: 8px 14px; font-size: 13px; font-weight: bold; letter-spacing: 1px; display: flex; align-items: center; gap: 6px; }
+  .mt-body { padding: 14px; }
+  .mt-preview { background: #EEF2F8; border-radius: 6px; padding: 12px 14px; margin-bottom: 12px; font-size: 14px; line-height: 2.1; }
+  .mt-ans { display: inline; color: var(--crimson); font-weight: bold; background: #FFF0EE; border-radius: 3px; padding: 1px 5px; }
+  .mt-start-btn { width: 100%; padding: 10px; background: var(--navy); color: white; border: none; border-radius: 6px; font-size: 13px; font-weight: bold; cursor: pointer; font-family: inherit; }
+  .mt-start-btn:hover { background: #2D4070; }
+  .mt-quiz-text { font-size: 14px; line-height: 2.4; margin-bottom: 14px; }
+  .mt-blank { display: inline-flex; align-items: center; justify-content: center; min-width: 68px; height: 28px; border: 2px dashed #AAB8CC; border-radius: 5px; background: #EEF2F8; color: #8FA8CC; font-size: 13px; padding: 0 6px; vertical-align: middle; cursor: pointer; transition: all 0.15s; }
+  .mt-blank.filled { border-style: solid; border-color: var(--navy); background: white; color: var(--navy); font-weight: bold; }
+  .mt-blank.correct { border-color: #27AE60; background: #E8F8F0; color: #27AE60; font-weight: bold; cursor: default; }
+  .mt-blank.wrong { border-color: var(--crimson); background: #FFF0EE; color: var(--crimson); animation: mt-shake 0.3s ease; }
+  @keyframes mt-shake { 0%,100%{transform:translateX(0)} 25%{transform:translateX(-4px)} 75%{transform:translateX(4px)} }
+  .mt-pool-label { font-size: 11px; color: #6B7E99; letter-spacing: 1px; margin-bottom: 6px; }
+  .mt-pool { display: flex; flex-wrap: wrap; gap: 6px; background: white; border-radius: 6px; padding: 8px; margin-bottom: 12px; min-height: 38px; border: 1px solid var(--border); }
+  .mt-chip { background: white; border: 1.5px solid var(--navy); border-radius: 5px; padding: 4px 10px; font-size: 13px; font-weight: bold; color: var(--navy); cursor: pointer; transition: all 0.12s; user-select: none; -webkit-user-select: none; }
+  .mt-chip:hover { background: #EEF2F8; }
+  .mt-chip.mt-sel { background: var(--navy); color: white; }
+  .mt-chip.mt-used { opacity: 0.3; pointer-events: none; }
+  .mt-btn-row { display: flex; gap: 8px; }
+  .mt-judge-btn { flex: 2; padding: 9px; background: var(--crimson); color: white; border: none; border-radius: 6px; font-size: 13px; font-weight: bold; cursor: pointer; font-family: inherit; }
+  .mt-judge-btn:hover { background: #A93226; }
+  .mt-hint-btn { flex: 1; padding: 9px; background: transparent; color: #6B7E99; border: 1px solid var(--border); border-radius: 6px; font-size: 12px; cursor: pointer; font-family: inherit; }
+  .mt-hint-btn:hover { background: #EEF2F8; }
+  .mt-hint-note { font-size: 12px; color: #8B6914; background: #FFF8E6; border-left: 3px solid var(--gold); padding: 8px 12px; border-radius: 0 5px 5px 0; margin-bottom: 10px; }
+  .mt-resume-btn { width: 100%; padding: 9px; background: var(--navy); color: white; border: none; border-radius: 6px; font-size: 13px; cursor: pointer; font-family: inherit; }
+  .mt-resume-btn:hover { background: #2D4070; }
+  .mt-result { text-align: center; padding: 16px 0 8px; position: relative; overflow: hidden; }
+  .mt-result-score { font-size: 32px; font-weight: bold; color: var(--gold); margin: 6px 0 4px; }
+  .mt-result-msg { font-size: 13px; color: #6B7E99; margin-bottom: 14px; }
+  .mt-retry-btn { padding: 9px 24px; background: var(--navy); color: white; border: none; border-radius: 6px; font-size: 13px; cursor: pointer; font-family: inherit; }
+  .mt-confetti { position: absolute; width: 7px; height: 7px; border-radius: 2px; animation: mt-fall linear forwards; pointer-events: none; }
+  @keyframes mt-fall { 0%{transform:translateY(-10px) rotate(0deg);opacity:1} 100%{transform:translateY(180px) rotate(720deg);opacity:0} }
+
+/* nav-buttons */
+.nav-buttons { display:flex; justify-content:space-between; margin-top:28px; }
+.btn { display:inline-block; padding:10px 24px; background:var(--crimson); color:#fff; text-decoration:none; border-radius:6px; font-size:13px; font-weight:bold; }
+.btn.outline { background:#fff; color:var(--navy); border:2px solid var(--navy); }
+.btn:hover { opacity:0.85; }
+
+</style>
+</head>
+<body data-page="kenpo_ch24">
+
+<nav class="topnav">
+  <span class="brand">GAMBA 憲法</span>
+  <span class="sep">|</span>
+  <a href="index.html">目次</a>
+  <a href="kenpo_ch24_q.html">演習へ</a>
+  <a href="review.html">復習リスト</a>
+</nav>
+
+<div class="wrap">
+<header class="hero">
+  <div class="crumb">第24章 / 統治機構⑥</div>
+  <h1>司法 <span class="chapter-num">①</span><span class="stars">★★★</span></h1>
+  <p class="sub">司法の分野は統治では珍しく判例が数多く登場します。<span class="pk">「法律上の争訟」の2要件</span>と却下判例4つ、<span class="pk">統治行為論（苫米地vs砂川の違い）</span>、<span class="pk">部分社会の法理</span>は超頻出です。令和2年の出席停止判例変更も押さえましょう。</p>
+</header>
+<main>
+
+<section class="goals">
+  <h2>この単元で押さえる5つのポイント</h2>
+  <ol>
+    <li>「法律上の争訟」の2要件：①<span class="pk">具体的な権利義務関係の存否</span>　②<span class="pk">法令を適用して終局的に解決できること</span></li>
+    <li>却下判例4つ：警察予備隊・技術士国家試験・板まんだら・宝塚市パチンコ条例</li>
+    <li>統治行為論：苫米地事件（解散）＝<span class="pk">一切審査不可</span>　砂川事件（条約）＝<span class="pk">一見明白に違憲なら審査余地あり</span></li>
+    <li>部分社会：出席停止→司法審査<span class="pk">及ぶ</span>（令2変更）・除名→<span class="pk">及ぶ</span>・政党除名→<span class="pk">手続面のみ</span></li>
+    <li>富山大学事件：単位授与→<span class="pk">審査不可</span>　専攻科修了認定→<span class="pk">審査可</span></li>
+  </ol>
+</section>
+
+<!-- ================= SECTION 1 ================= -->
+<div class="sec"><span class="num">1</span>司法権の意義・「法律上の争訟」</div>
+
+<div class="card">
+<h3 class="subsec">「法律上の争訟」の2要件</h3>
+<div class="ex-box">
+<span class="label">📜 憲法76条1項</span>
+<p>すべて司法権は、最高裁判所及び法律の定めるところにより設置する下級裁判所に属する。</p>
+</div>
+
+<p>司法権とは具体的な争訟について法を適用しこれを裁定する国家の作用。「具体的な争訟」＝裁判所法3条1項の<span class="pk">「法律上の争訟」</span>。2要件がどちらか欠けると<span class="pk">却下（門前払い）</span>。</p>
+
+<table class="tbl">
+<thead><tr><th>要件</th><th>内容</th></tr></thead>
+<tbody>
+<tr><td>①事件性の要件</td><td>当事者間の<strong>具体的な権利義務ないし法律関係の存否</strong>に関する紛争であること</td></tr>
+<tr><td>②終局解決可能性</td><td><strong>法令を適用することにより終局的に解決</strong>することができるものであること</td></tr>
+</tbody>
+</table>
+
+<h3 class="subsec">「法律上の争訟」に当たらない判例（4つ）</h3>
+<table class="tbl">
+<thead><tr><th>判例</th><th>欠ける要件</th><th>理由</th></tr></thead>
+<tbody>
+<tr><td><strong>警察予備隊事件</strong>（昭27）</td><td>①なし</td><td>具体的な争訟なく抽象的に判断を求めるもの</td></tr>
+<tr><td><strong>技術士国家試験事件</strong>（昭41）</td><td>②なし</td><td>合否判定は学問・技術上の判断。法令で解決不可</td></tr>
+<tr><td><strong>板まんだら事件</strong>（昭56）</td><td>①あり②なし</td><td>宗教上の教義に関する判断が核心→法令で終局的解決不可能</td></tr>
+<tr><td><strong>宝塚市パチンコ条例事件</strong>（平14）</td><td>①なし</td><td>行政権の主体として義務履行を求める訴訟は自己の権利利益の保護救済でない</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- ▼ 単元1 ミニテスト ▼ -->
+<div class="mini-test" id="mt24a">
+  <div class="mini-test-header">✏️ ミニテスト — 法律上の争訟</div>
+  <div class="mt-body">
+    <div class="mt-ph mt-ph-preview">
+      <div class="mt-preview">
+        1. 「法律上の争訟」とは、①当事者間の<span class="mt-ans">具体的な権利義務</span>ないし法律関係の存否に関する紛争で、②<span class="mt-ans">法令を適用</span>することにより終局的に解決できるものをいう。<br>
+        2. 板まんだら事件：信仰の対象の価値の判断が本質的問題→法律上の争訟に<span class="mt-ans">あたらない</span>。<br>
+        3. 技術士国家試験事件：試験の合否判定は<span class="mt-ans">純粋な学問的判断</span>→法律上の争訟に<span class="mt-ans">あたらない</span>。<br>
+        4. 宝塚市パチンコ条例事件：行政上の義務履行を求める訴訟は法律上の争訟として<span class="mt-ans">当然には</span>審判対象にならない。
+      </div>
+      <button class="mt-start-btn" onclick="mtStart('mt24a')">▶ チャレンジ開始</button>
+    </div>
+    <div class="mt-ph mt-ph-quiz" style="display:none">
+      <div class="mt-quiz-text"></div>
+      <div class="mt-pool-label">語　群</div>
+      <div class="mt-pool"></div>
+      <div class="mt-btn-row">
+        <button class="mt-judge-btn" onclick="mtJudge('mt24a')">✔ 判定する</button>
+        <button class="mt-hint-btn" onclick="mtHint('mt24a')">👁 手本を見る</button>
+      </div>
+    </div>
+    <div class="mt-ph mt-ph-hint" style="display:none">
+      <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+      <div class="mt-preview">
+        1. 「法律上の争訟」とは、①当事者間の<span class="mt-ans">具体的な権利義務</span>ないし法律関係の存否に関する紛争で、②<span class="mt-ans">法令を適用</span>することにより終局的に解決できるものをいう。<br>
+        2. 板まんだら事件：信仰の対象の価値の判断が本質的問題→法律上の争訟に<span class="mt-ans">あたらない</span>。<br>
+        3. 技術士国家試験事件：試験の合否判定は<span class="mt-ans">純粋な学問的判断</span>→法律上の争訟に<span class="mt-ans">あたらない</span>。<br>
+        4. 宝塚市パチンコ条例事件：行政上の義務履行を求める訴訟は法律上の争訟として<span class="mt-ans">当然には</span>審判対象にならない。
+      </div>
+      <button class="mt-resume-btn" onclick="mtResume('mt24a')">◀ 手本を閉じて続きから再開</button>
+    </div>
+    <div class="mt-ph mt-ph-result" style="display:none">
+      <div class="mt-result">
+        <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+        <div class="mt-result-score"></div><div class="mt-result-msg"></div>
+        <button class="mt-retry-btn" onclick="mtRetry('mt24a')">↺ もう一度</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ▼ 単元2 ミニテスト ▼ -->
+<div class="mini-test" id="mt24b">
+  <div class="mini-test-header">✏️ ミニテスト — 司法権の限界</div>
+  <div class="mt-body">
+    <div class="mt-ph mt-ph-preview">
+      <div class="mt-preview">
+        1. 資格争訟裁判（<span class="mt-ans">55条</span>）・弾劾裁判（<span class="mt-ans">64条</span>）は明文上の司法権の限界。<br>
+        2. 警察法改正無効事件：議事手続が適法に行われたものとして<span class="mt-ans">裁判所の審査権の外</span>にある（自律権）。<br>
+        3. 苫米地事件：衆議院の解散は<span class="mt-ans">統治行為</span>として司法審査の対象外。<br>
+        4. 砂川事件：高度の政治性を有する条約は<span class="mt-ans">一見極めて明白に違憲無効でない限り</span>司法審査になじまない。<br>
+        5. 地方議会議員の出席停止処分→司法審査<span class="mt-ans">あり（出席停止）</span>（最大判令和2年）。除名処分→司法審査<span class="mt-ans">あり（除名）</span>。
+      </div>
+      <button class="mt-start-btn" onclick="mtStart('mt24b')">▶ チャレンジ開始</button>
+    </div>
+    <div class="mt-ph mt-ph-quiz" style="display:none">
+      <div class="mt-quiz-text"></div>
+      <div class="mt-pool-label">語　群</div>
+      <div class="mt-pool"></div>
+      <div class="mt-btn-row">
+        <button class="mt-judge-btn" onclick="mtJudge('mt24b')">✔ 判定する</button>
+        <button class="mt-hint-btn" onclick="mtHint('mt24b')">👁 手本を見る</button>
+      </div>
+    </div>
+    <div class="mt-ph mt-ph-hint" style="display:none">
+      <div class="mt-hint-note">手本モードで確認中。閉じると続きから再開できます。</div>
+      <div class="mt-preview">
+        1. 資格争訟裁判（<span class="mt-ans">55条</span>）・弾劾裁判（<span class="mt-ans">64条</span>）は明文上の司法権の限界。<br>
+        2. 警察法改正無効事件：議事手続が適法に行われたものとして<span class="mt-ans">裁判所の審査権の外</span>にある（自律権）。<br>
+        3. 苫米地事件：衆議院の解散は<span class="mt-ans">統治行為</span>として司法審査の対象外。<br>
+        4. 砂川事件：高度の政治性を有する条約は<span class="mt-ans">一見極めて明白に違憲無効でない限り</span>司法審査になじまない。<br>
+        5. 地方議会議員の出席停止処分→司法審査<span class="mt-ans">あり（出席停止）</span>（最大判令和2年）。除名処分→司法審査<span class="mt-ans">あり（除名）</span>。
+      </div>
+      <button class="mt-resume-btn" onclick="mtResume('mt24b')">◀ 手本を閉じて続きから再開</button>
+    </div>
+    <div class="mt-ph mt-ph-result" style="display:none">
+      <div class="mt-result">
+        <div style="font-size:12px;color:#6B7E99">演習完了！</div>
+        <div class="mt-result-score"></div><div class="mt-result-msg"></div>
+        <button class="mt-retry-btn" onclick="mtRetry('mt24b')">↺ もう一度</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 章末まとめ -->
+<div class="sec"><span class="num">★</span>第24章まとめ</div>
+
+<div class="card">
+<table class="tbl">
+<thead><tr><th>論点</th><th>結論・キーワード</th></tr></thead>
+<tbody>
+<tr><td>法律上の争訟の2要件</td><td>①具体的な<strong>権利義務関係の存否</strong>　②<strong>法令を適用して終局的解決</strong></td></tr>
+<tr><td>却下判例4つ</td><td>警察予備隊①欠・技術士試験②欠・板まんだら②欠・宝塚市パチンコ①欠</td></tr>
+<tr><td>議事手続（警察法改正無効事件）</td><td>留保なしで<strong>一切審査不可</strong>（「明白な違憲がない限り」という留保なし！）</td></tr>
+<tr><td>統治行為（苫米地事件）</td><td>衆議院の<strong>解散</strong>→<strong>一切審査不可</strong></td></tr>
+<tr><td>統治行為（砂川事件）</td><td>日米安保<strong>条約</strong>→<strong>一見明白に違憲</strong>でない限り範囲外（余地あり）</td></tr>
+<tr><td>出席停止（令2変更）</td><td>司法審査の対象と<strong>なる</strong>（昭35判例変更）</td></tr>
+<tr><td>除名処分</td><td>司法審査が<strong>及ぶ</strong></td></tr>
+<tr><td>単位授与（認定）行為</td><td>司法審査<strong>及ばない</strong></td></tr>
+<tr><td>専攻科修了認定</td><td>司法審査<strong>及ぶ</strong></td></tr>
+<tr><td>政党の除名処分</td><td>司法審査が及ぶが<strong>手続面だけ</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="nav-buttons">
+  <a class="btn outline" href="kenpo_ch23.html">← 第23章</a>
+  <a class="btn" href="kenpo_ch24_q.html">演習問題へ →</a>
+</div>
+
+</main>
+</div>
+
+<script>
+var MT_DATA = {
+  mt24a:{
+    answers:['具体的な権利義務','法令を適用','あたらない','純粋な学問的判断','当然には'],
+    decoys:['抽象的な法律関係','命令を制定','あたる','個人の権利利益','当然に'],
+    parts:[
+      {t:'text',v:'1. 「法律上の争訟」とは、①当事者間の'},{t:'blank',i:0},
+      {t:'text',v:'ないし法律関係の存否に関する紛争で、②'},{t:'blank',i:1},
+      {t:'text',v:'することにより終局的に解決できるものをいう。'},{t:'br'},
+      {t:'text',v:'2. 板まんだら事件：信仰の対象の価値の判断が本質的問題→法律上の争訟に'},{t:'blank',i:2},{t:'text',v:'。'},{t:'br'},
+      {t:'text',v:'3. 技術士国家試験事件：試験の合否判定は'},{t:'blank',i:3},
+      {t:'text',v:'→法律上の争訟にあたらない。'},{t:'br'},
+      {t:'text',v:'4. 宝塚市パチンコ条例事件：行政上の義務履行を求める訴訟は法律上の争訟として'},{t:'blank',i:4},{t:'text',v:'審判対象にならない。'}
+    ]
+  },
+  mt24b:{
+    answers:['55条','64条','裁判所の審査権の外','統治行為','一見極めて明白に違憲無効でない限り','あり（出席停止）','あり（除名）'],
+    decoys:['76条','96条','国会の審査権の外','高度な政治行為','一見して違憲でない限り','なし'],
+    parts:[
+      {t:'text',v:'1. 資格争訟裁判（'},{t:'blank',i:0},{t:'text',v:'）・弾劾裁判（'},{t:'blank',i:1},{t:'text',v:'）は明文上の司法権の限界。'},{t:'br'},
+      {t:'text',v:'2. 警察法改正無効事件：議事手続が適法に行われたものとして'},{t:'blank',i:2},{t:'text',v:'にある（自律権）。'},{t:'br'},
+      {t:'text',v:'3. 苫米地事件：衆議院の解散は'},{t:'blank',i:3},{t:'text',v:'として司法審査の対象外。'},{t:'br'},
+      {t:'text',v:'4. 砂川事件：高度の政治性を有する条約は'},{t:'blank',i:4},{t:'text',v:'司法審査になじまない。'},{t:'br'},
+      {t:'text',v:'5. 地方議会議員の出席停止処分→司法審査'},{t:'blank',i:5},{t:'text',v:'（最大判令和2年）。除名処分→司法審査'},{t:'blank',i:6},{t:'text',v:'。'}
+    ]
+  }
+};
+var mtState = {};
+function mtShuffle(a){var b=[].concat(a);for(var i=b.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=b[i];b[i]=b[j];b[j]=t;}return b;}
+function mtStart(id){
+  var d=MT_DATA[id];
+  mtState[id]={filled:{},locked:{},sel:null,pool:mtShuffle(d.answers.concat(d.decoys))};
+  mtRenderQuiz(id);
+  mtSetPhase(id,'quiz');
+}
+function mtSetPhase(id,ph){
+  var el=document.getElementById(id);
+  el.querySelectorAll('.mt-ph').forEach(function(p){p.style.display='none';});
+  el.querySelector('.mt-ph-'+ph).style.display='block';
+}
+function mtRenderQuiz(id){
+  var d=MT_DATA[id],s=mtState[id];
+  var qt=document.getElementById(id).querySelector('.mt-quiz-text');
+  qt.innerHTML='';
+  d.parts.forEach(function(p){
+    if(p.t==='text'){
+      qt.appendChild(document.createTextNode(p.v));
+    } else if(p.t==='br'){
+      qt.appendChild(document.createElement('br'));
+    } else if(p.t==='blank'){
+      (function(i){
+        var btn=document.createElement('button');
+        btn.type='button';
+        var cls='mt-blank';
+        if(s.locked[i]===true) cls+=' correct';
+        else if(s.filled[i]) cls+=' filled';
+        btn.className=cls;
+        btn.dataset.bi=i;
+        btn.textContent=s.filled[i]||(s.locked[i]===true?d.answers[i]:'　　　');
+        if(s.locked[i]!==true){
+          btn.addEventListener('click',function(){mtBlankClick(id,i);});
+        }
+        qt.appendChild(btn);
+      })(p.i);
+    }
+  });
+  mtRenderPool(id);
+}
+function mtRenderPool(id){
+  var d=MT_DATA[id],s=mtState[id];
+  var pool=document.getElementById(id).querySelector('.mt-pool');
+  pool.innerHTML='';
+  s.pool.forEach(function(w,idx){
+    var lockedUsed=false;
+    for(var k in s.locked){if(s.locked[k]===true&&s.filled[k]===w){lockedUsed=true;break;}}
+    var placedUsed=false;
+    for(var k in s.filled){if(s.filled[k]===w&&s.locked[k]!==true){placedUsed=true;break;}}
+    var used=lockedUsed||placedUsed;
+    var chip=document.createElement('button');
+    chip.type='button';
+    chip.className='mt-chip'+(s.sel===idx?' mt-sel':'')+(used?' mt-used':'');
+    chip.textContent=w;
+    chip.dataset.ci=idx;
+    (function(ci){
+      chip.addEventListener('click',function(){
+        if(!this.classList.contains('mt-used')) mtChipClick(id,ci);
+      });
+    })(idx);
+    pool.appendChild(chip);
+  });
+}
+function mtChipClick(id,idx){
+  var s=mtState[id];
+  s.sel=(s.sel===idx)?null:idx;
+  mtRenderPool(id);
+}
+function mtBlankClick(id,bi){
+  var s=mtState[id];
+  if(s.locked[bi]===true) return;
+  if(s.sel!==null){
+    var w=s.pool[s.sel];
+    for(var k in s.filled){
+      if(s.filled[k]===w&&s.locked[k]!==true&&String(k)!==String(bi)){
+        s.filled[k]=null; break;
+      }
+    }
+    s.filled[bi]=w;
+    s.sel=null;
+    mtRenderQuiz(id);
+    return;
+  }
+  if(s.filled[bi]){s.filled[bi]=null; mtRenderQuiz(id);}
+}
+function mtJudge(id){
+  var d=MT_DATA[id],s=mtState[id],wrong=[];
+  d.answers.forEach(function(ans,i){
+    if(s.locked[i]===true) return;
+    if(s.filled[i]===ans){s.locked[i]=true;}
+    else if(s.filled[i]){s.locked[i]=false; wrong.push(i);}
+  });
+  mtRenderQuiz(id);
+  wrong.forEach(function(i){
+    var el=document.getElementById(id).querySelector('.mt-blank[data-bi="'+i+'"]');
+    if(el) el.classList.add('wrong');
+    setTimeout(function(){
+      if(mtState[id]){mtState[id].locked[i]=undefined; mtState[id].filled[i]=null; mtRenderQuiz(id);}
+    },800);
+  });
+  var allOk=d.answers.every(function(ans,i){return s.locked[i]===true;});
+  if(allOk) setTimeout(function(){mtShowResult(id,d.answers.length,d.answers.length);},500);
+}
+function mtHint(id){mtSetPhase(id,'hint');}
+function mtResume(id){mtRenderQuiz(id); mtSetPhase(id,'quiz');}
+function mtShowResult(id,sc,tot){
+  var el=document.getElementById(id);
+  el.querySelector('.mt-result-score').textContent=sc+' / '+tot+' 点';
+  var msg=sc===tot?'全問正解！完璧です！':sc>=tot*0.7?'あと少し！もう一度確認しましょう。':'解説をよく読んでから再挑戦！';
+  el.querySelector('.mt-result-msg').textContent=msg;
+  mtSetPhase(id,'result');
+  if(sc===tot) mtConfetti(el.querySelector('.mt-result'));
+}
+function mtConfetti(wrap){
+  var cols=['#C0392B','#D4A017','#27AE60','#1B2A4A','#3498DB'];
+  for(var i=0;i<36;i++){
+    var c=document.createElement('div'); c.className='mt-confetti';
+    c.style.left=Math.random()*100+'%';
+    c.style.background=cols[Math.floor(Math.random()*cols.length)];
+    c.style.animationDuration=(0.7+Math.random()*0.8)+'s';
+    c.style.animationDelay=(Math.random()*0.5)+'s';
+    wrap.appendChild(c);
+    setTimeout(function(x){x.remove();},1800,c);
+  }
+}
+function mtRetry(id){mtStart(id);}
+</script>
+</body>
+</html>
